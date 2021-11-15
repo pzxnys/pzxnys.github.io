@@ -215,9 +215,10 @@
 <ol>
 <li>定位不准</li>
 <li>低消耗时</li>
-<li>出错率高<span id="more"></span></li>
+<li>出错率高<span id="more"></span>
+</li>
 </ol>
-<h3 id="正确的做题方式-–-即满分思维："><a href="#正确的做题方式-–-即满分思维：" class="headerlink" title="正确的做题方式 – 即满分思维："></a>正确的做题方式 – 即满分思维：</h3><ul>
+<h3 id="正确的做题方式-—-即满分思维："><a href="#正确的做题方式-—-即满分思维：" class="headerlink" title="正确的做题方式 — 即满分思维："></a>正确的做题方式 — 即满分思维：</h3><ul>
 <li>定位：回答题干问题所问</li>
 <li>内容：逻辑判断</li>
 <li>做题：比出出错概率较小</li>
@@ -340,5 +341,21 @@ MathJax.Hub.Queue(function() {
 
 
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
 </body>
 </html>
