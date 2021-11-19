@@ -248,4 +248,23 @@
     
   </entry>
   
+  <entry>
+    <title>Ubuntu 使用技巧</title>
+    <link href="http://example.com/posts/993634954/"/>
+    <id>http://example.com/posts/993634954/</id>
+    <published>2021-11-08T06:18:00.000Z</published>
+    <updated>2021-11-19T03:44:31.100Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;一、在桌面创建图标：&lt;br&gt;有两种情况：&lt;br&gt;一是标准安装的应用程序，这种程序一般安装之后就已经有.desktop文件了，我们只要把它复制到桌面就可以了。&lt;br&gt;还有一种就是第三方或自己写的非标应用程序，这个需要自己编写.desktop文件。&lt;br&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Ubuntu" scheme="http://example.com/categories/Ubuntu/"/>
+    
+    
+    <category term="Ubuntu Desktop ICON" scheme="http://example.com/tags/Ubuntu-Desktop-ICON/"/>
+    
+  </entry>
+  
 </feed>

@@ -271,6 +271,31 @@
     </entry>
     
     
+    
+    <entry>
+      <title>Ubuntu 使用技巧</title>
+      <link href="/posts/993634954/"/>
+      <url>/posts/993634954/</url>
+      
+        <content type="html"><![CDATA[<p>一、在桌面创建图标：<br>有两种情况：<br>一是标准安装的应用程序，这种程序一般安装之后就已经有.desktop文件了，我们只要把它复制到桌面就可以了。<br>还有一种就是第三方或自己写的非标应用程序，这个需要自己编写.desktop文件。<br><span id="more"></span><br>1、 首先在Ubuntu中已经安装该应用程序，比如在Ubuntu18中已经安装了firefox浏览器（Ubuntu16中也是一样的），想在桌面上建立一个快捷图      标（快捷方式）。<br>2、打开终端（ctrl+alt+t）进入/usr/share/applications目录找到Firefox对应的.desktop文件，如下。hzq@ubuntu:~$ cd /usr/share/applications</p><pre class="line-numbers language-none"><code class="language-none">hzq@ubuntu:/usr/share/applications$ ls firefox*firefox.desktophzq@ubuntu:~$ <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>仔细确认该文件是不是你的应用程序对应的文件，有的时候会有多个类似文件（上图中只有一个比较好确认）。<br>3、将.desktop文件拷贝到桌面，如下。</p><pre class="line-numbers language-none"><code class="language-none">hzq@ubuntu:/usr/share/applications$ cp firefox.desktop ~/桌面/hzq@ubuntu:/usr/share/applications$ cdhzq@ubuntu:~$ ls 桌面/firefox.desktophzq@ubuntu:~$ <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>回到桌面查看，效果如下。还需要进一步处理一下。<br>4、选中文件，右键属性打开，切换到“权限”标签，如下所示。选中“允许作为程序执行文件”。然后退出。<br>5、然后再次点击打开该图标，如果弹出提示如下，选“trust and launch”。</p><p>非标准应用程序的操作方法<br>1、其实只要是大规模发行的软件一般在Ubuntu里安装完之后都会在/usr/share/applications里建立相应.desktop文件的，但是总有一些特殊情况。这里以新安装的gedit为例（gedit其实也有现成的.desktop文件，我只是以他为例子建立一个个性化的图标）。<br>2、进入/usr/share/applications目录，建立一个空白的文本文件。如下。</p><pre><code>hzq@ubuntu:~$ cd /usr/share/applicationshzq@ubuntu:/usr/share/applications$ sudo gedit myGedit.desktop#输入文件内容，注释内容可以删除---------------------[Desktop Entry]#名字Name=myGedit#注释Comment=Edit text files#执行文件、命令格式Exec=gedit %U#是否需要终端打开Terminal=false#类型Type=Application#图标，我这里是自己做的图标，你也可以引用别的程序的Icon=/home/hzq/word.png#分类，按自己需要填写Categories=GNOME;GTK;Utility;TextEditor;#保存退出-----------------------------hzq@ubuntu:/usr/share/applications$ </code></pre><p>3、将.desktop文件拷贝到桌面，如下。</p><pre><code>hzq@ubuntu:/usr/share/applications$ cp myGedit.desktop ~/桌面/hzq@ubuntu:/usr/share/applications$ cdhzq@ubuntu:~$ ls 桌面/firefox.desktop   myGedit.desktophzq@ubuntu:~$ </code></pre><p>回到桌面查看，效果如下。下面的处理步骤就跟方法一中的步骤类似了。</p><p>在win10下安装了Ubuntu双系统，默认情况下，默认启动的是Ubuntu系统。将默认启动系统设置成win10的办法是：<br>① 进入ubuntu系统；<br>② 打开终端，进入到 /etc/default 目录下；<br>③ 使用 sudo gedit grub 打开grub配置文件，将GRUB_DEFAULT=0修改为你想要默认启动的系统的序号，设置完后保存；<br>注：系统的序号即为启动时看到的顺序，从0开始数，默认ubuntu为第一个，即其序号为0，我的win10系统在第3个，所以设置GRUB_DEFAULT=2<br>④ 输入 sudo update-grub 更新grub文件；<br>⑤ 重启系统，完工。</p><p>解决 ubuntu 与 win10 双系统，系统时间不同步问题<br>①  进入ubuntu，在 ubuntu 下更新本地时间<br>      sudo apt-get install ntpdate<br>      sudo ntpdate time.windows.com<br>② 将本地时间更新到硬件上<br>      sudo hwclock —localtime —systohc</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Ubuntu </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Ubuntu Desktop ICON </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
   
   
 </search>
