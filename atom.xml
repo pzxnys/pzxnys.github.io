@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>XNYS&#39;s Blog</title>
+  
+  <subtitle>人间烟火</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-11-15T05:36:29.216Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>江水</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Data processing (Tourism )</title>
+    <link href="http://example.com/posts/2949193936/"/>
+    <id>http://example.com/posts/2949193936/</id>
+    <published>2021-11-15T02:06:00.000Z</published>
+    <updated>2021-11-15T05:36:29.216Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a name=&quot;97buO&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;①-jieba分词&quot;&gt;&lt;a href=&quot;#①-jieba分词&quot; class=&quot;headerlink&quot; title=&quot;①. jieba分词&quot;&gt;&lt;/a&gt;①. jieba分词&lt;/h3&gt;&lt;p&gt;使用jieba分词工具，对马蜂窝爬取数据进行简单处理&lt;br&gt;&lt;br&gt;首先，去除停用词、表情符号，英文等字符，避免干扰&lt;br&gt;&lt;br&gt;PS：只保留中文字符（if word &amp;gt;= u’\u4e00’ and word &amp;lt;= u’\u9fa5’:）(此数据采用中文’utf-8’编码)&lt;br&gt;&lt;br&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="ML &amp;&amp; DL" scheme="http://example.com/categories/ML-DL/"/>
+    
+    
+    <category term="Dataset " scheme="http://example.com/tags/Dataset/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DBSCAN_Yelp</title>
+    <link href="http://example.com/posts/2007885086/"/>
+    <id>http://example.com/posts/2007885086/</id>
+    <published>2021-11-15T02:03:00.000Z</published>
+    <updated>2021-11-15T02:22:55.687Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;DBSCAN&quot;&gt;&lt;a href=&quot;#DBSCAN&quot; class=&quot;headerlink&quot; title=&quot;DBSCAN&quot;&gt;&lt;/a&gt;DBSCAN&lt;/h3&gt;&lt;p&gt;利用 DBSCAN 聚类算法，对经纬度进行聚类&lt;br&gt;​&lt;/p&gt;
+&lt;p&gt;代码如下：&lt;br&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="ML &amp;&amp; DL" scheme="http://example.com/categories/ML-DL/"/>
+    
+    
+    <category term="Cluster" scheme="http://example.com/tags/Cluster/"/>
+    
+    <category term="Code" scheme="http://example.com/tags/Code/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记录一次磁盘爆炸血泪史</title>
+    <link href="http://example.com/posts/3148641905/"/>
+    <id>http://example.com/posts/3148641905/</id>
+    <published>2021-11-15T02:01:00.000Z</published>
+    <updated>2021-11-15T02:26:08.886Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a name=&quot;fMQD6&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot; title=&quot;起因&quot;&gt;&lt;/a&gt;起因&lt;/h3&gt;&lt;p&gt;这是最初建立 ubuntu + Windows 10 留下的一个诟病。&lt;br&gt;由于网上大部分教程，及之前个人实验的影响。在建立 Ubuntu 系统时，根目录仅分配了 40 G 的磁盘容量。&lt;br&gt;本想着就只是存储一些代码，和少许的数据集，不可能把根目录撑爆，奈何大意失荆州啊！！！&lt;br&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Ubuntu" scheme="http://example.com/categories/Ubuntu/"/>
+    
+    
+    <category term="Issues" scheme="http://example.com/tags/Issues/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>橙啦-颉斌斌老师 阅读课</title>
+    <link href="http://example.com/posts/1669987382/"/>
+    <id>http://example.com/posts/1669987382/</id>
+    <published>2021-11-12T12:54:00.000Z</published>
+    <updated>2021-11-18T09:22:22.736Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;阅读低分思维和满分思维的区别：&quot;&gt;&lt;a href=&quot;#阅读低分思维和满分思维的区别：&quot; class=&quot;headerlink&quot; title=&quot;阅读低分思维和满分思维的区别：&quot;&gt;&lt;/a&gt;阅读低分思维和满分思维的区别：&lt;/h2&gt;&lt;h3 id=&quot;低分思维：&quot;&gt;&lt;a href=&quot;#低分思维：&quot; class=&quot;headerlink&quot; title=&quot;低分思维：&quot;&gt;&lt;/a&gt;低分思维：&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;定位：题干中有什么就去定位什么&lt;/li&gt;
+&lt;li&gt;内容：把每个单词都读懂，翻译成中文&lt;/li&gt;
+&lt;li&gt;做题：答案见过，求证 100% 正确&lt;/li&gt;
+&lt;li&gt;已知信息：原文&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;结果：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;定位不准&lt;/li&gt;
+&lt;li&gt;低消耗时&lt;/li&gt;
+&lt;li&gt;出错率高&lt;/li&gt;&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="CET-6" scheme="http://example.com/categories/CET-6/"/>
+    
+    
+    <category term="Reading Comprehension" scheme="http://example.com/tags/Reading-Comprehension/"/>
+    
+  </entry>
+  
+  <entry>
+    <title> Sentiment analysis using deep learning architectures: a review</title>
+    <link href="http://example.com/posts/3219910839/"/>
+    <id>http://example.com/posts/3219910839/</id>
+    <published>2021-11-12T09:33:00.000Z</published>
+    <updated>2021-11-19T01:24:46.805Z</updated>
+    
+    
+    <summary type="html">&lt;font size=&quot;2&quot; color=&quot;grey&quot;&gt;Author: Ashima Yadav, Dinesh Kumar Vishwakarma&lt;/font&gt;
+
+&lt;p&gt;A significant goal of sentiment analysis is to classify and analyze the reviews related to products, hotels, online  booking sites, e-commerce sites, social media, etc.&lt;br&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Paper reading" scheme="http://example.com/categories/Paper-reading/"/>
+    
+    
+    <category term="Sentiment Analysis" scheme="http://example.com/tags/Sentiment-Analysis/"/>
+    
+    <category term="Review" scheme="http://example.com/tags/Review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Welcome to My Blog</title>
+    <link href="http://example.com/posts/3309110367/"/>
+    <id>http://example.com/posts/3309110367/</id>
+    <published>2021-11-11T04:47:00.000Z</published>
+    <updated>2021-11-19T03:39:27.913Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;一条没有任何思想的臭咸鱼&quot;&gt;&lt;a href=&quot;#一条没有任何思想的臭咸鱼&quot; class=&quot;headerlink&quot; title=&quot;一条没有任何思想的臭咸鱼&quot;&gt;&lt;/a&gt;一条没有任何思想的臭咸鱼&lt;/h3&gt;&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Extracting Keywords from Short Government Documents Using Reinforcement Learning</title>
+    <link href="http://example.com/posts/3531973999/"/>
+    <id>http://example.com/posts/3531973999/</id>
+    <published>2021-11-11T02:02:00.000Z</published>
+    <updated>2021-11-11T05:57:07.513Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h3&gt;&lt;p&gt;在本文中，我们提出了一种新的基于强化学习的方法来从大量未标注的政府短文档中提取关键词。引入平均速率正则化，作为模型损失函数的稀疏约束，引导策略网络保留重要词汇。对实验结果的分析表明，该模型在处理大量未标注的政府公文标题时，优于传统的无监督关键词提取方法。&lt;br&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Paper reading" scheme="http://example.com/categories/Paper-reading/"/>
+    
+    
+    <category term="Extracting Keywords" scheme="http://example.com/tags/Extracting-Keywords/"/>
+    
+    <category term="Paper" scheme="http://example.com/tags/Paper/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MovieLens 1M Introduction</title>
+    <link href="http://example.com/posts/962424729/"/>
+    <id>http://example.com/posts/962424729/</id>
+    <published>2021-11-08T13:23:00.000Z</published>
+    <updated>2021-11-11T04:05:54.050Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Total：1000209&lt;br&gt;Movies: 3883&lt;br&gt;Users: 6040&lt;br&gt;稀疏比约为：95.7%&lt;br&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="ML &amp;&amp; DL" scheme="http://example.com/categories/ML-DL/"/>
+    
+    
+    <category term="Dataset" scheme="http://example.com/tags/Dataset/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信常用知识</title>
+    <link href="http://example.com/posts/3569131112/"/>
+    <id>http://example.com/posts/3569131112/</id>
+    <published>2021-11-08T12:50:00.000Z</published>
+    <updated>2021-11-11T07:45:48.456Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://developers.weixin.qq.com/miniprogram/dev/framework/&quot;&gt;小程序开发文档&lt;/a&gt;&amp;lt;/br&amp;gt;&lt;br&gt;&lt;a href=&quot;https://www.iconfont.cn/&quot;&gt;阿里图标iconfont&lt;/a&gt;&amp;lt;/br&amp;gt;&lt;br&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="WeChat" scheme="http://example.com/categories/WeChat/"/>
+    
+    
+    <category term="Initial" scheme="http://example.com/tags/Initial/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信小程序开发问题解决</title>
+    <link href="http://example.com/posts/1493546253/"/>
+    <id>http://example.com/posts/1493546253/</id>
+    <published>2021-11-08T12:28:00.000Z</published>
+    <updated>2021-11-11T08:24:01.836Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;写在最初 &amp;lt;/br&amp;gt;&lt;br&gt;半年有余的小程序前端开发，踩坑无数，在此记录！！！&lt;br&gt;&amp;lt;/br&amp;gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="WeChat" scheme="http://example.com/categories/WeChat/"/>
+    
+    
+    <category term="小程序开发" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 基础</title>
+    <link href="http://example.com/posts/734607008/"/>
+    <id>http://example.com/posts/734607008/</id>
+    <published>2021-11-08T08:13:00.000Z</published>
+    <updated>2021-11-11T04:05:54.050Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;写在最初，终端中，输入  import   this   了解Python之禅的魅力&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Python" scheme="http://example.com/categories/Python/"/>
+    
+    
+    <category term="Python Code" scheme="http://example.com/tags/Python-Code/"/>
+    
+  </entry>
+  
+</feed>
