@@ -3,11 +3,11 @@
   <title>XNYS&#39;s Blog</title>
   
   <subtitle>人间烟火</subtitle>
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://pzxnys.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://pzxnys.github.io/"/>
   <updated>2021-11-15T05:36:29.216Z</updated>
-  <id>http://example.com/</id>
+  <id>https://pzxnys.github.io/</id>
   
   <author>
     <name>江水</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Data processing (Tourism )</title>
-    <link href="http://example.com/posts/2949193936/"/>
-    <id>http://example.com/posts/2949193936/</id>
+    <link href="https://pzxnys.github.io/posts/2949193936/"/>
+    <id>https://pzxnys.github.io/posts/2949193936/</id>
     <published>2021-11-15T02:06:00.000Z</published>
     <updated>2021-11-15T05:36:29.216Z</updated>
     
@@ -29,17 +29,17 @@
     
     
     
-    <category term="ML &amp;&amp; DL" scheme="http://example.com/categories/ML-DL/"/>
+    <category term="ML &amp;&amp; DL" scheme="https://pzxnys.github.io/categories/ML-DL/"/>
     
     
-    <category term="Dataset " scheme="http://example.com/tags/Dataset/"/>
+    <category term="Dataset " scheme="https://pzxnys.github.io/tags/Dataset/"/>
     
   </entry>
   
   <entry>
     <title>DBSCAN_Yelp</title>
-    <link href="http://example.com/posts/2007885086/"/>
-    <id>http://example.com/posts/2007885086/</id>
+    <link href="https://pzxnys.github.io/posts/2007885086/"/>
+    <id>https://pzxnys.github.io/posts/2007885086/</id>
     <published>2021-11-15T02:03:00.000Z</published>
     <updated>2021-11-15T02:22:55.687Z</updated>
     
@@ -49,19 +49,19 @@
     
     
     
-    <category term="ML &amp;&amp; DL" scheme="http://example.com/categories/ML-DL/"/>
+    <category term="ML &amp;&amp; DL" scheme="https://pzxnys.github.io/categories/ML-DL/"/>
     
     
-    <category term="Cluster" scheme="http://example.com/tags/Cluster/"/>
+    <category term="Cluster" scheme="https://pzxnys.github.io/tags/Cluster/"/>
     
-    <category term="Code" scheme="http://example.com/tags/Code/"/>
+    <category term="Code" scheme="https://pzxnys.github.io/tags/Code/"/>
     
   </entry>
   
   <entry>
     <title>记录一次磁盘爆炸血泪史</title>
-    <link href="http://example.com/posts/3148641905/"/>
-    <id>http://example.com/posts/3148641905/</id>
+    <link href="https://pzxnys.github.io/posts/3148641905/"/>
+    <id>https://pzxnys.github.io/posts/3148641905/</id>
     <published>2021-11-15T02:01:00.000Z</published>
     <updated>2021-11-15T02:26:08.886Z</updated>
     
@@ -71,17 +71,17 @@
     
     
     
-    <category term="Ubuntu" scheme="http://example.com/categories/Ubuntu/"/>
+    <category term="Ubuntu" scheme="https://pzxnys.github.io/categories/Ubuntu/"/>
     
     
-    <category term="Issues" scheme="http://example.com/tags/Issues/"/>
+    <category term="Issues" scheme="https://pzxnys.github.io/tags/Issues/"/>
     
   </entry>
   
   <entry>
     <title>橙啦-颉斌斌老师 阅读课</title>
-    <link href="http://example.com/posts/1669987382/"/>
-    <id>http://example.com/posts/1669987382/</id>
+    <link href="https://pzxnys.github.io/posts/1669987382/"/>
+    <id>https://pzxnys.github.io/posts/1669987382/</id>
     <published>2021-11-12T12:54:00.000Z</published>
     <updated>2021-11-18T09:22:22.736Z</updated>
     
@@ -100,17 +100,17 @@
     
     
     
-    <category term="CET-6" scheme="http://example.com/categories/CET-6/"/>
+    <category term="CET-6" scheme="https://pzxnys.github.io/categories/CET-6/"/>
     
     
-    <category term="Reading Comprehension" scheme="http://example.com/tags/Reading-Comprehension/"/>
+    <category term="Reading Comprehension" scheme="https://pzxnys.github.io/tags/Reading-Comprehension/"/>
     
   </entry>
   
   <entry>
     <title> Sentiment analysis using deep learning architectures: a review</title>
-    <link href="http://example.com/posts/3219910839/"/>
-    <id>http://example.com/posts/3219910839/</id>
+    <link href="https://pzxnys.github.io/posts/3219910839/"/>
+    <id>https://pzxnys.github.io/posts/3219910839/</id>
     <published>2021-11-12T09:33:00.000Z</published>
     <updated>2021-11-19T01:24:46.805Z</updated>
     
@@ -121,19 +121,19 @@
     
     
     
-    <category term="Paper reading" scheme="http://example.com/categories/Paper-reading/"/>
+    <category term="Paper reading" scheme="https://pzxnys.github.io/categories/Paper-reading/"/>
     
     
-    <category term="Sentiment Analysis" scheme="http://example.com/tags/Sentiment-Analysis/"/>
+    <category term="Sentiment Analysis" scheme="https://pzxnys.github.io/tags/Sentiment-Analysis/"/>
     
-    <category term="Review" scheme="http://example.com/tags/Review/"/>
+    <category term="Review" scheme="https://pzxnys.github.io/tags/Review/"/>
     
   </entry>
   
   <entry>
     <title>Welcome to My Blog</title>
-    <link href="http://example.com/posts/3309110367/"/>
-    <id>http://example.com/posts/3309110367/</id>
+    <link href="https://pzxnys.github.io/posts/3309110367/"/>
+    <id>https://pzxnys.github.io/posts/3309110367/</id>
     <published>2021-11-11T04:47:00.000Z</published>
     <updated>2021-11-19T03:39:27.913Z</updated>
     
@@ -153,8 +153,8 @@
   
   <entry>
     <title>Extracting Keywords from Short Government Documents Using Reinforcement Learning</title>
-    <link href="http://example.com/posts/3531973999/"/>
-    <id>http://example.com/posts/3531973999/</id>
+    <link href="https://pzxnys.github.io/posts/3531973999/"/>
+    <id>https://pzxnys.github.io/posts/3531973999/</id>
     <published>2021-11-11T02:02:00.000Z</published>
     <updated>2021-11-11T05:57:07.513Z</updated>
     
@@ -163,19 +163,19 @@
     
     
     
-    <category term="Paper reading" scheme="http://example.com/categories/Paper-reading/"/>
+    <category term="Paper reading" scheme="https://pzxnys.github.io/categories/Paper-reading/"/>
     
     
-    <category term="Extracting Keywords" scheme="http://example.com/tags/Extracting-Keywords/"/>
+    <category term="Extracting Keywords" scheme="https://pzxnys.github.io/tags/Extracting-Keywords/"/>
     
-    <category term="Paper" scheme="http://example.com/tags/Paper/"/>
+    <category term="Paper" scheme="https://pzxnys.github.io/tags/Paper/"/>
     
   </entry>
   
   <entry>
     <title>MovieLens 1M Introduction</title>
-    <link href="http://example.com/posts/962424729/"/>
-    <id>http://example.com/posts/962424729/</id>
+    <link href="https://pzxnys.github.io/posts/962424729/"/>
+    <id>https://pzxnys.github.io/posts/962424729/</id>
     <published>2021-11-08T13:23:00.000Z</published>
     <updated>2021-11-11T04:05:54.050Z</updated>
     
@@ -184,17 +184,17 @@
     
     
     
-    <category term="ML &amp;&amp; DL" scheme="http://example.com/categories/ML-DL/"/>
+    <category term="ML &amp;&amp; DL" scheme="https://pzxnys.github.io/categories/ML-DL/"/>
     
     
-    <category term="Dataset" scheme="http://example.com/tags/Dataset/"/>
+    <category term="Dataset" scheme="https://pzxnys.github.io/tags/Dataset/"/>
     
   </entry>
   
   <entry>
     <title>微信常用知识</title>
-    <link href="http://example.com/posts/3569131112/"/>
-    <id>http://example.com/posts/3569131112/</id>
+    <link href="https://pzxnys.github.io/posts/3569131112/"/>
+    <id>https://pzxnys.github.io/posts/3569131112/</id>
     <published>2021-11-08T12:50:00.000Z</published>
     <updated>2021-11-11T07:45:48.456Z</updated>
     
@@ -203,17 +203,17 @@
     
     
     
-    <category term="WeChat" scheme="http://example.com/categories/WeChat/"/>
+    <category term="WeChat" scheme="https://pzxnys.github.io/categories/WeChat/"/>
     
     
-    <category term="Initial" scheme="http://example.com/tags/Initial/"/>
+    <category term="Initial" scheme="https://pzxnys.github.io/tags/Initial/"/>
     
   </entry>
   
   <entry>
     <title>微信小程序开发问题解决</title>
-    <link href="http://example.com/posts/1493546253/"/>
-    <id>http://example.com/posts/1493546253/</id>
+    <link href="https://pzxnys.github.io/posts/1493546253/"/>
+    <id>https://pzxnys.github.io/posts/1493546253/</id>
     <published>2021-11-08T12:28:00.000Z</published>
     <updated>2021-11-11T08:24:01.836Z</updated>
     
@@ -222,17 +222,17 @@
     
     
     
-    <category term="WeChat" scheme="http://example.com/categories/WeChat/"/>
+    <category term="WeChat" scheme="https://pzxnys.github.io/categories/WeChat/"/>
     
     
-    <category term="小程序开发" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/"/>
+    <category term="小程序开发" scheme="https://pzxnys.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>Python 基础</title>
-    <link href="http://example.com/posts/734607008/"/>
-    <id>http://example.com/posts/734607008/</id>
+    <link href="https://pzxnys.github.io/posts/734607008/"/>
+    <id>https://pzxnys.github.io/posts/734607008/</id>
     <published>2021-11-08T08:13:00.000Z</published>
     <updated>2021-11-11T04:05:54.050Z</updated>
     
@@ -241,17 +241,17 @@
     
     
     
-    <category term="Python" scheme="http://example.com/categories/Python/"/>
+    <category term="Python" scheme="https://pzxnys.github.io/categories/Python/"/>
     
     
-    <category term="Python Code" scheme="http://example.com/tags/Python-Code/"/>
+    <category term="Python Code" scheme="https://pzxnys.github.io/tags/Python-Code/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu 使用技巧</title>
-    <link href="http://example.com/posts/993634954/"/>
-    <id>http://example.com/posts/993634954/</id>
+    <link href="https://pzxnys.github.io/posts/993634954/"/>
+    <id>https://pzxnys.github.io/posts/993634954/</id>
     <published>2021-11-08T06:18:00.000Z</published>
     <updated>2021-11-19T03:44:31.100Z</updated>
     
@@ -260,10 +260,10 @@
     
     
     
-    <category term="Ubuntu" scheme="http://example.com/categories/Ubuntu/"/>
+    <category term="Ubuntu" scheme="https://pzxnys.github.io/categories/Ubuntu/"/>
     
     
-    <category term="Ubuntu Desktop ICON" scheme="http://example.com/tags/Ubuntu-Desktop-ICON/"/>
+    <category term="Ubuntu Desktop ICON" scheme="https://pzxnys.github.io/tags/Ubuntu-Desktop-ICON/"/>
     
   </entry>
   
