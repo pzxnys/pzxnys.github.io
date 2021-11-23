@@ -411,14 +411,14 @@ A significant goal of sentiment analysis is to classify and analyze the ">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    8 分
                 </div>
                 
 
@@ -502,7 +502,16 @@ A significant goal of sentiment analysis is to classify and analyze the ">
 <p><font size="5px"><b>Embeddings: </b></font>It can be obtained using Skip Gram model and Common Bag of words(CBOW).</p>
 <p><font size="5px">CBOW: </font> The model predicts the current word from surrounding context words.</p>
 <p><font size="5px">Skip Gram: </font> The model predicts the surrounding context words from the current word.</p>
-<p><font size="5.5px"><b>Convolutional neural networks(CNNs): </b></font></p>
+<p><font size="5.5px"><b>Recursive neural networks (RecNNs): </b></font>It belongs to the category of the network, that learns a directed acyclic graph structure (e.g., tree structure ).</p>
+<p>Figure 6 shows a Rec NN in which whenever a sequence of n-gram (e.g., This Bag  has Beautiful color), is fed into the model, each word of n-gram sequence is  represented as a d-dimensional vector.</p>
+<div align="center"><img src="https://pzxnys.github.io/posts/3309110367/211123100936.png"></div>
+
+<p><font size="5.5px"><b>Recurrent neural networks (RNNs): </b></font>It is a variant of Rec NN and is used for modeling the sequential data. Sequential data is applied in a variety of applications.<br>RNN considers the time factor for processing the elements in a sequence.</p>
+<p>Figure 9a shows an RNN with a loop that preserves all the information, whereas,  in Fig. 9b, the unrolled version indicates that multiple copies of RNN are  connected, and they communicate by passing information from one state to another</p>
+<div align="center"><img src="https://pzxnys.github.io/posts/3309110367/211123140003.png"></div>
+
+
+
 
                 
             </div>
