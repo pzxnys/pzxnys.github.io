@@ -6,7 +6,7 @@
   <link href="https://pzxnys.github.io/atom.xml" rel="self"/>
   
   <link href="https://pzxnys.github.io/"/>
-  <updated>2021-11-15T05:36:29.216Z</updated>
+  <updated>2021-12-29T10:51:32.404Z</updated>
   <id>https://pzxnys.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Anaconda环境配置</title>
+    <link href="https://pzxnys.github.io/posts/763869287/"/>
+    <id>https://pzxnys.github.io/posts/763869287/</id>
+    <published>2021-12-29T10:42:00.000Z</published>
+    <updated>2021-12-29T10:51:32.404Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;环境配置&quot;&gt;&lt;a href=&quot;#环境配置&quot; class=&quot;headerlink&quot; title=&quot;环境配置&quot;&gt;&lt;/a&gt;环境配置&lt;/h4&gt;&lt;h5 id=&quot;新建环境&quot;&gt;&lt;a href=&quot;#新建环境&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Ubuntu" scheme="https://pzxnys.github.io/categories/Ubuntu/"/>
+    
+    
+    <category term="Anaconda " scheme="https://pzxnys.github.io/tags/Anaconda/"/>
+    
+  </entry>
   
   <entry>
     <title>Data processing (Tourism )</title>

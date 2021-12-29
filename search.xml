@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Anaconda环境配置</title>
+      <link href="/posts/763869287/"/>
+      <url>/posts/763869287/</url>
+      
+        <content type="html"><![CDATA[<h4 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h4><h5 id="新建环境"><a href="#新建环境" class="headerlink" title="新建环境"></a>新建环境</h5><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">conda create -n NAME python==xxx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h5 id="将环境添加到jupyterLab"><a href="#将环境添加到jupyterLab" class="headerlink" title="将环境添加到jupyterLab"></a>将环境添加到jupyterLab</h5><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">conda activate NAMEconda install ipykernelpython -m ipykernel install --user --name NAME --display-name NAME<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h5 id="将环境从jupyterLab中删除"><a href="#将环境从jupyterLab中删除" class="headerlink" title="将环境从jupyterLab中删除"></a>将环境从jupyterLab中删除</h5><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">jupyter kernelspec remove NAME<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h5 id="删除环境"><a href="#删除环境" class="headerlink" title="删除环境"></a>删除环境</h5><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">conda remove -n NAME --all<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h4 id="TensorFlow安装"><a href="#TensorFlow安装" class="headerlink" title="TensorFlow安装"></a>TensorFlow安装</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">conda activate NAME<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>（Version &gt; 2.4  2021年12月29日18:37:18）</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pip install tensorflow==xxxconda install cudaToolkitconda install cudnn<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>(Version &lt;= 2.4 2021年12月29日18:39:26)</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">conda install tensorflow==xxx    //conda 自动将对应的版本的 cuda 和 cudnn 安装完成。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h4 id="PyTorch安装"><a href="#PyTorch安装" class="headerlink" title="PyTorch安装"></a>PyTorch安装</h4><p> 参见官网<a href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Ubuntu </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Anaconda  </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Data processing (Tourism )</title>
       <link href="/posts/2949193936/"/>
       <url>/posts/2949193936/</url>
