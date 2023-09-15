@@ -31,7 +31,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 
@@ -386,14 +388,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    4.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    14 分
                 </div>
                 
 
@@ -433,14 +435,22 @@
 <blockquote>
 <p>**TOPEX&#x2F;POSEIDON(T&#x2F;P)**是一颗美国-法国合作的卫星任务，旨在测量地球海洋表面的高度，并且用于研究海洋的动态、气候变化、海洋循环等。以下是关于T&#x2F;P卫星的一些基本信息：</p>
 <ol>
-<li><strong>任务目标：</strong>T&#x2F;P卫星</li>
+<li><strong>任务目标：</strong>T&#x2F;P卫星任务的主要目标是测量全球海洋表面高度，这对于研究海洋动力学、洋流、海平面上升、气候变化等具有重要意义。卫星携带有高精度的雷达测高仪，可实现高度测量。</li>
+<li><strong>卫星启动：</strong>T&#x2F;P卫星于1992年8月10日由美国国家航空航天局（NASA）和法国国家空间研究中心（CNES）合作发射升空。</li>
+<li><strong>测量方法：</strong>卫星通过发射雷达信号并测量信号返回的时间来测量海洋表面的高度。这种测高仪能够提供非常精确的海洋表面高度数据。</li>
+<li><strong>数据应用：</strong>T&#x2F;P卫星数据在气象学、海洋学、气候研究以及海洋资源管理等领域中被广泛应用。这些数据有助于监测全球海平面上升、研究洋流的变化、预测气象和气候事件等。</li>
+<li><strong>后续任务：</strong>T&#x2F;P任务之后，还有一系列类似的卫星任务，如Jason-1、Jason-2和Jason-3等，继续收集海洋表面高度数据，并持续对全球海洋的变化进行监测。</li>
+<li><strong>数据获取：</strong>T&#x2F;P卫星数据通常可以通过NASA、CNES以及其他相关机构的数据存档和分发渠道获得，以供科研和应用使用。</li>
 </ol>
+<p>这些卫星数据对于研究全球海洋和气候系统的变化非常重要，可以提供宝贵的信息，有助于科学家们更好地理解地球系统的复杂性。</p>
 </blockquote>
-<div align = 'center'><img src = 'https://pzxnys.github.io/posts/3309110367/2023-09-15-08-58-56.png'/></div>
-&emsp;&emsp;对数据同化问题的研究，尤其针对目前我国海区的数据同化应用研究较少这一情况。本文在前人文献的基础上，进行了方法及应用上的研究。这些成果包括： a) 建立考虑了时间相关的方差矩阵和时空相关的最优插值算法；b) 对卡尔曼滤波算法进行了SVD简化以及建立了显式的状态转移矩阵；c) 将T/P实时卫星数据进行调和分析并与数值模型进行同化处理。具体内容如下几个方面：
-
+<p>&emsp;&emsp;对数据同化问题的研究，尤其针对目前我国海区的数据同化应用研究较少这一情况。本文在前人文献的基础上，进行了方法及应用上的研究。这些成果包括：<br>&emsp;&emsp; - 建立考虑了时间相关的方差矩阵和时空相关的最优插值算法；<br>&emsp;&emsp; <font size = 2; color = natural>时空相关的最优插值算法是一种用于从有限的空间和时间观测数据中估计或预测未来或未观测位置和时间点的数值方法。这些插值算法可用于多个领域，包括气象学、环境科学、地理信息系统（GIS）、地质学等，其中时空数据的插值和预测通常具有挑战性，因为它们需要考虑时空相关性和变化。<br>以下是一些常见的时空相关的最优插值算法：<br>&emsp;&emsp; - <strong>Kriging：</strong>Kriging是一种统计插值方法，广泛用于时空相关数据的插值。它考虑了数据点之间的空间和时间相关性，并利用半变异函数来模拟数据的空间和时间变异性。Kriging还提供了估计误差的信息，因此在估计不确定性时非常有用。<br>&emsp;&emsp; - <strong>Cokriging：</strong>Cokriging是Kriging的扩展，它允许在插值时同时使用多个相关变量，例如，同时考虑空气温度和湿度的时空相关性。这可以提高插值的准确性。<br>&emsp;&emsp; - <strong>模型插值：</strong>模型插值方法将时空数据建模为一组数学方程，这些方程可以捕捉到数据的时空关系。例如，趋势面模型可以用来建模数据的趋势，而周期性模型可以考虑数据的季节性变化。<br>&emsp;&emsp; - <strong>径向基函数插值：</strong>径向基函数插值方法使用径向基函数来逼近时空数据。这些基函数的形状可以根据数据的时空特性进行调整。<br>&emsp;&emsp; - <strong>地统计学方法：</strong>地统计学方法结合了地理信息系统（GIS）和空间统计学的原理，用于处理空间和时间数据的插值和分析。它们通常考虑地理上的特殊性，并尝试将这些特性纳入插值过程中。<br>&emsp;&emsp; - <strong>神经网络：</strong>深度学习方法如卷积神经网络（CNN）和循环神经网络（RNN）也可以用于时空数据的插值。这些方法可以学习时空数据的复杂模式和关系。<br>&emsp;&emsp; - <strong>插值工具包：</strong>有许多地理信息系统（GIS）和科学计算软件提供了各种插值工具包，例如ArcGIS中的插值工具箱、R中的gstat包等，这些工具包通常包括多种插值方法供用户选择。<br>&emsp;&emsp;选择适当的时空插值方法取决于数据的性质、研究问题和可用的计算资源。通常，最优的方法是结合领域知识和实际数据特性来选择合适的插值方法。此外，考虑到时空数据的不确定性也是非常重要的，因此在插值时要估计和报告估计误差。<br></font><br>&emsp;&emsp; - 对卡尔曼滤波算法进行了SVD简化以及建立了显式的状态转移矩阵；<br>&emsp;&emsp; <font size = 2; color = natural>卡尔曼滤波（Kalman Filtering）是一种用于估计系统状态的递归迭代算法，特别适用于线性动态系统。它是由Rudolf E. Kálmán于1960年首次提出的，因此得名。卡尔曼滤波广泛应用于估计动态系统的状态，例如，飞行器导航、车辆定位、金融预测等领域。<br>&emsp;&emsp;卡尔曼滤波的主要思想是通过融合系统的动态模型（通常表示为状态转移方程）和测量模型（通常表示为观测方程）来估计系统的状态，同时考虑了系统的不确定性。以下是卡尔曼滤波算法的基本步骤：<br>&emsp;&emsp; - <strong>初始化：</strong>首先，需要初始化系统的状态估计和协方差矩阵。通常，这些初始值可以通过系统的先验知识或测量得到。<br>&emsp;&emsp; - <strong>状态预测：</strong>根据系统的动态模型（状态转移方程），通过预测当前时刻的状态和状态协方差矩阵。这一步估计了系统在没有新测量数据的情况下的状态。<br>&emsp;&emsp; - <strong>测量更新：</strong>接下来，使用测量模型（观测方程）将最新的测量数据与状态预测进行比较。通过卡尔曼增益（Kalman Gain），卡尔曼滤波器会根据测量的可信度来融合测量数据和状态预测，从而得到更精确的状态估计。<br>&emsp;&emsp;<font color=grey><strong>卡尔曼增益（Kalman Gain）</strong>是卡尔曼滤波算法中的一个关键概念，它用于将测量数据与状态估计进行融合，从而得到更精确的状态估计。<br>&emsp;&emsp;卡尔曼增益的作用是根据系统模型和测量模型的不确定性来确定在状态更新中给予哪个模型更多的权重。具体来说，卡尔曼增益用于调整状态预测和测量更新之间的权衡，以便更好地估计系统的真实状态。<br>&emsp;&emsp;卡尔曼增益的计算通常可以表示为以下的数学表达式：<br>$$ K &#x3D; \frac {P^- H^T} {HP^- H^T + R} $$<br>&emsp;&emsp;其中：<br>&emsp;&emsp; - $K$ 是卡尔曼增益。<br>&emsp;&emsp; - $P^-$ 是状态协方差矩阵的预测（先验）估计，表示状态预测的不确定性。<br>&emsp;&emsp; - $H$ 是观测矩阵，用于将状态映射到测量空间。<br>&emsp;&emsp; - $R$ 是测量噪声的协方差矩阵，表示测量的不确定性。<br>&emsp;&emsp;卡尔曼增益 $K$ 的计算考虑了系统预测的不确定性 $P^-$、测量的不确定性 $R$，以及系统模型和测量模型之间的关系。它决定了在状态更新中，应该给予测量多大的权重，以便得到更准确的状态估计。<br>&emsp;&emsp;在卡尔曼滤波算法中，卡尔曼增益的计算是迭代的过程，它在每个时间步都会根据当前的状态估计和测量数据进行更新，从而实现递归的状态估计。这样，卡尔曼滤波可以在不断获得新测量数据时，动态地调整状态估计，以适应系统的变化。<br></font><br>&emsp;&emsp; - <strong>状态估计更新：</strong>使用融合后的测量数据更新状态估计和状态协方差矩阵。这一步会更新系统的状态估计，并考虑到新测量数据的影响。<br>&emsp;&emsp; - <strong>重复迭代：</strong>卡尔曼滤波是一个递归算法，它会在每个时间步重复进行上述状态预测和测量更新的过程，以不断更新系统状态的估计。<br>&emsp;&emsp;卡尔曼滤波的关键优点在于它能够在不确定性的环境中提供最优的状态估计，并且能够有效地处理动态系统的变化。然而，卡尔曼滤波的局限性在于它要求系统的动态和测量模型必须是线性的，且需要提前知道系统的统计特性（均值和协方差）。<br>&emsp;&emsp;对于非线性系统，扩展卡尔曼滤波（Extended Kalman Filter，EKF）和粒子滤波（Particle Filter）等方法是卡尔曼滤波的扩展和变种，用于处理更复杂的系统模型。这些方法通过非线性状态转移和观测方程的线性化或蒙特卡洛采样等技术，使得卡尔曼滤波可以应用于更广泛的应用领域。<br></font><br>&emsp;&emsp; - 将T&#x2F;P实时卫星数据进行调和分析并与数值模型进行同化处理。</p>
+<p>具体内容如下几个方面：</p>
 <ol>
 <li><p><strong>建立时间相关的协方差矩阵处理方法</strong><br>&emsp;&emsp;在估值类的同化方法中，观测数据与理论模型相结合的桥梁是各自的协方差矩阵。在确定协方差矩阵的时候，以往的做法是将所有不同观测时刻的数据当作同一时刻的数据应用；本文在形成协方差矩阵时，不仅考虑空间相关，而且应用了时间相关，对观测数据的应用依照其得到时间的不同分别处理到协方差矩阵的建立中，并根据其在时间上的相关强弱给予不同的权重值，使得到观测数据的应用更接近实际情况。</p>
+<blockquote>
+<p><strong>时间相关的协方差矩阵：</strong>是一种用于描述时间序列数据中观测值之间的相关性随时间变化的矩阵。它通常用于分析和建模时间序列数据中的相关性结构，以便更好地理解数据的动态性质。</p>
+</blockquote>
 </li>
 <li><p><strong>应用动态最优插值算法进行渤海海表温度同化</strong><br> &emsp;&emsp;传统的最优插值算法没有考虑观测数据的时间错位。本文首先推导了既考虑空间相关，又考虑时间相关的最优插值算法，由于应用了时间相关的协方差矩阵，就使这个算法具有动态处理时间错位的观测数据的能力。随后，本文应用理论模型数据和模拟观测数据进行了并行实验，将动态插值算法应用到渤海海表温度场的计算中，同化结果兼顾理论模型结果和模拟观测结果，在方差意义上显示出最优特性，验证了本文所提出的方法改进的正确性。</p>
 </li>
@@ -449,7 +459,8 @@
 <li><p><strong>对T&#x2F;P数据进行调和分析，并将其结果与理论模型数据进行同化处理，使结果更接近于真实值</strong><br>&emsp;&emsp;对卫星数据如何进行处理和应用是一个重要的课题。本文首先使用黄、东海沿岸60个验潮站实际观测得到的调和常数进行同化处理，有效地改进了理论模式的结果。随后，本文将美国T&#x2F;P卫星数据集的第1～第150周期的数据进行调和分析，获得了黄、东海区域的10条轨道撒花姑娘的M2分潮的调和常数。在此基础上，本文进一步应用最优插值法，将理论模型结果和卫星数据调和结果进行同化处理。获得了更接近于真实值的同化结果。</p>
 </li>
 </ol>
-<p><strong>关键词：</strong>数据同化，动态最优插值，卡尔曼滤波，T&#x2F;P数据<br><br><br><font size=2; color=grey>马寨璞. 海洋流场数据同化方法与应用的研究[D]. 浙江大学,2002.</font></p>
+<p><strong>关键词：</strong>数据同化，动态最优插值，卡尔曼滤波，T&#x2F;P数据</p>
+<h3 id="第一章-emsp-emsp-绪-emsp-emsp-论"><a href="#第一章-emsp-emsp-绪-emsp-emsp-论" class="headerlink" title="第一章 &emsp;&emsp; 绪&emsp;&emsp;论"></a><div align='center'>第一章 &emsp;&emsp; 绪&emsp;&emsp;论</div></h3><h4 id="1-1-本论文研究的重要意义"><a href="#1-1-本论文研究的重要意义" class="headerlink" title="1.1 本论文研究的重要意义"></a>1.1 本论文研究的重要意义</h4><p>&emsp;&emsp;海洋流场的研究有两种方式：a. 使用数值型模型进行研究；（缺点：只能近似的反映海洋流场规律性的特征）b. 对海洋流场进行直接观测。（缺点：由于观测设备的局限和观测点物理量的随机变动，因此观测结果具有不可避免的系统误差与随机误差）<br><br><br><font size=2; color=grey>马寨璞. 海洋流场数据同化方法与应用的研究[D]. 浙江大学,2002.</font></p>
 
                 
             </div>
@@ -683,17 +694,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/undefined/">
+                <a href="/posts/2496005093/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="新手村任务1">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">新手村任务1</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -703,9 +715,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-09-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -714,6 +726,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -886,6 +899,13 @@
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
 
 
 
