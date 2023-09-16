@@ -367,9 +367,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Dr/">
+                                <span class="chip bg-color">Dr.</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -390,14 +394,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.3k
+                    5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    17 分
                 </div>
                 
 
@@ -462,7 +466,56 @@
 </li>
 </ol>
 <p><strong>关键词：</strong>数据同化，动态最优插值，卡尔曼滤波，T&#x2F;P数据</p>
-<h3 id="第一章-emsp-emsp-绪-emsp-emsp-论"><a href="#第一章-emsp-emsp-绪-emsp-emsp-论" class="headerlink" title="第一章 &emsp;&emsp; 绪&emsp;&emsp;论"></a><div align='center'>第一章 &emsp;&emsp; 绪&emsp;&emsp;论</div></h3><h4 id="1-1-本论文研究的重要意义"><a href="#1-1-本论文研究的重要意义" class="headerlink" title="1.1 本论文研究的重要意义"></a>1.1 本论文研究的重要意义</h4><p>&emsp;&emsp;海洋流场的研究有两种方式：a. 使用数值型模型进行研究；（缺点：只能近似的反映海洋流场规律性的特征）b. 对海洋流场进行直接观测。（缺点：由于观测设备的局限和观测点物理量的随机变动，因此观测结果具有不可避免的系统误差与随机误差）<br><br><br><font size=2; color=grey>马寨璞. 海洋流场数据同化方法与应用的研究[D]. 浙江大学,2002.</font></p>
+<h3 id="第一章-emsp-emsp-绪-emsp-emsp-论"><a href="#第一章-emsp-emsp-绪-emsp-emsp-论" class="headerlink" title="第一章 &emsp;&emsp; 绪&emsp;&emsp;论"></a><div align='center'>第一章 &emsp;&emsp; 绪&emsp;&emsp;论</div></h3><h4 id="1-1-本论文研究的重要意义"><a href="#1-1-本论文研究的重要意义" class="headerlink" title="1.1 本论文研究的重要意义"></a>1.1 本论文研究的重要意义</h4><p>&emsp;&emsp;海洋流场的研究有两种方式：a. 使用数值型模型进行研究；（缺点：只能近似的反映海洋流场规律性的特征）b. 对海洋流场进行直接观测。（缺点：由于观测设备的局限和观测点物理量的随机变动，因此观测结果具有不可避免的系统误差与随机误差）<br>&emsp;&emsp;为了解决上述问题，采用数据同化方法，将观测数据与理论模型结果相结合，吸收两者的优点，以期得到更接近真实值的结果。<br>&emsp;&emsp;为了充分利用温度数据，采用时间相关的数据同化方法来处理不同时刻的数据，使其更具有真实性。<br>&emsp;&emsp;为了更好的将卡尔曼滤波算法应用到海洋上面，采用SVD简化卡尔曼方法和直接显式建立状态转移矩阵的方法，节省了卡尔曼滤波算法的计算量，提高了效率，对时效性很强的海洋预报计算很有意义。<br>&emsp;&emsp;为了更好的将理论模型结果和卫星数据调和结果进行同化处理，使用最优插值算法，获得更接近于真实值的同化结果。这对于更准确的确定潮汐的等振幅线和等迟脚线分布具有重要意义。<br>&emsp;&emsp;<strong>数据同化研究还具有很大的实际意义：</strong></p>
+<blockquote>
+<ol>
+<li>通过数据同化可进行参数估计。区域性的场估计可通过边界条件估计而显著地改进。对于多学科的海洋科学，参数估计尤其充满希望，其对于理解海洋过程、监测环境变化、海洋资源管理以及气象和气候研究都至关重要。</li>
+<li>当在有足够数据但动力模型有点欠缺的情形下进行流场估计时，同化的数据能够补偿动力模型的欠缺。因此它可以改进场估计，使之与客观自然相一致。</li>
+<li>数据同化可用来进行海洋预报。通过持续的数据同化过程可以将可预见性误差控制在允许的范围内。这也是数据同化在海洋上的主要应用之一。</li>
+</ol>
+</blockquote>
+<p>综上所述，对海洋流场数据同化方法及其应用的研究具有十分重要的意义。一方面不仅可以借用观测数据和模式两者各自的优势，得到更接近客观自然的结果。另一方面，可以加深对海洋运动状态的了解，掌握海洋运动更准确的规律，为人类社会的发展服务，推动社会进步和海洋科技进步。fdssdsdasdadas</p>
+<h4 id="1-2-数据同化系统的结构及其方法分类"><a href="#1-2-数据同化系统的结构及其方法分类" class="headerlink" title="1.2 数据同化系统的结构及其方法分类"></a>1.2 数据同化系统的结构及其方法分类</h4><h5 id="1-2-1-数据同化系统的结构"><a href="#1-2-1-数据同化系统的结构" class="headerlink" title="1.2.1 数据同化系统的结构"></a>1.2.1 数据同化系统的结构</h5><p>&emsp;&emsp;一般的状态过程与参数估计如图所示：</p>
+<div align = 'center'><img src = 'https://pzxnys.github.io/posts/3309110367/2023-09-16-15-35-50.png'/></div>
+
+
+<br>
+<font size=2; color=grey>马寨璞. 海洋流场数据同化方法与应用的研究[D]. 浙江大学,2002.</font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 
             </div>
@@ -526,7 +579,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Dr/">
+                                    <span class="chip bg-color">Dr.</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -729,6 +786,14 @@
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Dr/">
+                        <span class="chip bg-color">Dr.</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
