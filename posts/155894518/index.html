@@ -393,14 +393,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.2k
+                    6.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    21 分
+                    20 分
                 </div>
                 
 
@@ -548,14 +548,34 @@
 <h3 id="4-惯性质量矩阵（Inertia-Matrix）"><a href="#4-惯性质量矩阵（Inertia-Matrix）" class="headerlink" title="4. 惯性质量矩阵（Inertia Matrix）"></a>4. 惯性质量矩阵（Inertia Matrix）</h3><p>船舶的惯性质量矩阵（Inertia Matrix）是描述船舶在运动和旋转过程中对惯性力和惯性力矩的响应的重要概念。这个矩阵包含了关于船舶的质量分布和转动惯量的信息，对于分析船舶的运动和稳定性非常重要。  </p>
 <p>惯性质量矩阵通常表示为一个3 X 3 的矩阵，包含以下元素：  </p>
 <ol>
-<li><strong>质量（Mass）：</strong><br>&gt; - 在对角线上，通常有三个元素，分别是船舶绕三个坐标轴的质量：纵向轴（X轴）、横向轴（Y轴）和垂直轴（Z轴的质量）。<br>&gt; - 这些元素代表了船舶在运动时的质量分布，通常以吨（或其他适当的质量单位）表示。</li>
-<li><strong>横滚惯性矩量（Rolling Moment of Inertia）：</strong><br>&gt; - 这是描述船舶绕横向轴（Y轴）旋转的性质。<br>&gt; - 它反映了船舶在横滚运动时的抵抗程度，通常以吨米²表示。</li>
-</ol>
-<pre><code>&gt; &lt;font size=2; color=netural&gt;PS:吨米²是一个表示物体惯性矩量的单位。表示的是质量和长度单位的组合，用于描述物体对绕特定轴旋转的惯性矩量。在船舶动力学和物理学中，这个单位通常用于描述船舶或其他物体在不同轴上的转动惯性。&lt;/font&gt;
-</code></pre>
-<ol start="3">
-<li><strong>纵倾惯性矩量（Pitching Moment Inertia）：</strong><br>&gt; - 这是描述船舶绕纵向轴（Y轴）旋转的性质。<br>&gt; - 它反映了船舶在纵倾运动时的抵抗程度，通常以吨米²表示。</li>
-<li><strong>艏摇惯性矩量（Yawing Moment of Inertia）：</strong><br>&gt; - 这是描述船舶绕垂直轴（Z轴）旋转的性质。<br>&gt; - 它反映了船舶在艏摇运动时的抵抗程度，通常以吨米²表示。</li>
+<li><strong>质量（Mass）：</strong><blockquote>
+<ul>
+<li>在对角线上，通常有三个元素，分别是船舶绕三个坐标轴的质量：纵向轴（X轴）、横向轴（Y轴）和垂直轴（Z轴的质量）。</li>
+<li>这些元素代表了船舶在运动时的质量分布，通常以吨（或其他适当的质量单位）表示。</li>
+</ul>
+</blockquote>
+</li>
+<li><strong>横滚惯性矩量（Rolling Moment of Inertia）：</strong><blockquote>
+<ul>
+<li>这是描述船舶绕横向轴（Y轴）旋转的性质。</li>
+<li>它反映了船舶在横滚运动时的抵抗程度，通常以吨米²表示。<br><font size=2; color=netural>PS:吨米²是一个表示物体惯性矩量的单位。表示的是质量和长度单位的组合，用于描述物体对绕特定轴旋转的惯性矩量。在船舶动力学和物理学中，这个单位通常用于描述船舶或其他物体在不同轴上的转动惯性。</font></li>
+</ul>
+</blockquote>
+</li>
+<li><strong>纵倾惯性矩量（Pitching Moment Inertia）：</strong><blockquote>
+<ul>
+<li>这是描述船舶绕纵向轴（Y轴）旋转的性质。</li>
+<li>它反映了船舶在纵倾运动时的抵抗程度，通常以吨米²表示。</li>
+</ul>
+</blockquote>
+</li>
+<li><strong>艏摇惯性矩量（Yawing Moment of Inertia）：</strong><blockquote>
+<ul>
+<li>这是描述船舶绕垂直轴（Z轴）旋转的性质。</li>
+<li>它反映了船舶在艏摇运动时的抵抗程度，通常以吨米²表示。</li>
+</ul>
+</blockquote>
+</li>
 </ol>
 <p>这个矩阵的具体数值由船舶的设计和几何特性以及质量分布决定。它对于分析船舶的稳定性、响应以及控制系统的设计都非常重要。通常，惯性质量矩阵会在船舶设计和模拟中用于预测船舶在不同条件下的运动行为。</p>
 <h3 id="5-科里奥利向心力矩阵（Corioliscentripetal-matrix）"><a href="#5-科里奥利向心力矩阵（Corioliscentripetal-matrix）" class="headerlink" title="5. 科里奥利向心力矩阵（Corioliscentripetal matrix）"></a>5. 科里奥利向心力矩阵（Corioliscentripetal matrix）</h3><p>船舶的科里奥利向心力矩阵是用于描述船舶在运动中受到科里奥利力（Coriolis Force）或向心力（Centripetal Force）的影响的矩阵。科里奥利力是一种由于物体在旋转坐标系中运动而产生的力，它会影响物体的运动轨迹，特别是在地球上的运动。</p>
@@ -591,7 +611,14 @@
 <ol>
 <li><strong>感知和预测：</strong>首先，USV需要具备感知和预测其他物体的能力。这通常通过传感器系统（如雷达、摄像头、LIDAR等）来实现，以获取周围环境的信息。同时，需要根据其他物体的运动状态和轨迹预测模型来估计其他物体未来的位置和速度。</li>
 <li><strong>速度空间：</strong>速度障碍区域通常定义在速度空间中，这个空间包括USV的速度向量以及其他物体的速度向量。在二维情况下，速度空间通常包括USV的水平速度和垂直速度，以及其他物体的水平速度和垂直速度。在三维情况下，还需要考虑垂直方向的速度。<br><br>  <font size=2; color=natural>PS:垂直速度通常指的是垂直于重力方向的速度，而垂直方向速度则可以相对于任何垂直方向来定义，具体取决于上下文和参考坐标系的选择。因此，在具体应用中，需要根据上下文和参考坐标系来理解这两个术语。</font></li>
-<li><strong>计算碰撞检测：</strong>在速度空间中，通过计算USV的速度向量与其他物体的速度向量之间的关系，可以确定可能导致碰撞的速度组合，这通常涉及一下计算：<br>&gt; - 计算速度向量之间的相对速度。<br>&gt; - 计算碰撞时间：即在哪个时间点，两个物体的最近距离达到最小值。<br>&gt; - 确定碰撞时间下两个物体的位置。</li>
+<li><strong>计算碰撞检测：</strong>在速度空间中，通过计算USV的速度向量与其他物体的速度向量之间的关系，可以确定可能导致碰撞的速度组合，这通常涉及一下计算：<blockquote>
+<ul>
+<li>计算速度向量之间的相对速度。</li>
+<li>计算碰撞时间：即在哪个时间点，两个物体的最近距离达到最小值。</li>
+<li>确定碰撞时间下两个物体的位置。</li>
+</ul>
+</blockquote>
+</li>
 <li><strong>速度障碍区域的计算：</strong>一旦计算出碰撞检测，可以将这些信息用于构建速度障碍区域。速度障碍区域包括USV可能的速度组合，通常以多边形或集合的形式表示，这些速度组合会导致在碰撞时间点附近与其他物体相撞。</li>
 <li><strong>自适应速度调整：</strong>如果当前USV的速度位于速度障碍区域内，那么速度障碍法会触发自适应速度调整。这意味着USV需要选择一个可行速度，以避免与其他物体碰撞。这个可行速度通常是速度障碍区域内的一个安全区域。</li>
 <li><strong>路径规划：</strong>一旦选择了可行速度，USV会使用路径规划算法来确定如何调整速度以避开障碍物。这可能涉及到修改航线或路径，以确保USV在考虑到速度障碍区域后仍然能够到达目标。</li>
