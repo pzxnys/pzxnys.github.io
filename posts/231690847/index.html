@@ -393,14 +393,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.4k
+                    6.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    15 分
+                    23 分
                 </div>
                 
 
@@ -515,21 +515,73 @@
 </ol>
 <h3 id="数据集（资料）"><a href="#数据集（资料）" class="headerlink" title="数据集（资料）"></a>数据集（资料）</h3><p>&emsp;&emsp;本文采用的主要资料有：</p>
 <ol>
-<li>NCEP（National Centers for Environmental Prediction）的 FNL（Final）全球再分析资料：<a target="_blank" rel="noopener" href="https://rda.ucar.edu/datasets/">https://rda.ucar.edu/datasets/</a> 该数据的可用性和格式可能会根据时间而变化，因此最好查阅官方来源以获取最新的信息和访问方法。</li>
+<li>NCEP（National Centers for Environmental Prediction）的 FNL（Final）全球再分析资料：<a target="_blank" rel="noopener" href="https://rda.ucar.edu/datasets/">点击下载</a> 该数据的可用性和格式可能会根据时间而变化，因此最好查阅官方来源以获取最新的信息和访问方法。</li>
 <li>WRF<sup>[3]</sup>（Weather Research and Forecasting）模式高精度模拟资料。<blockquote>
 <p>WRF 是设计用于气象研究和数值天气预报的最先进的大气建模系统，它为大气过程提供了许多选项，并且可以在各种计算平台上运行。它具有两个动力核心、一个数据同化系统以及支持并行计算和系统可扩展性的软件架构，在数十米到数千公里的范围内的各种应用中均表现出色。</p>
 </blockquote>
 </li>
-<li>JMA（Japan Meteorological Agency）最佳数据集，数据集包含了台风号、形成时间、各个时刻的经纬度以及强度（中心最低气压以及表面最大风速），时间间隔为6小时。<a target="_blank" rel="noopener" href="https://www.jma.go.jp/jma/jma-eng/jma-center/rsmc-hp-pub-eg/besttrack.html">https://www.jma.go.jp/jma/jma-eng/jma-center/rsmc-hp-pub-eg/besttrack.html</a></li>
+<li>JMA（Japan Meteorological Agency）最佳数据集，数据集包含了台风号、形成时间、各个时刻的经纬度以及强度（中心最低气压以及表面最大风速），时间间隔为6小时。<a target="_blank" rel="noopener" href="https://www.jma.go.jp/jma/jma-eng/jma-center/rsmc-hp-pub-eg/besttrack.html">JMA 最佳数据集</a></li>
 </ol>
-<h3 id="数值试验设计"><a href="#数值试验设计" class="headerlink" title="数值试验设计"></a>数值试验设计</h3><h4 id="台风“鲶鱼”数值试验设计"><a href="#台风“鲶鱼”数值试验设计" class="headerlink" title="台风“鲶鱼”数值试验设计"></a>台风“鲶鱼”数值试验设计</h4><p>&emsp;&emsp;本文使用的模式为 WRF V3.6.1，模式的初始场和边界条件是从 NECP 的 FNL再分析资料中获取的。模式采用如图1所示的三层网格嵌套，水平格距分别是13.5，4.5和1.5KM。所有区域垂直方向均为35层，模式顶为10hPa。时间为2010-10-08_06:00:00 ~ 2010-10-14_00:00:00，每小时输出一次。</p>
+<h3 id="数值试验设计"><a href="#数值试验设计" class="headerlink" title="数值试验设计"></a>数值试验设计</h3><h4 id="台风“鲶鱼”数值试验设计"><a href="#台风“鲶鱼”数值试验设计" class="headerlink" title="台风“鲶鱼”数值试验设计"></a>台风“鲶鱼”数值试验设计</h4><p>&emsp;&emsp;本文使用的模式为 WRF V3.6.1 <a target="_blank" rel="noopener" href="https://www2.mmm.ucar.edu/wrf/users/download/get_source.html">WRF 链接</a>，模式的初始场和边界条件是从 NECP 的 FNL再分析资料中获取的。模式采用如图1所示的三层网格嵌套，水平格距分别是13.5，4.5和1.5KM。所有区域垂直方向均为35层，模式顶为10hPa。时间为2010-10-08_06:00:00 ~ 2010-10-14_00:00:00，每小时输出一次。</p>
 <div align = 'center'>
 <img src = 'https://pzxnys.github.io/posts/3309110367/2023-09-22-15-04-42.png'/>
 <font size = 2; color = natural>图1. 台风“鲇鱼”数值试验网格嵌套示意图</font>
 </div>
+&emsp;&emsp;模式中，3层网格云微物理参数化方案均采用 WSM6 方案，长波辐射参数化方案均采用 Rapid Radiative Transfer Model（RRTM）方案，短波辐射参数化方案是 Dudhia 方案。三层网格均没有使用任何积云对流参数化方案。
 
-
-
+<ul>
+<li><strong>WSM6：</strong>是一种云微物理方案，用于气象和大气科学领域的数值气象模型中，特别是用于描述云和降水过程。这个名称中的“WSM”代表“Warm- and Cold-Season processes of cloud and Precipitation”（云和降水的暖季和冷季过程）。<blockquote>
+<p>WSM6 方案旨在模拟云和降水的不同过程，包括云滴的形成和增长、雨滴的形成、降水、积冰、雪等。这个方案包括多个参数和模拟化的物理过程，以描述不同类型的云和降水时间。通常，气象模型会根据不同的研究或应用目标选择不同的微物理方案，以更好地模拟特定地区或时间段的天气现象。<br>具体来说，WSM6 方案通常用于 WRF（Weather Research and Forecasting Model）等数值气象模型中，以模拟云、降水和相关气象过程。这个方案的特性和性能会影响模型的预报结果，因此在使用时需要仔细选择和配置。</p>
+</blockquote>
+</li>
+<li><strong>RRTM：</strong>是一种用于计算大气辐射传输的计算机模型。它的主要目的是模拟大气中的辐射过程，包括太阳辐射的吸收和地球辐射的发射，以及在大气中的散射和吸收。RRTM通常用于气象和气候模型中，以更好地理解和预测地球的辐射平衡、温度分布和气候变化。以下是RRTM的一些关键特点和应用：<blockquote>
+<ol>
+<li><strong>辐射传输模拟：</strong>RRTM 被用来模拟辐射在大气中的传输和相互作用，包括太阳辐射和地球辐射。这对于研究大气能量平衡、气温、云的形成和降水等过程非常重要。</li>
+<li><strong>波长范围：</strong>RRTM 可以模拟不同波长范围的辐射传输，包括可见光、红外线和微波。这使得它可以用于分析不同能谱的辐射过程。</li>
+<li><strong>应用领域：</strong>RRTM 广泛应用于气象模型、气候模型、天气预报系统以及遥感和气象卫星数据的处理中。它有助于改善气象和气候模型的准确性，以便更好地模拟大气和地球的辐射行为。</li>
+<li><strong>改进版本：</strong>RRTM 有不同版本，包括 RRTM-IR（红外线辐射传输模型）和 RRTMG（RRTM的全光谱版本）。这些版本可能在不同波长范围内具有不同的参数化和改进，以适应不同研究需求。</li>
+<li><strong>科学研究：</strong>RRTM 的应用涵盖了气候变化、大气化学、云物理学和气象学等多个领域。研究人员使用它来改进对大气过程的理解，并为政策制定者提供有关气候变化和气象事件的信息。</li>
+</ol>
+</blockquote>
+&emsp;&emsp;总之，RRTM 是在大气科学中用于模拟辐射传输的重要工具，对于气象预测、气候研究和环境监测都具有重要价值。不同版本的 RRTM 可以用于不同的研究和应用领域。</li>
+<li><strong>Dudhia：</strong>指 Dudhia 短波辐射参数化方案（Dudhia shortwave radiation parameterization scheme）。这是一种在气象和气候模型中常用的参数化方案，用于模拟短波辐射过程，特别是太阳辐射的传播和相互作用。以下是 Dudhia 短波辐射参数化方案的一些关键特点：<blockquote>
+<ol>
+<li><strong>太阳辐射模拟：</strong>Dudhia 短波辐射参数化方案旨在模拟太阳辐射在大气中的传播、散射和吸收过程。这包括太阳辐射通过大气中的云、气溶胶和气体互动。</li>
+<li><strong>辐射传输：</strong>该方案考虑了辐射的传输和相互作用，以估算不同垂直层次和水平位置的辐射通量。</li>
+<li><strong>云和气溶胶的影响：</strong>Dudhia 短波辐射参数化方案还考虑云和气溶胶对太阳辐射的影响，因为云和气溶胶可以散射、吸收或反射太阳辐射。</li>
+<li><strong>模型适用性：</strong>这个参数化方案通常用于各种气象和气候模型，以模拟太阳辐射对地球表面和大气的影响，包括模拟日照、温度分别和气候现象。</li>
+</ol>
+</blockquote>
+&emsp;&emsp;Dudhia 短波辐射参数化方案的具体实现和参数设置可能会因不同的模型版本和研究项目而异。因此，在使用该方案时，研究人员通常需要了解模型文档和配置选项，以确保其与研究目标和模型的匹配。此外，对于特定的气象和气候研究，还可能需要考虑其他短波辐射参数化方案以获得更精确的模拟结果。</li>
+</ul>
+<p>&emsp;&emsp;为了更好的模拟“鲇鱼”形成之前扰动所在的大尺度环境场，这里在最外层区域中使用谱逼近的方法，使用时间7天。在第二层和第三层网格中，谱逼近只在模式开始的24小时之内使用。</p>
+<h4 id="敏感性实验设计"><a href="#敏感性实验设计" class="headerlink" title="敏感性实验设计"></a>敏感性实验设计</h4><p>&emsp;&emsp;为了探讨海表焓通量及相关的WISHE机制对“鲇鱼”台风形成的影响，设计了两个数值敏感性试验。敏感性试验的设置与控制试验基本相同，唯一的区别是模式最低层的水平风。在敏感性试验中，模式最低层的水平风被设为固定值。</p>
+<blockquote>
+<p><strong>WISHE机制</strong>  </p>
+<p>&emsp;&emsp;<strong>WISHE（WISHE mechanism）：</strong>是指“Warm Ocean，Moist Atmosphere，and Moist Convection”机制，它是一个用于解释和研究热带气旋（热带风暴和台风）发展的概念性模型。该机制描述了热带气旋的形成和增强过程，特别是关注热带海洋、湿度大气和湿对流等因素的相互作用。以下是WISHE机制的关键要点：</p>
+<ol>
+<li><strong>暖海洋：</strong>WISHE机制的第一个要素是暖热带海洋。在热带地区，海水通常较暖，这提供了足够的热能来驱动大气中的湿度和对流。暖海洋表面温度是热带气旋发展的重要起点。</li>
+<li><strong>湿度大气：</strong>WISHE机制的第二个要素是湿度大气。湿度大气意味着大气中含有大量水汽。这是在热带地区常见的情况，因为暖海洋表面可以蒸发大量水汽到大气中。湿度大气有助于提供热带气旋所需的湿度和能量。</li>
+<li><strong>湿对流：</strong>湿对流是指在湿度大气中发生的大规模对流运动，其中空气上升并形成云和降水。湿对流是热带气旋发展的关键过程，因为它有助于释放暖湿空气中的潜热，进一步加热大气并增强气旋。</li>
+<li><strong>正反馈循环：</strong>WISHE机制中的关键思想是正反馈循环。当热带气旋形成时，它开始吸取暖湿空气，这会导致大气中湿度增加，并触发湿对流。湿对流释放的潜热加热会进一步提高气温，使得气旋更强大，继续吸取更多湿度和热能，形成一个正反馈循环，使气旋增强。</li>
+<li><strong>发展和增强：</strong>通过WISHE机制，热带气旋可以逐渐发展并增强，最终可能形成热带风暴、台风或飓风。</li>
+</ol>
+<p>&emsp;&emsp;WISHE机制是对热带气旋发展的重要概念性理论，帮助解释了为什么热带地区的暖海洋和湿气大气是热带气旋形成和加强的理想环境。然而，实际的热带气旋发展受到许多其他复杂因素的影响，包括大气风切变、地形、季节变化等。因此，WISHE机制虽然提供了重要的基本理论，但实际的热带气旋发展仍然具有挑战性，并需要综合考虑多种因素。</p>
+</blockquote>
+<p>海表面通量包括感热通量（Sensible Heat Flux，SHX）和潜热通量（Latent Heat Flux，LHX），可用公式表示为：<br>$$<br>SHX &#x3D; \rho c_p C_h U_a (\theta_g - \theta_a)\\<br>LHX &#x3D; \rho L_v C_q U_a (q_g - q_a)<br>$$</p>
+<blockquote>
+<p>其中：</p>
+<ul>
+<li><strong>SHX：</strong>感热通量，表示单位时间内由海洋表面传输到大气最低层的热量，通常以瓦特每平方米（$W&#x2F;m^2$）为单位；</li>
+<li><strong>LHX：</strong>潜热通量，表示单位时间内由海洋表面传输到大气最低层的潜热（与水汽相变相关的热量），也以瓦特每平方米（$W&#x2F;m^2$）为单位；</li>
+<li><strong>$\rho$：</strong>近海面层的空气密度</li>
+<li><strong>$c_p$：</strong>恒压下的比热容，通常以焦耳每千克每摄氏度（$J&#x2F;(kg)$）为单位；</li>
+<li><strong>$C_h$：</strong>感热通量的传输系数，通常为无量纲值；</li>
+<li><strong>$C_q$：</strong>潜热通量的传输系数，通常为无量纲值；</li>
+<li><strong>$U_a$：</strong>大气风速，通常以米每秒（m&#x2F;s）为单位；</li>
+<li><strong>$\theta$</strong></li>
+</ul>
+</blockquote>
 <br>
 
 <font size=2; color=grey>
@@ -986,6 +1038,13 @@
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
 
 
 
