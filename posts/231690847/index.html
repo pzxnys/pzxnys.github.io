@@ -244,6 +244,19 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -389,18 +402,23 @@
                 
 
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-09-24
+                </div>
+                
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    8.6k
+                    10.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    30 分
+                    36 分
                 </div>
                 
 
@@ -662,10 +680,37 @@
 <p>&emsp;&emsp;$P_1$ 和 $P_2$ 分别表示气柱底部和顶部的气压。这个方程的目的是分析热带气旋形成期间水汽的运动、变化和平衡，考虑了平流、径向输送、凝结或沉降以及水汽的源项。通过分析这个方程，可以更好地理解水汽在热带气旋形成和发展中的作用，对于研究热带气旋的形成机制非常重要。</p>
 <h3 id="台风“鲇鱼”形成过程中中层涡旋的演变及影响"><a href="#台风“鲇鱼”形成过程中中层涡旋的演变及影响" class="headerlink" title="台风“鲇鱼”形成过程中中层涡旋的演变及影响"></a>台风“鲇鱼”形成过程中中层涡旋的演变及影响</h3><p>&emsp;&emsp;本章利用高精度数值模式资料分析“鲇鱼”形成过程中中层涡旋的形成和发展机制，以及中层涡旋在形成过程中所伴随的热力学特征；最后讨论中层涡旋在“鲇鱼”形成过程中的作用。</p>
 <h4 id="中层涡旋的整体演变"><a href="#中层涡旋的整体演变" class="headerlink" title="中层涡旋的整体演变"></a>中层涡旋的整体演变</h4><p>&emsp;&emsp;图2给出了“鲇鱼”形成过程中对流和涡度随时间，经度的演变。图3.2a 和图3.2d 显示，在形成之前，“鲇鱼”扰动经历了两次深对流的爆发。在两次深对流的间隔期间，很少有对流发展。由热带开尔文波触发的第一次对流爆发从10 月9 号06 号开始，第二次对流爆发从10 月10 号06 时开始，然后一直持续到结束。图3.2b-c 和3.2e-f 进一步显示，低层涡度的显著增强发生在第二次深对流爆发期间。而在第一次和第二次深对流爆发的间隔期间，中层涡旋显著增强。</p>
-<div align = 'center'><img src = 'https://pzxnys.github.io/posts/3309110367/2023-09-24-16-36-20.png'/></div>
+<div align = 'center'>
+<img src = 'https://pzxnys.github.io/posts/3309110367/2023-09-24-16-36-20.png'/></div>
+<font size = 2; color = natural>图2. （a）由 GFS 再分析资料导出的 $850\ hPa\ 8 ^\circ N - 16 ^\circ N$ 平均风场（矢量），黑体辐射温度（$^\circ C$；阴影）随经度，时间的演变。（b）与（a）类似，但是变量为由 GFS 再分析资料导出的 $850\ hPa\ 8 ^\circ N - 16 ^\circ N$ 平均涡度（$10^{-5} s^{-1}$）。（c）与（a）类似，但是变量为由 GFS 再分析资料导出的 $600\ hPa\ 8 ^\circ N - 16 ^\circ N$ 平均涡度（$10^{-5} s^{-1}$）。（d）-(f)与（a）-（c）类似，但是变量分别为模式导出的最大反射率（dbz）和 850 hPa 风场，（e）850 hPa 涡度（$10^{-5} s^{-1}$）和（f）600 hPa 涡度（$10^{-5} s^{-1}$）。</font>
 
-
-<br>
+<p><font size = 2; color = grey>PS：黑体辐射温度通常用来表示大气中的辐射热平衡，以及不同高度和时间的温度分布。黑体辐射温度随着高度、时间和地理位置的变化而变化.</font></p>
+<blockquote>
+<p><strong>GFS（Global Forecast System）再分析资料：</strong>由美国国家海洋和大气管理局（NOAA）的国家中心为环境预报（NCEP）的全球模式系统生成的气象数据。这些数据用于分析和研究大气和气候现象，以改进天气预报和气候模型。以下是关于GFS再分析资料的一些关键信息：</p>
+<ol>
+<li><strong>再分析数据：</strong>GFS再分析数据是通过将观测数据与数值模型的输出进行融合，使用先进的数据同化技术，生成历史上的大气参数的连续记录。这些数据包括温度、湿度、风速、气压、降水等等，通常以多层次和多时间步骤的形式提供。</li>
+<li><strong>全球覆盖：</strong>GFS再分析数据提供了全球范围内的气象信息，涵盖了地球的大气条件。这些数据在地球各个地区的气象研究和监测中非常有用。</li>
+<li><strong>时间分辨率：</strong>GFS再分析数据通常以不同的时间分辨率提供，最常见的包括1小时、3小时、6小时和24小时等。这意味着您可以获取不同时间精度的数据，以满足特定研究或预测需求。</li>
+<li><strong>空间分辨率：</strong>GFS再分析数据通常居勇不同的水平和垂直分辨率。水平分辨率表示数据在地球表面上的空间精度，通常以度数为单位。垂直分辨率表示数据在大气垂直上的分层情况，通常以压力层或高度层表示。</li>
+<li><strong>用途：</strong>GFS再分析数据在气象学、气候学、环境科学和天气预报等领域中广泛应用于研究和建模。研究人员和气象学家使用这些数据来了解过去的气象事件、制作气象图表、验证模型、开展气候分析等。</li>
+</ol>
+<p>GFS再分析数据通常可以通过 NOAA 等气象机构的网站或数据存档中心获取，以支持各种研究和应用。这些数据对于改进天气预测、研究气候变化以及了解大气现象非常有价值。</p>
+</blockquote>
+<p>&emsp;&emsp;根据以上所述的对流，中低层涡旋的演变，以及为了之后讨论的方便，这里我们把“鲇鱼”的形成过程分为3 个阶段：第一阶段为开尔文波带来的深对流的爆发阶段，时间段从10 月9 号06 时开始一直到10月10 号06 时；第二阶段为对流消散以及中层涡旋的增强阶段；第三阶段为深对流爆发，低层涡旋增强以及“鲇鱼”的形成阶段。</p>
+<blockquote>
+<p><strong>开尔文波（Kelvin wave）：</strong>是一种大气和海洋中的波动现象，通常是指大气中的大尺度波动，特别是赤道附近的波动。开尔文波的名称来源于其发现者威廉 汤姆森（William Thomson），也称为开尔文勋爵。以下是有关开尔文波的一些关键特征和信息：</p>
+<ol>
+<li><strong>波动类型：</strong>开尔文波通常是一种大气中的波动，沿赤道附近传播。它们可以是大气中的大尺度波动，也可以是海洋中的波动，通常与赤道附近的温度、风场和海洋流动有关；</li>
+<li><strong>传播方向：</strong>开尔文波的传播方向通常是东向（从东向西传播）或向西（从西向东传播），取决于波的类型。东向的开尔文波是一种大气波动，而西向的开尔文波是一种海洋波动；</li>
+<li><strong>与赤道交互：</strong>开尔文波与赤道附近的克里奥利力相互作用，导致它们以东向或西向的速度传播。这种相互作用是由于地球自转引起的，并且在大气和海洋中都起作用；</li>
+<li><strong>气候和天气影响：</strong>开尔文波对全球气候和天气系统产生影响。它们可以影响赤道地区的海洋温度和气候变化，并对厄尔尼诺和拉尼娜等大气现象产生影响；</li>
+<li><strong>研究和模拟：</strong>开尔文波是大气和海洋研究的重要对象，科学家使用模型和观测数据来研究它们的特性和影响。这些波动对于气象学、气候学和海洋学等领域的研究具有重要意义。</li>
+</ol>
+<p>总之，开尔文波是大气和海洋中的一种波动现象，与赤道附近的物理过程紧密相关，对全球气候和天气系统产生影响。它们是气象和海洋研究中的重要主题之一。</p>
+</blockquote>
+<p>&emsp;&emsp;中层涡旋的形成原因有两方面：一是层云引起的中层辐合；二是深对流向上的垂直涡度输送；在中层涡旋形成时，地面为反气旋性涡度，同时低层暖而干，动力学以及热力学条件都不利于对流活动的发展。但是，随着热力学场和动力学场的调整，浅对流在“鲇鱼”扰动中心爆发。一方面，浅对流向上输送水汽，增湿中层大气；另一方面，其引起的辐散也导致了中层涡旋强度的减弱。在第二次对流爆发期间，中层涡旋的强度随着对流的发展呈振荡式变化。在深对流期间以及层云期间，中层涡旋的强度增强；而在浅对流期间，其强度有所减弱。</p>
+<p>&emsp;&emsp;在“鲇鱼”的形成过程中，中层涡旋起到了双重作用。一方面，在中层涡旋的形成过程中，低层涡度的强度显著减弱，这对于低层气旋性环流强度的增强是不利的；另一方面，与中层涡旋耦合的冷心又有利于对流不稳定能量的累积，这对于对流活动而言是有利的。敏感性试验表面：中层涡旋的形成是不利于“鲇鱼”的形成的。</p>
+<h3 id="台风“鲇鱼”形成过程中水汽变化特征"><a href="#台风“鲇鱼”形成过程中水汽变化特征" class="headerlink" title="台风“鲇鱼”形成过程中水汽变化特征"></a>台风“鲇鱼”形成过程中水汽变化特征</h3><br>
 
 <font size=2; color=grey>
 [1]. How the ocean shapes weather and climate, World Meteorological Organization,2021.<br>
@@ -894,6 +939,28 @@
     
 
     
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC81OTAyMi8zNTQ4NA==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
 
     
 
@@ -1048,8 +1115,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('2'),
+            headingSelector: 'h1, h2, h3, h4, h5'
         });
 
         // modify the toc link href to support Chinese.
@@ -1061,7 +1128,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1145,6 +1212,9 @@
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">53.9k</span>
             
             
             
@@ -1249,10 +1319,6 @@
 
 
 
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
 
 </div>
     </div>
@@ -1383,20 +1449,19 @@ $(function () {
     
 
     
-        
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
-            }
-        </script>
-    
 
     <!-- 雪花特效 -->
     
 
     <!-- 鼠标星星特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
+            }
+        </script>
     
 
      
