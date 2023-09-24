@@ -393,14 +393,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    8k
+                    8.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    28 分
+                    30 分
                 </div>
                 
 
@@ -625,7 +625,46 @@
 <li><strong>$R$：</strong>表示次网格项。通常情况下，$R$ 项的贡献很小，这里采取与前人相同的处理办法，对 $R$ 忽略不计。</li>
 </ul>
 </blockquote>
-<h4 id="水汽方程诊断"><a href="#水汽方程诊断" class="headerlink" title="水汽方程诊断"></a>水汽方程诊断</h4><p>&emsp;&emsp;为了更好地分析“鲇鱼”台风形成过程中的水汽演变特征并揭示各物理过程的贡献，我们在数值模拟的基础上，对“鲇鱼”形成过程的水汽演变做诊断分析，所用的水汽方程如下：<br>$$<br>\int_{\tau} \frac{\partial \rho q}{\partial t} d\tau= - \frac{r_0}{g} \int_{p_2}^{p_1} \int_{0}^{2 \pi} qud\lambda dp + \int_{0}^{r_0} \int_{0}^{2 \pi} (r \rho qw)_{P_1} d\lambda dr \\\<br>-\int^{r_0}_0 \int_0^{2\pi}(r \rho qw) _{P_2} d\lambda dr -\int_\tau \rho NCd\tau + \int_\tau \rho B_vd\tau<br>\tag{6}<br>$$<br>&emsp;&emsp;其中，$u$ 和 $w$ 分别为相对于扰动的径向速度和垂直速度，$q$ 和 $\rho$ 分别表示水汽混合比和密度，$NC$ 为净的凝结量（正 $NC$ 表示凝结大于蒸发），$B_v$ 为来自海洋的水汽，$P_1$ 和 $P_2$ 分别是气柱底部和顶部气压，$r$ 是距台风前期扰动中心的距离，$r_0$ 为常数，这里取200km。方程（6）的左边项表示“鲇鱼”台风前期扰动特定层内的总水汽含量的变化趋势，而右边各项分别是水平向内的水汽水平通量、扰动气柱中的垂直水汽通量、总静凝结量和来自底层海洋的水汽贡献。</p>
+<h4 id="水汽方程诊断"><a href="#水汽方程诊断" class="headerlink" title="水汽方程诊断"></a>水汽方程诊断</h4><p>&emsp;&emsp;为了更好地分析“鲇鱼”台风形成过程中的水汽演变特征并揭示各物理过程的贡献，我们在数值模拟的基础上，对“鲇鱼”形成过程的水汽演变做诊断分析，所用的水汽方程如下：<br>$$<br>\int_{\tau} \frac{\partial \rho q}{\partial t} d\tau= - \frac{r_0}{g} \int_{P_2}^{P_1} \int_{0}^{2 \pi} qud\lambda dp + \int_{0}^{r_0} \int_{0}^{2 \pi} (r \rho qw)_{P_1} d\lambda dr \\\<br>-\int^{r_0}_0 \int_0^{2\pi}(r \rho qw) _{P_2} d\lambda dr -\int_\tau \rho NCd\tau + \int_\tau \rho B_vd\tau<br>\tag{6}<br>$$</p>
+<blockquote>
+<ul>
+<li><strong>$\int_{\tau} \frac{\partial \rho q}{\partial t} d\tau$：</strong>这一项表示在体积 $\tau$ 内水汽的时间变化率积分。它描述了在一定体积内水汽含量的变化趋势；</li>
+<li><strong>$-\frac{r_0}{g} \int_{p_2}^{p_1} \int_{0}^{2 \pi} qud\lambda dp$：</strong>这一项表示水汽的平流效应。它考虑了在不同压力水平 $(P_1, P_2)$ 上水汽的平流；<blockquote>
+<ul>
+<li><strong>$u$：</strong> 是相对于扰动的径向速度，表示气流沿着气旋的半径方向的速度变化；</li>
+<li><strong>$q$：</strong> 表示水汽混合比，表示单位质量空气中水汽的质量；</li>
+<li><strong>$\lambda$：</strong> 是经度；</li>
+<li><strong>$dp$：</strong> 是压力的微小变化；</li>
+</ul>
+</blockquote>
+</li>
+<li><strong>$\int_{0}^{r_0} \int_{0}^{2 \pi} (r \rho qw)_{P_1} d\lambda dr$：</strong>这一项表示径向水汽输送到气柱底部（$P_1$ 处）的贡献。它考虑了径向距离 $r$ 内的水汽输送；<blockquote>
+<ul>
+<li><strong>$r_0$：</strong> 是距台风前期扰动中心的距离，$r_0$ 为常数，这里取200km；</li>
+<li><strong>$\rho$：</strong> 是空气密度；</li>
+<li><strong>$w$：</strong> 是垂直速度；</li>
+</ul>
+</blockquote>
+</li>
+<li><strong>$-\int^{r_0}_0 \int_0^{2\pi}(r \rho qw) _{P_2} d\lambda dr$：</strong>这一项表示径向水汽输送从气柱顶部（$P_2$ 处）的贡献。</li>
+<li><strong>$-\int_\tau \rho NCd\tau$：</strong>表示在特定体积 $\tau$ 内的总净凝结量，这个量度考虑了液态水汽的净凝结（如果为正值则表示凝结大于蒸发，如果为负值则表示蒸发大于凝结）；<blockquote>
+<p><strong>$NC$：</strong> 表示净的凝结量，它表示在一定体积内水汽的凝结和蒸发的净效应。正值意味着水汽净凝结，而负值意味着水汽净蒸发；</p>
+</blockquote>
+</li>
+<li><strong>$\int_\tau \rho B_vd\tau$：</strong>表示在特定体积 $\tau$ 内来自底层海洋的水汽贡献；<blockquote>
+<ul>
+<li><strong>$B_v$：</strong> 表示来自海洋的水汽；</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<p>&emsp;&emsp;$P_1$ 和 $P_2$ 分别表示气柱底部和顶部的气压。这个方程的目的是分析热带气旋形成期间水汽的运动、变化和平衡，考虑了平流、径向输送、凝结或沉降以及水汽的源项。通过分析这个方程，可以更好地理解水汽在热带气旋形成和发展中的作用，对于研究热带气旋的形成机制非常重要。</p>
+<h3 id="台风“鲇鱼”形成过程中中层涡旋的演变及影响"><a href="#台风“鲇鱼”形成过程中中层涡旋的演变及影响" class="headerlink" title="台风“鲇鱼”形成过程中中层涡旋的演变及影响"></a>台风“鲇鱼”形成过程中中层涡旋的演变及影响</h3><p>&emsp;&emsp;本章利用高精度数值模式资料分析“鲇鱼”形成过程中中层涡旋的形成和发展机制，以及中层涡旋在形成过程中所伴随的热力学特征；最后讨论中层涡旋在“鲇鱼”形成过程中的作用。</p>
+<h4 id="中层涡旋的整体演变"><a href="#中层涡旋的整体演变" class="headerlink" title="中层涡旋的整体演变"></a>中层涡旋的整体演变</h4><p>&emsp;&emsp;图2给出了“鲇鱼”形成过程中对流和涡度随时间，经度的演变。图3.2a 和图3.2d 显示，在形成之前，“鲇鱼”扰动经历了两次深对流的爆发。在两次深对流的间隔期间，很少有对流发展。由热带开尔文波触发的第一次对流爆发从10 月9 号06 号开始，第二次对流爆发从10 月10 号06 时开始，然后一直持续到结束。图3.2b-c 和3.2e-f 进一步显示，低层涡度的显著增强发生在第二次深对流爆发期间。而在第一次和第二次深对流爆发的间隔期间，中层涡旋显著增强。</p>
+<div align = 'center'><img src = 'https://pzxnys.github.io/posts/3309110367/2023-09-24-16-36-20.png'/></div>
+
+
 <br>
 
 <font size=2; color=grey>
