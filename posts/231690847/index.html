@@ -393,14 +393,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.7k
+                    8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    23 分
+                    28 分
                 </div>
                 
 
@@ -522,7 +522,7 @@
 </li>
 <li>JMA（Japan Meteorological Agency）最佳数据集，数据集包含了台风号、形成时间、各个时刻的经纬度以及强度（中心最低气压以及表面最大风速），时间间隔为6小时。<a target="_blank" rel="noopener" href="https://www.jma.go.jp/jma/jma-eng/jma-center/rsmc-hp-pub-eg/besttrack.html">JMA 最佳数据集</a></li>
 </ol>
-<h3 id="数值试验设计"><a href="#数值试验设计" class="headerlink" title="数值试验设计"></a>数值试验设计</h3><h4 id="台风“鲶鱼”数值试验设计"><a href="#台风“鲶鱼”数值试验设计" class="headerlink" title="台风“鲶鱼”数值试验设计"></a>台风“鲶鱼”数值试验设计</h4><p>&emsp;&emsp;本文使用的模式为 WRF V3.6.1 <a target="_blank" rel="noopener" href="https://www2.mmm.ucar.edu/wrf/users/download/get_source.html">WRF 链接</a>，模式的初始场和边界条件是从 NECP 的 FNL再分析资料中获取的。模式采用如图1所示的三层网格嵌套，水平格距分别是13.5，4.5和1.5KM。所有区域垂直方向均为35层，模式顶为10hPa。时间为2010-10-08_06:00:00 ~ 2010-10-14_00:00:00，每小时输出一次。</p>
+<h3 id="数值试验设计"><a href="#数值试验设计" class="headerlink" title="数值试验设计"></a>数值试验设计</h3><h4 id="台风“鲇鱼”数值试验设计"><a href="#台风“鲇鱼”数值试验设计" class="headerlink" title="台风“鲇鱼”数值试验设计"></a>台风“鲇鱼”数值试验设计</h4><p>&emsp;&emsp;本文使用的模式为 WRF V3.6.1 <a target="_blank" rel="noopener" href="https://www2.mmm.ucar.edu/wrf/users/download/get_source.html">WRF 链接</a>，模式的初始场和边界条件是从 NECP 的 FNL再分析资料中获取的。模式采用如图1所示的三层网格嵌套，水平格距分别是13.5，4.5和1.5KM。所有区域垂直方向均为35层，模式顶为10hPa。时间为2010-10-08_06:00:00 ~ 2010-10-14_00:00:00，每小时输出一次。</p>
 <div align = 'center'>
 <img src = 'https://pzxnys.github.io/posts/3309110367/2023-09-22-15-04-42.png'/>
 <font size = 2; color = natural>图1. 台风“鲇鱼”数值试验网格嵌套示意图</font>
@@ -530,21 +530,25 @@
 &emsp;&emsp;模式中，3层网格云微物理参数化方案均采用 WSM6 方案，长波辐射参数化方案均采用 Rapid Radiative Transfer Model（RRTM）方案，短波辐射参数化方案是 Dudhia 方案。三层网格均没有使用任何积云对流参数化方案。
 
 <ul>
-<li><strong>WSM6：</strong>是一种云微物理方案，用于气象和大气科学领域的数值气象模型中，特别是用于描述云和降水过程。这个名称中的“WSM”代表“Warm- and Cold-Season processes of cloud and Precipitation”（云和降水的暖季和冷季过程）。<blockquote>
+<li><p><strong>WSM6：</strong>是一种云微物理方案，用于气象和大气科学领域的数值气象模型中，特别是用于描述云和降水过程。这个名称中的“WSM”代表“Warm- and Cold-Season processes of cloud and Precipitation”（云和降水的暖季和冷季过程）。</p>
+<blockquote>
 <p>WSM6 方案旨在模拟云和降水的不同过程，包括云滴的形成和增长、雨滴的形成、降水、积冰、雪等。这个方案包括多个参数和模拟化的物理过程，以描述不同类型的云和降水时间。通常，气象模型会根据不同的研究或应用目标选择不同的微物理方案，以更好地模拟特定地区或时间段的天气现象。<br>具体来说，WSM6 方案通常用于 WRF（Weather Research and Forecasting Model）等数值气象模型中，以模拟云、降水和相关气象过程。这个方案的特性和性能会影响模型的预报结果，因此在使用时需要仔细选择和配置。</p>
 </blockquote>
 </li>
-<li><strong>RRTM：</strong>是一种用于计算大气辐射传输的计算机模型。它的主要目的是模拟大气中的辐射过程，包括太阳辐射的吸收和地球辐射的发射，以及在大气中的散射和吸收。RRTM通常用于气象和气候模型中，以更好地理解和预测地球的辐射平衡、温度分布和气候变化。以下是RRTM的一些关键特点和应用：<blockquote>
+<li><p><strong>RRTM：</strong>是一种用于计算大气辐射传输的计算机模型。它的主要目的是模拟大气中的辐射过程，包括太阳辐射的吸收和地球辐射的发射，以及在大气中的散射和吸收。RRTM通常用于气象和气候模型中，以更好地理解和预测地球的辐射平衡、温度分布和气候变化。以下是RRTM的一些关键特点和应用：</p>
+<blockquote>
 <ol>
 <li><strong>辐射传输模拟：</strong>RRTM 被用来模拟辐射在大气中的传输和相互作用，包括太阳辐射和地球辐射。这对于研究大气能量平衡、气温、云的形成和降水等过程非常重要。</li>
 <li><strong>波长范围：</strong>RRTM 可以模拟不同波长范围的辐射传输，包括可见光、红外线和微波。这使得它可以用于分析不同能谱的辐射过程。</li>
 <li><strong>应用领域：</strong>RRTM 广泛应用于气象模型、气候模型、天气预报系统以及遥感和气象卫星数据的处理中。它有助于改善气象和气候模型的准确性，以便更好地模拟大气和地球的辐射行为。</li>
 <li><strong>改进版本：</strong>RRTM 有不同版本，包括 RRTM-IR（红外线辐射传输模型）和 RRTMG（RRTM的全光谱版本）。这些版本可能在不同波长范围内具有不同的参数化和改进，以适应不同研究需求。</li>
-<li><strong>科学研究：</strong>RRTM 的应用涵盖了气候变化、大气化学、云物理学和气象学等多个领域。研究人员使用它来改进对大气过程的理解，并为政策制定者提供有关气候变化和气象事件的信息。</li>
+<li><strong>科学研究：</strong>RRTM 的应用涵盖了气候变化、大气化学、云物理学和气象学等多个领域。研究人员使用它来改进对大气过程的理解，并为政策制定者提供有关气候变化和气象事件的信息。  </li>
 </ol>
 </blockquote>
-&emsp;&emsp;总之，RRTM 是在大气科学中用于模拟辐射传输的重要工具，对于气象预测、气候研究和环境监测都具有重要价值。不同版本的 RRTM 可以用于不同的研究和应用领域。</li>
-<li><strong>Dudhia：</strong>指 Dudhia 短波辐射参数化方案（Dudhia shortwave radiation parameterization scheme）。这是一种在气象和气候模型中常用的参数化方案，用于模拟短波辐射过程，特别是太阳辐射的传播和相互作用。以下是 Dudhia 短波辐射参数化方案的一些关键特点：<blockquote>
+<p>&emsp;&emsp;总之，RRTM 是在大气科学中用于模拟辐射传输的重要工具，对于气象预测、气候研究和环境监测都具有重要价值。不同版本的 RRTM 可以用于不同的研究和应用领域。</p>
+</li>
+<li><p><strong>Dudhia：</strong>指 Dudhia 短波辐射参数化方案（Dudhia shortwave radiation parameterization scheme）。这是一种在气象和气候模型中常用的参数化方案，用于模拟短波辐射过程，特别是太阳辐射的传播和相互作用。以下是 Dudhia 短波辐射参数化方案的一些关键特点：</p>
+<blockquote>
 <ol>
 <li><strong>太阳辐射模拟：</strong>Dudhia 短波辐射参数化方案旨在模拟太阳辐射在大气中的传播、散射和吸收过程。这包括太阳辐射通过大气中的云、气溶胶和气体互动。</li>
 <li><strong>辐射传输：</strong>该方案考虑了辐射的传输和相互作用，以估算不同垂直层次和水平位置的辐射通量。</li>
@@ -552,7 +556,8 @@
 <li><strong>模型适用性：</strong>这个参数化方案通常用于各种气象和气候模型，以模拟太阳辐射对地球表面和大气的影响，包括模拟日照、温度分别和气候现象。</li>
 </ol>
 </blockquote>
-&emsp;&emsp;Dudhia 短波辐射参数化方案的具体实现和参数设置可能会因不同的模型版本和研究项目而异。因此，在使用该方案时，研究人员通常需要了解模型文档和配置选项，以确保其与研究目标和模型的匹配。此外，对于特定的气象和气候研究，还可能需要考虑其他短波辐射参数化方案以获得更精确的模拟结果。</li>
+<p>&emsp;&emsp;Dudhia 短波辐射参数化方案的具体实现和参数设置可能会因不同的模型版本和研究项目而异。因此，在使用该方案时，研究人员通常需要了解模型文档和配置选项，以确保其与研究目标和模型的匹配。此外，对于特定的气象和气候研究，还可能需要考虑其他短波辐射参数化方案以获得更精确的模拟结果。</p>
+</li>
 </ul>
 <p>&emsp;&emsp;为了更好的模拟“鲇鱼”形成之前扰动所在的大尺度环境场，这里在最外层区域中使用谱逼近的方法，使用时间7天。在第二层和第三层网格中，谱逼近只在模式开始的24小时之内使用。</p>
 <h4 id="敏感性实验设计"><a href="#敏感性实验设计" class="headerlink" title="敏感性实验设计"></a>敏感性实验设计</h4><p>&emsp;&emsp;为了探讨海表焓通量及相关的WISHE机制对“鲇鱼”台风形成的影响，设计了两个数值敏感性试验。敏感性试验的设置与控制试验基本相同，唯一的区别是模式最低层的水平风。在敏感性试验中，模式最低层的水平风被设为固定值。</p>
@@ -568,20 +573,59 @@
 </ol>
 <p>&emsp;&emsp;WISHE机制是对热带气旋发展的重要概念性理论，帮助解释了为什么热带地区的暖海洋和湿气大气是热带气旋形成和加强的理想环境。然而，实际的热带气旋发展受到许多其他复杂因素的影响，包括大气风切变、地形、季节变化等。因此，WISHE机制虽然提供了重要的基本理论，但实际的热带气旋发展仍然具有挑战性，并需要综合考虑多种因素。</p>
 </blockquote>
-<p>海表面通量包括感热通量（Sensible Heat Flux，SHX）和潜热通量（Latent Heat Flux，LHX），可用公式表示为：<br>$$<br>SHX &#x3D; \rho c_p C_h U_a (\theta_g - \theta_a)\\<br>LHX &#x3D; \rho L_v C_q U_a (q_g - q_a)<br>$$</p>
+<p>海表面通量包括感热通量（Sensible Heat Flux，SHX）和潜热通量（Latent Heat Flux，LHX），可用公式表示为：<br>$$<br>SHX = \rho c_p C_h U_a (\theta_g - \theta_a) \\\<br>LHX = \rho L_v C_q U_a (q_g - q_a)<br>\tag{1}<br>$$</p>
 <blockquote>
 <p>其中：</p>
 <ul>
-<li><strong>SHX：</strong>感热通量，表示单位时间内由海洋表面传输到大气最低层的热量，通常以瓦特每平方米（$W&#x2F;m^2$）为单位；</li>
-<li><strong>LHX：</strong>潜热通量，表示单位时间内由海洋表面传输到大气最低层的潜热（与水汽相变相关的热量），也以瓦特每平方米（$W&#x2F;m^2$）为单位；</li>
-<li><strong>$\rho$：</strong>近海面层的空气密度</li>
-<li><strong>$c_p$：</strong>恒压下的比热容，通常以焦耳每千克每摄氏度（$J&#x2F;(kg)$）为单位；</li>
+<li><strong>SHX：</strong>感热通量，表示单位时间内由海洋表面传输到大气最低层的热量，通常以瓦特每平方米（$W/m^2$）为单位；</li>
+<li><strong>LHX：</strong>潜热通量，表示单位时间内由海洋表面传输到大气最低层的潜热（与水汽相变相关的热量），也以瓦特每平方米（$W/m^2$）为单位；</li>
+<li><strong>$\rho$：</strong>近海面层的空气密度，通常以每千克每立方米（$kg/m^3$）为单位。</li>
+<li><strong>$c_p$：</strong>恒压下的比热，通常以焦耳每千克每摄氏度（$J/(kg\cdot^\circ C)$）为单位；</li>
 <li><strong>$C_h$：</strong>感热通量的传输系数，通常为无量纲值；</li>
 <li><strong>$C_q$：</strong>潜热通量的传输系数，通常为无量纲值；</li>
-<li><strong>$U_a$：</strong>大气风速，通常以米每秒（m&#x2F;s）为单位；</li>
-<li><strong>$\theta$</strong></li>
+<li><strong>$U_a$：</strong>大气水平风速，通常以米每秒（m/s）为单位；</li>
+<li><strong>$\theta_g$：</strong>海洋表面温度，通常以摄氏度（$^\circ C$）为单位；</li>
+<li><strong>$\theta_a$：</strong>大气最低层温度，通常以摄氏度（$^\circ C$）为单位；</li>
+<li><strong>$L_v$：</strong>恒压下水的蒸发潜热，通常以焦耳每千克（$J/kg$）为单位；</li>
+<li><strong>$q_g$：</strong>海洋表面的比湿度，通常以千克水蒸气/kg干空气为单位；</li>
+<li><strong>$q_a$：</strong>大气最低层的比湿度，通常以千克水蒸气/kg干空气为单位。</li>
 </ul>
 </blockquote>
+<p>&emsp;&emsp;海表通量的大小取决于近地面风速和大气层与海洋之间的热力学差异。本文所设置的两个敏感性试验如下：</p>
+<ol>
+<li>第一个敏感性试验中，上式中的 $U_a$ 在模式积分36小时后，即2010年10月9日18时被设为 $0m/s$。这意味着，9日18时之后，海表通量为零，即海洋不向大气提供水汽和热量。</li>
+<li>第二个敏感性试验中，9日18时之后，如果上式中的 $U_a$ 大于 $5m/s$，则设为 $5m/s$。这意味着，9日18时之后，WISHE机制所描述的海气相互作用，反馈过程将不再发生。</li>
+</ol>
+<p>&emsp;&emsp;这两个敏感性试验中，前者是分析海洋热量和水汽对台风形成的影响，后者是分析WISHE机制对台风形成的影响。下文中将分别用 <strong>OFF</strong> 和 <strong>CAP5</strong> 代表第一和第二个敏感性试验。</p>
+<h4 id="扰动中心定义方法"><a href="#扰动中心定义方法" class="headerlink" title="扰动中心定义方法"></a>扰动中心定义方法</h4><p>&emsp;&emsp;不同于形成之后的热带气旋，在形成之前，热带气旋所对应的热带扰动强度较弱，环状结构不明显，中心气压场较为零散。所以这里我们采用涡度质心的方法定义“鲇鱼”形成之前的扰动中心：<br>$$<br>\bar{x} = \sum x_i \zeta_i / \sum \zeta_i \\\<br>\bar{y} = \sum y_i \zeta_i / \sum \zeta_i<br>\tag{2}<br>$$</p>
+<blockquote>
+<p>其中， <strong>$\zeta$</strong> 表示相对涡度，下标 i 表示某个区域内的格点。这里我们取半径 200 km 的圆形区域，而涡度则取 1000-600hpa 的平均涡度。</p>
+</blockquote>
+<h4 id="涡度方程诊断"><a href="#涡度方程诊断" class="headerlink" title="涡度方程诊断"></a>涡度方程诊断</h4><p>&emsp;&emsp;为了更好地研究“鲇鱼”形成过程中中层涡旋的形成和发展过程，这里我们运用涡度方程诊断的方法，等压面上的涡度方程可以写为：<br>$$<br>\frac{\partial \eta}{\partial t} = -\nabla \bullet (V’ \eta) - \nabla \bullet (-\omega k \times \frac{dV}{dp}) + R<br>\tag{3}<br>$$<br>其中 $\eta$ 代表绝对涡度的垂直分量：<br>$$<br>\eta = f + \frac{\partial v}{\partial x} - \frac{\partial u}{\partial y}<br>\tag{4}<br>$$<br>$V’$ 代表相对速度：<br>$$<br>V’ = V - C<br>\tag{5}<br>$$</p>
+<blockquote>
+<ul>
+<li><strong>$\frac{\partial \eta}{\partial t}$：</strong>表示绝对涡度的变化项，这是绝对涡度 $\eta$ 垂直分量随时间的变化率，表示了涡度的时间演化；</li>
+<li><strong>$-\nabla \bullet (V’ \eta)$：</strong>表示涡度通量的散度，包括了绝对涡度的水平平流以及拉伸项的影响。<blockquote>
+<ul>
+<li><strong>$V’$：</strong>代表相对速度，即实际风速 $V$ 与背景流速 $C$ 之间的差异；</li>
+<li><strong>$\eta$：</strong>代表绝对涡度的垂直分量；</li>
+<li><strong>$V’ \eta$：</strong>表示相对速度和涡度的点乘，得到了涡度通量的水平分量；</li>
+</ul>
+</blockquote>
+</li>
+<li><strong>$- \nabla \bullet (-\omega k \times \frac{dV}{dp})$：</strong>表示了这个垂直涡度输送的散度，考虑了涡度的产生或消耗机制，包括垂直涡度的输送和可能的倾斜效应。<blockquote>
+<ul>
+<li><strong>$- \omega$：</strong>代表垂直速度，通常表示上升或下降的垂直运动；</li>
+<li><strong>$k$：</strong>是单位矢量，垂直向上的向量；</li>
+<li><strong>$\frac{dV}{dp}$：</strong>表示水平风速随压力的变化率。通常与垂直速度一起考虑；</li>
+<li><strong>$-\omega k \times \frac{dV}{dp}$：</strong>表示了垂直速度、单位垂直向上矢量和水平风速梯度之间的叉积，代表了垂直涡度的输送。这一项同时也包含了倾斜项的影响，因为它考虑了垂直速度和水平风速的差异；</li>
+</ul>
+</blockquote>
+</li>
+<li><strong>$R$：</strong>表示次网格项。通常情况下，$R$ 项的贡献很小，这里采取与前人相同的处理办法，对 $R$ 忽略不计。</li>
+</ul>
+</blockquote>
+<h4 id="水汽方程诊断"><a href="#水汽方程诊断" class="headerlink" title="水汽方程诊断"></a>水汽方程诊断</h4><p>&emsp;&emsp;为了更好地分析“鲇鱼”台风形成过程中的水汽演变特征并揭示各物理过程的贡献，我们在数值模拟的基础上，对“鲇鱼”形成过程的水汽演变做诊断分析，所用的水汽方程如下：<br>$$<br>\int_{\tau} \frac{\partial \rho q}{\partial t} d\tau= - \frac{r_0}{g} \int_{p_2}^{p_1} \int_{0}^{2 \pi} qud\lambda dp + \int_{0}^{r_0} \int_{0}^{2 \pi} (r \rho qw)_{P_1} d\lambda dr \\\<br>-\int^{r_0}_0 \int_0^{2\pi}(r \rho qw) _{P_2} d\lambda dr -\int_\tau \rho NCd\tau + \int_\tau \rho B_vd\tau<br>\tag{6}<br>$$<br>&emsp;&emsp;其中，$u$ 和 $w$ 分别为相对于扰动的径向速度和垂直速度，$q$ 和 $\rho$ 分别表示水汽混合比和密度，$NC$ 为净的凝结量（正 $NC$ 表示凝结大于蒸发），$B_v$ 为来自海洋的水汽，$P_1$ 和 $P_2$ 分别是气柱底部和顶部气压，$r$ 是距台风前期扰动中心的距离，$r_0$ 为常数，这里取200km。方程（6）的左边项表示“鲇鱼”台风前期扰动特定层内的总水汽含量的变化趋势，而右边各项分别是水平向内的水汽水平通量、扰动气柱中的垂直水汽通量、总静凝结量和来自底层海洋的水汽贡献。</p>
 <br>
 
 <font size=2; color=grey>
