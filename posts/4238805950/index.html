@@ -5,11 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="菜就是菜, XNYS&#39;s Blog">
-    <meta name="description" content="基于ML的台风预测
-
-
-[1]. 陈睿. 基于深度学习的台风预测关键技术研究[D].国防科技大学
-">
+    <meta name="description" content="基于ML的台风预测摘要&amp;emsp;&amp;emsp;台风是一种极端天气事件，每年夏季会对沿海地区城市经济造成重大损失，预测台风的形成和强度对台风灾害的预警至关重要。传统的基于热动力方程的数值预报方法和基于经验关系的统计预报方法现如今仍难以准确地预">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -417,21 +413,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-09-26
+                    2023-09-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    35
+                    825
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -454,7 +450,20 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="基于ML的台风预测"><a href="#基于ML的台风预测" class="headerlink" title="基于ML的台风预测"></a>基于ML的台风预测</h2><br>
+                <h2 id="基于ML的台风预测"><a href="#基于ML的台风预测" class="headerlink" title="基于ML的台风预测"></a>基于ML的台风预测</h2><h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a><div align=center>摘要</div></h3><p>&emsp;&emsp;台风是一种极端天气事件，每年夏季会对沿海地区城市经济造成重大损失，预测台风的形成和强度对台风灾害的预警至关重要。传统的基于热动力方程的数值预报方法和基于经验关系的统计预报方法现如今仍难以准确地预测台风强度。此外，一些研究虽然也尝试用机器学习方法进行预测来提高准确率，但通常没有考虑台风相关变量之间的时空关系。本文提出了一种基于深度学习的台风时空深度混合预测模型，可以弥补现有方法的不足之处。本文模型引入了三维卷积神经网络（3DCNN）和二位卷积神经网络（2DCNN）来学习台风相关大气海洋变量之间的空间关系，利用 LSTM 来学习台风变化过程中的时序关系。针对西太平洋（WP）、东太平洋（EP）、北大西洋（NA）三个海域的大量台风形成与强度预测实验表明，本文模型优于现有官方组织使用的诸多数值预报方法、统计预报方法和机器学习方法。台风 24h 形成预测实验中，本文模型能达到的最高准确率为 85.2%，Auc 值为 92.2%，24h 强度预测实验中，最小误差为 7.4kt（1kt = 0.512 m/s）。并且在参数分析时发现，模型训练时的超参数如学习速率最好设置为 $10^{-4}$ 的量级，并在 25~35 个 epoch 后停止模型的训练。构造输入数据集时，台风中心周围经纬度区域范围最好确定在 $9^\circ \times 9^\circ$ ~ $13^\circ \times 13^\circ$ 内。且 LSTM 时间步确定为 2 时能获得最好的预测效果。</p>
+<br>
+
+<p><strong>关键词：台风；强度；预测；时空；深度学习；时空深度混合预测模型</strong></p>
+<br>
+
+<h3 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a><div align=center>绪论</div></h3><h4 id="研究背景及意义"><a href="#研究背景及意义" class="headerlink" title="研究背景及意义"></a>研究背景及意义</h4><p>&emsp;&emsp;热带气旋是由温暖海洋热能驱动的天气尺度风暴，含一个无云区的中心，中心上空有一个暖核，围绕中心的气流呈逆时针方向旋转。在这个涡旋中，最低气压出现在中心，最大风速出现在中心附近，通常会达到或超过 34kt（10.8m/s）。根据世界气象组织定义，在西北太平洋区域，当热带气旋中心附近最大风速达到 64kt（32.7m/s）时则称为台风。这样的涡旋在大西洋和东太平洋称之为飓风，在北印度洋称为强气旋性风暴。</p>
+<p>&emsp;&emsp;台风乃至热带气旋最常形成于 $5^\circ N$ 以北的西北太平洋热带洋面上，但全球除东南太平洋和南大西洋外各大洋区的其他热带海域也均有热带气旋发生和活动，其中以北大西洋、东太平洋、北印度洋最为频繁。图 1 为 1985 ~ 2005 间热带气旋的全球分布图。</p>
+<div align = 'center'><img src = 'https://pzxnys.github.io/posts/3309110367/2023-09-27-17-35-24.png'/></div>
+
+
+
+
+<br>
 
 <font size=2; color=grey>
 [1]. 陈睿. 基于深度学习的台风预测关键技术研究[D].国防科技大学
@@ -962,7 +971,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">56.4k</span>
+                        class="white-color">57.1k</span>
             
             
             
