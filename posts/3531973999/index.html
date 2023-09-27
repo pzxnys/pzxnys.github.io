@@ -397,8 +397,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Paper-reading/" class="post-category">
-                                Paper reading
+                            <a href="/categories/Paper-Reading/" class="post-category">
+                                Paper Reading
                             </a>
                         
                     </div>
@@ -417,7 +417,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-09-14
+                    2023-09-26
                 </div>
                 
 
@@ -467,7 +467,7 @@
 <p>在此基础上，设计了策略网络的损失函数。损失函数 Loss 由两部分组成：第一部分根据相应的 $R_{i}$ 赋予较高奖励更大的权重。这一部分的损失函数由$Loss_{1}$表示。损失函数的第二部分由$Loss_{2}$表示，通过将单词被选择的可能性的平均值限制为 $\gamma$ 来指导策略网络选择单词。损失函数的两个部分的定义如公式(1)所示。</p>
 <div align = 'center'><img src = "https://pzxnys.github.io/posts/3309110367/1111_2.png"/></div>
 
-<p>其中，超参数 $\lambda$ 是权重系数，N代表样本总数，$T_{i}$ 是文本 $i^{th}$ 的长度，$R_{i}$ 是文本 $i^{th}$ 获得的回馈奖励，$\pi_{\Theta}(a_t| s_t)$ 表示在 t 时刻的状态 $s_t$ 下，选择 $a_t$ 的条件概率，特别的 $\pi_{\Theta}(a_t &#x3D; 1| s_t)$ 表示在 t 时刻，状态为 $s_t$ 的状态下，当前词被选为关键词的概率，ReLu(x) 是线性整流函数，当 $x &gt; 0$ 是输出想， 否则输出0，参数$\gamma$ 表示一个词预期被选中的可能性。</p>
+<p>其中，超参数 $\lambda$ 是权重系数，N代表样本总数，$T_{i}$ 是文本 $i^{th}$ 的长度，$R_{i}$ 是文本 $i^{th}$ 获得的回馈奖励，$\pi_{\Theta}(a_t| s_t)$ 表示在 t 时刻的状态 $s_t$ 下，选择 $a_t$ 的条件概率，特别的 $\pi_{\Theta}(a_t = 1| s_t)$ 表示在 t 时刻，状态为 $s_t$ 的状态下，当前词被选为关键词的概率，ReLu(x) 是线性整流函数，当 $x &gt; 0$ 是输出想， 否则输出0，参数$\gamma$ 表示一个词预期被选中的可能性。</p>
 <h4 id="特征表示与匹配"><a href="#特征表示与匹配" class="headerlink" title="特征表示与匹配"></a>特征表示与匹配</h4><p>经过策略网络选择后，需要将关键词转换为特征向量。我们引入了有较大的预训练的嵌入模型 Word2Vec 来获得每个提取关键词的语义特征向量。然后，通过对所有对应关键字的特征向量求平均来获得文本表示。<br>        利用短文本对应的特征向量之间的余弦距离来计算短文本之间的相似度。然后，我们可以通过选择相似度最高的候选文本来获得当前短文本最相似的候选文本。</p>
 <h4 id="回馈奖励"><a href="#回馈奖励" class="headerlink" title="回馈奖励"></a>回馈奖励</h4><p>策略网络需要奖励信号才能知道其学习的关键词提取策略是否足够好。我们注意到，如果策略网络提取的关键词包含短文本的要点，则可以从候选文本中找到相似度较高的短文本。因此，奖励信号是根据短文本与相应候选人之间的相似度列表来设计的。假设在策略网络的每一批训练中，需要匹配的候选集被标注为 C，那么候选集的数量就是 C 的大小，可以表示为 |C|(|C|&gt;10)。为了获得短文本与候选文本之间的排序相似度的对应列表，需要根据计算出的相似度将每个样本与候选集中的每个文本进行匹配。假设 x 为 $t_i$ 的推荐等级，即样本 $d_i$ 的对应标签，则奖励金额计算如下：</p>
 <div align = 'center'><img src = "https://pzxnys.github.io/posts/3309110367/1111_3.png"/></div>
