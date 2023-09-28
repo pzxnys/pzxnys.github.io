@@ -5,7 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="菜就是菜, XNYS&#39;s Blog">
-    <meta name="description" content="基于ML的台风预测摘要&amp;emsp;&amp;emsp;台风是一种极端天气事件，每年夏季会对沿海地区城市经济造成重大损失，预测台风的形成和强度对台风灾害的预警至关重要。传统的基于热动力方程的数值预报方法和基于经验关系的统计预报方法现如今仍难以准确地预">
+    <meta name="description" content=" 基于ML的台风预测
+ 摘要
+  台风是一种极端天气事件，每年夏季会对沿海地区城市经济造成重大损失，预测台风的形成和强度对台风灾害的预警至关重要。传统的基于热动力方程的数值预报方法和基于经验关系的统计预报方法现如今仍难以准确地预测台风强度。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -413,21 +415,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-09-27
+                    2023-09-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -450,30 +452,79 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="基于ML的台风预测"><a href="#基于ML的台风预测" class="headerlink" title="基于ML的台风预测"></a>基于ML的台风预测</h2><h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a><div align=center>摘要</div></h3><p>&emsp;&emsp;台风是一种极端天气事件，每年夏季会对沿海地区城市经济造成重大损失，预测台风的形成和强度对台风灾害的预警至关重要。传统的基于热动力方程的数值预报方法和基于经验关系的统计预报方法现如今仍难以准确地预测台风强度。此外，一些研究虽然也尝试用机器学习方法进行预测来提高准确率，但通常没有考虑台风相关变量之间的时空关系。本文提出了一种基于深度学习的台风时空深度混合预测模型，可以弥补现有方法的不足之处。本文模型引入了三维卷积神经网络（3DCNN）和二位卷积神经网络（2DCNN）来学习台风相关大气海洋变量之间的空间关系，利用 LSTM 来学习台风变化过程中的时序关系。针对西太平洋（WP）、东太平洋（EP）、北大西洋（NA）三个海域的大量台风形成与强度预测实验表明，本文模型优于现有官方组织使用的诸多数值预报方法、统计预报方法和机器学习方法。台风 24h 形成预测实验中，本文模型能达到的最高准确率为 85.2%，Auc 值为 92.2%，24h 强度预测实验中，最小误差为 7.4kt（1kt = 0.512 m/s）。并且在参数分析时发现，模型训练时的超参数如学习速率最好设置为 $10^{-4}$ 的量级，并在 25~35 个 epoch 后停止模型的训练。构造输入数据集时，台风中心周围经纬度区域范围最好确定在 $9^\circ \times 9^\circ$ ~ $13^\circ \times 13^\circ$ 内。且 LSTM 时间步确定为 2 时能获得最好的预测效果。</p>
+                <h2 id="基于ml的台风预测"><a class="markdownIt-Anchor" href="#基于ml的台风预测"></a> 基于ML的台风预测</h2>
+<h3 id="div-aligncenter摘要div"><a class="markdownIt-Anchor" href="#div-aligncenter摘要div"></a> <div align=center>摘要</div></h3>
+<p>  台风是一种极端天气事件，每年夏季会对沿海地区城市经济造成重大损失，预测台风的形成和强度对台风灾害的预警至关重要。传统的基于热动力方程的数值预报方法和基于经验关系的统计预报方法现如今仍难以准确地预测台风强度。此外，一些研究虽然也尝试用机器学习方法进行预测来提高准确率，但通常没有考虑台风相关变量之间的时空关系。本文提出了一种基于深度学习的台风时空深度混合预测模型，可以弥补现有方法的不足之处。本文模型引入了三维卷积神经网络（3DCNN）和二位卷积神经网络（2DCNN）来学习台风相关大气海洋变量之间的空间关系，利用 LSTM 来学习台风变化过程中的时序关系。针对西太平洋（WP）、东太平洋（EP）、北大西洋（NA）三个海域的大量台风形成与强度预测实验表明，本文模型优于现有官方组织使用的诸多数值预报方法、统计预报方法和机器学习方法。台风 24h 形成预测实验中，本文模型能达到的最高准确率为 85.2%，Auc 值为 92.2%，24h 强度预测实验中，最小误差为 7.4kt（1kt = 0.512 m/s）。并且在参数分析时发现，模型训练时的超参数如学习速率最好设置为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>4</mn></mrow></msup></mrow><annotation encoding="application/x-tex">10^{-4}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span></span> 的量级，并在 25~35 个 epoch 后停止模型的训练。构造输入数据集时，台风中心周围经纬度区域范围最好确定在 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>9</mn><mo>∘</mo></msup><mo>×</mo><msup><mn>9</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">9^\circ \times 9^\circ</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.757445em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">9</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.674115em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.674115em;vertical-align:0em;"></span><span class="mord"><span class="mord">9</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.674115em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span></span></span></span> ~ <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>3</mn><mo>∘</mo></msup><mo>×</mo><mn>1</mn><msup><mn>3</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">13^\circ \times 13^\circ</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.757445em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord"><span class="mord">3</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.674115em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.674115em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">3</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.674115em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span></span></span></span> 内。且 LSTM 时间步确定为 2 时能获得最好的预测效果。</p>
 <br>
-
 <p><strong>关键词：台风；强度；预测；时空；深度学习；时空深度混合预测模型</strong></p>
 <br>
-
-<h3 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a><div align=center>绪论</div></h3><h4 id="研究背景及意义"><a href="#研究背景及意义" class="headerlink" title="研究背景及意义"></a>研究背景及意义</h4><p>&emsp;&emsp;热带气旋是由温暖海洋热能驱动的天气尺度风暴，含一个无云区的中心，中心上空有一个暖核，围绕中心的气流呈逆时针方向旋转。在这个涡旋中，最低气压出现在中心，最大风速出现在中心附近，通常会达到或超过 34kt（10.8m/s）。根据世界气象组织定义，在西北太平洋区域，当热带气旋中心附近最大风速达到 64kt（32.7m/s）时则称为台风。这样的涡旋在大西洋和东太平洋称之为飓风，在北印度洋称为强气旋性风暴。</p>
-<p>&emsp;&emsp;台风乃至热带气旋最常形成于 $5^\circ N$ 以北的西北太平洋热带洋面上，但全球除东南太平洋和南大西洋外各大洋区的其他热带海域也均有热带气旋发生和活动，其中以北大西洋、东太平洋、北印度洋最为频繁。图 1 为 1985 ~ 2005 间热带气旋的全球分布图。</p>
+<h3 id="div-aligncenter绪论div"><a class="markdownIt-Anchor" href="#div-aligncenter绪论div"></a> <div align=center>绪论</div></h3>
+<h4 id="研究背景及意义"><a class="markdownIt-Anchor" href="#研究背景及意义"></a> 研究背景及意义</h4>
+<p>  热带气旋是由温暖海洋热能驱动的天气尺度风暴，含一个无云区的中心，中心上空有一个暖核，围绕中心的气流呈逆时针方向旋转。在这个涡旋中，最低气压出现在中心，最大风速出现在中心附近，通常会达到或超过 34kt（10.8m/s）。根据世界气象组织定义，在西北太平洋区域，当热带气旋中心附近最大风速达到 64kt（32.7m/s）时则称为台风。这样的涡旋在大西洋和东太平洋称之为飓风，在北印度洋称为强气旋性风暴。</p>
+<p>  台风乃至热带气旋最常形成于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>5</mn><mo>∘</mo></msup><mi>N</mi></mrow><annotation encoding="application/x-tex">5^\circ N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord">5</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.674115em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 以北的西北太平洋热带洋面上，但全球除东南太平洋和南大西洋外各大洋区的其他热带海域也均有热带气旋发生和活动，其中以北大西洋、东太平洋、北印度洋最为频繁。图 1 为 1985 ~ 2005 间热带气旋的全球分布图。</p>
 <div align = 'center'>
 <img src = 'https://pzxnys.github.io/posts/3309110367/2023-09-27-17-35-24.png'/>
 <font size=2; color=natural>图 1. 1985-2005 年间热带气旋全球分布图（wikipedia）</font>
 </div>
-
-<p>&emsp;&emsp;台风的宏观结构大致分为六部分，分别是台风眼、眼外云墙、外包区、外围区、流入层、流出层。其中最为显著的特征是台风眼，它位于涡旋之中，眼内为下沉气流，静风，无云，亦为晴空区。有的台风有两个眼，称为同心双眼，也有两眼并列的台风，但极为罕见。台风眼外的云墙，是由于强烈上升运动而造成的深厚积云对流，台风最强的强风和暴雨也出现于此。台风眼和眼壁称为内核区，内核区直径小的可为二三十千米，而大的可扩大至为上百千米。外包区紧挨着内核区，风速比内核区削弱，螺旋雨带的主体在此区中。外围区紧挨着外包区，水平尺度是外包区的几倍，风速在该区虽明显减弱，但破坏力依然很强。此外，台风在低气压阶段，四周的空气是向中心流入的，从而形成了流入层。随着热带气旋的增强，切向风增大，流入现象也会减弱。流出层位于台风的顶部，对流层顶之上。该层气流在北半球呈反气旋式向外流出，使台风中心气压急剧下降，从而使得台风开始加强。图 2 可以清晰地展现台风的结构。</p>
+<p>  台风的宏观结构大致分为六部分，分别是台风眼、眼外云墙、外包区、外围区、流入层、流出层。其中最为显著的特征是台风眼，它位于涡旋之中，眼内为下沉气流，静风，无云，亦为晴空区。有的台风有两个眼，称为同心双眼，也有两眼并列的台风，但极为罕见。台风眼外的云墙，是由于强烈上升运动而造成的深厚积云对流，台风最强的强风和暴雨也出现于此。台风眼和眼壁称为内核区，内核区直径小的可为二三十千米，而大的可扩大至为上百千米。外包区紧挨着内核区，风速比内核区削弱，螺旋雨带的主体在此区中。外围区紧挨着外包区，水平尺度是外包区的几倍，风速在该区虽明显减弱，但破坏力依然很强。此外，台风在低气压阶段，四周的空气是向中心流入的，从而形成了流入层。随着热带气旋的增强，切向风增大，流入现象也会减弱。流出层位于台风的顶部，对流层顶之上。该层气流在北半球呈反气旋式向外流出，使台风中心气压急剧下降，从而使得台风开始加强。图 2 可以清晰地展现台风的结构。</p>
 <div align = 'center'>
 <img src = 'https://pzxnys.github.io/posts/3309110367/2309271953.png'/>
 <font size=2; color=natural>图 2. 台风结构图（wikipedia）</font>
 </div>
-
-
-
-
+<p>  本文中所定义的台风强度即为台风中心附近最大风速。根据我国气象局（China Meterological Administration，CMC）对于西北太平洋热带气旋强度的划分，热带气旋不同等级分别对应不同的名称，如表 1 所示。因此，严格意义上，无论是台风还是飓风，均是热带气旋的一种等级划分，本质上仍为热带气旋。本文把所有全球大洋强度大于 64kt 的热带气旋统称为“台风”，强度大于 34kt 的热带气旋称之为“热带风暴”。</p>
+<div align='center'>
+<font size=2; color=natural>表 1. 热带气旋等级划分及对应名称</font>
+<style>
+    table {
+        width: 50%;
+    }
+</style>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">热带气旋等级名称</th>
+<th style="text-align:center">强度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">热带低压</td>
+<td style="text-align:center">17kt ~ 33kt</td>
+</tr>
+<tr>
+<td style="text-align:center">热带风暴</td>
+<td style="text-align:center">34kt ~ 63kt</td>
+</tr>
+<tr>
+<td style="text-align:center">台风</td>
+<td style="text-align:center">64kt ~ 84kt</td>
+</tr>
+<tr>
+<td style="text-align:center">强台风</td>
+<td style="text-align:center">84kt ~ 104kt</td>
+</tr>
+<tr>
+<td style="text-align:center">超强台风</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≥</mo></mrow><annotation encoding="application/x-tex">\geq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≥</span></span></span></span> 105kt</td>
+</tr>
+</tbody>
+</table>
+<table width="500px">
+    <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+    </tr>
+    <tr>
+        <td>Row 1, Cell 1</td>
+        <td>Row 1, Cell 2</td>
+    </tr>
+    <tr>
+        <td>Row 2, Cell 1</td>
+        <td>Row 2, Cell 2</td>
+    </tr>
+</table>
+</div>
 <br>
-
 <font size=2; color=grey>
 [1]. 陈睿. 基于深度学习的台风预测关键技术研究[D].国防科技大学
 </font>
@@ -980,7 +1031,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">57.5k</span>
+                        class="white-color">57.8k</span>
             
             
             
