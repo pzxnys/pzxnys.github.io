@@ -422,14 +422,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    10.5k
+                    10.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    36 分
+                    38 分
                 </div>
                 
 
@@ -667,6 +667,17 @@ $$</p>
 <div align = 'center'>
 <img src = 'https://pzxnys.github.io/posts/3309110367/2023-10-02-15-59-12.png'/>
 <font size = 2; color = natural>图 5. 用于大气变量空间特征提取的三维卷积层示意图</font>
+</div>
+&emsp;&emsp;第 i 层第 j 个特征图上位置（x, y, z）的值表示如下：
+<p>$$<br>
+u_{ij}^{xyz} = f(\sum_{k=0} \sum_{p=0}^{P_{i-1}} \sum_{q=0}^{Q_{i-1}} \sum_{r=0}^{R_{i-1}} w_{ijk}^{pqr} u_{(i-1) k}^{(x+p)(y+q)(z+r)} + b_{ij})<br>
+\tag{11}<br>
+$$<br>
+  其中 $R_{i}$ 是 3D 卷积核时间维度的值，$w_{ijk}^{pqr}$ 连接 k 层特征图（i, j）位置处卷积核内的（p, q, r）处的值，$b_{ij}$ 为偏置项。</p>
+<p>  台风中心周围的大气变量各网格点各层之间同样存在各种复杂抽象的特征关系，因此仍然需要设置多个卷积核和多个卷积层来提取复杂的特征以进行预测，如图 6 所示。以一个样本为例，该 3DCNN 网络结构的输入为 $L$ 层 $M \times M$ 个网格位置的 $R$ 个海表变量，同样通过第一个卷积层的多个卷积核进行卷积操作后，生成了多个特征图，然后对特征图进行降采样操作，得到了同样数量的子特征图，再利用多个卷积层来对大气变量之间的复杂的抽象特征进行提取，最后对所有子特征图进行全连接展开后，降维为大气变量特征向量，此即为 3DCNN 用于大气变量三维空间关系特征学习的过程。</p>
+<div align = 'center'>
+<img src = 'https://pzxnys.github.io/posts/3309110367/2023-10-02-16-42-41.png'/>
+<font size=2; color=natural>图 6. 3DCNN 用于大气变量三维空间关系的特征学习示意图</font>
 </div>
 <br>
 <font size=2; color=grey>
@@ -1181,7 +1192,7 @@ $$</p>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">66.8k</span>
+                        class="white-color">67.2k</span>
             
             
             
