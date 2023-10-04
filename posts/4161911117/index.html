@@ -422,14 +422,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    8k
+                    8.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    29 分
+                    30 分
                 </div>
                 
 
@@ -670,6 +670,13 @@ $$</p>
 <div align = 'center'>
 <img src = 'https://pzxnys.github.io/posts/3309110367/2023-10-04-17-41-09.png'/>
 <font size=2; color=natural>图 2. WRFDA运行流程图</font>
+</div>
+<h5 id="三维变分同化原理">三维变分同化原理</h5>
+<p>  WRFDA 中的三维变分同化系统是基于 MM5 大气模式的三维变分同化系统（3D-Var）发展起来。变分数据同化系统的基本原理是通过迭代算法求解指定的目标函数以获取对于真实气候状态的一个最优估计。变分同化的内容主要包括目标函数得确定，观测算子及预报模式的选取，背景场误差协方差 $B$ 的计算，控制变量 $v$ 与分析整理 $\delta_x$ 的变换关系 $U$ 的建立、下降算法选取与目标函数计算。具体步骤请移步原文。</p>
+<p>  卫星资料的连续同化通过 WRF 大气模式的资料同化模块 WRFDA（WRF Data Assimilation）来实现，本文的同化方案采用三维变分同化。图 3 所示为一个模拟时间步长的耦合-同化过程：在初始耦合计算完成后生成了 WRF 风场的初始场和边界条件，然后再单独运行 WRFDA 模块进行卫星资料同化，并更新 WRF 的初始场和边界条件，再以新的初始场和边界条件进行耦合模型计算，得到同化后的 WRF 的风场数据、FVCOM 的流场数据和 SWAN 的波浪场数据，至此完成了第一个模拟时间步长的耦合一同化计算，之后的计算以此类推，最终完成所有时间步长的耦合一同化计算，实现连续耦合一同化计算。</p>
+<div align = 'center'>
+<img src = 'https://pzxnys.github.io/posts/3309110367/2023-10-04-17-57-15.png'/>
+<font size=2; color=natural>图 3. 耦合-同化过程</font>
 </div>
 <br>
 <font size=2; color=grey>
@@ -1178,7 +1185,7 @@ $$</p>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">75.4k</span>
+                        class="white-color">75.8k</span>
             
             
             
