@@ -4,9 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Welcome to My Blog, XNYS&#39;s Blog">
-    <meta name="description" content="一条没有任何思想的臭咸鱼
-">
+    <meta name="keywords" content="菜就要多学, XNYS&#39;s Blog">
+    <meta name="description" content="台风过程的大气-海洋-海浪耦合与卫星数据同化模拟
+摘要
+  对于台风多发海域，准确模拟出台风过程风场、波浪场和流场是至关重要的。本文采用 MCT 耦合器将中尺度大气模型 WRF、非结构化网络海洋模型 FVCOM 及非结构化网格波浪模型 SW">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Welcome to My Blog | XNYS&#39;s Blog</title>
+    <title>菜就要多学 | XNYS&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -261,12 +262,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://pzxnys.github.io/posts/3309110367/lash_logo.jpeg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://pzxnys.github.io/posts/3309110367/202310021755.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Welcome to My Blog</h1>
+                    <h1 class="description center-align post-title">菜就要多学</h1>
                 </div>
             </div>
         </div>
@@ -380,12 +381,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Dr/">
+                                <span class="chip bg-color">Dr.</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Paper-Reading/" class="post-category">
+                                Paper Reading
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -394,28 +408,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-11
+                    2023-10-02
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-09-14
+                    2023-10-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    12
+                    5.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    18 分
                 </div>
                 
 
@@ -438,8 +452,91 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="一条没有任何思想的臭咸鱼"><a href="#一条没有任何思想的臭咸鱼" class="headerlink" title="一条没有任何思想的臭咸鱼"></a>一条没有任何思想的臭咸鱼</h3><img src="https://pzxnys.github.io/posts/3309110367/lash_logo.jpeg">
-
+                <h2 id="台风过程的大气-海洋-海浪耦合与卫星数据同化模拟">台风过程的大气-海洋-海浪耦合与卫星数据同化模拟</h2>
+<h3 id="div-align-center-摘要-div"><div align = center>摘要</div></h3>
+<p>  对于台风多发海域，准确模拟出台风过程风场、波浪场和流场是至关重要的。本文采用 MCT 耦合器将中尺度大气模型 WRF、非结构化网络海洋模型 FVCOM 及非结构化网格波浪模型 SWAN 进行耦合，并在计算过程中利用 WRF 大气模式的资料同化模块 WRFDA 对风场进行卫星资料同化，即建立大气-海洋-海浪实时耦合模型与卫星数据同化的联合运用模型（WRF-FVCOM-SWAN-ASSIMILATION 模型，简称 W-F-S-A 模型），对海南岛附近海域台风过程进行模拟，进一步获得了设计要素。论文的主要工作和结论如下：</p>
+<blockquote>
+<ol>
+<li class="lvl-3">
+<p>在通过 MCT 耦合器实现 WRF-FVCOM-SWAN 模型耦合的基础上，通过 FVCOM 模式和 SWAN 模式的热启动，成功建立了 WRF-FVCOM-SWAN-ASSIMILATION（W-F-S-A）耦合同化数学模型（以下简称 W-F-S-A 耦合同化模型）。</p>
+</li>
+<li class="lvl-3">
+<p>分别基于纯 WRF 模型驱动、纯耦合模型、W-F-S-A 耦合同化模型对台风风场路径和强度、海表温度场、波浪场模拟结果进行了比较，结果表明，W-F-S-A 耦合同化模型模拟结果与实测数据偏差最小。</p>
+</li>
+<li class="lvl-3">
+<p>对 1999 - 2018 共 20 年间经过海南岛附近海域的 70 场台风进行了 W-F-S-A 耦合同化模拟，得到了台风过程风场、海表流场、海表温度场和波浪场模拟结果。</p>
+</li>
+<li class="lvl-3">
+<p>基于 20 年台风过程风、浪模拟结果，获得了单一变量和联合分布的不同重现期设计要素。</p>
+</li>
+</ol>
+</blockquote>
+<p><strong>关键词：</strong> 大气-海洋-海浪耦合模型；连续同化；台风；频率分析；联合分布</p>
+<h3 id="div-align-center-绪论-div"><div align = center>绪论</div></h3>
+<h4 id="研究目的和意义">研究目的和意义</h4>
+<p>  台风具有极强的破坏性，对于建筑物、沿海生态系统、电力设施都具有较大的危害。而且从台风发生的空间分布来看，西北太平洋是全球台风发生频率最高的区域，约占全球总数的 1/3。我刚频率西北太平洋，是全球范围内受台风影响最大的国家之一，年平均有 9.3 个台风影响我国，居世界之首。近年来，南海作为我国重要战略区域的地位日趋明显，获得南海海域的海洋环境设计要素对于南海海上工程的建设十分关键。获得合理设计参数需要对台风过程的风场、流场以及波浪场进行模拟。因此，如何合理准确地模拟台风过程中的风、浪、流过程，具有十分重要的意义，成为本文研究的主要内容。</p>
+<h4 id="国内外主要研究进展">国内外主要研究进展</h4>
+<h5 id="台风过程风、浪、流的特征">台风过程风、浪、流的特征</h5>
+<p><strong>台风风场特征</strong></p>
+<p>  台风风场的平面结构可以简单分成两部分，其中心区域为台风眼区，是一个低压区，风速很弱；台风眼区外的空气向台风眼汇合，在北半球气流呈逆时针方向旋转，且产生大风区。另外，由于在北半球，空气质点受到的科氏力与径向速度垂直，使得台风的运动呈右偏性。</p>
+<p><strong>台风过程中海洋的响应特征</strong></p>
+<p>  台风过程中海洋的响应特征体现在两方面，一方面是对海表流场的影响，另一方面是对海表温度场的影响。</p>
+<ol>
+<li class="lvl-3">
+<p><strong>海表流场：</strong> 台风过境时，受风应力作用，海表会形成旋转流场。台风过境时，海表往往会形成逆时针旋转流场，流场中心位于台风中心的右后方，具有一定的滞后性。且流场具有明显的右偏性，台风移动路径右侧的流速大于左侧。</p>
+</li>
+<li class="lvl-3">
+<p>**海表温度场：**台风过境时，会引起海表较大幅度的降温，最大降温幅度受台风强度、海洋结构的影响。且温度场受风场制约呈不对称分布，具有明显的右偏性，最大降温区位于台风移动路径的右侧。</p>
+</li>
+</ol>
+<p><strong>台风过程中海浪的响应特征</strong></p>
+<p>  台风过程中，巨大的风应力会产生强烈的风浪，风浪与远处传来的涌浪叠加，构成了台风浪，台风浪的时空分布特征主要受台风风场制约，同时也受岛屿效应、海底地形以及潮流的影响。台风过境时，海表会形成旋转波浪场，呈椭圆形分布，且波浪场受风场制约呈不对称分布，具有明显的右偏性，台风移动路径右侧的有效波高大于左侧。</p>
+<h5 id="台风过程数值模拟">台风过程数值模拟</h5>
+<p><strong>台风过程风场数值模拟</strong></p>
+<p>  近年来台风模拟的发展较为迅速，从早期的客观分析法，到经验模型法，再至现在常用的数值模拟法，对于台风模拟的精度提升和风场刻画日趋完善。</p>
+<p>  <strong>客观分析法：</strong> 风场计算最传统的方法，其原理是将气象站的观测资料在地形网格上进行插值，从而实现风场数据的扩充，同时利用相关的约束条件与物理方程对风场数据进行修正，使数据满足动力平衡条件。但修正后的数据仍具有观测资料本身具有的不连续性、风速局限性、不稳定性等特点，同时还有观测的偶然性误差。</p>
+<p>  <strong>经验模型法：</strong> 使用相关的台风模型取代了物理约束方程，但是其本质上并没有改善实测数据质量和数量的不足，并且台风模型多为轴对称模型，对于实现高精度模拟和台风复杂风场的刻画还是有一定难度。</p>
+<p>  <strong>数值模拟法：</strong> 随着计算机技术的快速发展，其成为新的研究方向，同时人们也要通过寻求更精确的风场资料、研究更完备的台风模型去改善台风模拟结果。对于风场资料的获取也从最初的仪器观测资料，发展到雷达资料，再到卫星数据资料，目前已发展至卫星资料再分析数据，这从源头上提高了风场模拟的精度。近年来，数值模拟方法不断发展，中尺度大气模式逐渐成为主流。</p>
+<p><strong>台风过程流场和温度场数值模拟</strong></p>
+<p>  台风对海洋的作用主要体现在海表流场和海表温度场这两方面，这两者的模拟主要通过海洋模式实现，目前海洋模式已发展到三维模拟，国内外普遍采用的模式主要由 ECOM、ROMS、POM、和 FVCOM 等。其中前三种模型多采用结构化网格，这对于实际岸线的刻画是不利的。FVCOM 海洋模型采用三角形网格，即非结构化网格，可模拟复杂岸线对流场和温度场的影响，其能较好地刻画出流场、温度场的右偏性、以及流场的滞后性等特点。</p>
+<p><strong>台风过程波浪场数值模拟</strong></p>
+<p>  波浪研究一直是国内外海洋动力学研究的热门话题，对于波浪参数与波浪传播过程的模拟计算，目前主流的方法是通过数学模型求解波浪在传播过程中的折射、绕射效应以及浅水变形，数学模型原理主要分为经典的射线理论、缓坡方程、Boussinesq 方程和波作用谱平衡方程。在上世纪八十年代后期，研究者开始利用波作用谱方程作为数学模型模拟波浪。目前已经发展至第三代海浪模式，主要包括 WAM、WAVEWATCH III、SWAN 等。近年来的波浪模拟普遍采用了风场驱动海浪模式的计算方法进行数值模拟，在一定程度上提高了模拟效果。研究发现，在复杂地形中，利用嵌套模式是更为科学准确的。</p>
+<p><strong>耦合模式对台风的数值模拟</strong></p>
+<p>  台风与海洋之间存在强烈的热量交换，台风过境时会导致海表温度下降，且台风强度越大，海表温度降低的幅度越大。相应地，海表温度降低会减少供给台风的潜热通量、感热通量和水汽通量，导致台风强度减弱。另一方面，台风在海表产生的近惯性流也会导致混合层温度持续降低，从而减弱台风强度。因此为了更真实地模拟出台风过程的风场、流场和温度场，需要建立<strong>大气-海洋耦合模式</strong>。其对模拟精度的提高是十分必要的</p>
+<p>  台风是台风浪生成的主要动力因素，因此在波浪的模拟中考虑风场的影响是必不可少的，波浪对于大气的影响是不可忽略的，分为动力作用和热力作用。在动力作用中，大气传递动量到上层海洋，驱动表层海水运动，部分动能被海浪场吸收，因此动力作用会减弱台风强度；在热力作用中，海浪会增强海表感热、潜热通量对于大气的传递，从而增强台风强度。因此为了提高风场和波浪场的模拟精度，需要建立<strong>大气-海浪的实时双向耦合模式</strong>。其可以较好地改善台风强度的模拟效果，但对台风路径的改善程度较小。</p>
+<p>  台风过程中海洋内部也有强烈的相互作用，因此考虑<strong>海洋-海浪耦合模式</strong>，实现其计算也是十分重要的。</p>
+<p>  由上文可知，<strong>大气－海洋耦合</strong>可以改善台风过程的风场、流程、温度场的模拟效果，<strong>大气－海浪耦合模式</strong>可以可以较好地改善台风强度的模拟效果，<strong>海浪－海洋耦合模式</strong>较好地改善了流场和波浪场的模拟结果。因此，更优化的耦合方式正在由两者互相耦合的计算模式向三者两两耦合的计算模式发展，<strong>大气－海洋－海浪耦合模式</strong>就在此基础上建立起来了。国内外目前建立的海气浪耦合模式主要基于结构化网格，这对于实际岸线的刻画是不利的，因此引入非结构网格的数值模式，例如 FVCOM 海洋模型，可以模拟复杂岸线对流场和温度场的影响，改善模拟结果。</p>
+<h5 id="卫星资料同化研究">卫星资料同化研究</h5>
+<p>  卫星资料同行是在资料通话的基础上发展起来的，资料同行的理论基础来源于气象学中的分析技术。资料同化的含义是，基于统计“最优”的目的，将多种不同形式的观测数据融合到数值模拟模式中，从而建立起实测值与数值模拟值之间的相互协调关系，在观测资料足够多的前提下，数值模拟模式通过不断导入、整合、调整观测数据，从而使模拟结果越来越接近实际情况，最终得到的模拟结果达到在统计意义上最合理、最准确的效果。</p>
+<p>  资料同化理论的发展较早，上个世纪 60 年代开始，同化的基本概念形成，此时的同化方法以逐步订正法为主。到上个世纪 80 年代，最优插值法成为当时主导的同化方法，在这一时间段内变分法被提出并逐渐形成。90 年代，变分方法渐渐成熟并开始得到应用。随着卫星的出现，卫星遥感资料的高质量、全球性、高频次、高精度等优点使用同化效果得到了极大的提高，目前各国气象部门普遍采用卫星遥感资料的直接同化。21 世纪初，提出了混合资料同化方法，例如三维变分同化法。</p>
+<p>  目前世界上采用三维变分同化进行大气模拟的系统有 GSI 同化系统和 WRF 大气模式。GSI（Grid Statistical Interpolation）业务同化系统是美国环境预报中心（NCEP）所采用的同化系统，主要用于全球预报、区域预报以及飓风预报，是目前世界上较先进和成熟的同化系统之一。WRFDA（WRF Data Assimilation）同化模块是 WRF 大气模式中一个不依赖主模块的，可以单独安装编译单独使用的模块。</p>
+<p>  当然，卫星资料同化也不是完美无瑕的，由于卫星数据也是观测资料，必然存在仪器的观测误差，同时还有辐射传输模式造成的系统性偏差、统计学的偶然误差等，因此卫星资料同化还需要一定的“修正”方法。总结台风过程模拟的工作可以发现，目前利用<strong>大气－海洋－海浪耦合模型</strong>和<strong>卫星数据同化</strong>进行台风过程模拟的工作还不多见。</p>
+<h5 id="水文频率分析方法研究">水文频率分析方法研究</h5>
+<p>  正确获取波高的多年分布规律，从而合理地确定不同重现期的设计波高数值，是十分关键的。最传统的方法是采用全部实测波浪数据，利用不同的坐标转换，按直线外延推求不同重现期的设计波高。这种方法的本质是依据经验对直线外延，有两个主要缺点，其一：采用不同的定线方法，对计算结果的影响较大，任意性和随机性较大；其二：对于未完全开发的区域，往往没有长期的波浪实测资料，所以样本数据的容量不够。</p>
+<p>  随后发展出了年最大值分析法，即对年最大波高组成的系列， 选配一条合适的理论频率曲线，外延推求多年一遇设计波高。其中应用于水文频率统计的概率分布函数主要有皮尔逊 III 型分布、对数正态分布、耿贝尔第一型极值分布和威布尔分布等。这种方法引进了多种概率分布函数，提供了多种科学的定线方法，解决了以往定线随机性的问题。但是无法解决样本数据容量过小的问题，因为波浪资料的年限往往不够长，由几十个或十余个经验点数据选配一条理论频率曲线，任意性还是比较大的。</p>
+<p>  <strong>泊松-耿贝尔复合极值分布：</strong> 首先根据台风统计资料，经过分析得出影响某一个海域的台风发生频次极好地符合泊松（Poisson）分布；然后检验每次台风影响下形成的波高，得到波高分布在包伟尔几率格纸上呈现直线关系，说明台风波浪波高原始分布符合耿贝尔（Gumbel）分布，由此得到了一种海洋工程中推算设计波高的方法。《港口与航道水文规范》（JTS145-2015）中规定，对于台风多发海域，某一波向一年中出现一个以上较大台风波高时，可按台风波高的最大值系列取样，采用泊松一耿贝尔复合极值分布确定不同重现期的设计波高。</p>
+<p>  随着海洋、海岸工程的发展，采用联合分布方法计算风、浪、流联合频率越来越受到人们的重视。因为台风过程各要素的计算结果中，最大风速、最大流速、最大波高往往不在同一时刻出现，并且各要素最大值的组合形式是复杂多样的，若采用传统的单一要素频率分析法，其结果往往偏于过于保守。联合分布方法以对海洋工程影响最大的要素作为主导要素，考虑了与该要素最大值同时发生的其他要素的较大值，更符合实际情况，在保证设计安全的情况下有可能降低工程造价。</p>
+<h4 id="本文的主要研究工作">本文的主要研究工作</h4>
+<p>  目前的大多数研究所采用的模拟方法是数值模型模拟出风场，再利用风场驱动海洋模型和海浪模型获得流场、温度场和波浪场，这样的模拟方法局限于单一模型的独立模拟，且模拟精度与实际情况偏差较大，受制于风场的模拟精度。因此，本文的模型从两方面改善台风过程中各数值场的模拟精度。</p>
+<p>  其一是改善风场模拟本身的精度，因为受风场初始场资料的分辨率较低和数值模型积分过程的计算误差影响，模拟得到的风场结果会有台风移动路径不准确、台风强度偏弱等问题，由此产生了利用卫星资料对模拟结果进行校正的方法–卫星资料连续同化。卫星资料具有时空分辨率较高、覆盖面积较广的特点，在很大程度上弥补了海洋气象站的常规观测资料稀少的缺点。</p>
+<p>  其二是通过模型耦合提高模拟精度。由于台风过程不是单一的大气作用过程，而是一个复杂的大气-海洋-海浪相互作用的过程，因此模拟思路应该更向实际情况发展，不局限于单一模型的独立模拟，也不再局限于离线耦合，而是向多个软件的实时耦合发展，建立大气-海洋-海浪的实时耦合模型，这样的模拟思路在原理上更科学更符合实际，且对于台风风场、海表流场、温度场和波浪场的模拟效果都有相应改善。</p>
+<p>  另外，对于各设计要素的确定，传统方法大多是对各设计要素分别进行概率分析，然后选取其某一重现期值作为设计标准。但是各种极端情况同时出现的概率极小，如最大风速、最大波高同时发生在同一时刻的概率极小，所以传统方法是不符合实际、也是偏于保守的，会导致工程成本估算过高，因此为合理反映海洋工程在实际中受风、浪的影响，获得风、浪的联合分布更具有实际价值。</p>
+<p>  为了提高台风过程风、浪、流模拟精度，本文将采用 MCT 耦合器对中尺度大气模型 WRF、非结构化网络海洋模型 FVCOM及非结构化网格波浪模型 SWAN 进行耦合，并在计算过程中利用 WRF 大气模式的资料同化模块 WRFDA（WRF Data Assimilation）对风场进行卫星资料同化，即建立大气-海洋-海浪实时耦合模型与卫星数据同化的联合运用模型，对 1999-2018 年影响海南岛海域的台风过程风场、海表流场、波浪场进行数值模拟，最后利用水文频率统计法获得工程所需的设计要素。</p>
+<h3 id="div-align-center-基于卫星同化的大气-海洋-海浪实时耦合模式-div"><div align=center>基于卫星同化的大气-海洋-海浪实时耦合模式</div></h3>
+<h4 id="数值模型简介">数值模型简介</h4>
+<p>  由于台风过程不仅涉及大气本身的变化，而且涉及海洋、波浪的变化，因此分别采用大气、海洋和波浪模型描述这些变化过程并通过模型耦合描述他们之间的相互影响。</p>
+<h4 id="耦合器及耦合方案">耦合器及耦合方案</h4>
+<h5 id="耦合器">耦合器</h5>
+<p>  大气－海洋－波浪耦合模式基于 MCT（Model Coupling Toolkit）耦合器建立。MCT 耦合器是一款用来建立耦合模式的开源程序工具包。MCT 支持并行耦合系统的各子模式间多个分布式变量的数据交换。MCT 采用 FORTRAN90 编写，包含一系列 FORTRAN 模块，各子模式调用这些模块实现数据的发送和接收。<a target="_blank" rel="noopener" href="https://github.com/quantheory/MCT">MCT 开源代码</a></p>
+<p>  耦合模式由主程序调用 WRF、FVCOM 和 SWAN 子模式同时独立计算，在设定的某一计算时间，各子模式调用MCT子程序进行数据的发送和接收，实现子模式两两之间的实时数据交换。由于 WRF 采用结构化网格，FVCOM 和 SWAN 采用相同的非结构化三角形网格，WRF 和 FVCOM、SWAN 之间进行变量交换时需要进行插值，而 FVCOM 和 SWAN 之间可以直接传递变量。模式耦合机制如图 1 所示。</p>
+<div align = 'center'>
+<img src = 'https://pzxnys.github.io/posts/3309110367/2023-10-04-09-21-50.png'/>
+<font size=2; color=natural>图 1. 模式耦合机制</font>
+</div>
+<br>
+<font size=2; color=grey>
+[1]. 毛卿任. 台风过程的大气-海洋-海浪耦合与卫星数据同化模拟[D].天津大学,2019. <br>
+</font>
                 
             </div>
             <hr/>
@@ -465,7 +562,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://pzxnys.github.io/posts/3309110367/">https://pzxnys.github.io/posts/3309110367/</a>
+                    <a href="https://pzxnys.github.io/posts/4161911117/">https://pzxnys.github.io/posts/4161911117/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -502,7 +599,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Dr/">
+                                    <span class="chip bg-color">Dr.</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -694,30 +795,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/3219910839/">
+                <a href="/posts/4161911117/">
                     <div class="card-image">
                         
+                        <img src="https://pzxnys.github.io/posts/3309110367/202310021755.png" class="responsive-img" alt="菜就要多学">
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt=" Sentiment analysis using deep learning architectures: a review">
-                        
-                        <span class="card-title"> Sentiment analysis using deep learning architectures: a review</span>
+                        <span class="card-title">菜就要多学</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Author: Ashima Yadav, Dinesh Kumar Vishwakarma
-A significant goal of sentiment analysis is to classify and analyze the r
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -730,15 +830,12 @@ A significant goal of sentiment analysis is to classify and analyze the r
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Sentiment-Analysis/">
-                        <span class="chip bg-color">Sentiment Analysis</span>
-                    </a>
-                    
-                    <a href="/tags/Review/">
-                        <span class="chip bg-color">Review</span>
+                    <a href="/tags/Dr/">
+                        <span class="chip bg-color">Dr.</span>
                     </a>
                     
                 </div>
@@ -752,24 +849,23 @@ A significant goal of sentiment analysis is to classify and analyze the r
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/3531973999/">
+                <a href="/posts/4238805950/">
                     <div class="card-image">
                         
+                        <img src="https://pzxnys.github.io/posts/3309110367/c6e32.jpg" class="responsive-img" alt="菜就是菜">
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Extracting Keywords from Short Government Documents Using Reinforcement Learning">
-                        
-                        <span class="card-title">Extracting Keywords from Short Government Documents Using Reinforcement Learning</span>
+                        <span class="card-title">菜就是菜</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            摘要在本文中，我们提出了一种新的基于强化学习的方法来从大量未标注的政府短文档中提取关键词。引入平均速率正则化，作为模型损失函数的稀疏约束，引导策略网络保留重要词汇。对实验结果的分析表明，该模型在处理大量未标注的政府公文标题时，优于传统的无监
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-26
                             </span>
                         <span class="publish-author">
                             
@@ -786,12 +882,8 @@ A significant goal of sentiment analysis is to classify and analyze the r
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Extracting-Keywords/">
-                        <span class="chip bg-color">Extracting Keywords</span>
-                    </a>
-                    
-                    <a href="/tags/Paper/">
-                        <span class="chip bg-color">Paper</span>
+                    <a href="/tags/Dr/">
+                        <span class="chip bg-color">Dr.</span>
                     </a>
                     
                 </div>
@@ -922,6 +1014,13 @@ A significant goal of sentiment analysis is to classify and analyze the r
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
 
 
 
