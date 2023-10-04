@@ -422,14 +422,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    8.4k
+                    9.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    30 分
+                    32 分
                 </div>
                 
 
@@ -677,6 +677,23 @@ $$</p>
 <div align = 'center'>
 <img src = 'https://pzxnys.github.io/posts/3309110367/2023-10-04-17-57-15.png'/>
 <font size=2; color=natural>图 3. 耦合-同化过程</font>
+</div>
+<h4 id="本章小节">本章小节</h4>
+<p>  本章从模式概述以及控制方程两方面对本课题所采用的中尺度大气模式 WRF、非结构化网格海洋模型 FVCOM、第三代海浪模式 SWAN、大气-海洋-海浪耦合机制、卫星资料同化原理以及耦合模拟-数据同化联合模型进行了介绍。</p>
+<h3 id="div-align-center-台风算例与耦合同化计算方案的确定-div"><div align = center>台风算例与耦合同化计算方案的确定</div></h3>
+<h4 id="风场资料的选取">风场资料的选取</h4>
+<p>  本文主要针对海南岛附近海域进行分析。根据热带气旋的强度划分依据，并结合<a target="_blank" rel="noopener" href="http://typhoon.zjwater.gov.cn/">台风实时发布系统</a> 和 <a target="_blank" rel="noopener" href="https://www.typhoon.org.cn/">中国台风网</a>，对1999 - 2018 年间经过太平样的共计 528 场热带气旋进行了路径观察和强度分析。具体资料选取，请移步原文。</p>
+<h4 id="计算区域与网格划分的确定">计算区域与网格划分的确定</h4>
+<p>  影响 WRF 模型计算的物理参数有很多，其中计算区域范围和网格精度是两个十分关键的影响因素。具体<strong>计算区域与网格划分的确定</strong>请移步原文。</p>
+<p>  为了取得更准确的风场模拟结果，且在一定程度上保证计算资源与模拟结果的平衡，本文的 WRF 大气模式采用水平方向的大小网格嵌套计算，地形范围在合理程度上进行扩大，覆盖至菲律宾海域，地形范围如图 4 所示，主区域 D1（大模型）与嵌套区域 D2（小模型）均采用正方形网格。主区域 D1 的经度范围为 $104.07^\circ E$ ~ $130.28^\circ E$，纬度范围为 $0.15^\circ N$ ~ $40.63^\circ N$，其空间分辨率为 12km，网格数为 $372 \times 199$；嵌套区域 D2 的经度范围为 $106.51^\circ E$ ~ $116.38^\circ E$，纬度范围为 $16.23^\circ N$ ~ $22.26^\circ N$，其空间分辨率为 4km，网格数为 $168 \times 258$。垂向分层层数采用不均匀的 35 层。</p>
+<div align = 'center'>
+<img src = 'https://pzxnys.github.io/posts/3309110367/2023-10-04-21-09-13.png'/>
+<font size=2; color=natural>图 4. 计算范围地形</font>
+</div>
+<p>  海洋模型 FVCOM 和海浪模型 SWAN 的水平网格为非结构化三角形网格，采用经纬坐标，近岸和水深变化剧烈处采用局部网格加密最小网格点间距约 500m，开边界处网格较疏，最大网格点间距约 20km。地形纬度范围为 $11.60^\circ N$ ~ $25.38^\circ N$，经度范围为 $105.61^\circ E$ ~ $119.65^\circ E$。模型单元数 50785，网格节点数为 26418，地形范围和网格示意图如图 5。FVCOM 海洋模型垂向采用 $\sigma$ 坐标分为 15 层。</p>
+<div align = 'center'>
+<img src = 'https://pzxnys.github.io/posts/3309110367/2023-10-04-21-10-15.png'/>
+<font size=2; color=natural>图 5. FVCOM 模式和 SWAN 模式的计算范围和网格</font>
 </div>
 <br>
 <font size=2; color=grey>
@@ -1185,7 +1202,7 @@ $$</p>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">75.8k</span>
+                        class="white-color">76.5k</span>
             
             
             
