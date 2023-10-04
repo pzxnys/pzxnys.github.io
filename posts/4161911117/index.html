@@ -528,6 +528,7 @@
 <h4 id="耦合器及耦合方案">耦合器及耦合方案</h4>
 <h5 id="耦合器">耦合器</h5>
 <p>  大气－海洋－波浪耦合模式基于 MCT（Model Coupling Toolkit）耦合器建立。MCT 耦合器是一款用来建立耦合模式的开源程序工具包。MCT 支持并行耦合系统的各子模式间多个分布式变量的数据交换。MCT 采用 FORTRAN90 编写，包含一系列 FORTRAN 模块，各子模式调用这些模块实现数据的发送和接收。<a target="_blank" rel="noopener" href="https://github.com/quantheory/MCT">MCT 开源代码</a></p>
+<h5 id="耦合方案">耦合方案</h5>
 <p>  耦合模式由主程序调用 WRF、FVCOM 和 SWAN 子模式同时独立计算，在设定的某一计算时间，各子模式调用MCT子程序进行数据的发送和接收，实现子模式两两之间的实时数据交换。由于 WRF 采用结构化网格，FVCOM 和 SWAN 采用相同的非结构化三角形网格，WRF 和 FVCOM、SWAN 之间进行变量交换时需要进行插值，而 FVCOM 和 SWAN 之间可以直接传递变量。模式耦合机制如图 1 所示。</p>
 <div align = 'center'>
 <img src = 'https://pzxnys.github.io/posts/3309110367/2023-10-04-09-21-50.png'/>
