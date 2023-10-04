@@ -422,14 +422,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.4k
+                    8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    18 分
+                    29 分
                 </div>
                 
 
@@ -533,6 +533,143 @@
 <div align = 'center'>
 <img src = 'https://pzxnys.github.io/posts/3309110367/2023-10-04-09-21-50.png'/>
 <font size=2; color=natural>图 1. 模式耦合机制</font>
+</div>
+<h4 id="大气-海洋耦合机制">大气-海洋耦合机制</h4>
+<h5 id="大气对海洋的作用">大气对海洋的作用</h5>
+<p>  大气与海洋耦合中，台风过程中的海气相互作用主要体现在海面大风造成上层海洋强烈的搅拌和混合，改变其热力结构。大气对海洋产生强迫作用，主要包括海表面风应力、长波辐射、短波辐射、感热通量、潜热通量、海面以上 10m 处风速。FVCOM 模式在笛卡尔坐标下的三维动量方程和连续性方程为：</p>
+<p>$$<br>
+\left\{\begin{matrix}<br>
+\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial  x} + v \frac{\partial u}{\partial y} + w \frac{\partial u}{\partial z} - fv = -\frac{1}{\rho_0} \frac{\partial (P_H + P_a)}{\partial x} - \frac{1}{\rho_0}\frac{\partial q}{\partial x} + \frac{\partial }{\partial z}(K_m \frac{\partial u}{\partial z} ) + F_u \\<br>
+\frac{\partial v}{\partial t} + u \frac{\partial v}{\partial  x} + v \frac{\partial v}{\partial y} + w \frac{\partial v}{\partial z} + fu = -\frac{1}{\rho_0} \frac{\partial (P_H + P_a)}{\partial y} - \frac{1}{\rho_0}\frac{\partial q}{\partial y} + \frac{\partial }{\partial z}(K_m \frac{\partial v}{\partial z} ) + F_v \\<br>
+\frac{\partial w}{\partial t} + u \frac{\partial w}{\partial x} + v \frac{\partial w}{\partial y} + w \frac{\partial w}{\partial z} = -\frac{1}{\rho_0} \frac{\partial q}{\partial z} + \frac{\partial }{\partial z}(K_m \frac{\partial w}{\partial z} ) + F_w \\<br>
+\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} = 0<br>
+\end{matrix}\right.<br>
+\tag{1}<br>
+$$</p>
+<p>  温度扩散方程为：</p>
+<p>$$<br>
+\frac{\partial T}{\partial t} + u \frac{\partial T}{\partial x} + v \frac{\partial T}{\partial y} + w \frac{\partial T}{\partial z} = \frac{\partial }{\partial t}(K_h \frac{\partial T}{\partial z} ) + F_T<br>
+\tag{2}<br>
+$$</p>
+<p>式中，$x,\ y$ 和 $z$ 分别为笛卡尔坐标系中坐标，分别代表水平和垂直方向；$u,\ v$ 和 $w$ 分别是流速沿 $x,\ y,\ z$ 方向的分量；$T$ 代表温度；$f$ 是科氏力参数；$\rho_0$ 为海水密度；$P$ 为压力；$K_h$ 代表紊动动能的垂向扩散系数。$F_u$ 代表 $x$ 方向的水平动量，$F_v$ 代表 $y$ 方向水平动量，$F_t$ 代表温度扩散项。</p>
+<p>  流速 $u$ 和 $v$ 表面边界条件为：</p>
+<p>$$<br>
+K_m(\frac{\partial u}{\partial z}, \frac{\partial v}{\partial z}) = \frac{1}{\rho_0}(\tau_{sx}, \tau_{sy})<br>
+\tag{3}<br>
+$$</p>
+<p>$$<br>
+(\tau_{sx}, \tau_{sy}) = C_d \sqrt{U_{10}^2 + V_{10}^2}(U_{10},\ V_{10})<br>
+\tag{4}<br>
+$$</p>
+<p>其中，$(\tau_{sx}, \tau_{sy})$ 是表面风应力的 $x、y$ 方向分量，$C_d$ 为拖曳力系数，$(U_{10}，V_{10})$ 为海面上空 10m 处风速。</p>
+<p>  而温度的表面和底部边界条件为：</p>
+<p>$$<br>
+\frac{\partial T}{\partial z} = \frac{1}{\rho c_p K_p} [Q_n(x,y,t) - SW(x,y,\zeta,t)]<br>
+\tag{5}<br>
+$$</p>
+<p>$$<br>
+\frac{\partial T}{\partial z} = -\frac{A_H tan \alpha}{K_h} \frac{\partial T}{\partial n}<br>
+\tag{6}<br>
+$$</p>
+<p>其中 $Q_n(x,y,t)$ 是表面净热通量，包括四部分：向下的短波辐射通量和长波辐射通量，感热通量和潜热通量；$SW(x,y,\zeta,t)$ 是到达海表面的短波辐射通量，$C_p$ 是海水的比热容，$S_H$ 是水平热扩散系数，$\alpha$ 是底部地形的坡陡，$n$ 是水平坐标。</p>
+<p>  耦合时，大气模式传递到海洋模式中的海面上空 10m 风速用以计算表面风应力，影响流场的求解。而传递的长波辐射、短波辐射、感热通量、潜热通量用以计算 $Q_n(x,y,t)$ 和 $SW(x,y,\zeta,t)$，影响温度扩散方程的求解，改变海表温度分布。</p>
+<h5 id="海洋对大气的作用">海洋对大气的作用</h5>
+<p>  海洋向上的热量通量是台风系统发展和维持的重要热源，其主要通过海表温度来体现，海表温度既影响台风的形成和移动，又影响台风强度。耦合模式中，海洋模式模拟的海表温度 SST 传递至 WRF 模式中，通过表面层方案更新大气模式下垫面温度，继而通过下垫面温度影响边界层方案、积云对流方案和辐射方案计算，对表面通量（长波辐射、短波辐射、表面应力等）和大气状态（位温、湿度、云雨等）产生影响，影响模拟的台风强度和路径。由于涉及方程表达式较多，本文不再赘述。</p>
+<h4 id="大气-海浪耦合机制">大气-海浪耦合机制</h4>
+<h5 id="海浪对大气的作用">海浪对大气的作用</h5>
+<p>  气浪耦合中，大风条件下，强浪场显著改变了海表状态，直接影响海气界面上的动量、热量和物质交换过程，这种影响通过海表粗糙度的变化来实现。在 WRF 模式中需要计算表面动量 、热量 和湿度 ，三者分别表示如下：</p>
+<p>$$<br>
+F_m = \rho_1 C_m |\vec{V_{SL}}|^2<br>
+\tag{7}<br>
+$$</p>
+<p>$$<br>
+F_h = \rho_1 c_p C_{hq}(\theta_{sk} - \theta_1)<br>
+\tag{8}<br>
+$$</p>
+<p>$$<br>
+F_q = \rho_1 LC_{hq}M(q_{vsk} - q_{v1})<br>
+\tag{9}<br>
+$$</p>
+<p>其中，$C_m$ 为动量交换系数，$C_{hq}$ 为热通量和水汽通量有效交换系数，具体关系式为：</p>
+<p>$$<br>
+C_m = \frac{U^2_* }{|\overline{V_{SL}}|^2}<br>
+\tag{10}<br>
+$$</p>
+<p>$$<br>
+\vec{V_{SL}}^2 = u^2 + v^2<br>
+\tag{11}<br>
+$$</p>
+<p>$$<br>
+C_{hq} = u_*k[\psi_h(\frac{Z_r}{L_{MO}}) - \psi_h(\frac{Z_{OT}}{L_{MO}}) + ln(\frac{Z_r}{Z_{OT}})]^{-1}<br>
+\tag{12}<br>
+$$</p>
+<p>其中，$Z_r$ 是观测高度，$Z_{OT}$ 是有温度贡献的海表面粗糙长度，$L_{MO}$ 是 Monin-Obukhov 长度。</p>
+<p>$$<br>
+L_{MO} = \frac{-u_*^3 \bar{\theta}}{kg(\theta_{sk} - \theta_{1})}<br>
+\tag{13}<br>
+$$</p>
+<p>  摩阻速度 $u_<em>$ 和由动量贡献的海表面粗糙长度 $Z_{om}$ 有关，$u_</em>$ 和 $Z_{om}$ 关系式如下：</p>
+<p>$$<br>
+u_* = k |\vec{V_{SL}}| [\psi_m(\frac{Z_r}{L_{MO}}) - \psi_m(\frac{Z_{om}}{L_{MO}}) + ln(\frac{Z_r}{Z_{om}})]^{-1}<br>
+\tag{14}<br>
+$$</p>
+<p>  海面上的波浪将改变海表面粗糙度 $Z_o$ 中的 $Z_{om}$ 大小，通过建立 $Z_{om}$ 和波浪参数之间的关系可以反映波浪对风场的影响：</p>
+<p>$$<br>
+Z_{om} = f(H_{wave},\ L_{pwave},\ T_{psurf})<br>
+\tag{15}<br>
+$$</p>
+<p>  Taylor 等根据实验数据提出了粗糙度关于波高和波陡的关系式：</p>
+<p>$$<br>
+Z_{om} = 1200.0H_{wave}(H_{wave} / L_{pwave})^{4.5}<br>
+\tag{16}<br>
+$$</p>
+<p>其中，$H_{wave}$ 是有效波高，$L_{pwave}$ 是谱峰周期对应的波长。</p>
+<p>  WRF 模式的 MYNN 近地面层方案中可以选用 Taylor 参数化方案，但波浪要素通过考虑风速的经验公式计算。本文对 Taylor 参数化方案计算方法进行改进，耦合时，WRF 模式海表粗糙度根据 SWAN 模式有效波高、谱峰周期和谱峰波长等结果实时更新，而不是采用经验公式计算波浪要素。</p>
+<h5 id="大气对海浪的作用">大气对海浪的作用</h5>
+<p>  热带气旋过程中，强风的作用引起海表形成较大的风浪，耦合中，大气模式向海浪模式传递海面上 10 米处的风速作为波浪场的驱动风场。</p>
+<p>  SWAN 模式的建立基于包含源汇项的波作用谱平衡方程，描述风浪生成及其在近岸区的演化过程。在直角（笛卡尔）坐标系下，波作用谱平衡方程的表达式为：</p>
+<p>$$<br>
+\frac{\partial}{\partial t} N + \frac{\partial}{\partial x} C_x N + \frac{\partial}{\partial y} C_y N + \frac{\partial}{\partial \sigma} C_\sigma N + \frac{\partial}{\partial \theta} C_\theta N = \frac{S}{\sigma}<br>
+\tag{17}<br>
+$$</p>
+<p>其中，$N$ 为波作用密度谱，$S$ 为用谱密度表示的源汇项；$\theta$ 为波向，即各谱分量垂直于波峰线的方向；$\sigma$ 为波浪的相对频率，即在随水运动的坐标系中观测到的频率；$C_x、C_y$ 为 $x、y$ 方向的波浪传播速度；$C_\theta、C_\sigma$ 为 $\theta、\sigma$ 空间的波浪传播速度。</p>
+<p>  SWAN 模式中波作用谱平衡方程的源汇项表达式为：</p>
+<p>$$<br>
+S = S_{in} + S_{ds,w} + S_{da,b} + S_{da,br} + S_{nl4} + S_{nl3}<br>
+\tag{18}<br>
+$$</p>
+<p>其中，$S_{in}$ 表示风能输入，$S_{ds,w}$ 表示由白浪引起的波能耗散，$S_{ds,b}$ 表示由底部摩擦引起的波能耗散，$S_{ds,br}$ 表示水深变浅引起的波浪破碎，$S_{nl4}$ 表示四波非线性相互作用，$S_{nl3}$ 表示三波非线性相互作用。</p>
+<p>  风能输入 $S_{in}$ 由两部分组成：线性增长项和指数增长项。风能输入表达式为：</p>
+<p>$$<br>
+S_{in} = A + BE(\sigma,\theta)<br>
+\tag{19}<br>
+$$</p>
+<p>式中，$A$  表示线性增长项，$BE$ 表示指数增长项。在 SWAN 模式中，输入项是海面上空 10m 处的风速 $U_{10}$，而 $A$ 和 $BE$ 的计算过程中采用摩擦速度 $U_*$，两者之间的关系式为：</p>
+<p>$$<br>
+U_* = C_D U_{10}^2<br>
+\tag{20}<br>
+$$</p>
+<p>其中，$C_D$ 表示风拖曳力系数：</p>
+<p>$$<br>
+C_D = (0.55 + 2.97 \widetilde{U} - 1.49 \widetilde{U}^2) \times 10^{-3} \\<br>
+\widetilde{U} = U_{10} / U_{ref}<br>
+\tag{21}<br>
+$$</p>
+<p>其中，$U_{ref}$ 是参考风速。</p>
+<p>  因此，大气模式模拟的海面以上 10m 风速影响波浪模式中的风能输入项，进而影响波作用谱平衡方程的求解。</p>
+<h4 id="海洋-海浪耦合机制">海洋-海浪耦合机制</h4>
+<h5 id="海浪对海洋的作用">海浪对海洋的作用</h5>
+<p>  波浪会对水流的运动过程、分布形式产生复杂影响，主要表现为：波浪辐射应力产生驱动力、海面粗糙度增大引起表面风应力的增加以及底部剪切应力改变导致底部摩阻的增加，本文仅考虑波浪辐射应力的影响。在笛卡尔坐标系下，考虑三维辐射应力的 FVCOM控制方程，请移步原文。</p>
+<p>  耦合中，海浪模式传递波高、波向、波长等给海洋模式FVCOM，FVCOM 基于传递的波参数计算波速、波数、波能与波浪辐射应力，进而求解控制方程。</p>
+<h5 id="海洋对海浪的作用">海洋对海浪的作用</h5>
+<p>  水流也会对波浪的演变过程和形态产生复杂影响，水流流向和波浪传播方向异同会引起波要素（例如：波速、波长、波陡等）的变化。SWAN 模式波作用谱平衡方程，请移步原文。</p>
+<p>  模型耦合时，海洋模式传递流速和水位给海浪模式，水深和背景流场的变化影响波浪模式中的频率迁移和波浪折射，影响波作用谱平衡方程的求解。</p>
+<h4 id="卫星资料连续同行">卫星资料连续同行</h4>
+<h5 id="WRFDA-概述">WRFDA 概述</h5>
+<p>  WRF 大气模式的资料同化模块 WRFDA（WRF Data Assimilation）是一个不依赖主模块的，可以进行单独编译并且单独使用的模块。本文采用同化模块版本为 WRFDA 3.8.1（目前最新为：<a target="_blank" rel="noopener" href="https://github.com/wrf-model/WRF">WRFDA 4.5.1</a>），可以实现的功能包含：混合资料同化（Hybrid）、集合卡尔曼变换（ETKF）、三维变分同化（3D-Var）、思维变分同化（4D-Var）。WRFDA 系统包括观测数据前处理（OBSPROC），主区域同化及侧边界条件更新，背景场误差协方差构造（GEN BE）等功能模块，各模块以及它们与 WRF 系统的其余部分的关系如图 2 所示。</p>
+<div align = 'center'>
+<img src = 'https://pzxnys.github.io/posts/3309110367/2023-10-04-17-41-09.png'/>
+<font size=2; color=natural>图 2. WRFDA运行流程图</font>
 </div>
 <br>
 <font size=2; color=grey>
@@ -1041,7 +1178,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">72.8k</span>
+                        class="white-color">75.4k</span>
             
             
             
