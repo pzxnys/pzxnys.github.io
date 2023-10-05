@@ -422,14 +422,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    9.1k
+                    9.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    32 分
+                    35 分
                 </div>
                 
 
@@ -695,6 +695,53 @@ $$</p>
 <img src = 'https://pzxnys.github.io/posts/3309110367/2023-10-04-21-10-15.png'/>
 <font size=2; color=natural>图 5. FVCOM 模式和 SWAN 模式的计算范围和网格</font>
 </div>
+<h4 id="耦合模式计算方程的确定">耦合模式计算方程的确定</h4>
+<h5 id="WRF-模式计算方案的确定">WRF 模式计算方案的确定</h5>
+<p>  WRF 大气模式是通过选取不同的计算参数来模拟相应的气象过程，不同的计算参数对于台风模拟的路径、强度影响较大，因此针对模拟研究区域选取合适的计算参数是十分关键的。</p>
+<p>  本文采用的是 W-F-S-A 耦合同化模式，其中耦合模式相对于单一的 WRF 模式有所改进。单一的 WRF 模型中一般需要引入参数以描述海浪的作用。近年来，国内外普遍采用海表面粗糙度对海浪的影响进行参数化因此耦合模式基于 Taylor 和 Yelland 公式对原始 WRF 计算模型进行了修改，建立了海表面粗糙度 $Z_{om}$ 与波浪参数（波高、谱峰周期、波长）的关系，将其加入至 MYNN 选项中：</p>
+<p>$$<br>
+Z_{om} = 1200.0 H_{wave}(H_{wave} / L_{wave})^(4.5)<br>
+\tag{22}<br>
+$$</p>
+<p>并同时改进 WRF 计算模型中的海表面层和海表边界层的物理模式。本文选取的 WRF 模型参数如表 1 所示。</p>
+<p><font size=2; color=natural>表 1. WRF 模式参数选择结果</font></p>
+<table align = center>
+    <tr>
+        <th width=150px;>项目</th>
+        <th width=400px>方案</th>
+    </tr>
+    <tr>
+        <td>陆面过程</td>
+        <td>Noah-MP</td>
+    </tr>
+    <tr>
+        <td>积云参数化</td>
+        <td>Kain-Fritsch</td>
+    </tr>
+    <tr>
+        <td>微物理过程</td>
+        <td>WSM6 方案</td>
+    </tr>
+    <tr>
+        <td>短波辐射</td>
+        <td>Dudhia 方案</td>
+    </tr>
+    <tr>
+        <td>长波辐射</td>
+        <td>RRTM 方案</td>
+    </tr>
+    <tr>
+        <td>表面层</td>
+        <td>Monin-Obukhov-Janjic(Eta) 方案；MYNN 方案</td>
+    </tr>
+    <tr>
+        <td>边界层</td>
+        <td>Mellor-Yamada-Janjic(Eta) 方案；MYNN 2.5 阶方案</td>
+    </tr>
+</table>
+<h5 id="耦合模式计算方案的确定">耦合模式计算方案的确定</h5>
+<p>  WRF 主区域积分时间步长根据手册的推荐，取为计算网格精度 12km 的 6 倍，即 72s，主区域 D1 与嵌套区域 D2 采用双向计算。为排除非耦合和耦合试验初始海表温度不同导致的海气界面差异，温度初始场的海表温度均采用 NECP 的全球日平均数据 RTG_SST，潮位开边界使用 MIKE21 提取，并提前计算 ７ 天获得耦合模拟时的初始流场。FVCOM 模型积分时间步长取 5s。SWAN 模型由较大范围的波浪模拟结果提供边界场和初始场，计算时间步长 300s。WRF、FVCOM 和 SWAN 三者耦合交换时间步长取 600s。</p>
+<h4 id="同化方案的确定">同化方案的确定</h4>
 <br>
 <font size=2; color=grey>
 [1]. 毛卿任. 台风过程的大气-海洋-海浪耦合与卫星数据同化模拟[D].天津大学,2019. <br>
@@ -1202,7 +1249,7 @@ $$</p>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">76.5k</span>
+                        class="white-color">77.1k</span>
             
             
             
