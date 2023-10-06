@@ -415,21 +415,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-10-05
+                    2023-10-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    15.2k
+                    15.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    55 分
+                    56 分
                 </div>
                 
 
@@ -1125,11 +1125,24 @@ $$</p>
 \tag{23}<br>
 $$</p>
 <p>$$<br>
-s = \sqrt{\frac{1}{n}\sum<sup>n_{i=1}X_i</sup>2 - (\frac{1}{n}\sum<sup>n_{i=1}X_i)</sup>2}<br>
+s = \sqrt{\frac{1}{n}\sum^n_{i=1} X_i^2 - (\frac{1}{n}\sum^n_{i=1} X_i)^2}<br>
 \tag{24}<br>
 $$</p>
 <h5 id="泊松-耿贝尔复合极值分布">泊松-耿贝尔复合极值分布</h5>
 <p>  泊松-耿贝尔复合极值分布是由马逢时等提出的一种利用极值分布理论（Gumbel 分布）推算海洋工程中设计波高的新方法。该方法的原理是，首先根据台风统计资料，经过分析得出影响某一个海域的台风发生频次极好的符合泊松（Poisson）分布；然后检验每次台风影响下形成的波高，得到波高分布在鲍威尔几率格纸上呈现直线关系，说明台风波浪波高原始分布符合耿贝尔（Gumbel）分布，由此形成了泊松-耿贝尔复合极值分布。《港口与航道水文规范》（JTS145-2015）中规定，对于台风多发海域，某一波向一年中出现一个以上较大台风波高时，可按台风波高的最大值系列取样，采用泊松-耿贝尔复合极值分布确定不同重现期的设计波高。因此，本文对于不同重现期波高的推算采用泊松-耿贝尔复合极值分布。</p>
+<p>  对于某一海域，假设台风每年在其附近经过并产生影响的次数为 $n$ 次，显然 $n$ 是一个随机变量它的分布函数应该符合某种离散型分布，$n$ 的取值范围为 $0~k$ 之间的整数，其相应概率为 $P_K$。每年每次台风在该海域形成的最大波高记为 $\zeta_i$，$i = 1 ~ n$。每年 $n$ 场台风浪中有一个极大值记为 $\zeta_n = \underset{1 \leq i \leq n}{max} {\zeta_i}$，设 $\zeta_i$ 的原始分布函数为 $G(x)$。当台风出现次数为 $n$ 时概率分布函数为 $P_K$ 的情况下，台风波浪的年极值 $\zeta_n$ 的分布函数 $F(x)$。根据概率的加法和乘法定理，$F(x)$ 可写为：</p>
+<p>$$<br>
+F(x) = P \{\zeta &lt; x \} = \sum_{k=0}^{\infty} P \{\zeta &lt; x, n=k \} \\<br>
+=\sum_{k=0}^{\infty} P \{\zeta &lt; x|_{n=k} \} P \{n=k \} \\<br>
+=\sum_{k=0}^{\infty} P \{max[\zeta_i] &lt; x \} \cdot P_k \\<br>
+=\sum_{k=0}^{\infty} P_k \cdot [G(x)]^k<br>
+$$</p>
+<p>  由上式可见 $F(x)$ 是由 $n$ 的概率分布与 $\zeta$ 的概率分布两种分布所构成，所以称为复合极值分布。</p>
+<p>  经过我国沿海一些台风观测站的检验，每年台风出现的次数 $n$ 符合泊松（Poisson）分布，即</p>
+<p>$$<br>
+P_k = e^{-\lambda} \frac{\lambda^k}{k!}<br>
+\tag{26}<br>
+$$</p>
 <br>
 <font size=2; color=grey>
 [1]. 毛卿任. 台风过程的大气-海洋-海浪耦合与卫星数据同化模拟[D].天津大学,2019. <br>
@@ -1637,7 +1650,7 @@ $$</p>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">82.6k</span>
+                        class="white-color">82.9k</span>
             
             
             
