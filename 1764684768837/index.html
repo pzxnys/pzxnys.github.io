@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="微信小程序开发问题解决, 咸鱼">
-    <meta name="description" content=" 写在最初 半年有余的小程序前端开发，踩坑无数，在此记录！！！1、读取数据库内容，含有HTML标签。解析这些标签使用：&amp;lt;rich-text nodes=&amp;quot;&amp;#123;&amp;#123;Notice.content&amp;#125;&amp;#1">
+    <meta name="keywords" content="ubuntu使用技巧, 咸鱼">
+    <meta name="description" content=" 一、在桌面创建图标：有两种情况：一是标准安装的应用程序，这种程序一般安装之后就已经有.desktop文件了，我们只要把它复制到桌面就可以了。还有一种就是第三方或自己写的非标应用程序，这个需要自己编写.desktop文件。
+
+1、 首先在U">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>微信小程序开发问题解决 | PZXNYS&#39;s Blog</title>
+    <title>ubuntu使用技巧 | PZXNYS&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -290,12 +292,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">微信小程序开发问题解决</h1>
+                    <h1 class="description center-align post-title">ubuntu使用技巧</h1>
                 </div>
             </div>
         </div>
@@ -319,8 +321,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">
-                                <span class="chip bg-color">小程序开发</span>
+                            <a href="/tags/Ubuntu-Desktop-ICON/">
+                                <span class="chip bg-color">Ubuntu-Desktop-ICON</span>
                             </a>
                         
                     </div>
@@ -331,8 +333,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/WeChat/" class="post-category">
-                                WeChat
+                            <a href="/categories/Ubuntu/" class="post-category">
+                                Ubuntu
                             </a>
                         
                     </div>
@@ -353,14 +355,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    740
+                    890
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -383,9 +385,53 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                 <p>写在最初 </br><br>半年有余的小程序前端开发，踩坑无数，在此记录！！！<br></br><span id="more"></span><br>1、读取数据库内容，含有HTML标签。解析这些标签使用：<br /><br><code>&lt;rich-text nodes=&quot;&#123;&#123;Notice.content&#125;&#125;&quot;&gt;&lt;/rich-text&gt;</code><br /><br>2、将常使用数据存放到storage，读取时，应在page中的onload使用：<br />onLoad(){<br />    this.setData({<br />       userInfo: wx.getStorageSync(‘userInfo’)<br />    })<br /> },<br />否则无法实时读取storage信息。<br /><br><br />3、照片上传问题</p>
-<p>url: ‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8088/management/image/upload">http://127.0.0.1:8088/management/image/upload</a>‘,  &#x2F;&#x2F;图片上传接口，本地调试用<br />header: {‘cookie’: wx.getStorageSync(‘sessionid’)},<br />formData:{                  <br />     eventId: 124,   &#x2F;&#x2F;事件id，暂时写死，int形式<br />     eventStatus: 1       &#x2F;&#x2F;事件状态值，暂时写死，int形式             <br />},<br />method: ‘POST’,     <br />dataType: ‘json’,<br />filePath: tempFilePaths[i],<br />name: ‘file’,<br />其中，formData中的参数，是随图片一起传回后台的数据<br /><br><br />4、小程序添加背景图片<br />使用 background-image 这个属性，后面需用url，且既不能用绝对路径，又不能用相对路径，需将整张图片转成base64编码的数据<br />转换网址：<a target="_blank" rel="noopener" href="https://www.zhangxinxu.com/sp/base64.html">https://www.zhangxinxu.com/sp/base64.html</a><br />使用方法：background-image: url(“……”)</p>
-<p>5、安卓登录，shiro权限认证失败(解决方案)<br />1、问题描述<br />最近有用户反馈，小程序登陆有问题<br />小程序成功登陆后，部分安卓用户经常会出现登陆异常情况。而 iPhone 用户从未出现此种状况<br />2、问题分析<br />a. 前期猜测，安卓用户授权问题，在进入登录页面的同时，调取获取位置接口，解决部分手机用户，但是治标不治本<br />b. 怀疑是缓存问题，毕竟iPhone没问题，安卓也有登录成功的情况出现，故改用globalData，结果，然并卵，发病率更改<br />c. 基本确认是 shiro 权限认证问题，但是大部分情况，都没有出现任何问题，那么问题出在哪里呢。感谢 <a target="_blank" rel="noopener" href="https://blog.csdn.net/czx0132/article/details/110101854?utm_source=app&app_version=4.5.3">csdn 四袋粉博主</a>文章<br />该死的安卓系统，不按标准化程序来，获取后台输出也能随机来。<br />（苹果手机获取Set-Cookie顺序是严格一致的，安卓手机Set-Cookie顺序是随机的。）<br /><img src="https://pzxnys.github.io/posts/3309110367/IGImjJ.png" alt="image.png"><br />当返回结果的header有多个Set-Cookier时，微信小程序获取res.header[‘Set-Cookie’]，已经是将Set-Cookie用逗号拼接好的字符串。<br />如果使用简单的逗号分割，Expires时间也含有逗号，Cookie结果是错误的。<br />3、问题解决<br />Cookie正则分割，分号重新拼接<br />简单的逗号无法分割，可以使用正则表达式去分割Cookie字符串，<br />需要被分割的逗号，后继字符串是含有&#x3D;<br /><img src="https://pzxnys.github.io/posts/3309110367/IGIlAx.png" alt="image.png"><br />重新编译后，JSSIONID被整体分割处理，问题解决。perfect<br />上代码：<br />     &#x2F;&#x2F; Set-Cookie字符串获取<br />            var cookie &#x3D; res.header[‘Set-Cookie’]<br />            <br />            &#x2F;&#x2F; 字符串分割成数组<br />            var cookieArray &#x3D; cookie.split(&#x2F;,(?&#x3D;[^,]*&#x3D;)&#x2F;)<br />            &#x2F;&#x2F; 分号拼接数组<br />            var newCookie &#x3D; cookieArray.join(‘;’)<br />            &#x2F;&#x2F; 存储拼接后的cookie<br />            wx.setStorageSync(‘sessionid’, newCookie)<br /></p>
+                 <p>一、在桌面创建图标：<br>有两种情况：<br>一是标准安装的应用程序，这种程序一般安装之后就已经有.desktop文件了，我们只要把它复制到桌面就可以了。<br>还有一种就是第三方或自己写的非标应用程序，这个需要自己编写.desktop文件。</p>
+<span id="more"></span>
+<p>1、 首先在Ubuntu中已经安装该应用程序，比如在Ubuntu18中已经安装了firefox浏览器（Ubuntu16中也是一样的），想在桌面上建立一个快捷图      标（快捷方式）。<br>2、打开终端（ctrl+alt+t）进入&#x2F;usr&#x2F;share&#x2F;applications目录找到Firefox对应的.desktop文件，如下。hzq@ubuntu:~$ cd &#x2F;usr&#x2F;share&#x2F;applications</p>
+<pre class="line-numbers language-none"><code class="language-none">hzq@ubuntu:&#x2F;usr&#x2F;share&#x2F;applications$ ls firefox*
+firefox.desktop
+hzq@ubuntu:~$ <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>仔细确认该文件是不是你的应用程序对应的文件，有的时候会有多个类似文件（上图中只有一个比较好确认）。<br>3、将.desktop文件拷贝到桌面，如下。</p>
+<pre class="line-numbers language-none"><code class="language-none">hzq@ubuntu:&#x2F;usr&#x2F;share&#x2F;applications$ cp firefox.desktop ~&#x2F;桌面&#x2F;
+hzq@ubuntu:&#x2F;usr&#x2F;share&#x2F;applications$ cd
+hzq@ubuntu:~$ ls 桌面&#x2F;
+firefox.desktop
+hzq@ubuntu:~$ <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>回到桌面查看，效果如下。还需要进一步处理一下。<br>4、选中文件，右键属性打开，切换到“权限”标签，如下所示。选中“允许作为程序执行文件”。然后退出。<br>5、然后再次点击打开该图标，如果弹出提示如下，选“trust and launch”。</p>
+<p>非标准应用程序的操作方法<br>1、其实只要是大规模发行的软件一般在Ubuntu里安装完之后都会在&#x2F;usr&#x2F;share&#x2F;applications里建立相应.desktop文件的，但是总有一些特殊情况。这里以新安装的gedit为例（gedit其实也有现成的.desktop文件，我只是以他为例子建立一个个性化的图标）。<br>2、进入&#x2F;usr&#x2F;share&#x2F;applications目录，建立一个空白的文本文件。如下。</p>
+<pre class="line-numbers language-none"><code>hzq@ubuntu:~$ cd /usr/share/applications
+hzq@ubuntu:/usr/share/applications$ sudo gedit myGedit.desktop
+#输入文件内容，注释内容可以删除---------------------
+[Desktop Entry]
+#名字
+Name=myGedit
+#注释
+Comment=Edit text files
+#执行文件、命令格式
+Exec=gedit %U
+#是否需要终端打开
+Terminal=false
+#类型
+Type=Application
+#图标，我这里是自己做的图标，你也可以引用别的程序的
+Icon=/home/hzq/word.png
+#分类，按自己需要填写
+Categories=GNOME;GTK;Utility;TextEditor;
+#保存退出-----------------------------
+hzq@ubuntu:/usr/share/applications$ 
+</code></pre>
+<p>3、将.desktop文件拷贝到桌面，如下。</p>
+<pre class="line-numbers language-none"><code>hzq@ubuntu:/usr/share/applications$ cp myGedit.desktop ~/桌面/
+hzq@ubuntu:/usr/share/applications$ cd
+hzq@ubuntu:~$ ls 桌面/
+firefox.desktop   myGedit.desktop
+hzq@ubuntu:~$ 
+</code></pre>
+<p>回到桌面查看，效果如下。下面的处理步骤就跟方法一中的步骤类似了。</p>
+<p>在win10下安装了Ubuntu双系统，默认情况下，默认启动的是Ubuntu系统。将默认启动系统设置成win10的办法是：<br>① 进入ubuntu系统；<br>② 打开终端，进入到 &#x2F;etc&#x2F;default 目录下；<br>③ 使用 sudo gedit grub 打开grub配置文件，将GRUB_DEFAULT&#x3D;0修改为你想要默认启动的系统的序号，设置完后保存；<br>注：系统的序号即为启动时看到的顺序，从0开始数，默认ubuntu为第一个，即其序号为0，我的win10系统在第3个，所以设置GRUB_DEFAULT&#x3D;2<br>④ 输入 sudo update-grub 更新grub文件；<br>⑤ 重启系统，完工。</p>
+<p>解决 ubuntu 与 win10 双系统，系统时间不同步问题<br>①  进入ubuntu，在 ubuntu 下更新本地时间<br>      sudo apt-get install ntpdate<br>      sudo ntpdate time.windows.com<br>② 将本地时间更新到硬件上<br>      sudo hwclock –localtime –systohc</p>
 
                 
             </div>
@@ -412,7 +458,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://159.75.162.251:4000/1764684626676/">http://159.75.162.251:4000/1764684626676/</a>
+                    <a href="http://159.75.162.251:4000/1764684768837/">http://159.75.162.251:4000/1764684768837/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -450,8 +496,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">
-                                    <span class="chip bg-color">小程序开发</span>
+                                <a href="/tags/Ubuntu-Desktop-ICON/">
+                                    <span class="chip bg-color">Ubuntu-Desktop-ICON</span>
                                 </a>
                             
                         </div>
@@ -534,13 +580,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/1764684626387/">
+                <a href="/1764684769215/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Python 基础">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="微信小程序开发问题解决">
                         
-                        <span class="card-title">Python 基础</span>
+                        <span class="card-title">微信小程序开发问题解决</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -557,8 +603,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
+                            <a href="/categories/WeChat/" class="post-category">
+                                    WeChat
                                 </a>
                             
                             
@@ -568,8 +614,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python-Code/">
-                        <span class="chip bg-color">Python Code</span>
+                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">
+                        <span class="chip bg-color">小程序开发</span>
                     </a>
                     
                 </div>
@@ -580,10 +626,10 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/1764684627345/">
+                <a href="/1764684768837/">
                     <div class="card-image">
                         
                         
@@ -614,6 +660,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
