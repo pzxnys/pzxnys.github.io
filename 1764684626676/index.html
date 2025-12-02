@@ -4,12 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python 基础, 咸鱼">
-    <meta name="description" content=" 写在最初，终端中，输入  import   this   了解Python之禅的魅力
-
-The Zen of Python, by Tim Peters
-Beautiful is better than ugly.
-Explicit is">
+    <meta name="keywords" content="微信小程序开发问题解决, 咸鱼">
+    <meta name="description" content=" 写在最初 半年有余的小程序前端开发，踩坑无数，在此记录！！！1、读取数据库内容，含有HTML标签。解析这些标签使用：&amp;lt;rich-text nodes=&amp;quot;&amp;#123;&amp;#123;Notice.content&amp;#125;&amp;#1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +17,7 @@ Explicit is">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Python 基础 | PZXNYS&#39;s Blog</title>
+    <title>微信小程序开发问题解决 | PZXNYS&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -294,12 +290,12 @@ Explicit is">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Python 基础</h1>
+                    <h1 class="description center-align post-title">微信小程序开发问题解决</h1>
                 </div>
             </div>
         </div>
@@ -323,8 +319,8 @@ Explicit is">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Python-Code/">
-                                <span class="chip bg-color">Python Code</span>
+                            <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">
+                                <span class="chip bg-color">小程序开发</span>
                             </a>
                         
                     </div>
@@ -335,8 +331,8 @@ Explicit is">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Python/" class="post-category">
-                                Python
+                            <a href="/categories/WeChat/" class="post-category">
+                                WeChat
                             </a>
                         
                     </div>
@@ -357,14 +353,14 @@ Explicit is">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.7k
+                    740
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    17 分
+                    2 分
                 </div>
                 
 
@@ -387,80 +383,10 @@ Explicit is">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                 <p>写在最初，终端中，输入  import   this   了解Python之禅的魅力</p>
-<span id="more"></span>
-<pre class="line-numbers language-none"><code class="language-none">The Zen of Python, by Tim Peters
-Beautiful is better than ugly.
-Explicit is better than implicit.
-Simple is better than complex.
-Complex is better than complicated.
-Flat is better than nested.
-Sparse is better than dense.
-Readability counts.
-Special cases aren&#39;t special enough to break the rules.
-Although practicality beats purity.
-Errors should never pass silently.
-Unless explicitly silenced.
-In the face of ambiguity, refuse the temptation to guess.
-There should be one-- and preferably only one --obvious way to do it.
-Although that way may not be obvious at first unless you&#39;re Dutch.
-Now is better than never.
-Although never is often better than *right* now.
-If the implementation is hard to explain, it&#39;s a bad idea.
-If the implementation is easy to explain, it may be a good idea.
-Namespaces are one honking great idea -- let&#39;s do more of those!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                 <p>写在最初 </br><br>半年有余的小程序前端开发，踩坑无数，在此记录！！！<br></br><span id="more"></span><br>1、读取数据库内容，含有HTML标签。解析这些标签使用：<br /><br><code>&lt;rich-text nodes=&quot;&#123;&#123;Notice.content&#125;&#125;&quot;&gt;&lt;/rich-text&gt;</code><br /><br>2、将常使用数据存放到storage，读取时，应在page中的onload使用：<br />onLoad(){<br />    this.setData({<br />       userInfo: wx.getStorageSync(‘userInfo’)<br />    })<br /> },<br />否则无法实时读取storage信息。<br /><br><br />3、照片上传问题</p>
+<p>url: ‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8088/management/image/upload">http://127.0.0.1:8088/management/image/upload</a>‘,  &#x2F;&#x2F;图片上传接口，本地调试用<br />header: {‘cookie’: wx.getStorageSync(‘sessionid’)},<br />formData:{                  <br />     eventId: 124,   &#x2F;&#x2F;事件id，暂时写死，int形式<br />     eventStatus: 1       &#x2F;&#x2F;事件状态值，暂时写死，int形式             <br />},<br />method: ‘POST’,     <br />dataType: ‘json’,<br />filePath: tempFilePaths[i],<br />name: ‘file’,<br />其中，formData中的参数，是随图片一起传回后台的数据<br /><br><br />4、小程序添加背景图片<br />使用 background-image 这个属性，后面需用url，且既不能用绝对路径，又不能用相对路径，需将整张图片转成base64编码的数据<br />转换网址：<a target="_blank" rel="noopener" href="https://www.zhangxinxu.com/sp/base64.html">https://www.zhangxinxu.com/sp/base64.html</a><br />使用方法：background-image: url(“……”)</p>
+<p>5、安卓登录，shiro权限认证失败(解决方案)<br />1、问题描述<br />最近有用户反馈，小程序登陆有问题<br />小程序成功登陆后，部分安卓用户经常会出现登陆异常情况。而 iPhone 用户从未出现此种状况<br />2、问题分析<br />a. 前期猜测，安卓用户授权问题，在进入登录页面的同时，调取获取位置接口，解决部分手机用户，但是治标不治本<br />b. 怀疑是缓存问题，毕竟iPhone没问题，安卓也有登录成功的情况出现，故改用globalData，结果，然并卵，发病率更改<br />c. 基本确认是 shiro 权限认证问题，但是大部分情况，都没有出现任何问题，那么问题出在哪里呢。感谢 <a target="_blank" rel="noopener" href="https://blog.csdn.net/czx0132/article/details/110101854?utm_source=app&app_version=4.5.3">csdn 四袋粉博主</a>文章<br />该死的安卓系统，不按标准化程序来，获取后台输出也能随机来。<br />（苹果手机获取Set-Cookie顺序是严格一致的，安卓手机Set-Cookie顺序是随机的。）<br /><img src="https://pzxnys.github.io/posts/3309110367/IGImjJ.png" alt="image.png"><br />当返回结果的header有多个Set-Cookier时，微信小程序获取res.header[‘Set-Cookie’]，已经是将Set-Cookie用逗号拼接好的字符串。<br />如果使用简单的逗号分割，Expires时间也含有逗号，Cookie结果是错误的。<br />3、问题解决<br />Cookie正则分割，分号重新拼接<br />简单的逗号无法分割，可以使用正则表达式去分割Cookie字符串，<br />需要被分割的逗号，后继字符串是含有&#x3D;<br /><img src="https://pzxnys.github.io/posts/3309110367/IGIlAx.png" alt="image.png"><br />重新编译后，JSSIONID被整体分割处理，问题解决。perfect<br />上代码：<br />     &#x2F;&#x2F; Set-Cookie字符串获取<br />            var cookie &#x3D; res.header[‘Set-Cookie’]<br />            <br />            &#x2F;&#x2F; 字符串分割成数组<br />            var cookieArray &#x3D; cookie.split(&#x2F;,(?&#x3D;[^,]*&#x3D;)&#x2F;)<br />            &#x2F;&#x2F; 分号拼接数组<br />            var newCookie &#x3D; cookieArray.join(‘;’)<br />            &#x2F;&#x2F; 存储拼接后的cookie<br />            wx.setStorageSync(‘sessionid’, newCookie)<br /></p>
 
-<p> <a target="_blank" rel="noopener" href="https://www.python.org/dev/peps/pep-0008/">PEP8编码规范</a><br> <a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/news/332042">中文版</a></p>
-<p>1、终端写python程序，直接键入python(python3版本，一般需要键入python3)，退出时，可以使用代码段：exit(),  也可以使用快捷键Crtl + D<br> （打开终端的快捷键：Ctrl + Alt + T   目前仅测试Ubuntu）</p>
-<p>2、定义变量不需要考虑类型，其会自动匹配对应类型</p>
-<p>3、变量命名规则：<br>      ①. 变量名只能包含字母、数字和下划线。变量名可以字母或者下划线打头，但不能以数字打头<br>      ②. 变量明不能包含空格，但可使用下划线来分割其中的单词<br>      ③. 不要将Python关键字和函数名用作变量名，即不要使用Python保留用于特殊用途的单词。<br>      ④变量名应既简短又具有描述性<br>      ⑤慎用小写字母l和大写字母O，因为它们可能被人错看成数字1和0<br>ps：就目前而言，应使用消息网的Python变量名</p>
-<p>4、字符串<br>      Python中，无论用单引号还是双引号括起来的，都是字符串，虽然更加人性化但也应该注意 避免混淆<br>      ①. Function: title()  作用是将所有单词的首字母都大写<br>      ②. Function: upper()  作用是将所有字母都改成大写<br>      ③. Function: lower()  作用是将所有字母都改成小写<br>      ④. 合并（拼接）字符串： 用 “+”<br>      ⑤. 换行符用\n， 添加制表符用\t<br>      ⑥. 删除空白行<br>            空白很重要，特别是在做字符串比对的时候，尤为明显。但是在一些简单的情形下，额外的空白也可能令人迷惑<br>             ⅰ、Function：rstrip()  作用是删除字符串末尾的空白<br>            ⅱ、 Function：lstrip()   作用是删除字符串开头的空白<br>            ⅲ、 Function： strip()   作用是删除字符串两端的空白<br>ps：特别注意，引号不能混用<br>pps：编写程序时，编辑器的语法突出功能可帮助你快速找出某些语法错误。看到Python代码以普通句子的颜色显示，或者普通句子以Python代码的颜色显示时，就可能意味着文件中存在引号不匹配的情况。</p>
-<p>5、Python2 与 Python3 的区别<br>      ①. Python2 中的 print 语句，可以用括号，可以不用。而 Python3 中，由于 print 变为了 Function，因此必须用括号。<br>      ②. Python2 中整数除法的结果只包含整数部分，使用去尾法。而 Python3 中，会自动输出浮点数</p>
-<p>6、数字类型<br>ps：python 部分代码在编译器和终端，输入输出有些许差异<br>      ①. 整数   基本不需要太注意什么，<br>ps：Python使用两个乘号（**） 表示乘方。其还可以使用括号来改变运算次序<br>      ②. 浮点数  基本无需考虑 其行为<br>ps：结果包含的小数位可能不是很确定，Python 会尽力找到一种方式，以尽可能精确地表示结果，暂时忽略多余的小数位即可，后续慢慢研究<br>       ③. Function：str()  作用将非字符串值表示为字符串  避免类型错误<br>ps：大多数情况下，Python中使用数字非常简单。若结果出乎意料，就检查一下，是否出现Python无法理解的类型错误！</p>
-<p>7、列表<br>      ①. 列表和C语言中的数组基本相同，索引 (下标) 同样从一开始。特别的，Python的列表可以从后往前用下标，最后一个元素的下标为 -1，以此类推<br>      ②. 修改列表元素，直接给列表中对应元素进行赋值即可<br>      ③. 添加列表元素：<br>            Function：append()  作用直接向列表末尾添加元素<br>            Function：insert(下标，‘元素’)  作用向列表对应下标插入对应元素<br>      ④. 删除列表元素：<br>           ⅰ、使用 del 语句删除元素，必须知道该元素所对应的下标，该语句直接将该元素彻底删除，无法继续访问<br>          ⅱ、Function： pop()  作用将元素从列表中删除，并将其存储到某一变量。pop(下标)，删除对应下标的元素，并将其存储到某一变量<br>          ⅲ、Function：remove()  作用  只知道要删除元素的值，使用该方法。亦可将其存储到某一变量，为我所用<br>ps：remove()只删除第一个指定的值。如果删除的值可能多次存在，须使用循环判断</p>
-<p>8、组织列表<br>      ①. Function：sort() 作用对列表进行永久性排序，不能再改回原排序方式。其中sort(reverse &#x3D; True)，列表元素反向排列。<br>      ②. Function：sorted()  作用对列表进行临时排序，反向排列用法同上<br>      ③. Function：reverse()  作用将列表元素反向排列，也为永久性排序，但是可随时恢复到原排列。再调用一次 reverse() 即可<br>      ④. Function：len()  作用快速获悉列表的长度<br>ps：列表元素下标从0开始，不要犯越界错误，下标-1元素一直输出最后一个，仅当列表为空时，这种访问方式才会错误</p>
-<p>9、循环遍历<br>      ①.  语法 for   A    in   B:     把B中的每一个数值单独提出来，赋值给A<br>      ②.  在 for 循环中，想包含多山行代码都可以，每个缩进的代码行 都是循环的一部分<br>      ③.  代码没有缩进便自动跳出循环，和之前的{}循环体不太一样， 请注意<br>      ④.  由于 python 以缩进来区分代码块，因此，一定要保持一个良好的缩进风格<br>      ⑤.  千万不能忘记 for 循环语句后面的 “ : “</p>
-<p>10、创建数字列表<br>      ①.  Function：range(a, b)  作用打印从 a 开始到 b 结束，之间的数字<br>      ②.  Function：list(range(a, b))  作用 将range() 打印出来的一系列数字转换为一个列表<br>      ③.  Function：range(a, b, c) 作用 打印从 a 到 b 的数字， 每次打印在前一次的基础上 + c   ，即 指定步长</p>
-<p>PS：在编写代码时，首先应该编写清晰易懂且能完成所需功能的代码；等待审核代码时，再考虑采用更高效的方法</p>
-<p>PS：处理数字列表时有几个特殊函数，能帮助找出数字列表的最大值、最小值和总和：max()    min()    sum()</p>
-<p>11、处理部分元素 – python 称之为切片<br>      ①.  Function：List(a : b)   作用 处理列表 List 从 a 开始终于 b 的列表元素<br>      ②.  若没有指明 a，则从头开始执行。若没有指明 b， 则执行到末尾<br>      ③.  若 a 为负数，则执行最后几个 </p>
-<p>PS：列表可以直接赋值，但是一定要用切片，a 和 b 都为空。否则的话，连个列表会指向同一片内存，而不是赋值类似对比指针</p>
-<p>12、元组<br>      ①.  Python将不能修改的值称为不可变的，而不可变的列表被称为元组。定义元组用 “( )”<br>      ②.  遍历元组中的所有值和遍历列表一样<br>      ③.  虽然不能修改元组的元素，但是可以直接对其进行重新赋值</p>
-<p>13、if 相关<br>      ①.  Function：lower()  作用在判断两变量是否相等时，忽略大小写的影响。且不改变原变量的值<br>      ②.  编写的大多数条件表达式都检查两个值是否相等，但有时检查两个值是否不等的效率更高<br>      ③.  在 python 中，同时判断多个条件，直接使用 and 或者 or 即可<br>      ④.  Function：A in (not) B  作用是判断A是否(不)在B中</p>
-<p>PS：else if 在 python 中简写为 elif</p>
-<p>14、字典基础<br>      ①.  字典与c语言中的结构体相似，可对应理解相关概念<br>      ②.  获取字典中的值：aaa[‘…’]  ，其中 aaa 对应的是字典名称， … 对应的是想要访问的字典对应的键值<br>      ③.  由于字典是一种动态结构，故对其添加新的键-值对，只需依次指定字典名和键及相关联的值：aaa[‘…’] &#x3D; bbb<br>      ④.  打印整个字典，只需要 print(aaa)<br>      ⑤.  修改字典中的键值，只需要给对应的键值重新赋值即可<br>      ⑥.  Function： del aaa[‘…’]  作用是删除某键值对</p>
-<p>PS：… 可以为变量，不过此时不需要加  ‘   ’</p>
-<p>15、遍历字典<br>PS：遍历字典时，键-值对的返回顺序也与存储顺序不同。Python不关心键-值对的存储顺序，而只跟踪键和值之间的关联关系。<br>      ①.  遍历字典的所有键-值对： （for …, … in aaa.items() ）<br>      ②.  遍历字典的所有键： ( for … in aaa.keys() )<br>      ③.  方法 keys() 并非只能用于遍历，实际上，还可以判断某键是否存在于字典中<br>      ④.  Function：sorted()    作用获得按特定顺序排列的键列表副本<br>      ⑤.  遍历字典的所有值：  ( for … in aaa.values())<br>      ⑥.  可使用集合（set）对遍历字典的所有值进行去重</p>
-<p>16、嵌套<br>      ①.  在列表中嵌套字典：a_1 &#x3D; {…}   a_2 &#x3D; {…} …     a &#x3D; [a_1,  a_2, ……]<br>      ②.  Function：range(n)  作用自动创建 n 个对象<br>      ③.  在字典中嵌套列表：a &#x3D; {… ,   ‘b’: [‘…’, ‘…’, ‘…’]}<br>      ④.  字典中嵌套字典： a &#x3D; {‘b’: {…}, ‘c’: {…}} </p>
-<p>PS：列表和字典的嵌套层级不应太多。如果嵌套层级比前面的示例多得多，很可能有更简单的解决问题的方案<br>PS：字典之间的嵌套，最好保持嵌套内字典结构相同，这样能使得字典处理起来更容易</p>
-<p>PS：每当使用 input () 输入函数时，都应当指定清晰且易于明白的提示<br>PS：有时候，提示信息可能超过一行，可将提示存储在一个变量中，再将其传递给函数 input()<br>PS：python 默认输入格式为字符串，若要使用数字，需用强制转换，as：int()</p>
-<p>PS：python中数字类型是不可变数据。也就是数字类型数据在内存中是不会发生改变的，当变量值发生改变时，会新申请一块内存赋值为新值，然后将变量指向新的内存地址<br>PS：由于部分整数使用频繁，为了提升性能避免浪费，python提供了一个整数池，默认 [-5, 256]的数字都属于这个整数池，每次赋值都是取得池中的对象。</p>
-<p>17、循环<br>      ①.  break 可以用于 python 的各种循环之中，作用就是结束循环<br>      ②.  continue 结束本次循环，直接跳到下一次循环</p>
-<p>PS：确认每个循环都有有一个属于自己的ending，若程序陷入无限循环，可按 Ctrl + C，或直接关闭终端窗口来终结该bug。</p>
-<p>18、无返回值函数<br>      ①.  python 中定义函数，用关键字 def<br>      ②.  定义需传参的函数 def aaa (bbb) :<br>      ③.  形参  实参 注意区分。若实在很难记，统称参数<br>      ④.  向形参传递实参的方法有两种，位置传参，关键字传参。对标C<br>      ⑤.  编写函数时，可以预先指定形参的默认值，若调用函数，没有给定实参，则使用形参的默认值<br>PS：使用哪种调用函数并不重要，使用自己顺手的调用方式才重要!<br>PS：使用关键字传参时，务必准确地指定函数定义中的形参名</p>
-<p>PS：python 中亦可用 “”” … “”” 对代码进行注释</p>
-<p>19、有返回值函数<br>      ①.  同样用 def 来定义函数，这有别于 C 等，对逻辑要求严格的语法。<br>      ②.  有些形参不是必须的，可以在定义时，为该形参赋值为空字符串，只有在需要的时候，才会启用该形参，并为其赋值<br>PS：在定义函数时，对于给定默认值的形参，一定要放在未给定默认值的形参的后面<br>      ③.  函数返回值不只是变量，还可以是字典等<br>      ④.  实参不只是变量，定量，还可以是列表等<br>      ⑤.  在函数中对列表所做的任何修改都是永久性的<br>      ⑥.  若不想让函数修改列表，可使用切片法[ ：]，创建列表副本，供函数使用，且并不改变函数原列表</p>
-<p>20、传递任意数量的实参<br>      ①.  使用形参名 *aaa (类比 c 语言中的指针)，创建一个空元组。Python 将实参封装到这个元组中<br>      ②.  使用形参名 **aaa，创建一个空字典。 Python 将从实参接收到的键-值对封装在这个元组中</p>
-<p>21、函数模块化<br>      ①.  导入模块：import  qqqqqq<br>      ②.  导入特定的函数：from aaa import f_1, f_2, …   只导入某模块中自己想用的函数<br>      ③.  给导入的函数起别名：from aaa import f_1 as f<br>      ④.  给导入的模块七别名：import dddd as d<br>      ⑤.  (慎用) 导入模块中的所有函数： from ffff import *，不需要在使用 . 调用，可直接使用模块中的所有函数<br>PS：最好不要采用导入模块中的所有函数，因为 Python 在遇到多个同名的函数或变量时，并不是分别调用，而是暴力覆盖</p>
-<p>PS：（特别注意）给形参指定默认值时，等号两边不要有空格。</p>
-<p>22、类<br>      ①.  Python 要求， 类名首字母需要大写，使用驼峰规则命名<br>      ②.  类中的函数叫做方法，<code>__init__</code> 是一个特殊的方法(init前后各两个下划线)，Python 类中，会自动运行它<br>      ③.  方法<code>__init__</code> 中，第一形参必须是 self<br>      ④.  在方法中定义的每一个属性，都应该赋初值，且形参自动为空。<br>      ⑤.  在类中定义的其它方法，调用 <code>__init__</code>方法总的属性，必须用  self.***<br>      ⑥.  在类外调用属性或者方法，只需要用 aaa(表示实例化对象).bbb(表示方法或者属性)即可<br>PS：在 Python2.7 中创建类时，应在括号内加object，as：class  ClassName (object):</p>
-<p>23、继承<br>      ①.  class Ass(Bvv) 子类 Ass 继承父类Bvv，继承之后需初始化，对应代码：<br>             <code>def __init__ (self, ..., ..., ...):</code><br>                       <code>super().__init__ (..., ..., ...)</code><br>      ②.  在 Python2.7 版本中，代码有所区别：<br>              <code>def __init__ (self, ..., ..., ...):</code><br>                         <code>super(Ass, self).__init__ (..., ..., ...)</code><br>      ③.  重写父类方法，将该父类方法在子类中重新定义，并给出子类对该方法的使用即可<br>PS：重写父类，可以使继承做到：取其精华去其糟粕<br>      ④.  当一个大类过于繁杂时，我们可以把它拆分成若干个协同工作的小类，此小类不需做继承，在大类中，若用到该小类只需：self.××× &#x3D; xxx() 声明一下即可，实例化对象调用该小类的某个方法时，只需要：obj.xxx.fun () 即可。(obj: 实例化对象)<br>PS：这样做，使得模块化越来越细化，后期维护较方便<br>PS：注意导入整个模块和导入模块函数的区别</p>
-<p>PS：若某条语句未按照自己的想法执行，且没有报错，请检查自己调用函数的语句是否忘加括号<br>PS：在类中，可使用一个空行来分隔方法，而在模块中，可用两个空行来分隔类</p>
-<p>24、读取文件<br>      ①.  Function：open(‘xxx’) 作用是打开文件，并返回一个表示文件的对象<br>      ②.  关键字 with 在不再需要访问文件后将其关闭。改关键字特别重要，可以让你省去很多烦恼<br>PS：使用 with 时，open() 返回的文件对象只在 with 代码块内可用<br>      ③.  读取整个文件：<code>xxx = file_object.read()</code><br>      ④.  逐行读取文件：<code>for line in file_object:</code><br>      ⑤.  Function：readlines() 从文件中读取每一行，并存储到列表中<br>PS：读取文本文件时，Python 默认将其中的所有文本都解读为字符串。如果你读取的是数字，且想要将其作为数值使用，就必须使用函数 int() &#x2F; float() 将其转化为整数或浮点数去使用</p>
-<p>25、写入文件<br>保存文件最简单的方式之一就是将其写入到文件中<br>      ①. 深入理解Function：open(xxx, ‘…’),上面已经提到，xxx为文件名变量，…为指定打开方式，<br>            其中：指定读取模式 ‘r’<br>                       指定写入模式 ‘w’<br>                       指定附加模式 ‘a’<br>                       指定读取和写入模式 ‘r+’<br>PS：如果省略了模式实参，Python将以默认的只读模式打开文件<br>PS：若作为写模式打开，而该文件夹下并没有该文件，则自动创建它。然而，若已存在，Attention please！Python 将在返回文件对象前清空该文件<br>PS：Python 只能将字符串写入文本文件。要将数值数据存储到文本文件中，必须先使用 Function：str() 将其转换为字符串格式<br>      ②.  若写入的为多行时，一定要加入换行符，因为 Function：write() 不会在你写入的文本末尾添加换行符<br>PS：除换行符外，还可以使用空格，制表符，空行等，来设置这些输出格式<br>      ③.  附加模式 ‘a’, 不会清空之前的内容，而是在原文件的末尾继续添加</p>
-<p>26、异常<br>有效的采用异常机制，可以避免系统崩溃</p>
-<pre class="line-numbers language-none"><code class="language-none">处理异常代码块：
-try:
-    ......
-except xxx:
-    ......
-else:
-    ......
-对某块代码执行异常处理，其中“xxx”为处理那种异常，若出现该异常，则执行 except xxx: 后的代码块，若未出现该异常，则执行 else<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>PS：通过预测可能发生错误的代码，可编写健壮的程序，它们即便面临无效数据或缺少资源，也能继续运行，从而能够抵御无意的用户错误和恶意攻击<br>      ①.  ZeroDivisionError，处理被除数为 0 的异常<br>      ②.  FileNotFoundError，处理文件不存在异常<br>      ③.  Function：split()  作用是以空格为分隔符将字符串分拆成多个部分。(文本处理常用 Function)<br>      ④.  若你不想让异常显示给用户，可以用 pass 语句，让 Python 遇到异常后，什么都不做</p>
-<p>27、存储数据<br>需要导入  json包，即： <code>import json</code><br>PS：JSON 格式最初是为 JavaScript 开发的，但随后成了一种常见格式，被包括 Python 在内的众多语言采用。<br>      ①.  Function：json.dump(aaa, bbb)  作用是将 aaa 的数据存储到 bbb 中<br>      ②.  Function：json.load(xxx)  作用是将 xxx 这个文件读取到内存</p>
-<p>28、重构<br>对正确的代码进一步的改进，将代码划分为一系列完成具体工作的函数</p>
                 
             </div>
             <hr/>
@@ -486,7 +412,7 @@ else:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://159.75.162.251:4000/1764683802770/">http://159.75.162.251:4000/1764683802770/</a>
+                    <a href="http://159.75.162.251:4000/1764684626676/">http://159.75.162.251:4000/1764684626676/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -524,8 +450,8 @@ else:
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Python-Code/">
-                                    <span class="chip bg-color">Python Code</span>
+                                <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">
+                                    <span class="chip bg-color">小程序开发</span>
                                 </a>
                             
                         </div>
@@ -608,12 +534,13 @@ else:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/1764683802920/">
+                <a href="/1764684626387/">
                     <div class="card-image">
                         
-                        <img src="https://pzxnys.github.io/posts/3309110367/lash_logo.jpeg" class="responsive-img" alt="Welcome to My Blog">
                         
-                        <span class="card-title">Welcome to My Blog</span>
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Python 基础">
+                        
+                        <span class="card-title">Python 基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -624,15 +551,27 @@ else:
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-11
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-08
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            pzxnys
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python-Code/">
+                        <span class="chip bg-color">Python Code</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -644,13 +583,13 @@ else:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/1764683803140/">
+                <a href="/1764684627345/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="微信小程序开发问题解决">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="ubuntu使用技巧">
                         
-                        <span class="card-title">微信小程序开发问题解决</span>
+                        <span class="card-title">ubuntu使用技巧</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -667,8 +606,8 @@ else:
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/WeChat/" class="post-category">
-                                    WeChat
+                            <a href="/categories/Ubuntu/" class="post-category">
+                                    Ubuntu
                                 </a>
                             
                             
@@ -678,8 +617,8 @@ else:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">
-                        <span class="chip bg-color">小程序开发</span>
+                    <a href="/tags/Ubuntu-Desktop-ICON/">
+                        <span class="chip bg-color">Ubuntu-Desktop-ICON</span>
                     </a>
                     
                 </div>
