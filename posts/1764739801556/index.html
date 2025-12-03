@@ -4,8 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="微信小程序开发问题解决, 咸鱼">
-    <meta name="description" content=" 写在最初 半年有余的小程序前端开发，踩坑无数，在此记录！！！1、读取数据库内容，含有HTML标签。解析这些标签使用：&amp;lt;rich-text nodes=&amp;quot;&amp;#123;&amp;#123;Notice.content&amp;#125;&amp;#1">
+    <meta name="keywords" content="MovieLens 1M Introduction, 咸鱼">
+    <meta name="description" content="Total：1000209Movies: 3883Users: 6040稀疏比约为：95.7%
+
+
+ratings.datUserID::MovieID::Rating::TimestampUserID: 在 1 到 6040 之间Movi">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>微信小程序开发问题解决 | PZXNYS&#39;s Blog</title>
+    <title>MovieLens 1M Introduction | PZXNYS&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -290,12 +293,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">微信小程序开发问题解决</h1>
+                    <h1 class="description center-align post-title">MovieLens 1M Introduction</h1>
                 </div>
             </div>
         </div>
@@ -319,8 +322,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">
-                                <span class="chip bg-color">小程序开发</span>
+                            <a href="/tags/Dataset/">
+                                <span class="chip bg-color">Dataset</span>
                             </a>
                         
                     </div>
@@ -331,8 +334,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/WeChat/" class="post-category">
-                                WeChat
+                            <a href="/categories/ML-DL/" class="post-category">
+                                ML && DL
                             </a>
                         
                     </div>
@@ -344,7 +347,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-08
+                    2021-11-09
                 </div>
                 
 
@@ -353,14 +356,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    740
+                    296
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -383,9 +386,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                 <p>写在最初 </br><br>半年有余的小程序前端开发，踩坑无数，在此记录！！！<br></br><span id="more"></span><br>1、读取数据库内容，含有HTML标签。解析这些标签使用：<br /><br><code>&lt;rich-text nodes=&quot;&#123;&#123;Notice.content&#125;&#125;&quot;&gt;&lt;/rich-text&gt;</code><br /><br>2、将常使用数据存放到storage，读取时，应在page中的onload使用：<br />onLoad(){<br />    this.setData({<br />       userInfo: wx.getStorageSync(‘userInfo’)<br />    })<br /> },<br />否则无法实时读取storage信息。<br /><br><br />3、照片上传问题</p>
-<p>url: ‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8088/management/image/upload">http://127.0.0.1:8088/management/image/upload</a>‘,  &#x2F;&#x2F;图片上传接口，本地调试用<br />header: {‘cookie’: wx.getStorageSync(‘sessionid’)},<br />formData:{                  <br />     eventId: 124,   &#x2F;&#x2F;事件id，暂时写死，int形式<br />     eventStatus: 1       &#x2F;&#x2F;事件状态值，暂时写死，int形式             <br />},<br />method: ‘POST’,     <br />dataType: ‘json’,<br />filePath: tempFilePaths[i],<br />name: ‘file’,<br />其中，formData中的参数，是随图片一起传回后台的数据<br /><br><br />4、小程序添加背景图片<br />使用 background-image 这个属性，后面需用url，且既不能用绝对路径，又不能用相对路径，需将整张图片转成base64编码的数据<br />转换网址：<a target="_blank" rel="noopener" href="https://www.zhangxinxu.com/sp/base64.html">https://www.zhangxinxu.com/sp/base64.html</a><br />使用方法：background-image: url(“……”)</p>
-<p>5、安卓登录，shiro权限认证失败(解决方案)<br />1、问题描述<br />最近有用户反馈，小程序登陆有问题<br />小程序成功登陆后，部分安卓用户经常会出现登陆异常情况。而 iPhone 用户从未出现此种状况<br />2、问题分析<br />a. 前期猜测，安卓用户授权问题，在进入登录页面的同时，调取获取位置接口，解决部分手机用户，但是治标不治本<br />b. 怀疑是缓存问题，毕竟iPhone没问题，安卓也有登录成功的情况出现，故改用globalData，结果，然并卵，发病率更改<br />c. 基本确认是 shiro 权限认证问题，但是大部分情况，都没有出现任何问题，那么问题出在哪里呢。感谢 <a target="_blank" rel="noopener" href="https://blog.csdn.net/czx0132/article/details/110101854?utm_source=app&app_version=4.5.3">csdn 四袋粉博主</a>文章<br />该死的安卓系统，不按标准化程序来，获取后台输出也能随机来。<br />（苹果手机获取Set-Cookie顺序是严格一致的，安卓手机Set-Cookie顺序是随机的。）<br /><img src="https://pzxnys.github.io/images/IGImjJ.png" alt="image.png"><br />当返回结果的header有多个Set-Cookier时，微信小程序获取res.header[‘Set-Cookie’]，已经是将Set-Cookie用逗号拼接好的字符串。<br />如果使用简单的逗号分割，Expires时间也含有逗号，Cookie结果是错误的。<br />3、问题解决<br />Cookie正则分割，分号重新拼接<br />简单的逗号无法分割，可以使用正则表达式去分割Cookie字符串，<br />需要被分割的逗号，后继字符串是含有&#x3D;<br /><img src="https://pzxnys.github.io/images/IGIlAx.png" alt="image.png"><br />重新编译后，JSSIONID被整体分割处理，问题解决。perfect<br />上代码：<br />     &#x2F;&#x2F; Set-Cookie字符串获取<br />            var cookie &#x3D; res.header[‘Set-Cookie’]<br />            <br />            &#x2F;&#x2F; 字符串分割成数组<br />            var cookieArray &#x3D; cookie.split(&#x2F;,(?&#x3D;[^,]*&#x3D;)&#x2F;)<br />            &#x2F;&#x2F; 分号拼接数组<br />            var newCookie &#x3D; cookieArray.join(‘;’)<br />            &#x2F;&#x2F; 存储拼接后的cookie<br />            wx.setStorageSync(‘sessionid’, newCookie)<br /></p>
+                <p>Total：1000209<br />Movies: 3883<br />Users: 6040<br />稀疏比约为：95.7%<br /></p>
+<span id="more"></span>
+<p><a name="KAv6J"></a></p>
+<h1 id="ratings-dat"><a href="#ratings-dat" class="headerlink" title="ratings.dat"></a>ratings.dat</h1><p>UserID::MovieID::Rating::Timestamp<br /><br><br />UserID: 在 1 到 6040 之间<br />MovieID: 在 1 到 3952 之间(存在缺省值)<br />Rating: 在 1 到 5 之间(采用整数制)<br />Timestamp: 从 1970 开始的秒数<br /><br><br />PS:  每个用户至少有20个评分<br /></p>
+<p><a name="6qZGV"></a></p>
+<h1 id="users-dat"><a href="#users-dat" class="headerlink" title="users.dat"></a>users.dat</h1><p>UserId::Gender::Age::Occupation::Zip-code<br /><br><br />Age: <br />1: 18-<br />18: 18 - 24<br />25: 25 - 34<br />35: 35 - 44<br />45: 45 - 49<br />50: 50 - 55<br />56: 56+<br />Occupation:<br />0: 其它或未说明<br />1: 学术&#x2F;教育工作者<br />2: 艺术家<br />3: 办事员&#x2F;行政<br />4: 大学&#x2F;研究生<br />5: 客户服务<br />6: 医生&#x2F;保健<br />7: 行政&#x2F;管理<br />8: 农民<br />9: 家庭主妇<br />10: k - 12 学生<br />11: 律师<br />12: 程序员<br />13: 退休人员<br />14: 销售&#x2F;营销<br />15: 科学家<br />16: 自由职业者<br />17: 技术员&#x2F; 工程师<br />18: 商人&#x2F;手艺人<br />19: 失业人员<br />20: 作家<br /></p>
+<p><a name="Hrcni"></a></p>
+<h1 id="movies-dat"><a href="#movies-dat" class="headerlink" title="movies.dat"></a>movies.dat</h1><p>MovieId::Title::Genres<br /><br><br />Genres:<br />Action: 动作 <br />Adventure: 冒险<br />Animation: 动画<br />Children’s: 儿童<br />Comedy: 喜剧<br />Crime: 犯罪<br />Documentary:  纪录片<br />Drama: 戏剧<br />Fantasy: 魔幻<br />Film-Noir: 黑色电影<br />Horror: 恐怖<br />Musical: 音乐剧<br />Mystery: 推理<br />Romance: 浪漫爱情<br />Sci-Fi: 科幻<br />Thriler: 惊悚<br />War: 战争<br />Western: 美国西部片<br /><br><br />PS：一些MovieID可能不对应，由于电影是手工录入，故存在误差</p>
 
                 
             </div>
@@ -412,7 +420,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://159.75.162.251:4000/posts/1764727198758/">http://159.75.162.251:4000/posts/1764727198758/</a>
+                    <a href="http://159.75.162.251:4000/posts/1764739801556/">http://159.75.162.251:4000/posts/1764739801556/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -450,8 +458,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">
-                                    <span class="chip bg-color">小程序开发</span>
+                                <a href="/tags/Dataset/">
+                                    <span class="chip bg-color">Dataset</span>
                                 </a>
                             
                         </div>
@@ -534,7 +542,60 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/1764727198537/">
+                <a href="/posts/1764739801437/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Extracting Keywords from Short Government Documents Using Reinforcement Learning">
+                        
+                        <span class="card-title">Extracting Keywords from Short Government Documents Using Reinforcement Learning</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-12
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Paper-Reading/" class="post-category">
+                                    Paper-Reading
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Extracting-Keywords/">
+                        <span class="chip bg-color">Extracting Keywords</span>
+                    </a>
+                    
+                    <a href="/tags/Paper/">
+                        <span class="chip bg-color">Paper</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/1764739802217/">
                     <div class="card-image">
                         
                         
@@ -550,9 +611,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -570,55 +631,6 @@
                     
                     <a href="/tags/Python-Code/">
                         <span class="chip bg-color">Python Code</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/1764727199025/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="ubuntu使用技巧">
-                        
-                        <span class="card-title">ubuntu使用技巧</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-08
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Ubuntu/" class="post-category">
-                                    Ubuntu
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Ubuntu-Desktop-ICON/">
-                        <span class="chip bg-color">Ubuntu-Desktop-ICON</span>
                     </a>
                     
                 </div>
@@ -801,7 +813,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">19.2k</span>
+                        class="white-color">21.7k</span>
             
             
             

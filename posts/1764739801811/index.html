@@ -4,11 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="MovieLens 1M Introduction, 咸鱼">
-    <meta name="description" content="Total：1000209Movies: 3883Users: 6040稀疏比约为：95.7%
+    <meta name="keywords" content="DBSCAN_Yelp, 咸鱼">
+    <meta name="description" content="DBSCAN利用 DBSCAN 聚类算法，对经纬度进行聚类​
+代码如下：
 
 
-ratings.datUserID::MovieID::Rating::TimestampUserID: 在 1 到 6040 之间Movi">
+import pandas as pd
+import numpy as np
+from sklearn.cluster import DBSCAN
+from sk">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +24,7 @@ ratings.datUserID::MovieID::Rating::TimestampUserID: 在 1 到 6040 之间Movi">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>MovieLens 1M Introduction | PZXNYS&#39;s Blog</title>
+    <title>DBSCAN_Yelp | PZXNYS&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -293,12 +297,12 @@ ratings.datUserID::MovieID::Rating::TimestampUserID: 在 1 到 6040 之间Movi">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">MovieLens 1M Introduction</h1>
+                    <h1 class="description center-align post-title">DBSCAN_Yelp</h1>
                 </div>
             </div>
         </div>
@@ -322,8 +326,12 @@ ratings.datUserID::MovieID::Rating::TimestampUserID: 在 1 到 6040 之间Movi">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Dataset/">
-                                <span class="chip bg-color">Dataset</span>
+                            <a href="/tags/Cluster/">
+                                <span class="chip bg-color">Cluster</span>
+                            </a>
+                        
+                            <a href="/tags/Code/">
+                                <span class="chip bg-color">Code</span>
                             </a>
                         
                     </div>
@@ -347,7 +355,7 @@ ratings.datUserID::MovieID::Rating::TimestampUserID: 在 1 到 6040 之间Movi">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-09
+                    2021-11-15
                 </div>
                 
 
@@ -356,14 +364,14 @@ ratings.datUserID::MovieID::Rating::TimestampUserID: 在 1 到 6040 之间Movi">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    296
+                    462
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -386,14 +394,53 @@ ratings.datUserID::MovieID::Rating::TimestampUserID: 在 1 到 6040 之间Movi">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Total：1000209<br />Movies: 3883<br />Users: 6040<br />稀疏比约为：95.7%<br /></p>
+                <h3 id="DBSCAN"><a href="#DBSCAN" class="headerlink" title="DBSCAN"></a>DBSCAN</h3><p>利用 DBSCAN 聚类算法，对经纬度进行聚类<br>​</p>
+<p>代码如下：</p>
 <span id="more"></span>
-<p><a name="KAv6J"></a></p>
-<h1 id="ratings-dat"><a href="#ratings-dat" class="headerlink" title="ratings.dat"></a>ratings.dat</h1><p>UserID::MovieID::Rating::Timestamp<br /><br><br />UserID: 在 1 到 6040 之间<br />MovieID: 在 1 到 3952 之间(存在缺省值)<br />Rating: 在 1 到 5 之间(采用整数制)<br />Timestamp: 从 1970 开始的秒数<br /><br><br />PS:  每个用户至少有20个评分<br /></p>
-<p><a name="6qZGV"></a></p>
-<h1 id="users-dat"><a href="#users-dat" class="headerlink" title="users.dat"></a>users.dat</h1><p>UserId::Gender::Age::Occupation::Zip-code<br /><br><br />Age: <br />1: 18-<br />18: 18 - 24<br />25: 25 - 34<br />35: 35 - 44<br />45: 45 - 49<br />50: 50 - 55<br />56: 56+<br />Occupation:<br />0: 其它或未说明<br />1: 学术&#x2F;教育工作者<br />2: 艺术家<br />3: 办事员&#x2F;行政<br />4: 大学&#x2F;研究生<br />5: 客户服务<br />6: 医生&#x2F;保健<br />7: 行政&#x2F;管理<br />8: 农民<br />9: 家庭主妇<br />10: k - 12 学生<br />11: 律师<br />12: 程序员<br />13: 退休人员<br />14: 销售&#x2F;营销<br />15: 科学家<br />16: 自由职业者<br />17: 技术员&#x2F; 工程师<br />18: 商人&#x2F;手艺人<br />19: 失业人员<br />20: 作家<br /></p>
-<p><a name="Hrcni"></a></p>
-<h1 id="movies-dat"><a href="#movies-dat" class="headerlink" title="movies.dat"></a>movies.dat</h1><p>MovieId::Title::Genres<br /><br><br />Genres:<br />Action: 动作 <br />Adventure: 冒险<br />Animation: 动画<br />Children’s: 儿童<br />Comedy: 喜剧<br />Crime: 犯罪<br />Documentary:  纪录片<br />Drama: 戏剧<br />Fantasy: 魔幻<br />Film-Noir: 黑色电影<br />Horror: 恐怖<br />Musical: 音乐剧<br />Mystery: 推理<br />Romance: 浪漫爱情<br />Sci-Fi: 科幻<br />Thriler: 惊悚<br />War: 战争<br />Western: 美国西部片<br /><br><br />PS：一些MovieID可能不对应，由于电影是手工录入，故存在误差</p>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">import pandas as pd
+import numpy as np
+from sklearn.cluster import DBSCAN
+from sklearn import metrics
+import os
+
+def dbscan(input_file):
+    columns&#x3D;[&#39;lon&#39;,&#39;lat&#39;]
+    in_df &#x3D; pd.read_csv(input_file, sep&#x3D;&#39;,&#39;, header&#x3D;1, names&#x3D;columns)
+    print(in_df)
+    coords &#x3D; in_df.values
+ 
+    kms_per_radian &#x3D; 6371.0086
+   
+    epsilon &#x3D; 0.4 &#x2F; kms_per_radian
+ 
+    db &#x3D; DBSCAN(eps&#x3D;epsilon, min_samples&#x3D;10, algorithm&#x3D;&#39;ball_tree&#39;, metric&#x3D;&#39;haversine&#39;).fit(np.radians(coords))
+    cluster_labels &#x3D; db.labels_
+ 
+    num_clusters &#x3D; len(set(cluster_labels) - set([-1]))
+ 
+    print( &#39;Clustered &#39; + str(len(in_df)) + &#39; points to &#39; + str(num_clusters) + &#39; clusters&#39;)
+ 
+    for n in range(num_clusters):
+        #print(&#39;Cluster &#39;, n, &#39; all samples:&#39;)
+        one_cluster &#x3D; coords[cluster_labels &#x3D;&#x3D; n]
+        print(len(one_cluster))
+        #clist &#x3D; one_cluster.tolist()
+        #print(clist[0])
+        
+def main():
+    path &#x3D; &#39;.&#x2F;data&#39;
+    f &#x3D; &#39;placell.csv&#39;
+    datafile &#x3D; os.path.join(path,f)
+    print(datafile)
+    dbscan(datafile)
+    
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
+    main()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>利用此算法，将 12094 家店铺聚类为 163 类，每一类至少有 10 家店铺。<br>并存储。<br>重新做数据，将聚类标签添加至数据集中。<br>创建 dqn_coords，训练不同地理位置所适应的店铺。<br>将其作为参数引入 YELP 的推荐中。<code>​</code><br>获得新的推荐结果。<br>​</p>
+<h3 id="数据模拟"><a href="#数据模拟" class="headerlink" title="数据模拟"></a>数据模拟</h3><p>对用户的 70W+ 记录进行完全随机模拟生成用户所在地理位置，或许，模拟出的位置分类与其真实所到的位置相距很远，<br>但是在后期推荐的时候，由于推荐结果的某些特性，在一定程度上来说，提高了对于分类的准确性，综合结果有待评价。<br>​</p>
+<p>若利用聚类的结果，对用户的 70W+ 记录进行随机模拟生成用户所在地理位置，其模拟出的位置与实际位置相距很近，<br>但在后期推荐的时候，对于根据地理位置进行推荐的准确率有所偏低，综合结果有待评价。</p>
 
                 
             </div>
@@ -420,7 +467,7 @@ ratings.datUserID::MovieID::Rating::TimestampUserID: 在 1 到 6040 之间Movi">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://159.75.162.251:4000/posts/1764727198844/">http://159.75.162.251:4000/posts/1764727198844/</a>
+                    <a href="http://159.75.162.251:4000/posts/1764739801811/">http://159.75.162.251:4000/posts/1764739801811/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -458,8 +505,12 @@ ratings.datUserID::MovieID::Rating::TimestampUserID: 在 1 到 6040 之间Movi">
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Dataset/">
-                                    <span class="chip bg-color">Dataset</span>
+                                <a href="/tags/Cluster/">
+                                    <span class="chip bg-color">Cluster</span>
+                                </a>
+                            
+                                <a href="/tags/Code/">
+                                    <span class="chip bg-color">Code</span>
                                 </a>
                             
                         </div>
@@ -542,13 +593,13 @@ ratings.datUserID::MovieID::Rating::TimestampUserID: 在 1 到 6040 之间Movi">
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/1764727198133/">
+                <a href="/posts/1764739801835/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Extracting Keywords from Short Government Documents Using Reinforcement Learning">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Data processing (Tourism )">
                         
-                        <span class="card-title">Extracting Keywords from Short Government Documents Using Reinforcement Learning</span>
+                        <span class="card-title">Data processing (Tourism )</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -559,14 +610,14 @@ ratings.datUserID::MovieID::Rating::TimestampUserID: 在 1 到 6040 之间Movi">
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-15
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Paper-Reading/" class="post-category">
-                                    Paper-Reading
+                            <a href="/categories/ML-DL/" class="post-category">
+                                    ML && DL
                                 </a>
                             
                             
@@ -576,12 +627,8 @@ ratings.datUserID::MovieID::Rating::TimestampUserID: 在 1 到 6040 之间Movi">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Extracting-Keywords/">
-                        <span class="chip bg-color">Extracting Keywords</span>
-                    </a>
-                    
-                    <a href="/tags/Paper/">
-                        <span class="chip bg-color">Paper</span>
+                    <a href="/tags/Dataset/">
+                        <span class="chip bg-color">Dataset</span>
                     </a>
                     
                 </div>
@@ -595,13 +642,13 @@ ratings.datUserID::MovieID::Rating::TimestampUserID: 在 1 到 6040 之间Movi">
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/1764727198537/">
+                <a href="/posts/1764739801558/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Python 基础">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="记录一次磁盘爆炸血泪史">
                         
-                        <span class="card-title">Python 基础</span>
+                        <span class="card-title">记录一次磁盘爆炸血泪史</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -612,14 +659,14 @@ ratings.datUserID::MovieID::Rating::TimestampUserID: 在 1 到 6040 之间Movi">
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
+                            <a href="/categories/Ubuntu/" class="post-category">
+                                    Ubuntu
                                 </a>
                             
                             
@@ -629,8 +676,8 @@ ratings.datUserID::MovieID::Rating::TimestampUserID: 在 1 到 6040 之间Movi">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python-Code/">
-                        <span class="chip bg-color">Python Code</span>
+                    <a href="/tags/Issues/">
+                        <span class="chip bg-color">Issues</span>
                     </a>
                     
                 </div>
@@ -813,7 +860,7 @@ ratings.datUserID::MovieID::Rating::TimestampUserID: 在 1 到 6040 之间Movi">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">19.2k</span>
+                        class="white-color">21.7k</span>
             
             
             
