@@ -4,15 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="DBSCAN_Yelp, 咸鱼">
-    <meta name="description" content="DBSCAN利用 DBSCAN 聚类算法，对经纬度进行聚类​
-代码如下：
-
-
-import pandas as pd
-import numpy as np
-from sklearn.cluster import DBSCAN
-from sk">
+    <meta name="keywords" content="Welcome to My Blog, 咸鱼">
+    <meta name="description" content=" 一条没有任何思想的臭咸鱼
+ ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -24,7 +18,7 @@ from sk">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>DBSCAN_Yelp | PZXNYS&#39;s Blog</title>
+    <title>Welcome to My Blog | PZXNYS&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -297,12 +291,12 @@ from sk">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://pzxnys.github.io/images/lash.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">DBSCAN_Yelp</h1>
+                    <h1 class="description center-align post-title">Welcome to My Blog</h1>
                 </div>
             </div>
         </div>
@@ -324,29 +318,12 @@ from sk">
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Cluster/">
-                                <span class="chip bg-color">Cluster</span>
-                            </a>
-                        
-                            <a href="/tags/Code/">
-                                <span class="chip bg-color">Code</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/ML-DL/" class="post-category">
-                                ML && DL
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -355,7 +332,7 @@ from sk">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-15
+                    2022-11-11
                 </div>
                 
 
@@ -364,14 +341,14 @@ from sk">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    462
+                    12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -394,54 +371,8 @@ from sk">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="DBSCAN"><a href="#DBSCAN" class="headerlink" title="DBSCAN"></a>DBSCAN</h3><p>利用 DBSCAN 聚类算法，对经纬度进行聚类<br>​</p>
-<p>代码如下：</p>
-<span id="more"></span>
-
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import pandas as pd
-import numpy as np
-from sklearn.cluster import DBSCAN
-from sklearn import metrics
-import os
-
-def dbscan(input_file):
-    columns&#x3D;[&#39;lon&#39;,&#39;lat&#39;]
-    in_df &#x3D; pd.read_csv(input_file, sep&#x3D;&#39;,&#39;, header&#x3D;1, names&#x3D;columns)
-    print(in_df)
-    coords &#x3D; in_df.values
- 
-    kms_per_radian &#x3D; 6371.0086
-   
-    epsilon &#x3D; 0.4 &#x2F; kms_per_radian
- 
-    db &#x3D; DBSCAN(eps&#x3D;epsilon, min_samples&#x3D;10, algorithm&#x3D;&#39;ball_tree&#39;, metric&#x3D;&#39;haversine&#39;).fit(np.radians(coords))
-    cluster_labels &#x3D; db.labels_
- 
-    num_clusters &#x3D; len(set(cluster_labels) - set([-1]))
- 
-    print( &#39;Clustered &#39; + str(len(in_df)) + &#39; points to &#39; + str(num_clusters) + &#39; clusters&#39;)
- 
-    for n in range(num_clusters):
-        #print(&#39;Cluster &#39;, n, &#39; all samples:&#39;)
-        one_cluster &#x3D; coords[cluster_labels &#x3D;&#x3D; n]
-        print(len(one_cluster))
-        #clist &#x3D; one_cluster.tolist()
-        #print(clist[0])
-        
-def main():
-    path &#x3D; &#39;.&#x2F;data&#39;
-    f &#x3D; &#39;placell.csv&#39;
-    datafile &#x3D; os.path.join(path,f)
-    print(datafile)
-    dbscan(datafile)
-    
-if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
-    main()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>利用此算法，将 12094 家店铺聚类为 163 类，每一类至少有 10 家店铺。<br>并存储。<br>重新做数据，将聚类标签添加至数据集中。<br>创建 dqn_coords，训练不同地理位置所适应的店铺。<br>将其作为参数引入 YELP 的推荐中。<code>​</code><br>获得新的推荐结果。<br>​</p>
-<h3 id="数据模拟"><a href="#数据模拟" class="headerlink" title="数据模拟"></a>数据模拟</h3><p>对用户的 70W+ 记录进行完全随机模拟生成用户所在地理位置，或许，模拟出的位置分类与其真实所到的位置相距很远，<br>但是在后期推荐的时候，由于推荐结果的某些特性，在一定程度上来说，提高了对于分类的准确性，综合结果有待评价。<br>​</p>
-<p>若利用聚类的结果，对用户的 70W+ 记录进行随机模拟生成用户所在地理位置，其模拟出的位置与实际位置相距很近，<br>但在后期推荐的时候，对于根据地理位置进行推荐的准确率有所偏低，综合结果有待评价。</p>
-
+                 <h3 id="一条没有任何思想的臭咸鱼"><a href="#一条没有任何思想的臭咸鱼" class="headerlink" title="一条没有任何思想的臭咸鱼"></a>一条没有任何思想的臭咸鱼</h3>
+ <img src="https://pzxnys.github.io/images/lash.png">
                 
             </div>
             <hr/>
@@ -467,7 +398,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://159.75.162.251:4000/posts/1764740019699/">http://159.75.162.251:4000/posts/1764740019699/</a>
+                    <a href="http://159.75.162.251:4000/posts/1764740360409/">http://159.75.162.251:4000/posts/1764740360409/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -504,15 +435,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/Cluster/">
-                                    <span class="chip bg-color">Cluster</span>
-                                </a>
-                            
-                                <a href="/tags/Code/">
-                                    <span class="chip bg-color">Code</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -593,13 +516,13 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/1764740019623/">
+                <a href="/posts/1764740360694/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Data processing (Tourism )">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="进阶的科研">
                         
-                        <span class="card-title">Data processing (Tourism )</span>
+                        <span class="card-title">进阶的科研</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -610,14 +533,14 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-15
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-09-09
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/ML-DL/" class="post-category">
-                                    ML && DL
+                            <a href="/categories/Dr/" class="post-category">
+                                    Dr.
                                 </a>
                             
                             
@@ -627,8 +550,8 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Dataset/">
-                        <span class="chip bg-color">Dataset</span>
+                    <a href="/tags/USV/">
+                        <span class="chip bg-color">USV</span>
                     </a>
                     
                 </div>
@@ -642,13 +565,13 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/1764740019637/">
+                <a href="/posts/1764740360867/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="记录一次磁盘爆炸血泪史">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Anaconda环境配置">
                         
-                        <span class="card-title">记录一次磁盘爆炸血泪史</span>
+                        <span class="card-title">Anaconda环境配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -659,16 +582,12 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-29
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Ubuntu/" class="post-category">
-                                    Ubuntu
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            pzxnys
                             
                         </span>
                     </div>
@@ -676,8 +595,8 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Issues/">
-                        <span class="chip bg-color">Issues</span>
+                    <a href="/tags/Anaconda/">
+                        <span class="chip bg-color">Anaconda</span>
                     </a>
                     
                 </div>
@@ -860,7 +779,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">21.8k</span>
+                        class="white-color">27.9k</span>
             
             
             

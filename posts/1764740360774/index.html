@@ -4,9 +4,20 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="记录一次磁盘爆炸血泪史, 咸鱼">
-    <meta name="description" content="
-起因这是最初建立 ubuntu + Windows 10 留下的一个诟病。由于网上大部分教程，及之前个人实验的影响。在建立 Ubuntu 系统时，根目录仅分配了 40 G 的磁盘容量。本想着就只是存储一些代码，和少许的数据集，不可能把根目">
+    <meta name="keywords" content="橙啦-颉斌斌老师 阅读课, 咸鱼">
+    <meta name="description" content="阅读低分思维和满分思维的区别：低分思维：
+定位：题干中有什么就去定位什么
+内容：把每个单词都读懂，翻译成中文
+做题：答案见过，求证 100% 正确
+已知信息：原文
+
+结果：
+
+定位不准
+低消耗时
+出错率高
+
+正确的做题方式 – 即满分思维：">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +29,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>记录一次磁盘爆炸血泪史 | PZXNYS&#39;s Blog</title>
+    <title>橙啦-颉斌斌老师 阅读课 | PZXNYS&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -291,12 +302,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">记录一次磁盘爆炸血泪史</h1>
+                    <h1 class="description center-align post-title">橙啦-颉斌斌老师 阅读课</h1>
                 </div>
             </div>
         </div>
@@ -320,8 +331,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Issues/">
-                                <span class="chip bg-color">Issues</span>
+                            <a href="/tags/Reading-Comprehension/">
+                                <span class="chip bg-color">Reading Comprehension</span>
                             </a>
                         
                     </div>
@@ -332,8 +343,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Ubuntu/" class="post-category">
-                                Ubuntu
+                            <a href="/categories/CET-6/" class="post-category">
+                                CET-6
                             </a>
                         
                     </div>
@@ -345,7 +356,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-15
+                    2023-11-12
                 </div>
                 
 
@@ -354,14 +365,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    941
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    3 分
                 </div>
                 
 
@@ -384,15 +395,101 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a name="fMQD6"></a></p>
-<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>这是最初建立 ubuntu + Windows 10 留下的一个诟病。<br />由于网上大部分教程，及之前个人实验的影响。在建立 Ubuntu 系统时，根目录仅分配了 40 G 的磁盘容量。<br />本想着就只是存储一些代码，和少许的数据集，不可能把根目录撑爆，奈何大意失荆州啊！！！</p>
-<span id="more"></span>
-<p><a name="Wj4s6"></a></p>
-<h3 id="问题出现"><a href="#问题出现" class="headerlink" title="问题出现"></a>问题出现</h3><p>2021.07.07 下午，如往常一样，“开心”地做实验。<br />由于对比实验的需求，在多如牛毛的数据集中(其实也就3个)，找到了比较适合的数据集 YELP。<br />同之前操作，开始向 mongodb 导入这个“高达” 12 G 的数据集合。<br />把最大的一个约 6 G 大小的用户评论表导入成功之后，一切还是波澜不惊(主要是没有查看磁盘容量的习惯)<br />接下来开始导入用户注册表，本以为它是正常导入，结果没想到，mongodb 突然无法远程连接，我简直是大吃一惊，<br />以为和苹果连接特定名称WiFi，导致WiFi永久不能使用一样。我导入的用户表中，也有这样的字符串嘛？简直是吓破胆啊！<br />于是开始疯狂找解决办法，我还是很天真的想着，如何把刚导入的那个表删除。但是 mongodb 就是不给你连接，你有什么办法。哎！<br />就这样，经过一个多小时的挣扎，试了百度、博客、csdn等各路大神的指导，问题仍在哪里，纹丝不动。（内心：我到底做错了什么）<br />高潮来了，本想着 linux 的“稳定性”(再也不信了)重启解决所有问题，我按下了这该死的重启键。<br />问题并没有想象中那么愉快的解决，反而系统进入了无限输入密码的阶段（内心已经完全崩溃），难道这就要重新搭建系统了嘛？我拒绝！！！<br><a name="rjqYC"></a></p>
-<h3 id="寻找问题症结"><a href="#寻找问题症结" class="headerlink" title="寻找问题症结"></a>寻找问题症结</h3><p>“程序员干的最 sb 的一件事就是：修改前辈们的代码，你本想着只是把整体结构梳理清晰，结果弄成了山体坍塌”<br />我本想着把 MongoDB 的服务打开，没想到，系统就这样崩了，崩了，崩了！！！<br />我有继续在百度、博客、csdn等各大网站畅游，试过无数方法，他仍旧不能进入桌面（马上要疯。。。）<br />直到一句话，“你的磁盘满了，登录信息无法写入，所以无法进入桌面”，哇，悟了。<br><a name="Yk3I6"></a></p>
-<h3 id="先修房子"><a href="#先修房子" class="headerlink" title="先修房子"></a>先修房子</h3><p>天真的我，开启 Windows 系统，使用系统磁盘管理，将一块基本不用的盘（大概 605 G，简直是暴殄天物）格式化，为 Ubuntu 的扩容<br />本想着，分区工具（DiskGenius）是神一般的存在，所有的硬盘问题，交给他就是洒洒水的事。没想到，所托非人。连续两次的扩容尝试，让我意识到，他不行了！<br />接下来，继续开启百度、博客、csdn等各大网站(身边有一个 linux 大神，该有多好)。一款闻所未闻的分区工具(gparted)出现在了我的眼前<br />但，大部分都是在系统正常的时候，使用其对根目录进行扩容。难道我又失败了？真的要重做系统吗？不要这样折磨我好吗？<br />突然有句话出现了，它可以烧录到 u 盘上，作为镜像启动。天呐，太牛了。就 u 盘多<br />进入官方网站<a target="_blank" rel="noopener" href="https://gparted.org/download.php">下载</a>，随手翻篇帖子。将U盘格式化为 FAT 格式（之前为了方便存大文件，都是 NTFS 格式的）。经压缩包解压到 U 盘根目录（官方要求）<br />进入  ‘utils&#x2F;win32&#x2F;‘ 文件夹下，右键管理员运行 makeboot.bat (官方真的有够细心)<br />开始常规 u 盘启动，经过一系列胡乱操作之后，进入到了硬盘管理界面。重新调配硬盘大小，执行。。。<br />………………………………………………………………………………………waiting…………………………………………………………………………………………<br />就这样，一个半小时过去了。硬盘完全调配好了，还等什么，麻利拔 U 盘，赶紧开机<br />果真没让我失望，他开了，他终于开了（内心可喜，结果发现高兴过早了！！！）<br><a name="HwEhA"></a></p>
-<h3 id="再补漏洞"><a href="#再补漏洞" class="headerlink" title="再补漏洞"></a>再补漏洞</h3><p>经过了近三个小时的挣扎，系统算是成功打开了。<br />本想着，系统都能正常运行了，你 MongoDB 就别在那拘着了，有什么好傲娇的呢？可是他就是不顺你的心意，这就是我刚说的高兴太早了<br />为了能把 MongoDB 打开，我搜索其反馈的各种错误代码，以及查看运行日志，甚至联系 DBA 大神 – 东东(身边真的没什么玩数据库的，<br />奈何他只搞 Oracle 和 MySQL，而且还说了一句话，生产的数据库是不会挂的，如果没问题，找你干嘛)<br />修改配置文件，删除锁文件，修改权限，等等。网络“大神”给出的方案真的是五花八门，不过我早就料到回是这样，于是就一个个的开始尝试，<br />最后，不出所料，我以失败而告终，已经晚上9点多了，好饿。。。<br />以后有问题，一定要先看官方文档（为什么我就不看呢，服了自己了。）<br />MongoDB 有一个很牛的功能，即使你不能打开服务，也能使用其提供的函数 mongodump，将数据库完整的备份出来。<br />然后，等数据库修复好之后，再用函数 mongorestore，将其恢复。(可能是我太天真了，一切都不是那么顺利。)<br />数据备份还是比较轻松的，先在根目录创个文件夹，用来存备份文件， mkdir -p &#x2F;remote_dir&#x2F;mongo_dump_dir<br />开始备份数据库：  mongodump -d tourism -o &#x2F;remote_dir&#x2F;mongo_dump_dir<br />       接下来就不担心数据问题了，明天早点来搞			时间： 21:44<br />………………………………………………………………………………………………手动分割线……………………………………………………………………………………………<br />2020.07.08<br />今天早上来了之后，不用想其它了，直接重装数据库吧。(面对疾风吧！！！)<br />经过网上一系列卸载 MongoDB 的教程之后，我发现重装的数据库仍然不能打开，这不是欺人太甚嘛！<br />反反复复折腾了小两个小时，我还是失败了。（真的抓狂）<br />最后，走了一条十分绝的道路，直接搜索，凡是和 MongoDB 有关，且和 Anaconda 无关的所有，全部彻底删除，然后重启机器(我命由我)<br />经过大海捞针式的搜索之后，我终于找到了一个不错的帖子（其它都还好，只是这个把问题解决了）<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ae77f6473250">Ubuntu 安装 MongoDB</a><br />经过系列疯狂操作之后，他活了，终于又活过来了<br />开始修复 bug：<br />①. 为了能够远程访问，&#x2F;etc&#x2F;mongodb.conf 中加一句：bind_ip&#x3D;0.0.0.0<br />②.   解决mongod: 找不到命令：vim ~&#x2F;.bashrc<br />到配置最后，加入以下内容<br />export mongodb&#x3D;&#x2F;usr&#x2F;local&#x2F;mongodb<br />export PATH&#x3D;$mongodn&#x2F;bin:$PATH<br />保存，退出编辑，重置环境变量：source ~&#x2F;.bashrc<br />③.   解决sudo: mongod: 找不到命令:  sudo visudo<br />找到secure_path,  最后添加:     :&#x2F;usr&#x2F;local&#x2F;mongodb&#x2F;bin<br />④.   关闭mongod<br />连接： mongo<br />     use admin<br />     db.shutdownServer()<br />⑤.   MongoDB 服务重启：sudo mongod –config &#x2F;etc&#x2F;mongodb.conf<br />至此，MongoDB重装完毕！！！<br />开始恢复数据库： mongorestore -d  tourism  &#x2F;remote_dir&#x2F;mongo_dump_dir&#x2F;tourism<br><a name="Vers1"></a></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>数据不易，且行且珍惜！！！<br />以后再不注意磁盘容量，把磁盘撑爆！！！！！！我是猪！！！！！！！！！！1</p>
+                <h2 id="阅读低分思维和满分思维的区别："><a href="#阅读低分思维和满分思维的区别：" class="headerlink" title="阅读低分思维和满分思维的区别："></a>阅读低分思维和满分思维的区别：</h2><h3 id="低分思维："><a href="#低分思维：" class="headerlink" title="低分思维："></a>低分思维：</h3><ul>
+<li>定位：题干中有什么就去定位什么</li>
+<li>内容：把每个单词都读懂，翻译成中文</li>
+<li>做题：答案见过，求证 100% 正确</li>
+<li>已知信息：原文</li>
+</ul>
+<p>结果：</p>
+<ol>
+<li>定位不准</li>
+<li>低消耗时</li>
+<li>出错率高<span id="more"></span></li>
+</ol>
+<h3 id="正确的做题方式-–-即满分思维："><a href="#正确的做题方式-–-即满分思维：" class="headerlink" title="正确的做题方式 – 即满分思维："></a>正确的做题方式 – 即满分思维：</h3><ul>
+<li>定位：回答题干问题所问</li>
+<li>内容：逻辑判断</li>
+<li>做题：比出出错概率较小</li>
+<li>已知信息：原文 + 题干 + 选项</li>
+</ul>
+<h3 id="传统老师的定位方法"><a href="#传统老师的定位方法" class="headerlink" title="传统老师的定位方法"></a>传统老师的定位方法</h3><ol>
+<li>先看题干，从题干中找定位词：大写字母 &#x2F; 专有名词 &#x2F; 数字 &#x2F; 人名 &#x2F; 地名 &#x2F; 关键词</li>
+<li>带着这些定位词到原文中去定位，找到出题句</li>
+<li>精读出题句，对比选项看有没有同义词替换或同义改写</li>
+<li>如果没有答案，就去看上一句或下一句，最多三句</li>
+</ol>
+<h3 id="怎样去避免干扰？"><a href="#怎样去避免干扰？" class="headerlink" title="怎样去避免干扰？"></a>怎样去避免干扰？</h3><p>一定要学会精准定位</p>
+<p>题干的问题决定了精准定位，而不是题干有什么就定位什么</p>
+<p>定位的内容一定要回答题干问题所问</p>
+<p>题干问题所问需要深度理解问题：题干结合选项  才能对问题深度把握</p>
+<h3 id="对比选项"><a href="#对比选项" class="headerlink" title="对比选项"></a>对比选项</h3><ol>
+<li><p>客观接收信息</p>
+<p>每个考生面前的信息是一样的，但读完之后会有不一样的解读！所以，如何做到对信息真实的接受，不能失真！</p>
+<h4 id="客观"><a href="#客观" class="headerlink" title="客观"></a>客观</h4><ul>
+<li>不加任何生活背景，不看暗含</li>
+<li>不加自己的解释</li>
+<li>不做主观式的推测</li>
+</ul>
+</li>
+<li><p>比出出错概率最小：</p>
+<h4 id="传统的阅读思维"><a href="#传统的阅读思维" class="headerlink" title="传统的阅读思维"></a>传统的阅读思维</h4><ol>
+<li><p>求证正确答案的正确性：</p>
+<p><font color='red'> 同义替 &#x2F; 同义改写 &#x2F; 逻辑高度概括 </font></p>
+</li>
+<li><p>求证错误选项的错误性：</p>
+<p><font color='red'> 张冠李戴 &#x2F; 无中生有 &#x2F; 逻辑颠倒 </font></p>
+</li>
+</ol>
+<h4 id="真实的考试状态"><a href="#真实的考试状态" class="headerlink" title="真实的考试状态"></a>真实的考试状态</h4><ol>
+<li>有时间压力 - 读不懂或读不透</li>
+<li>有心理压力 - 各种应试能力全面下降</li>
+</ol>
+<p>PS：在考场上大多数考生没有能力判断哪个正确</p>
+<p>PS：选出正确选项是培训老师最大的谎言！</p>
+<h4 id="选择题的特点"><a href="#选择题的特点" class="headerlink" title="选择题的特点"></a>选择题的特点</h4><ol>
+<li><p>答案的唯一性  </p>
+<p>先把错误选项干掉，再把比较不对的选项干掉（选项是比出来的）</p>
+<ol>
+<li>有比较对象 </li>
+<li>选项相对正确</li>
+</ol>
+</li>
+<li><p>比出一个出错概率较小的选项（必要性思维 – 前提思维）</p>
+<p>a. 排除不沾边的，留下沾点边的</p>
+<p>b. 只有一个沾边，就选它</p>
+<p>c. 如果有两个沾边，比出一个出错概率较小的选项</p>
+</li>
+</ol>
+<p>​         PS： 用“出错概率较小”代替“正确选项”的思维</p>
+<h4 id="选择题答案的特点（排除法）"><a href="#选择题答案的特点（排除法）" class="headerlink" title="选择题答案的特点（排除法）"></a>选择题答案的特点（排除法）</h4><ul>
+<li>没有对的定义，只有完全错的定义或相对不好的定义！</li>
+<li>选项之所以选它，不是你想选它，而是被逼的不得不选它！因为别的没法选！</li>
+</ul>
+<h4 id="什么是评估选项"><a href="#什么是评估选项" class="headerlink" title="什么是评估选项"></a>什么是评估选项</h4><ol>
+<li>根据题干中的问题所问到原文中定位</li>
+<li>根据定位到的信息，对选项做出评估</li>
+</ol>
+<p><font color='blue'>PS: 意思一样的可以评估，意思不一样的也可以评估</font></p>
+<p><font color='red'>评估：在这个定位得到的信息存在之下，谁的出错概率更小！</font></p>
+<p><font color='yellowgreen'>答案具有唯一性，A能推出B，则答案一定选B！！！</font></p>
+<p><b><font color='green' size='6px'>阅读理解可以利用的宝藏</font></b></p>
+<h4 id="选择题无法避开的固有缺陷"><a href="#选择题无法避开的固有缺陷" class="headerlink" title="选择题无法避开的固有缺陷"></a>选择题无法避开的固有缺陷</h4><ol>
+<li>问题的暗示</li>
+<li>选项的暗示</li>
+<li>原文的暗示</li>
+<li>一致性（前后题）的暗示</li>
+</ol>
+<h3 id="阅读做法"><a href="#阅读做法" class="headerlink" title="阅读做法"></a>阅读做法</h3><p>先读五个题干后最后一题的4个选项（若最后一题为主旨。）</p>
+<p>画出具体信息：</p>
+<ul>
+<li>名词</li>
+<li>该名词涉及文章具体信息</li>
+<li>词组优先</li>
+</ul>
+<p>PS：选项的区别是思考的角度</p>
+</li>
+</ol>
                 
             </div>
             <hr/>
@@ -418,7 +515,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://159.75.162.251:4000/posts/1764740019637/">http://159.75.162.251:4000/posts/1764740019637/</a>
+                    <a href="http://159.75.162.251:4000/posts/1764740360774/">http://159.75.162.251:4000/posts/1764740360774/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -456,8 +553,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Issues/">
-                                    <span class="chip bg-color">Issues</span>
+                                <a href="/tags/Reading-Comprehension/">
+                                    <span class="chip bg-color">Reading Comprehension</span>
                                 </a>
                             
                         </div>
@@ -536,17 +633,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/1764740019699/">
+                <a href="/posts/1764740360774/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="DBSCAN_Yelp">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="橙啦-颉斌斌老师 阅读课">
                         
-                        <span class="card-title">DBSCAN_Yelp</span>
+                        <span class="card-title">橙啦-颉斌斌老师 阅读课</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -556,30 +654,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/ML-DL/" class="post-category">
-                                    ML && DL
+                            <a href="/categories/CET-6/" class="post-category">
+                                    CET-6
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Cluster/">
-                        <span class="chip bg-color">Cluster</span>
-                    </a>
-                    
-                    <a href="/tags/Code/">
-                        <span class="chip bg-color">Code</span>
+                    <a href="/tags/Reading-Comprehension/">
+                        <span class="chip bg-color">Reading Comprehension</span>
                     </a>
                     
                 </div>
@@ -593,13 +688,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/1764740019792/">
+                <a href="/posts/1764740360979/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Extracting Keywords from Short Government Documents Using Reinforcement Learning">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Sentiment analysis using deep learning architectures: a review">
                         
-                        <span class="card-title">Extracting Keywords from Short Government Documents Using Reinforcement Learning</span>
+                        <span class="card-title">Sentiment analysis using deep learning architectures: a review</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -610,7 +705,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-08
                             </span>
                         <span class="publish-author">
                             
@@ -627,12 +722,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Extracting-Keywords/">
-                        <span class="chip bg-color">Extracting Keywords</span>
+                    <a href="/tags/Sentiment-Analysis/">
+                        <span class="chip bg-color">Sentiment Analysis</span>
                     </a>
                     
-                    <a href="/tags/Paper/">
-                        <span class="chip bg-color">Paper</span>
+                    <a href="/tags/Review/">
+                        <span class="chip bg-color">Review</span>
                     </a>
                     
                 </div>
@@ -815,7 +910,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">21.8k</span>
+                        class="white-color">27.9k</span>
             
             
             
