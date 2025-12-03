@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="记录一次磁盘爆炸血泪史, 咸鱼">
-    <meta name="description" content="
-起因这是最初建立 ubuntu + Windows 10 留下的一个诟病。由于网上大部分教程，及之前个人实验的影响。在建立 Ubuntu 系统时，根目录仅分配了 40 G 的磁盘容量。本想着就只是存储一些代码，和少许的数据集，不可能把根目">
+    <meta name="keywords" content="Sentiment analysis using deep learning architectures: a review, 咸鱼">
+    <meta name="description" content="Author: Ashima Yadav, Dinesh Kumar Vishwakarma
+A significant goal of sentiment analysis is to classify and analyze the r">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>记录一次磁盘爆炸血泪史 | PZXNYS&#39;s Blog</title>
+    <title>Sentiment analysis using deep learning architectures: a review | PZXNYS&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -291,12 +291,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">记录一次磁盘爆炸血泪史</h1>
+                    <h1 class="description center-align post-title">Sentiment analysis using deep learning architectures: a review</h1>
                 </div>
             </div>
         </div>
@@ -320,8 +320,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Issues/">
-                                <span class="chip bg-color">Issues</span>
+                            <a href="/tags/Sentiment-Analysis/">
+                                <span class="chip bg-color">Sentiment Analysis</span>
+                            </a>
+                        
+                            <a href="/tags/Review/">
+                                <span class="chip bg-color">Review</span>
                             </a>
                         
                     </div>
@@ -332,8 +336,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Ubuntu/" class="post-category">
-                                Ubuntu
+                            <a href="/categories/Paper-Reading/" class="post-category">
+                                Paper-Reading
                             </a>
                         
                     </div>
@@ -345,7 +349,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-15
+                    2023-10-08
                 </div>
                 
 
@@ -354,14 +358,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    10 分
                 </div>
                 
 
@@ -384,15 +388,147 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a name="fMQD6"></a></p>
-<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>这是最初建立 ubuntu + Windows 10 留下的一个诟病。<br />由于网上大部分教程，及之前个人实验的影响。在建立 Ubuntu 系统时，根目录仅分配了 40 G 的磁盘容量。<br />本想着就只是存储一些代码，和少许的数据集，不可能把根目录撑爆，奈何大意失荆州啊！！！</p>
+                <p><font size="2" color="grey">Author: Ashima Yadav, Dinesh Kumar Vishwakarma</font></p>
+<p>A significant goal of sentiment analysis is to classify and analyze the reviews related to products, hotels, online  booking sites, e-commerce sites, social media, etc.</p>
 <span id="more"></span>
-<p><a name="Wj4s6"></a></p>
-<h3 id="问题出现"><a href="#问题出现" class="headerlink" title="问题出现"></a>问题出现</h3><p>2021.07.07 下午，如往常一样，“开心”地做实验。<br />由于对比实验的需求，在多如牛毛的数据集中(其实也就3个)，找到了比较适合的数据集 YELP。<br />同之前操作，开始向 mongodb 导入这个“高达” 12 G 的数据集合。<br />把最大的一个约 6 G 大小的用户评论表导入成功之后，一切还是波澜不惊(主要是没有查看磁盘容量的习惯)<br />接下来开始导入用户注册表，本以为它是正常导入，结果没想到，mongodb 突然无法远程连接，我简直是大吃一惊，<br />以为和苹果连接特定名称WiFi，导致WiFi永久不能使用一样。我导入的用户表中，也有这样的字符串嘛？简直是吓破胆啊！<br />于是开始疯狂找解决办法，我还是很天真的想着，如何把刚导入的那个表删除。但是 mongodb 就是不给你连接，你有什么办法。哎！<br />就这样，经过一个多小时的挣扎，试了百度、博客、csdn等各路大神的指导，问题仍在哪里，纹丝不动。（内心：我到底做错了什么）<br />高潮来了，本想着 linux 的“稳定性”(再也不信了)重启解决所有问题，我按下了这该死的重启键。<br />问题并没有想象中那么愉快的解决，反而系统进入了无限输入密码的阶段（内心已经完全崩溃），难道这就要重新搭建系统了嘛？我拒绝！！！<br><a name="rjqYC"></a></p>
-<h3 id="寻找问题症结"><a href="#寻找问题症结" class="headerlink" title="寻找问题症结"></a>寻找问题症结</h3><p>“程序员干的最 sb 的一件事就是：修改前辈们的代码，你本想着只是把整体结构梳理清晰，结果弄成了山体坍塌”<br />我本想着把 MongoDB 的服务打开，没想到，系统就这样崩了，崩了，崩了！！！<br />我有继续在百度、博客、csdn等各大网站畅游，试过无数方法，他仍旧不能进入桌面（马上要疯。。。）<br />直到一句话，“你的磁盘满了，登录信息无法写入，所以无法进入桌面”，哇，悟了。<br><a name="Yk3I6"></a></p>
-<h3 id="先修房子"><a href="#先修房子" class="headerlink" title="先修房子"></a>先修房子</h3><p>天真的我，开启 Windows 系统，使用系统磁盘管理，将一块基本不用的盘（大概 605 G，简直是暴殄天物）格式化，为 Ubuntu 的扩容<br />本想着，分区工具（DiskGenius）是神一般的存在，所有的硬盘问题，交给他就是洒洒水的事。没想到，所托非人。连续两次的扩容尝试，让我意识到，他不行了！<br />接下来，继续开启百度、博客、csdn等各大网站(身边有一个 linux 大神，该有多好)。一款闻所未闻的分区工具(gparted)出现在了我的眼前<br />但，大部分都是在系统正常的时候，使用其对根目录进行扩容。难道我又失败了？真的要重做系统吗？不要这样折磨我好吗？<br />突然有句话出现了，它可以烧录到 u 盘上，作为镜像启动。天呐，太牛了。就 u 盘多<br />进入官方网站<a target="_blank" rel="noopener" href="https://gparted.org/download.php">下载</a>，随手翻篇帖子。将U盘格式化为 FAT 格式（之前为了方便存大文件，都是 NTFS 格式的）。经压缩包解压到 U 盘根目录（官方要求）<br />进入  ‘utils&#x2F;win32&#x2F;‘ 文件夹下，右键管理员运行 makeboot.bat (官方真的有够细心)<br />开始常规 u 盘启动，经过一系列胡乱操作之后，进入到了硬盘管理界面。重新调配硬盘大小，执行。。。<br />………………………………………………………………………………………waiting…………………………………………………………………………………………<br />就这样，一个半小时过去了。硬盘完全调配好了，还等什么，麻利拔 U 盘，赶紧开机<br />果真没让我失望，他开了，他终于开了（内心可喜，结果发现高兴过早了！！！）<br><a name="HwEhA"></a></p>
-<h3 id="再补漏洞"><a href="#再补漏洞" class="headerlink" title="再补漏洞"></a>再补漏洞</h3><p>经过了近三个小时的挣扎，系统算是成功打开了。<br />本想着，系统都能正常运行了，你 MongoDB 就别在那拘着了，有什么好傲娇的呢？可是他就是不顺你的心意，这就是我刚说的高兴太早了<br />为了能把 MongoDB 打开，我搜索其反馈的各种错误代码，以及查看运行日志，甚至联系 DBA 大神 – 东东(身边真的没什么玩数据库的，<br />奈何他只搞 Oracle 和 MySQL，而且还说了一句话，生产的数据库是不会挂的，如果没问题，找你干嘛)<br />修改配置文件，删除锁文件，修改权限，等等。网络“大神”给出的方案真的是五花八门，不过我早就料到回是这样，于是就一个个的开始尝试，<br />最后，不出所料，我以失败而告终，已经晚上9点多了，好饿。。。<br />以后有问题，一定要先看官方文档（为什么我就不看呢，服了自己了。）<br />MongoDB 有一个很牛的功能，即使你不能打开服务，也能使用其提供的函数 mongodump，将数据库完整的备份出来。<br />然后，等数据库修复好之后，再用函数 mongorestore，将其恢复。(可能是我太天真了，一切都不是那么顺利。)<br />数据备份还是比较轻松的，先在根目录创个文件夹，用来存备份文件， mkdir -p &#x2F;remote_dir&#x2F;mongo_dump_dir<br />开始备份数据库：  mongodump -d tourism -o &#x2F;remote_dir&#x2F;mongo_dump_dir<br />       接下来就不担心数据问题了，明天早点来搞			时间： 21:44<br />………………………………………………………………………………………………手动分割线……………………………………………………………………………………………<br />2020.07.08<br />今天早上来了之后，不用想其它了，直接重装数据库吧。(面对疾风吧！！！)<br />经过网上一系列卸载 MongoDB 的教程之后，我发现重装的数据库仍然不能打开，这不是欺人太甚嘛！<br />反反复复折腾了小两个小时，我还是失败了。（真的抓狂）<br />最后，走了一条十分绝的道路，直接搜索，凡是和 MongoDB 有关，且和 Anaconda 无关的所有，全部彻底删除，然后重启机器(我命由我)<br />经过大海捞针式的搜索之后，我终于找到了一个不错的帖子（其它都还好，只是这个把问题解决了）<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ae77f6473250">Ubuntu 安装 MongoDB</a><br />经过系列疯狂操作之后，他活了，终于又活过来了<br />开始修复 bug：<br />①. 为了能够远程访问，&#x2F;etc&#x2F;mongodb.conf 中加一句：bind_ip&#x3D;0.0.0.0<br />②.   解决mongod: 找不到命令：vim ~&#x2F;.bashrc<br />到配置最后，加入以下内容<br />export mongodb&#x3D;&#x2F;usr&#x2F;local&#x2F;mongodb<br />export PATH&#x3D;$mongodn&#x2F;bin:$PATH<br />保存，退出编辑，重置环境变量：source ~&#x2F;.bashrc<br />③.   解决sudo: mongod: 找不到命令:  sudo visudo<br />找到secure_path,  最后添加:     :&#x2F;usr&#x2F;local&#x2F;mongodb&#x2F;bin<br />④.   关闭mongod<br />连接： mongo<br />     use admin<br />     db.shutdownServer()<br />⑤.   MongoDB 服务重启：sudo mongod –config &#x2F;etc&#x2F;mongodb.conf<br />至此，MongoDB重装完毕！！！<br />开始恢复数据库： mongorestore -d  tourism  &#x2F;remote_dir&#x2F;mongo_dump_dir&#x2F;tourism<br><a name="Vers1"></a></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>数据不易，且行且珍惜！！！<br />以后再不注意磁盘容量，把磁盘撑爆！！！！！！我是猪！！！！！！！！！！1</p>
+<p>Singla et al. (2017) They have categorized text into positive and negative polarity, and have also include sentiments of anger, anticipation, fear, joy, sadness, disgust, surprise, and trust. The classification is done through SVM resulting in an accuracy of 84.85%. These results are useful for manufacturers as they can work on the feedback to improve the quality of product.</p>
+<p>Different  from  these  surveys, this review aims to cover the significant and widespread approaches which are introduced recently in the field of sentiment analysis using deep learning.</p>
+<p>This survey provides a comprehensive review of the existing literature on sentiment analysis with deep learning architecture. The significant contribution of this survey can be summarized as:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Outlined a taxonomy for sentiment classification (Fig. 3), which includes methods  using handcrafted and machine-learned feature-based approaches.</p>
+</li>
+<li class="lvl-2">
+<p>Discuss the architecture of various deep learning-based approaches to summarize  the notable work and highlight the popular deep learning-based architecture used  by various researchers for sentiment analysis.</p>
+</li>
+<li class="lvl-2">
+<p>Present the vital sentiment analysis tasks and identify why deep learning models  are increasingly applied to them.</p>
+</li>
+<li class="lvl-2">
+<p>Identify the popular sentiment analysis datasets, the accuracy obtained on them,  and discuss the need for creating own corpus for sentiment analysis.</p>
+</li>
+</ul>
+<div align = 'center'><img src="https://pzxnys.github.io/images/211112163624.png"/></div>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>•Outlined a taxonomy for sentiment classification (Fig.3), which includes methods using</p>
+</li>
+<li class="lvl-2">
+<p>handcrafted and machine-learned feature-based approaches.</p>
+</li>
+<li class="lvl-2">
+<p>•Discuss the architecture of various deep learning-based approaches to summarize the</p>
+</li>
+<li class="lvl-2">
+<p>notable work and highlight the popular deep learning-based architecture used by various</p>
+</li>
+<li class="lvl-2">
+<p>researchers for sentiment analysis.</p>
+</li>
+<li class="lvl-2">
+<p>•Present the vital sentiment analysis tasks and identify why deep learning models are</p>
+</li>
+<li class="lvl-2">
+<p>increasingly applied to them.</p>
+</li>
+<li class="lvl-2">
+<p>•Identify the popular sentiment analysis datasets, the accuracy obtained on them, and discuss</p>
+</li>
+<li class="lvl-2">
+<p>the need for creating own corpus for sentiment analysis.</p>
+</li>
+</ul>
+<p>The organization of the survey is shown in Fig. 2.</p>
+<div align="center"><img src = "https://pzxnys.github.io/images/211112194433.png"/></div>
+<p>The sentiment analysis tasks can be categorized into two parts: core(or major) tasks which are referred as the basic sentiment analysis tasks, and second category includes the sub-tasks that are called sub-categories of the major tasks.</p>
+<h2 id="Document-level-sentiment-classification">Document-level sentiment classification</h2>
+<p>This level of classification takes the whole document as a primary unit of information focusing on one topic or object. The document is further categorized into positive polarity or negative polarity . Thus, an overall sentiment of text can be generated.</p>
+<h3 id="Disadvantage">Disadvantage</h3>
+<p>Disadvantage is difficult to extract the different polarity or sentiment about distinct entities separately .</p>
+<h2 id="Sentence-level-sentiment-classification">Sentence-level sentiment classification:</h2>
+<p>A sentence is classification into subjective type or objective type.</p>
+<h3 id="Subjective">Subjective</h3>
+<p>Express an opinion towards an entity. Hence, it is considered as a subjective statement that can be further classified into different polarities.</p>
+<h3 id="Objective">Objective</h3>
+<p>Factual statement</p>
+<h2 id="Aspect-level-sentiment-classification">Aspect-level sentiment classification</h2>
+<p>(feature-based sentiment analysis, entity-based sentiment analysis) This sentiment analysis task includes the identification of features or aspects in a sentence (which is a user-generated review of an entity) and categorizing the features as positive or negative. The sentiment-target pairs are first identified, then they are classified into different polarities, and finally, sentiment values for every aspect are clubbed.</p>
+<h2 id="Multi-domain-sentiment-classification">Multi-domain sentiment classification</h2>
+<p>The word $ domain $ is referred as a set of documents that are related to a specific topic. Multi-domain sentiment classification focuses on transferring information from one domain to the next domain. The models are first trained in source domain; the knowledge is then transferred  and explored in another domain.</p>
+<h2 id="Multimodal-sentiment-classification">Multimodal sentiment classification</h2>
+<p>Different people express their sentiments or opinions in different ways.  Earlier, the text was considered as the primary medium to express an opinion.  This is known as a unimodal approach. With the advancement of technology and  science, people are now shifting towards visual (videos, images, or clips) and  audio (speech) modalities to express their sentiments. Combining or fusing more  than one modalities for detecting the opinion is known as multi-modal sentiment  analysis. Hence, researchers are now focusing on this direction for improving  the sentiment classification process.</p>
+<p>Due to the enormous data available on social media in different forms like videos, audios, photos for expressing sentiment on social media platforms, the conventional approach for text-based sentiment analysis was progressed into compound models of multimodal sentiment analysis. Hence, mining the opinions expressed in different modalities became a crucial approach.</p>
+<p>The popular models applied to sentiment analysis (SA) tasks can be summarised as:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>For document-level sentiment classification, CNN followed by LSTM has shown the highest on the various dataset.</p>
+</li>
+<li class="lvl-2">
+<p>For sentence-level sentiment classification and aspect-level sentiment classification,researchers have majorly focused on RNN(Particularly LSTM).</p>
+</li>
+<li class="lvl-2">
+<p>For multi-domain sentiment classification, LSTM has given good results, and for multi-modal sentiment classification, CNN and RNN are popular deep learning models. Hence, RNN models are the most sought-after and popular choice for sentiment analysis among researchs.</p>
+</li>
+<li class="lvl-2">
+<p>Further, we can see that LSTM is popular applied for text-based sentiments, and CNN models have shown good results for image sentiment. For multimodal data, CNN+LSTM followed by fusion becomes the desired approach.</p>
+</li>
+</ul>
+<p>However, the choice of a specific deep learning model may still depend on the various number of factors like the amount of data available, the number of hidden units (nodes) required for the problem, etc.</p>
+<h2 id="Future-extraction">Future extraction</h2>
+<p>including handcrafted features and machine-learned features.</p>
+<h2 id="Machine-learned-features">Machine-learned features</h2>
+<p>can be categorized into traditional machine learning-based approaches and deep learning-based approaches.</p>
+<h3 id="Machine-learning-based-methods">Machine learning-based methods</h3>
+<p>include Support Vector Machine (SVM), Naive Bayes (NB), Maximum Entropy (ME), Decision tree learning, and Random Forests. They are further categorized into supervised and unsupervised learning methods.</p>
+<p>It becomes evident that the number of established approaches for supervised learning is more as compound to unsupervised learning-based approaches.</p>
+<h3 id="Deep-learning-based-approaches">Deep learning-based approaches</h3>
+<p>include Convolution Neural Network, Recursive Neural Network, Recurrent Neural Network (which includes LSTM and GRU), Deep Belief Networks, Attention-based networks, Bi-directional Recurrent Neural Network, and Capsule Network.</p>
+<p>Deep Learning reduces the burden of design as when the network learns, it automatically creates the required features for the classification process.</p>
+<p>At present, a massive amount of data is being generated. traditional machine learning-based approaches fail to perform. On the contrary, deep learning models outperform the machine learning approaches as they can be trained to learn more features with large datasets. This justifies the fact that deep learning models show improved performance than traditional machine learning models.</p>
+<h2 id="Convolutional-neural-networks-CNNs">Convolutional neural networks(CNNs)</h2>
+<p>belong to the class of neural networks and have shown significant success and innovation in computer vision and image processing. The fundamental architecture of CNN is displayed in Fig. 4.</p>
+<div align='center'><img src="https://pzxnys.github.io/images/211118151133.png"/></div>
+<h3 id="Embeddings">Embeddings</h3>
+<p>It can be obtained using Skip Gram model and Common Bag of words(CBOW).</p>
+<h4 id="CBOW">CBOW</h4>
+<p>The model predicts the current word from surrounding context words.</p>
+<h4 id="Skip-Gram">Skip Gram</h4>
+<p>The model predicts the surrounding context words from the current word.</p>
+<h2 id="Recursive-neural-networks-RecNNs">Recursive neural networks (RecNNs)</h2>
+<p>It belongs to the category of the network, that learns a directed acyclic graph structure (e.g., tree structure ).</p>
+<p>Figure 6 shows a Rec NN in which whenever a sequence of n-gram (e.g., This Bag  has Beautiful color), is fed into the model, each word of n-gram sequence is  represented as a d-dimensional vector.</p>
+<div align='center'><img src="https://pzxnys.github.io/images/211123100936.png"/></div>
+<h2 id="Recurrent-neural-networks-RNNs">Recurrent neural networks (RNNs)</h2>
+<p>It is a variant of Rec NN and is used for modeling the sequential data. Sequential data is applied in a variety of applications.</p>
+<p>RNN considers the time factor for processing the elements in a sequence.</p>
+<p>Figure 9a shows an RNN with a loop that preserves all the information, whereas,  in Fig. 9b, the unrolled version indicates that multiple copies of RNN are  connected, and they communicate by passing information from one state to another</p>
+<div align='center'><img src="https://pzxnys.github.io/images/211123140003.png"/></div>
+<p>The commonly used variants of RNNs are LSTM, GRU, bi-directional RNNs, and deep  RNNs.</p>
+<h3 id="Long-short-term-memory-LSTM">Long short-term memory(LSTM)</h3>
+<p>It is one of the most popular variants of RNN, which possesses the capability to handle the vanishing gradient problem in standard RNN and can catch long-term dependencies. This makes them more powerful and flexible. The architecture of LSTM is shown in Fig. 10.</p>
+<div align='center'><img src="https://pzxnys.github.io/images/211124155129.png"/></div>
+<h3 id="Gated-Recurrent-units-GRUs">Gated Recurrent units (GRUs)</h3>
+<p>GRUs are variants of LSTM and are considered as LSTM without an output gate. The architecture of GRU is shown in Fig. 12.</p>
+<div align='center'><img src="https://pzxnys.github.io/images/211124201654.png"/></div>
+<h3 id="Deep-belief-networks-DBNs">Deep belief networks (DBNs)</h3>
+<p>DBNs emanate under the type of unsupervised pre-trained networks, which also includes autoencoders and Generative Adversarial Networks. DBNs are composed of multiple layers of unsupervised networks like Restricted Boltzmann Machines (RBMs) or autoencoders as shown in Fig. 13a.</p>
+<div align='center'><img src="https://pzxnys.github.io/images/211124203545.png"/></div>
+<h2 id="Drawbacks-of-deep-learning-approaches-in-sentiment-analysis">Drawbacks of deep learning approaches in sentiment analysis</h2>
+<p>Although, deep learning algorithms have shown excellent outcomes and significant evolution in sentiment analysis, yet there exist some drawbacks of applying these algorithms which are stated as follows:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Most deep learning techniques require a lot of labeled data for training to make sure that machine delivers the desired results. Hence, for sentiment analysis, we require a large corpus to properly train the deep learning model for correct prediction of class labels. Gathering and labeling large amounts of data can be very difficult and tedious.</p>
+</li>
+<li class="lvl-2">
+<p>Unlike traditional machine learning or lexical methods where we know what features are selected for predicting a particular sentiment, it is hard to figure out what is the actual reason for the neural network to predict a specific to get an intuition about the prediction process of the neural networks, and they behave like a “black box” to many researchers.</p>
+</li>
+<li class="lvl-2">
+<p>Deep learning techniques like CNN requires tuning of initial parameters as a  starting point. This can be seen in Stojanovski et al. (2015). Thus, the  performance of the network depends upon the values of the hyperparameters of the  network. Hence, deciding the optimal hyperparameter values is a challenging task</p>
+</li>
+<li class="lvl-2">
+<p>Due to a large number of parameters present in the deep learning models, the  time taken to train them is often very large (Dufourq and Bassett 2017).  Moreover, they need high performing hardware like GPUs and large RAM for better  efficiency.</p>
+</li>
+</ul>
                 
             </div>
             <hr/>
@@ -418,7 +554,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://159.75.162.251:4000/posts/1764739801558/">http://159.75.162.251:4000/posts/1764739801558/</a>
+                    <a href="http://159.75.162.251:4000/posts/1764739964057/">http://159.75.162.251:4000/posts/1764739964057/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -456,8 +592,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Issues/">
-                                    <span class="chip bg-color">Issues</span>
+                                <a href="/tags/Sentiment-Analysis/">
+                                    <span class="chip bg-color">Sentiment Analysis</span>
+                                </a>
+                            
+                                <a href="/tags/Review/">
+                                    <span class="chip bg-color">Review</span>
                                 </a>
                             
                         </div>
@@ -540,13 +680,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/1764739801811/">
+                <a href="/posts/1764739964160/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="DBSCAN_Yelp">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="橙啦-颉斌斌老师 阅读课">
                         
-                        <span class="card-title">DBSCAN_Yelp</span>
+                        <span class="card-title">橙啦-颉斌斌老师 阅读课</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -557,14 +697,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-15
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-12
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/ML-DL/" class="post-category">
-                                    ML && DL
+                            <a href="/categories/CET-6/" class="post-category">
+                                    CET-6
                                 </a>
                             
                             
@@ -574,12 +714,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Cluster/">
-                        <span class="chip bg-color">Cluster</span>
-                    </a>
-                    
-                    <a href="/tags/Code/">
-                        <span class="chip bg-color">Code</span>
+                    <a href="/tags/Reading-Comprehension/">
+                        <span class="chip bg-color">Reading Comprehension</span>
                     </a>
                     
                 </div>
@@ -593,13 +729,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/1764739801437/">
+                <a href="/posts/1764739963419/">
                     <div class="card-image">
                         
+                        <img src="https://pzxnys.github.io/images/lash.png" class="responsive-img" alt="Welcome to My Blog">
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Extracting Keywords from Short Government Documents Using Reinforcement Learning">
-                        
-                        <span class="card-title">Extracting Keywords from Short Government Documents Using Reinforcement Learning</span>
+                        <span class="card-title">Welcome to My Blog</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -610,31 +745,15 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-11
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Paper-Reading/" class="post-category">
-                                    Paper-Reading
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            pzxnys
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Extracting-Keywords/">
-                        <span class="chip bg-color">Extracting Keywords</span>
-                    </a>
-                    
-                    <a href="/tags/Paper/">
-                        <span class="chip bg-color">Paper</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -815,7 +934,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">21.7k</span>
+                        class="white-color">21.8k</span>
             
             
             

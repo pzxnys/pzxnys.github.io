@@ -4,9 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Welcome to My Blog, 咸鱼">
-    <meta name="description" content=" 一条没有任何思想的臭咸鱼
- ">
+    <meta name="keywords" content="Anaconda环境配置, 咸鱼">
+    <meta name="description" content="环境配置新建环境conda create -n NAME python&amp;#x3D;&amp;#x3D;xxx
+
+
+
+将环境添加到jupyterLabconda activate NAME
+conda install ipykernel
+python">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +23,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Welcome to My Blog | PZXNYS&#39;s Blog</title>
+    <title>Anaconda环境配置 | PZXNYS&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -291,12 +296,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://pzxnys.github.io/images/lash.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Welcome to My Blog</h1>
+                    <h1 class="description center-align post-title">Anaconda环境配置</h1>
                 </div>
             </div>
         </div>
@@ -318,9 +323,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Anaconda/">
+                                <span class="chip bg-color">Anaconda</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -332,7 +341,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-11-11
+                    2021-12-29
                 </div>
                 
 
@@ -341,7 +350,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    12
+                    134
                 </div>
                 
 
@@ -371,8 +380,38 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                 <h3 id="一条没有任何思想的臭咸鱼"><a href="#一条没有任何思想的臭咸鱼" class="headerlink" title="一条没有任何思想的臭咸鱼"></a>一条没有任何思想的臭咸鱼</h3>
- <img src="https://pzxnys.github.io/images/lash.png">
+                <h4 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h4><h5 id="新建环境"><a href="#新建环境" class="headerlink" title="新建环境"></a>新建环境</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda create -n NAME python&#x3D;&#x3D;xxx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h5 id="将环境添加到jupyterLab"><a href="#将环境添加到jupyterLab" class="headerlink" title="将环境添加到jupyterLab"></a>将环境添加到jupyterLab</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda activate NAME
+conda install ipykernel
+python -m ipykernel install --user --name NAME --display-name NAME<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h5 id="将环境从jupyterLab中删除"><a href="#将环境从jupyterLab中删除" class="headerlink" title="将环境从jupyterLab中删除"></a>将环境从jupyterLab中删除</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">jupyter kernelspec remove NAME<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h5 id="删除环境"><a href="#删除环境" class="headerlink" title="删除环境"></a>删除环境</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda remove -n NAME --all<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h4 id="TensorFlow安装"><a href="#TensorFlow安装" class="headerlink" title="TensorFlow安装"></a>TensorFlow安装</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda activate NAME<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>（Version &gt; 2.4  2021年12月29日18:37:18）</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip install tensorflow&#x3D;&#x3D;xxx
+conda install cudaToolkit
+conda install cudnn<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>(Version &lt;&#x3D; 2.4 2021年12月29日18:39:26)</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda install tensorflow&#x3D;&#x3D;xxx    &#x2F;&#x2F;conda 自动将对应的版本的 cuda 和 cudnn 安装完成。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h4 id="PyTorch安装"><a href="#PyTorch安装" class="headerlink" title="PyTorch安装"></a>PyTorch安装</h4><p> 参见官网<a target="_blank" rel="noopener" href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a></p>
+
                 
             </div>
             <hr/>
@@ -398,7 +437,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://159.75.162.251:4000/posts/1764739801631/">http://159.75.162.251:4000/posts/1764739801631/</a>
+                    <a href="http://159.75.162.251:4000/posts/1764739963442/">http://159.75.162.251:4000/posts/1764739963442/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -435,7 +474,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Anaconda/">
+                                    <span class="chip bg-color">Anaconda</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -516,13 +559,12 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/1764739801903/">
+                <a href="/posts/1764739963419/">
                     <div class="card-image">
                         
+                        <img src="https://pzxnys.github.io/images/lash.png" class="responsive-img" alt="Welcome to My Blog">
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Sentiment analysis using deep learning architectures: a review">
-                        
-                        <span class="card-title">Sentiment analysis using deep learning architectures: a review</span>
+                        <span class="card-title">Welcome to My Blog</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -533,31 +575,15 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-08
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-11
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Paper-Reading/" class="post-category">
-                                    Paper-Reading
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            pzxnys
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Sentiment-Analysis/">
-                        <span class="chip bg-color">Sentiment Analysis</span>
-                    </a>
-                    
-                    <a href="/tags/Review/">
-                        <span class="chip bg-color">Review</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -569,7 +595,7 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/1764739801835/">
+                <a href="/posts/1764739963319/">
                     <div class="card-image">
                         
                         
@@ -787,7 +813,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">21.7k</span>
+                        class="white-color">21.8k</span>
             
             
             
