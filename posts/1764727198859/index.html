@@ -4,10 +4,20 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ubuntu使用技巧, 咸鱼">
-    <meta name="description" content=" 一、在桌面创建图标：有两种情况：一是标准安装的应用程序，这种程序一般安装之后就已经有.desktop文件了，我们只要把它复制到桌面就可以了。还有一种就是第三方或自己写的非标应用程序，这个需要自己编写.desktop文件。
+    <meta name="keywords" content="橙啦-颉斌斌老师 阅读课, 咸鱼">
+    <meta name="description" content="阅读低分思维和满分思维的区别：低分思维：
+定位：题干中有什么就去定位什么
+内容：把每个单词都读懂，翻译成中文
+做题：答案见过，求证 100% 正确
+已知信息：原文
 
-1、 首先在U">
+结果：
+
+定位不准
+低消耗时
+出错率高
+
+正确的做题方式 – 即满分思维：">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +29,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ubuntu使用技巧 | PZXNYS&#39;s Blog</title>
+    <title>橙啦-颉斌斌老师 阅读课 | PZXNYS&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -292,12 +302,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ubuntu使用技巧</h1>
+                    <h1 class="description center-align post-title">橙啦-颉斌斌老师 阅读课</h1>
                 </div>
             </div>
         </div>
@@ -321,8 +331,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Ubuntu-Desktop-ICON/">
-                                <span class="chip bg-color">Ubuntu-Desktop-ICON</span>
+                            <a href="/tags/Reading-Comprehension/">
+                                <span class="chip bg-color">Reading Comprehension</span>
                             </a>
                         
                     </div>
@@ -333,8 +343,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Ubuntu/" class="post-category">
-                                Ubuntu
+                            <a href="/categories/CET-6/" class="post-category">
+                                CET-6
                             </a>
                         
                     </div>
@@ -346,7 +356,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-08
+                    2023-11-12
                 </div>
                 
 
@@ -355,7 +365,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    890
+                    941
                 </div>
                 
 
@@ -385,54 +395,101 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                 <p>一、在桌面创建图标：<br>有两种情况：<br>一是标准安装的应用程序，这种程序一般安装之后就已经有.desktop文件了，我们只要把它复制到桌面就可以了。<br>还有一种就是第三方或自己写的非标应用程序，这个需要自己编写.desktop文件。</p>
-<span id="more"></span>
-<p>1、 首先在Ubuntu中已经安装该应用程序，比如在Ubuntu18中已经安装了firefox浏览器（Ubuntu16中也是一样的），想在桌面上建立一个快捷图      标（快捷方式）。<br>2、打开终端（ctrl+alt+t）进入&#x2F;usr&#x2F;share&#x2F;applications目录找到Firefox对应的.desktop文件，如下。hzq@ubuntu:~$ cd &#x2F;usr&#x2F;share&#x2F;applications</p>
-<pre class="line-numbers language-none"><code class="language-none">hzq@ubuntu:&#x2F;usr&#x2F;share&#x2F;applications$ ls firefox*
-firefox.desktop
-hzq@ubuntu:~$ <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>仔细确认该文件是不是你的应用程序对应的文件，有的时候会有多个类似文件（上图中只有一个比较好确认）。<br>3、将.desktop文件拷贝到桌面，如下。</p>
-<pre class="line-numbers language-none"><code class="language-none">hzq@ubuntu:&#x2F;usr&#x2F;share&#x2F;applications$ cp firefox.desktop ~&#x2F;桌面&#x2F;
-hzq@ubuntu:&#x2F;usr&#x2F;share&#x2F;applications$ cd
-hzq@ubuntu:~$ ls 桌面&#x2F;
-firefox.desktop
-hzq@ubuntu:~$ <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>回到桌面查看，效果如下。还需要进一步处理一下。<br>4、选中文件，右键属性打开，切换到“权限”标签，如下所示。选中“允许作为程序执行文件”。然后退出。<br>5、然后再次点击打开该图标，如果弹出提示如下，选“trust and launch”。</p>
-<p>非标准应用程序的操作方法<br>1、其实只要是大规模发行的软件一般在Ubuntu里安装完之后都会在&#x2F;usr&#x2F;share&#x2F;applications里建立相应.desktop文件的，但是总有一些特殊情况。这里以新安装的gedit为例（gedit其实也有现成的.desktop文件，我只是以他为例子建立一个个性化的图标）。<br>2、进入&#x2F;usr&#x2F;share&#x2F;applications目录，建立一个空白的文本文件。如下。</p>
-<pre class="line-numbers language-none"><code>hzq@ubuntu:~$ cd /usr/share/applications
-hzq@ubuntu:/usr/share/applications$ sudo gedit myGedit.desktop
-#输入文件内容，注释内容可以删除---------------------
-[Desktop Entry]
-#名字
-Name=myGedit
-#注释
-Comment=Edit text files
-#执行文件、命令格式
-Exec=gedit %U
-#是否需要终端打开
-Terminal=false
-#类型
-Type=Application
-#图标，我这里是自己做的图标，你也可以引用别的程序的
-Icon=/home/hzq/word.png
-#分类，按自己需要填写
-Categories=GNOME;GTK;Utility;TextEditor;
-#保存退出-----------------------------
-hzq@ubuntu:/usr/share/applications$ 
-</code></pre>
-<p>3、将.desktop文件拷贝到桌面，如下。</p>
-<pre class="line-numbers language-none"><code>hzq@ubuntu:/usr/share/applications$ cp myGedit.desktop ~/桌面/
-hzq@ubuntu:/usr/share/applications$ cd
-hzq@ubuntu:~$ ls 桌面/
-firefox.desktop   myGedit.desktop
-hzq@ubuntu:~$ 
-</code></pre>
-<p>回到桌面查看，效果如下。下面的处理步骤就跟方法一中的步骤类似了。</p>
-<p>在win10下安装了Ubuntu双系统，默认情况下，默认启动的是Ubuntu系统。将默认启动系统设置成win10的办法是：<br>① 进入ubuntu系统；<br>② 打开终端，进入到 &#x2F;etc&#x2F;default 目录下；<br>③ 使用 sudo gedit grub 打开grub配置文件，将GRUB_DEFAULT&#x3D;0修改为你想要默认启动的系统的序号，设置完后保存；<br>注：系统的序号即为启动时看到的顺序，从0开始数，默认ubuntu为第一个，即其序号为0，我的win10系统在第3个，所以设置GRUB_DEFAULT&#x3D;2<br>④ 输入 sudo update-grub 更新grub文件；<br>⑤ 重启系统，完工。</p>
-<p>解决 ubuntu 与 win10 双系统，系统时间不同步问题<br>①  进入ubuntu，在 ubuntu 下更新本地时间<br>      sudo apt-get install ntpdate<br>      sudo ntpdate time.windows.com<br>② 将本地时间更新到硬件上<br>      sudo hwclock –localtime –systohc</p>
-
+                <h2 id="阅读低分思维和满分思维的区别："><a href="#阅读低分思维和满分思维的区别：" class="headerlink" title="阅读低分思维和满分思维的区别："></a>阅读低分思维和满分思维的区别：</h2><h3 id="低分思维："><a href="#低分思维：" class="headerlink" title="低分思维："></a>低分思维：</h3><ul>
+<li>定位：题干中有什么就去定位什么</li>
+<li>内容：把每个单词都读懂，翻译成中文</li>
+<li>做题：答案见过，求证 100% 正确</li>
+<li>已知信息：原文</li>
+</ul>
+<p>结果：</p>
+<ol>
+<li>定位不准</li>
+<li>低消耗时</li>
+<li>出错率高<span id="more"></span></li>
+</ol>
+<h3 id="正确的做题方式-–-即满分思维："><a href="#正确的做题方式-–-即满分思维：" class="headerlink" title="正确的做题方式 – 即满分思维："></a>正确的做题方式 – 即满分思维：</h3><ul>
+<li>定位：回答题干问题所问</li>
+<li>内容：逻辑判断</li>
+<li>做题：比出出错概率较小</li>
+<li>已知信息：原文 + 题干 + 选项</li>
+</ul>
+<h3 id="传统老师的定位方法"><a href="#传统老师的定位方法" class="headerlink" title="传统老师的定位方法"></a>传统老师的定位方法</h3><ol>
+<li>先看题干，从题干中找定位词：大写字母 &#x2F; 专有名词 &#x2F; 数字 &#x2F; 人名 &#x2F; 地名 &#x2F; 关键词</li>
+<li>带着这些定位词到原文中去定位，找到出题句</li>
+<li>精读出题句，对比选项看有没有同义词替换或同义改写</li>
+<li>如果没有答案，就去看上一句或下一句，最多三句</li>
+</ol>
+<h3 id="怎样去避免干扰？"><a href="#怎样去避免干扰？" class="headerlink" title="怎样去避免干扰？"></a>怎样去避免干扰？</h3><p>一定要学会精准定位</p>
+<p>题干的问题决定了精准定位，而不是题干有什么就定位什么</p>
+<p>定位的内容一定要回答题干问题所问</p>
+<p>题干问题所问需要深度理解问题：题干结合选项  才能对问题深度把握</p>
+<h3 id="对比选项"><a href="#对比选项" class="headerlink" title="对比选项"></a>对比选项</h3><ol>
+<li><p>客观接收信息</p>
+<p>每个考生面前的信息是一样的，但读完之后会有不一样的解读！所以，如何做到对信息真实的接受，不能失真！</p>
+<h4 id="客观"><a href="#客观" class="headerlink" title="客观"></a>客观</h4><ul>
+<li>不加任何生活背景，不看暗含</li>
+<li>不加自己的解释</li>
+<li>不做主观式的推测</li>
+</ul>
+</li>
+<li><p>比出出错概率最小：</p>
+<h4 id="传统的阅读思维"><a href="#传统的阅读思维" class="headerlink" title="传统的阅读思维"></a>传统的阅读思维</h4><ol>
+<li><p>求证正确答案的正确性：</p>
+<p><font color='red'> 同义替 &#x2F; 同义改写 &#x2F; 逻辑高度概括 </font></p>
+</li>
+<li><p>求证错误选项的错误性：</p>
+<p><font color='red'> 张冠李戴 &#x2F; 无中生有 &#x2F; 逻辑颠倒 </font></p>
+</li>
+</ol>
+<h4 id="真实的考试状态"><a href="#真实的考试状态" class="headerlink" title="真实的考试状态"></a>真实的考试状态</h4><ol>
+<li>有时间压力 - 读不懂或读不透</li>
+<li>有心理压力 - 各种应试能力全面下降</li>
+</ol>
+<p>PS：在考场上大多数考生没有能力判断哪个正确</p>
+<p>PS：选出正确选项是培训老师最大的谎言！</p>
+<h4 id="选择题的特点"><a href="#选择题的特点" class="headerlink" title="选择题的特点"></a>选择题的特点</h4><ol>
+<li><p>答案的唯一性  </p>
+<p>先把错误选项干掉，再把比较不对的选项干掉（选项是比出来的）</p>
+<ol>
+<li>有比较对象 </li>
+<li>选项相对正确</li>
+</ol>
+</li>
+<li><p>比出一个出错概率较小的选项（必要性思维 – 前提思维）</p>
+<p>a. 排除不沾边的，留下沾点边的</p>
+<p>b. 只有一个沾边，就选它</p>
+<p>c. 如果有两个沾边，比出一个出错概率较小的选项</p>
+</li>
+</ol>
+<p>​         PS： 用“出错概率较小”代替“正确选项”的思维</p>
+<h4 id="选择题答案的特点（排除法）"><a href="#选择题答案的特点（排除法）" class="headerlink" title="选择题答案的特点（排除法）"></a>选择题答案的特点（排除法）</h4><ul>
+<li>没有对的定义，只有完全错的定义或相对不好的定义！</li>
+<li>选项之所以选它，不是你想选它，而是被逼的不得不选它！因为别的没法选！</li>
+</ul>
+<h4 id="什么是评估选项"><a href="#什么是评估选项" class="headerlink" title="什么是评估选项"></a>什么是评估选项</h4><ol>
+<li>根据题干中的问题所问到原文中定位</li>
+<li>根据定位到的信息，对选项做出评估</li>
+</ol>
+<p><font color='blue'>PS: 意思一样的可以评估，意思不一样的也可以评估</font></p>
+<p><font color='red'>评估：在这个定位得到的信息存在之下，谁的出错概率更小！</font></p>
+<p><font color='yellowgreen'>答案具有唯一性，A能推出B，则答案一定选B！！！</font></p>
+<p><b><font color='green' size='6px'>阅读理解可以利用的宝藏</font></b></p>
+<h4 id="选择题无法避开的固有缺陷"><a href="#选择题无法避开的固有缺陷" class="headerlink" title="选择题无法避开的固有缺陷"></a>选择题无法避开的固有缺陷</h4><ol>
+<li>问题的暗示</li>
+<li>选项的暗示</li>
+<li>原文的暗示</li>
+<li>一致性（前后题）的暗示</li>
+</ol>
+<h3 id="阅读做法"><a href="#阅读做法" class="headerlink" title="阅读做法"></a>阅读做法</h3><p>先读五个题干后最后一题的4个选项（若最后一题为主旨。）</p>
+<p>画出具体信息：</p>
+<ul>
+<li>名词</li>
+<li>该名词涉及文章具体信息</li>
+<li>词组优先</li>
+</ul>
+<p>PS：选项的区别是思考的角度</p>
+</li>
+</ol>
                 
             </div>
             <hr/>
@@ -458,7 +515,7 @@ hzq@ubuntu:~$
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://159.75.162.251:4000/posts/1764727145309/">http://159.75.162.251:4000/posts/1764727145309/</a>
+                    <a href="http://159.75.162.251:4000/posts/1764727198859/">http://159.75.162.251:4000/posts/1764727198859/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -496,8 +553,8 @@ hzq@ubuntu:~$
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Ubuntu-Desktop-ICON/">
-                                    <span class="chip bg-color">Ubuntu-Desktop-ICON</span>
+                                <a href="/tags/Reading-Comprehension/">
+                                    <span class="chip bg-color">Reading Comprehension</span>
                                 </a>
                             
                         </div>
@@ -576,17 +633,18 @@ hzq@ubuntu:~$
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/1764727145176/">
+                <a href="/posts/1764727198859/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="微信小程序开发问题解决">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="橙啦-颉斌斌老师 阅读课">
                         
-                        <span class="card-title">微信小程序开发问题解决</span>
+                        <span class="card-title">橙啦-颉斌斌老师 阅读课</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -596,26 +654,27 @@ hzq@ubuntu:~$
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/WeChat/" class="post-category">
-                                    WeChat
+                            <a href="/categories/CET-6/" class="post-category">
+                                    CET-6
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">
-                        <span class="chip bg-color">小程序开发</span>
+                    <a href="/tags/Reading-Comprehension/">
+                        <span class="chip bg-color">Reading Comprehension</span>
                     </a>
                     
                 </div>
@@ -629,13 +688,13 @@ hzq@ubuntu:~$
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/1764727145345/">
+                <a href="/posts/1764727199034/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="微信常用知识">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Sentiment analysis using deep learning architectures: a review">
                         
-                        <span class="card-title">微信常用知识</span>
+                        <span class="card-title">Sentiment analysis using deep learning architectures: a review</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -646,14 +705,14 @@ hzq@ubuntu:~$
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/WeChat/" class="post-category">
-                                    WeChat
+                            <a href="/categories/Paper-Reading/" class="post-category">
+                                    Paper-Reading
                                 </a>
                             
                             
@@ -663,8 +722,12 @@ hzq@ubuntu:~$
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Initial/">
-                        <span class="chip bg-color">Initial</span>
+                    <a href="/tags/Sentiment-Analysis/">
+                        <span class="chip bg-color">Sentiment Analysis</span>
+                    </a>
+                    
+                    <a href="/tags/Review/">
+                        <span class="chip bg-color">Review</span>
                     </a>
                     
                 </div>

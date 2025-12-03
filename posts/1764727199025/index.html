@@ -4,9 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="记录一次磁盘爆炸血泪史, 咸鱼">
-    <meta name="description" content="
-起因这是最初建立 ubuntu + Windows 10 留下的一个诟病。由于网上大部分教程，及之前个人实验的影响。在建立 Ubuntu 系统时，根目录仅分配了 40 G 的磁盘容量。本想着就只是存储一些代码，和少许的数据集，不可能把根目">
+    <meta name="keywords" content="ubuntu使用技巧, 咸鱼">
+    <meta name="description" content=" 一、在桌面创建图标：有两种情况：一是标准安装的应用程序，这种程序一般安装之后就已经有.desktop文件了，我们只要把它复制到桌面就可以了。还有一种就是第三方或自己写的非标应用程序，这个需要自己编写.desktop文件。
+
+1、 首先在U">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>记录一次磁盘爆炸血泪史 | PZXNYS&#39;s Blog</title>
+    <title>ubuntu使用技巧 | PZXNYS&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -291,12 +292,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">记录一次磁盘爆炸血泪史</h1>
+                    <h1 class="description center-align post-title">ubuntu使用技巧</h1>
                 </div>
             </div>
         </div>
@@ -320,8 +321,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Issues/">
-                                <span class="chip bg-color">Issues</span>
+                            <a href="/tags/Ubuntu-Desktop-ICON/">
+                                <span class="chip bg-color">Ubuntu-Desktop-ICON</span>
                             </a>
                         
                     </div>
@@ -345,7 +346,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-15
+                    2021-11-08
                 </div>
                 
 
@@ -354,14 +355,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    890
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    3 分
                 </div>
                 
 
@@ -384,15 +385,53 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a name="fMQD6"></a></p>
-<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>这是最初建立 ubuntu + Windows 10 留下的一个诟病。<br />由于网上大部分教程，及之前个人实验的影响。在建立 Ubuntu 系统时，根目录仅分配了 40 G 的磁盘容量。<br />本想着就只是存储一些代码，和少许的数据集，不可能把根目录撑爆，奈何大意失荆州啊！！！</p>
+                 <p>一、在桌面创建图标：<br>有两种情况：<br>一是标准安装的应用程序，这种程序一般安装之后就已经有.desktop文件了，我们只要把它复制到桌面就可以了。<br>还有一种就是第三方或自己写的非标应用程序，这个需要自己编写.desktop文件。</p>
 <span id="more"></span>
-<p><a name="Wj4s6"></a></p>
-<h3 id="问题出现"><a href="#问题出现" class="headerlink" title="问题出现"></a>问题出现</h3><p>2021.07.07 下午，如往常一样，“开心”地做实验。<br />由于对比实验的需求，在多如牛毛的数据集中(其实也就3个)，找到了比较适合的数据集 YELP。<br />同之前操作，开始向 mongodb 导入这个“高达” 12 G 的数据集合。<br />把最大的一个约 6 G 大小的用户评论表导入成功之后，一切还是波澜不惊(主要是没有查看磁盘容量的习惯)<br />接下来开始导入用户注册表，本以为它是正常导入，结果没想到，mongodb 突然无法远程连接，我简直是大吃一惊，<br />以为和苹果连接特定名称WiFi，导致WiFi永久不能使用一样。我导入的用户表中，也有这样的字符串嘛？简直是吓破胆啊！<br />于是开始疯狂找解决办法，我还是很天真的想着，如何把刚导入的那个表删除。但是 mongodb 就是不给你连接，你有什么办法。哎！<br />就这样，经过一个多小时的挣扎，试了百度、博客、csdn等各路大神的指导，问题仍在哪里，纹丝不动。（内心：我到底做错了什么）<br />高潮来了，本想着 linux 的“稳定性”(再也不信了)重启解决所有问题，我按下了这该死的重启键。<br />问题并没有想象中那么愉快的解决，反而系统进入了无限输入密码的阶段（内心已经完全崩溃），难道这就要重新搭建系统了嘛？我拒绝！！！<br><a name="rjqYC"></a></p>
-<h3 id="寻找问题症结"><a href="#寻找问题症结" class="headerlink" title="寻找问题症结"></a>寻找问题症结</h3><p>“程序员干的最 sb 的一件事就是：修改前辈们的代码，你本想着只是把整体结构梳理清晰，结果弄成了山体坍塌”<br />我本想着把 MongoDB 的服务打开，没想到，系统就这样崩了，崩了，崩了！！！<br />我有继续在百度、博客、csdn等各大网站畅游，试过无数方法，他仍旧不能进入桌面（马上要疯。。。）<br />直到一句话，“你的磁盘满了，登录信息无法写入，所以无法进入桌面”，哇，悟了。<br><a name="Yk3I6"></a></p>
-<h3 id="先修房子"><a href="#先修房子" class="headerlink" title="先修房子"></a>先修房子</h3><p>天真的我，开启 Windows 系统，使用系统磁盘管理，将一块基本不用的盘（大概 605 G，简直是暴殄天物）格式化，为 Ubuntu 的扩容<br />本想着，分区工具（DiskGenius）是神一般的存在，所有的硬盘问题，交给他就是洒洒水的事。没想到，所托非人。连续两次的扩容尝试，让我意识到，他不行了！<br />接下来，继续开启百度、博客、csdn等各大网站(身边有一个 linux 大神，该有多好)。一款闻所未闻的分区工具(gparted)出现在了我的眼前<br />但，大部分都是在系统正常的时候，使用其对根目录进行扩容。难道我又失败了？真的要重做系统吗？不要这样折磨我好吗？<br />突然有句话出现了，它可以烧录到 u 盘上，作为镜像启动。天呐，太牛了。就 u 盘多<br />进入官方网站<a target="_blank" rel="noopener" href="https://gparted.org/download.php">下载</a>，随手翻篇帖子。将U盘格式化为 FAT 格式（之前为了方便存大文件，都是 NTFS 格式的）。经压缩包解压到 U 盘根目录（官方要求）<br />进入  ‘utils&#x2F;win32&#x2F;‘ 文件夹下，右键管理员运行 makeboot.bat (官方真的有够细心)<br />开始常规 u 盘启动，经过一系列胡乱操作之后，进入到了硬盘管理界面。重新调配硬盘大小，执行。。。<br />………………………………………………………………………………………waiting…………………………………………………………………………………………<br />就这样，一个半小时过去了。硬盘完全调配好了，还等什么，麻利拔 U 盘，赶紧开机<br />果真没让我失望，他开了，他终于开了（内心可喜，结果发现高兴过早了！！！）<br><a name="HwEhA"></a></p>
-<h3 id="再补漏洞"><a href="#再补漏洞" class="headerlink" title="再补漏洞"></a>再补漏洞</h3><p>经过了近三个小时的挣扎，系统算是成功打开了。<br />本想着，系统都能正常运行了，你 MongoDB 就别在那拘着了，有什么好傲娇的呢？可是他就是不顺你的心意，这就是我刚说的高兴太早了<br />为了能把 MongoDB 打开，我搜索其反馈的各种错误代码，以及查看运行日志，甚至联系 DBA 大神 – 东东(身边真的没什么玩数据库的，<br />奈何他只搞 Oracle 和 MySQL，而且还说了一句话，生产的数据库是不会挂的，如果没问题，找你干嘛)<br />修改配置文件，删除锁文件，修改权限，等等。网络“大神”给出的方案真的是五花八门，不过我早就料到回是这样，于是就一个个的开始尝试，<br />最后，不出所料，我以失败而告终，已经晚上9点多了，好饿。。。<br />以后有问题，一定要先看官方文档（为什么我就不看呢，服了自己了。）<br />MongoDB 有一个很牛的功能，即使你不能打开服务，也能使用其提供的函数 mongodump，将数据库完整的备份出来。<br />然后，等数据库修复好之后，再用函数 mongorestore，将其恢复。(可能是我太天真了，一切都不是那么顺利。)<br />数据备份还是比较轻松的，先在根目录创个文件夹，用来存备份文件， mkdir -p &#x2F;remote_dir&#x2F;mongo_dump_dir<br />开始备份数据库：  mongodump -d tourism -o &#x2F;remote_dir&#x2F;mongo_dump_dir<br />       接下来就不担心数据问题了，明天早点来搞			时间： 21:44<br />………………………………………………………………………………………………手动分割线……………………………………………………………………………………………<br />2020.07.08<br />今天早上来了之后，不用想其它了，直接重装数据库吧。(面对疾风吧！！！)<br />经过网上一系列卸载 MongoDB 的教程之后，我发现重装的数据库仍然不能打开，这不是欺人太甚嘛！<br />反反复复折腾了小两个小时，我还是失败了。（真的抓狂）<br />最后，走了一条十分绝的道路，直接搜索，凡是和 MongoDB 有关，且和 Anaconda 无关的所有，全部彻底删除，然后重启机器(我命由我)<br />经过大海捞针式的搜索之后，我终于找到了一个不错的帖子（其它都还好，只是这个把问题解决了）<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ae77f6473250">Ubuntu 安装 MongoDB</a><br />经过系列疯狂操作之后，他活了，终于又活过来了<br />开始修复 bug：<br />①. 为了能够远程访问，&#x2F;etc&#x2F;mongodb.conf 中加一句：bind_ip&#x3D;0.0.0.0<br />②.   解决mongod: 找不到命令：vim ~&#x2F;.bashrc<br />到配置最后，加入以下内容<br />export mongodb&#x3D;&#x2F;usr&#x2F;local&#x2F;mongodb<br />export PATH&#x3D;$mongodn&#x2F;bin:$PATH<br />保存，退出编辑，重置环境变量：source ~&#x2F;.bashrc<br />③.   解决sudo: mongod: 找不到命令:  sudo visudo<br />找到secure_path,  最后添加:     :&#x2F;usr&#x2F;local&#x2F;mongodb&#x2F;bin<br />④.   关闭mongod<br />连接： mongo<br />     use admin<br />     db.shutdownServer()<br />⑤.   MongoDB 服务重启：sudo mongod –config &#x2F;etc&#x2F;mongodb.conf<br />至此，MongoDB重装完毕！！！<br />开始恢复数据库： mongorestore -d  tourism  &#x2F;remote_dir&#x2F;mongo_dump_dir&#x2F;tourism<br><a name="Vers1"></a></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>数据不易，且行且珍惜！！！<br />以后再不注意磁盘容量，把磁盘撑爆！！！！！！我是猪！！！！！！！！！！1</p>
+<p>1、 首先在Ubuntu中已经安装该应用程序，比如在Ubuntu18中已经安装了firefox浏览器（Ubuntu16中也是一样的），想在桌面上建立一个快捷图      标（快捷方式）。<br>2、打开终端（ctrl+alt+t）进入&#x2F;usr&#x2F;share&#x2F;applications目录找到Firefox对应的.desktop文件，如下。hzq@ubuntu:~$ cd &#x2F;usr&#x2F;share&#x2F;applications</p>
+<pre class="line-numbers language-none"><code class="language-none">hzq@ubuntu:&#x2F;usr&#x2F;share&#x2F;applications$ ls firefox*
+firefox.desktop
+hzq@ubuntu:~$ <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>仔细确认该文件是不是你的应用程序对应的文件，有的时候会有多个类似文件（上图中只有一个比较好确认）。<br>3、将.desktop文件拷贝到桌面，如下。</p>
+<pre class="line-numbers language-none"><code class="language-none">hzq@ubuntu:&#x2F;usr&#x2F;share&#x2F;applications$ cp firefox.desktop ~&#x2F;桌面&#x2F;
+hzq@ubuntu:&#x2F;usr&#x2F;share&#x2F;applications$ cd
+hzq@ubuntu:~$ ls 桌面&#x2F;
+firefox.desktop
+hzq@ubuntu:~$ <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>回到桌面查看，效果如下。还需要进一步处理一下。<br>4、选中文件，右键属性打开，切换到“权限”标签，如下所示。选中“允许作为程序执行文件”。然后退出。<br>5、然后再次点击打开该图标，如果弹出提示如下，选“trust and launch”。</p>
+<p>非标准应用程序的操作方法<br>1、其实只要是大规模发行的软件一般在Ubuntu里安装完之后都会在&#x2F;usr&#x2F;share&#x2F;applications里建立相应.desktop文件的，但是总有一些特殊情况。这里以新安装的gedit为例（gedit其实也有现成的.desktop文件，我只是以他为例子建立一个个性化的图标）。<br>2、进入&#x2F;usr&#x2F;share&#x2F;applications目录，建立一个空白的文本文件。如下。</p>
+<pre class="line-numbers language-none"><code>hzq@ubuntu:~$ cd /usr/share/applications
+hzq@ubuntu:/usr/share/applications$ sudo gedit myGedit.desktop
+#输入文件内容，注释内容可以删除---------------------
+[Desktop Entry]
+#名字
+Name=myGedit
+#注释
+Comment=Edit text files
+#执行文件、命令格式
+Exec=gedit %U
+#是否需要终端打开
+Terminal=false
+#类型
+Type=Application
+#图标，我这里是自己做的图标，你也可以引用别的程序的
+Icon=/home/hzq/word.png
+#分类，按自己需要填写
+Categories=GNOME;GTK;Utility;TextEditor;
+#保存退出-----------------------------
+hzq@ubuntu:/usr/share/applications$ 
+</code></pre>
+<p>3、将.desktop文件拷贝到桌面，如下。</p>
+<pre class="line-numbers language-none"><code>hzq@ubuntu:/usr/share/applications$ cp myGedit.desktop ~/桌面/
+hzq@ubuntu:/usr/share/applications$ cd
+hzq@ubuntu:~$ ls 桌面/
+firefox.desktop   myGedit.desktop
+hzq@ubuntu:~$ 
+</code></pre>
+<p>回到桌面查看，效果如下。下面的处理步骤就跟方法一中的步骤类似了。</p>
+<p>在win10下安装了Ubuntu双系统，默认情况下，默认启动的是Ubuntu系统。将默认启动系统设置成win10的办法是：<br>① 进入ubuntu系统；<br>② 打开终端，进入到 &#x2F;etc&#x2F;default 目录下；<br>③ 使用 sudo gedit grub 打开grub配置文件，将GRUB_DEFAULT&#x3D;0修改为你想要默认启动的系统的序号，设置完后保存；<br>注：系统的序号即为启动时看到的顺序，从0开始数，默认ubuntu为第一个，即其序号为0，我的win10系统在第3个，所以设置GRUB_DEFAULT&#x3D;2<br>④ 输入 sudo update-grub 更新grub文件；<br>⑤ 重启系统，完工。</p>
+<p>解决 ubuntu 与 win10 双系统，系统时间不同步问题<br>①  进入ubuntu，在 ubuntu 下更新本地时间<br>      sudo apt-get install ntpdate<br>      sudo ntpdate time.windows.com<br>② 将本地时间更新到硬件上<br>      sudo hwclock –localtime –systohc</p>
 
                 
             </div>
@@ -419,7 +458,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://159.75.162.251:4000/posts/1764727145164/">http://159.75.162.251:4000/posts/1764727145164/</a>
+                    <a href="http://159.75.162.251:4000/posts/1764727199025/">http://159.75.162.251:4000/posts/1764727199025/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -457,8 +496,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Issues/">
-                                    <span class="chip bg-color">Issues</span>
+                                <a href="/tags/Ubuntu-Desktop-ICON/">
+                                    <span class="chip bg-color">Ubuntu-Desktop-ICON</span>
                                 </a>
                             
                         </div>
@@ -541,13 +580,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/1764727145600/">
+                <a href="/posts/1764727198758/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="DBSCAN_Yelp">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="微信小程序开发问题解决">
                         
-                        <span class="card-title">DBSCAN_Yelp</span>
+                        <span class="card-title">微信小程序开发问题解决</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -558,14 +597,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-15
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-08
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/ML-DL/" class="post-category">
-                                    ML && DL
+                            <a href="/categories/WeChat/" class="post-category">
+                                    WeChat
                                 </a>
                             
                             
@@ -575,12 +614,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Cluster/">
-                        <span class="chip bg-color">Cluster</span>
-                    </a>
-                    
-                    <a href="/tags/Code/">
-                        <span class="chip bg-color">Code</span>
+                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">
+                        <span class="chip bg-color">小程序开发</span>
                     </a>
                     
                 </div>
@@ -594,13 +629,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/1764727144897/">
+                <a href="/posts/1764727199100/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Extracting Keywords from Short Government Documents Using Reinforcement Learning">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="微信常用知识">
                         
-                        <span class="card-title">Extracting Keywords from Short Government Documents Using Reinforcement Learning</span>
+                        <span class="card-title">微信常用知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -611,14 +646,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Paper-Reading/" class="post-category">
-                                    Paper-Reading
+                            <a href="/categories/WeChat/" class="post-category">
+                                    WeChat
                                 </a>
                             
                             
@@ -628,12 +663,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Extracting-Keywords/">
-                        <span class="chip bg-color">Extracting Keywords</span>
-                    </a>
-                    
-                    <a href="/tags/Paper/">
-                        <span class="chip bg-color">Paper</span>
+                    <a href="/tags/Initial/">
+                        <span class="chip bg-color">Initial</span>
                     </a>
                     
                 </div>
