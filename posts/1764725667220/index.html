@@ -427,25 +427,11 @@
 <td>下拉 loading 的样式，仅支持 dark &#x2F; light</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td>enablePullDownRefresh</td>
 <td>boolean</td>
 <td>false</td>
 <td></td>
 <td>设置为 true 则页面整体不能上下滚动。只在页面配置中有效，无法在 app.json 中设置</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody></table>
 <p> <br />十、sitemap配置—了解即可 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/sitemap.html">API</a><br />该配置文件用于配置小程序及其页面是否允许被微信索引<br /> <br />十一、模板语法<br />     <br />WXML（weixin Markup language）是框架设计的一套标签语言，结合基础组件、事件系统，可以构建出>页面的结构。<br />1、数据绑定<br />渲染object类型，需要单独属性渲染，否则只会出现object<br /> <br />text 相当于以前web中的 span标签 行内元素 不会换行<br /> <br />view 相当于以前web中的 div标签 块级元素 会换行<br /> <br />cheekbox 以前的复选框标签<br /> <br />字符串和花括号之间一定不要存在空格 否则会导致识别失败<br />以下写法就是错误的示范<br />  <checkbox checked="  "></checkbox><br />十二、运算 &#x3D;&gt; 表达式<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxml/data.html">API</a><br />   <br />1.可以在花括号中 加入 表达式 – “语句”<br />2.表达式<br />  指的是一些简单运算 数字运算 字符串拼接 逻辑运算…<br />  ·数字的加减乘除<br />  ·字符串拼接<br />  ·三元表达>式<br />3.语句<br />  ·复杂的代码段<br />      ☆ if else<br />      ☆switch<br />      ☆do while…<br />      ☆for…<br /> <br />PS:”&#x3D;&#x3D;&#x3D;” 表示全等,即类型和值都相等<br /> <br />十三、列表渲染<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxml/list.html">API</a><br />   <br />1、wx:for&#x3D;”“  wx:for-item&#x3D;”循环项的名称”    wx:for-index&#x3D;”循环项的索引”<br />2、wx:key&#x3D;”唯一的值” 用来提高列表渲染的性能<br />   ·wx:key 绑定一个普通的字符串的时候 那么这个字符串名称 肯定是循环数组 中的 对象的 唯一属性<br />   ·wx:key&#x3D;”*this” 就表示你的数组 是一个普通的数组 *this表示是 循环项<br />    [1, 2, 3, 44, 5]<br />    [“1”, “222”, “adfdf”]<br />3、当出现 数组的嵌套循环的时候 尤其要注意 一下绑定的名称 不要重名<br />        wx:for-item&#x3D;”item”  wx:for-index&#x3D;”index”<br />4、默认情况下 我们 不写wx:for-item&#x3D;”item”  wx:for-index&#x3D;”index”小程序也会把 循环项的名称 和 索引的名称 item 和 index<br />即 只有一层循环的话(wx:for-item&#x3D;”item”  wx:for-index&#x3D;”index”) 可以省略<br />5、对>象循环<br />   ·wx:for&#x3D;”“  wx:for-item&#x3D;”对象的值”  wx:for-index&#x3D;”对象的属性”<br />   ·循环对象的时候 最好把 item 和 index 的名称修改一下<br />     wx:for-item&#x3D;”value”  wx:for-index&#x3D;”key”<br />注：block<br />   ·占位符的标签<br />   ·写代码的时候 可以看到这标签的存在<br />   ·页面渲染 小程序会把它移除掉<br /> <br />十四、条件渲染 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxml/conditional.html">API</a><br /> <br />1、wx:if<br />  在框架中，使用 wx:if&#x3D;”” 来判断是否需要渲染该代码块   condition:true&#x2F;false<br />  wx:if<br />  wx:elif<br />  wx:else<br /> <br />2、hidden<br />  类似 wx:if<br />  频繁切换 用 hidden<br />      通过添加样式的方式来切换<br />PS：hidden 属性 不要和 样式 display 一起使用<br />hidden&#x3D;”false“显示标签<br />  <br />>不常使用 用wx:if<br />直接把标签从 页面结构给移除掉<br /> <br />十五、事件绑定<br /> <br />小程序中的事件绑定，通过bind>关键字来实现。如bindtap、bindinput、bindchange等  不同的组件支持不同的事件，具体看组件的说明即可<br /> <br />1 需要给 input 标签绑定 input 事件<br />  绑定关键字 bindinput<br /> <br />2 如何获取 输入框的值<br />  通过事件源对象来获取<br />   e.detail.value<br /> <br />3 把输入框的值 赋值到 data 当中<br />     不能直接<br />       · this.data.num &#x3D; e.detail.value<br />       · thie.num &#x3D; e.detail.value<br />      正确写法<br />        this.setData({<br />           num:e.detail.value<br />        })<br />需要加入一个点击事件<br />        1 bindtap<br />        2 无法在小程序当中的 事>件中 直接传参<br />        3 通过自定义属性的方式来传递参数<br />        4 事件源中获取自定义属性<br /> <br />4、特别注>意<br />   ·绑定事件时不能带参数 不能带括号<br />   ·事件传值 通过标签自定义属性的方式和value<br /> <br />十六、样式wxss <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html">API</a><br />wxss是一套样式语言，用于描述wxml的组件样式<br />与CSS相比  WXSS扩展的特性有：<br />    ·响应式长度单位rpx<br />·样式导入<br />   <br />1、尺寸单位<br />  rpx（responsive pixel）：可以根据屏幕宽度进行自适应，规定屏幕宽度为750rpx<br />建议：开发微信小程序是， 用iPhone6作为视觉稿的标准<br />使用步骤：<br />    ·确定设计稿宽度pageWidth<br />    ·计算比>列 750rpx &#x3D; pageWidth px，  因此 1px &#x3D; 750rpx &#x2F; pageWidth<br />    ·在less文件中，只要把设计稿中的 px &#x3D;&gt; 750 &#x2F; pageWidth rpx即可<br />      利用 一个属性 calc属性 css 和 wxss 都支持 一个属性<br />        · 750 和 rpx 中间不要留空格<br />           · 运算符的两边也不要留空格<br /> <br />2、样式导入<br />  wxss中直接支持 样式导入功>能<br />  也可以和 less中的导入混用<br />  使用 @import语句可以导入外联样式表，只支持相对路径<br /> <br />3、选择器<br />  特别需要注意的是 小程序 不支持通配符 *<br /> <br />目前支持的选择器有：</p>
@@ -1125,7 +1111,7 @@
 <thead>
 <tr>
 <th></th>
-<th><img src="https://pzxnys.github.io/posts/3309110367/IG7J3T.png"></th>
+<th><img src="https://pzxnys.github.io/images/IG7J3T.png"></th>
 </tr>
 </thead>
 </table>
@@ -1156,7 +1142,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://159.75.162.251:4000/posts/1764724928262/">http://159.75.162.251:4000/posts/1764724928262/</a>
+                    <a href="http://159.75.162.251:4000/posts/1764725667220/">http://159.75.162.251:4000/posts/1764725667220/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1278,7 +1264,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/1764724928670/">
+                <a href="/posts/1764725667268/">
                     <div class="card-image">
                         
                         
@@ -1327,7 +1313,7 @@
                 本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/posts/1764724928262/">
+                <a href="/posts/1764725667220/">
                     <div class="card-image">
                         
                         
