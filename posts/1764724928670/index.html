@@ -4,9 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Welcome to My Blog, 咸鱼">
-    <meta name="description" content=" 一条没有任何思想的臭咸鱼
- ">
+    <meta name="keywords" content="ubuntu使用技巧, 咸鱼">
+    <meta name="description" content=" 一、在桌面创建图标：有两种情况：一是标准安装的应用程序，这种程序一般安装之后就已经有.desktop文件了，我们只要把它复制到桌面就可以了。还有一种就是第三方或自己写的非标应用程序，这个需要自己编写.desktop文件。
+
+1、 首先在U">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Welcome to My Blog | PZXNYS&#39;s Blog</title>
+    <title>ubuntu使用技巧 | PZXNYS&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -291,12 +292,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://pzxnys.github.io/images/lash.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Welcome to My Blog</h1>
+                    <h1 class="description center-align post-title">ubuntu使用技巧</h1>
                 </div>
             </div>
         </div>
@@ -318,12 +319,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Ubuntu-Desktop-ICON/">
+                                <span class="chip bg-color">Ubuntu-Desktop-ICON</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Ubuntu/" class="post-category">
+                                Ubuntu
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -332,7 +346,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-11-11
+                    2021-11-08
                 </div>
                 
 
@@ -341,14 +355,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    12
+                    890
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -371,8 +385,54 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                 <h3 id="一条没有任何思想的臭咸鱼"><a href="#一条没有任何思想的臭咸鱼" class="headerlink" title="一条没有任何思想的臭咸鱼"></a>一条没有任何思想的臭咸鱼</h3>
- <img src="https://pzxnys.github.io/images/lash.png">
+                 <p>一、在桌面创建图标：<br>有两种情况：<br>一是标准安装的应用程序，这种程序一般安装之后就已经有.desktop文件了，我们只要把它复制到桌面就可以了。<br>还有一种就是第三方或自己写的非标应用程序，这个需要自己编写.desktop文件。</p>
+<span id="more"></span>
+<p>1、 首先在Ubuntu中已经安装该应用程序，比如在Ubuntu18中已经安装了firefox浏览器（Ubuntu16中也是一样的），想在桌面上建立一个快捷图      标（快捷方式）。<br>2、打开终端（ctrl+alt+t）进入&#x2F;usr&#x2F;share&#x2F;applications目录找到Firefox对应的.desktop文件，如下。hzq@ubuntu:~$ cd &#x2F;usr&#x2F;share&#x2F;applications</p>
+<pre class="line-numbers language-none"><code class="language-none">hzq@ubuntu:&#x2F;usr&#x2F;share&#x2F;applications$ ls firefox*
+firefox.desktop
+hzq@ubuntu:~$ <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>仔细确认该文件是不是你的应用程序对应的文件，有的时候会有多个类似文件（上图中只有一个比较好确认）。<br>3、将.desktop文件拷贝到桌面，如下。</p>
+<pre class="line-numbers language-none"><code class="language-none">hzq@ubuntu:&#x2F;usr&#x2F;share&#x2F;applications$ cp firefox.desktop ~&#x2F;桌面&#x2F;
+hzq@ubuntu:&#x2F;usr&#x2F;share&#x2F;applications$ cd
+hzq@ubuntu:~$ ls 桌面&#x2F;
+firefox.desktop
+hzq@ubuntu:~$ <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>回到桌面查看，效果如下。还需要进一步处理一下。<br>4、选中文件，右键属性打开，切换到“权限”标签，如下所示。选中“允许作为程序执行文件”。然后退出。<br>5、然后再次点击打开该图标，如果弹出提示如下，选“trust and launch”。</p>
+<p>非标准应用程序的操作方法<br>1、其实只要是大规模发行的软件一般在Ubuntu里安装完之后都会在&#x2F;usr&#x2F;share&#x2F;applications里建立相应.desktop文件的，但是总有一些特殊情况。这里以新安装的gedit为例（gedit其实也有现成的.desktop文件，我只是以他为例子建立一个个性化的图标）。<br>2、进入&#x2F;usr&#x2F;share&#x2F;applications目录，建立一个空白的文本文件。如下。</p>
+<pre class="line-numbers language-none"><code>hzq@ubuntu:~$ cd /usr/share/applications
+hzq@ubuntu:/usr/share/applications$ sudo gedit myGedit.desktop
+#输入文件内容，注释内容可以删除---------------------
+[Desktop Entry]
+#名字
+Name=myGedit
+#注释
+Comment=Edit text files
+#执行文件、命令格式
+Exec=gedit %U
+#是否需要终端打开
+Terminal=false
+#类型
+Type=Application
+#图标，我这里是自己做的图标，你也可以引用别的程序的
+Icon=/home/hzq/word.png
+#分类，按自己需要填写
+Categories=GNOME;GTK;Utility;TextEditor;
+#保存退出-----------------------------
+hzq@ubuntu:/usr/share/applications$ 
+</code></pre>
+<p>3、将.desktop文件拷贝到桌面，如下。</p>
+<pre class="line-numbers language-none"><code>hzq@ubuntu:/usr/share/applications$ cp myGedit.desktop ~/桌面/
+hzq@ubuntu:/usr/share/applications$ cd
+hzq@ubuntu:~$ ls 桌面/
+firefox.desktop   myGedit.desktop
+hzq@ubuntu:~$ 
+</code></pre>
+<p>回到桌面查看，效果如下。下面的处理步骤就跟方法一中的步骤类似了。</p>
+<p>在win10下安装了Ubuntu双系统，默认情况下，默认启动的是Ubuntu系统。将默认启动系统设置成win10的办法是：<br>① 进入ubuntu系统；<br>② 打开终端，进入到 &#x2F;etc&#x2F;default 目录下；<br>③ 使用 sudo gedit grub 打开grub配置文件，将GRUB_DEFAULT&#x3D;0修改为你想要默认启动的系统的序号，设置完后保存；<br>注：系统的序号即为启动时看到的顺序，从0开始数，默认ubuntu为第一个，即其序号为0，我的win10系统在第3个，所以设置GRUB_DEFAULT&#x3D;2<br>④ 输入 sudo update-grub 更新grub文件；<br>⑤ 重启系统，完工。</p>
+<p>解决 ubuntu 与 win10 双系统，系统时间不同步问题<br>①  进入ubuntu，在 ubuntu 下更新本地时间<br>      sudo apt-get install ntpdate<br>      sudo ntpdate time.windows.com<br>② 将本地时间更新到硬件上<br>      sudo hwclock –localtime –systohc</p>
+
                 
             </div>
             <hr/>
@@ -398,7 +458,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://159.75.162.251:4000/posts/1764723631061/">http://159.75.162.251:4000/posts/1764723631061/</a>
+                    <a href="http://159.75.162.251:4000/posts/1764724928670/">http://159.75.162.251:4000/posts/1764724928670/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -435,7 +495,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Ubuntu-Desktop-ICON/">
+                                    <span class="chip bg-color">Ubuntu-Desktop-ICON</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -512,17 +576,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/1764723631061/">
+                <a href="/posts/1764724928597/">
                     <div class="card-image">
                         
-                        <img src="https://pzxnys.github.io/images/lash.png" class="responsive-img" alt="Welcome to My Blog">
                         
-                        <span class="card-title">Welcome to My Blog</span>
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="微信小程序开发问题解决">
+                        
+                        <span class="card-title">微信小程序开发问题解决</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -532,18 +596,29 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-11
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-08
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            pzxnys
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/WeChat/" class="post-category">
+                                    WeChat
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">
+                        <span class="chip bg-color">小程序开发</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -554,13 +629,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/1764723630819/">
+                <a href="/posts/1764724928262/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Python 基础">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="微信常用知识">
                         
-                        <span class="card-title">Python 基础</span>
+                        <span class="card-title">微信常用知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -577,8 +652,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
+                            <a href="/categories/WeChat/" class="post-category">
+                                    WeChat
                                 </a>
                             
                             
@@ -588,8 +663,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python-Code/">
-                        <span class="chip bg-color">Python Code</span>
+                    <a href="/tags/Initial/">
+                        <span class="chip bg-color">Initial</span>
                     </a>
                     
                 </div>
@@ -772,7 +847,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">6.4k</span>
+                        class="white-color">11.2k</span>
             
             
             
