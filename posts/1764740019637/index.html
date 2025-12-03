@@ -4,8 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="微信小程序开发问题解决, 咸鱼">
-    <meta name="description" content=" 写在最初 半年有余的小程序前端开发，踩坑无数，在此记录！！！1、读取数据库内容，含有HTML标签。解析这些标签使用：&amp;lt;rich-text nodes=&amp;quot;&amp;#123;&amp;#123;Notice.content&amp;#125;&amp;#1">
+    <meta name="keywords" content="记录一次磁盘爆炸血泪史, 咸鱼">
+    <meta name="description" content="
+起因这是最初建立 ubuntu + Windows 10 留下的一个诟病。由于网上大部分教程，及之前个人实验的影响。在建立 Ubuntu 系统时，根目录仅分配了 40 G 的磁盘容量。本想着就只是存储一些代码，和少许的数据集，不可能把根目">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>微信小程序开发问题解决 | PZXNYS&#39;s Blog</title>
+    <title>记录一次磁盘爆炸血泪史 | PZXNYS&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -290,12 +291,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">微信小程序开发问题解决</h1>
+                    <h1 class="description center-align post-title">记录一次磁盘爆炸血泪史</h1>
                 </div>
             </div>
         </div>
@@ -319,8 +320,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">
-                                <span class="chip bg-color">小程序开发</span>
+                            <a href="/tags/Issues/">
+                                <span class="chip bg-color">Issues</span>
                             </a>
                         
                     </div>
@@ -331,8 +332,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/WeChat/" class="post-category">
-                                WeChat
+                            <a href="/categories/Ubuntu/" class="post-category">
+                                Ubuntu
                             </a>
                         
                     </div>
@@ -344,7 +345,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-08
+                    2021-11-15
                 </div>
                 
 
@@ -353,14 +354,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    740
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    6 分
                 </div>
                 
 
@@ -383,10 +384,15 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                 <p>写在最初 </br><br>半年有余的小程序前端开发，踩坑无数，在此记录！！！<br></br><span id="more"></span><br>1、读取数据库内容，含有HTML标签。解析这些标签使用：<br /><br><code>&lt;rich-text nodes=&quot;&#123;&#123;Notice.content&#125;&#125;&quot;&gt;&lt;/rich-text&gt;</code><br /><br>2、将常使用数据存放到storage，读取时，应在page中的onload使用：<br />onLoad(){<br />    this.setData({<br />       userInfo: wx.getStorageSync(‘userInfo’)<br />    })<br /> },<br />否则无法实时读取storage信息。<br /><br><br />3、照片上传问题</p>
-<p>url: ‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8088/management/image/upload">http://127.0.0.1:8088/management/image/upload</a>‘,  &#x2F;&#x2F;图片上传接口，本地调试用<br />header: {‘cookie’: wx.getStorageSync(‘sessionid’)},<br />formData:{                  <br />     eventId: 124,   &#x2F;&#x2F;事件id，暂时写死，int形式<br />     eventStatus: 1       &#x2F;&#x2F;事件状态值，暂时写死，int形式             <br />},<br />method: ‘POST’,     <br />dataType: ‘json’,<br />filePath: tempFilePaths[i],<br />name: ‘file’,<br />其中，formData中的参数，是随图片一起传回后台的数据<br /><br><br />4、小程序添加背景图片<br />使用 background-image 这个属性，后面需用url，且既不能用绝对路径，又不能用相对路径，需将整张图片转成base64编码的数据<br />转换网址：<a target="_blank" rel="noopener" href="https://www.zhangxinxu.com/sp/base64.html">https://www.zhangxinxu.com/sp/base64.html</a><br />使用方法：background-image: url(“……”)</p>
-<p>5、安卓登录，shiro权限认证失败(解决方案)<br />1、问题描述<br />最近有用户反馈，小程序登陆有问题<br />小程序成功登陆后，部分安卓用户经常会出现登陆异常情况。而 iPhone 用户从未出现此种状况<br />2、问题分析<br />a. 前期猜测，安卓用户授权问题，在进入登录页面的同时，调取获取位置接口，解决部分手机用户，但是治标不治本<br />b. 怀疑是缓存问题，毕竟iPhone没问题，安卓也有登录成功的情况出现，故改用globalData，结果，然并卵，发病率更改<br />c. 基本确认是 shiro 权限认证问题，但是大部分情况，都没有出现任何问题，那么问题出在哪里呢。感谢 <a target="_blank" rel="noopener" href="https://blog.csdn.net/czx0132/article/details/110101854?utm_source=app&app_version=4.5.3">csdn 四袋粉博主</a>文章<br />该死的安卓系统，不按标准化程序来，获取后台输出也能随机来。<br />（苹果手机获取Set-Cookie顺序是严格一致的，安卓手机Set-Cookie顺序是随机的。）<br /><img src="https://pzxnys.github.io/images/IGImjJ.png" alt="image.png"><br />当返回结果的header有多个Set-Cookier时，微信小程序获取res.header[‘Set-Cookie’]，已经是将Set-Cookie用逗号拼接好的字符串。<br />如果使用简单的逗号分割，Expires时间也含有逗号，Cookie结果是错误的。<br />3、问题解决<br />Cookie正则分割，分号重新拼接<br />简单的逗号无法分割，可以使用正则表达式去分割Cookie字符串，<br />需要被分割的逗号，后继字符串是含有&#x3D;<br /><img src="https://pzxnys.github.io/images/IGIlAx.png" alt="image.png"><br />重新编译后，JSSIONID被整体分割处理，问题解决。perfect<br />上代码：<br />     &#x2F;&#x2F; Set-Cookie字符串获取<br />            var cookie &#x3D; res.header[‘Set-Cookie’]<br />            <br />            &#x2F;&#x2F; 字符串分割成数组<br />            var cookieArray &#x3D; cookie.split(&#x2F;,(?&#x3D;[^,]*&#x3D;)&#x2F;)<br />            &#x2F;&#x2F; 分号拼接数组<br />            var newCookie &#x3D; cookieArray.join(‘;’)<br />            &#x2F;&#x2F; 存储拼接后的cookie<br />            wx.setStorageSync(‘sessionid’, newCookie)<br /></p>
-
+                <p><a name="fMQD6"></a></p>
+<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>这是最初建立 ubuntu + Windows 10 留下的一个诟病。<br />由于网上大部分教程，及之前个人实验的影响。在建立 Ubuntu 系统时，根目录仅分配了 40 G 的磁盘容量。<br />本想着就只是存储一些代码，和少许的数据集，不可能把根目录撑爆，奈何大意失荆州啊！！！</p>
+<span id="more"></span>
+<p><a name="Wj4s6"></a></p>
+<h3 id="问题出现"><a href="#问题出现" class="headerlink" title="问题出现"></a>问题出现</h3><p>2021.07.07 下午，如往常一样，“开心”地做实验。<br />由于对比实验的需求，在多如牛毛的数据集中(其实也就3个)，找到了比较适合的数据集 YELP。<br />同之前操作，开始向 mongodb 导入这个“高达” 12 G 的数据集合。<br />把最大的一个约 6 G 大小的用户评论表导入成功之后，一切还是波澜不惊(主要是没有查看磁盘容量的习惯)<br />接下来开始导入用户注册表，本以为它是正常导入，结果没想到，mongodb 突然无法远程连接，我简直是大吃一惊，<br />以为和苹果连接特定名称WiFi，导致WiFi永久不能使用一样。我导入的用户表中，也有这样的字符串嘛？简直是吓破胆啊！<br />于是开始疯狂找解决办法，我还是很天真的想着，如何把刚导入的那个表删除。但是 mongodb 就是不给你连接，你有什么办法。哎！<br />就这样，经过一个多小时的挣扎，试了百度、博客、csdn等各路大神的指导，问题仍在哪里，纹丝不动。（内心：我到底做错了什么）<br />高潮来了，本想着 linux 的“稳定性”(再也不信了)重启解决所有问题，我按下了这该死的重启键。<br />问题并没有想象中那么愉快的解决，反而系统进入了无限输入密码的阶段（内心已经完全崩溃），难道这就要重新搭建系统了嘛？我拒绝！！！<br><a name="rjqYC"></a></p>
+<h3 id="寻找问题症结"><a href="#寻找问题症结" class="headerlink" title="寻找问题症结"></a>寻找问题症结</h3><p>“程序员干的最 sb 的一件事就是：修改前辈们的代码，你本想着只是把整体结构梳理清晰，结果弄成了山体坍塌”<br />我本想着把 MongoDB 的服务打开，没想到，系统就这样崩了，崩了，崩了！！！<br />我有继续在百度、博客、csdn等各大网站畅游，试过无数方法，他仍旧不能进入桌面（马上要疯。。。）<br />直到一句话，“你的磁盘满了，登录信息无法写入，所以无法进入桌面”，哇，悟了。<br><a name="Yk3I6"></a></p>
+<h3 id="先修房子"><a href="#先修房子" class="headerlink" title="先修房子"></a>先修房子</h3><p>天真的我，开启 Windows 系统，使用系统磁盘管理，将一块基本不用的盘（大概 605 G，简直是暴殄天物）格式化，为 Ubuntu 的扩容<br />本想着，分区工具（DiskGenius）是神一般的存在，所有的硬盘问题，交给他就是洒洒水的事。没想到，所托非人。连续两次的扩容尝试，让我意识到，他不行了！<br />接下来，继续开启百度、博客、csdn等各大网站(身边有一个 linux 大神，该有多好)。一款闻所未闻的分区工具(gparted)出现在了我的眼前<br />但，大部分都是在系统正常的时候，使用其对根目录进行扩容。难道我又失败了？真的要重做系统吗？不要这样折磨我好吗？<br />突然有句话出现了，它可以烧录到 u 盘上，作为镜像启动。天呐，太牛了。就 u 盘多<br />进入官方网站<a target="_blank" rel="noopener" href="https://gparted.org/download.php">下载</a>，随手翻篇帖子。将U盘格式化为 FAT 格式（之前为了方便存大文件，都是 NTFS 格式的）。经压缩包解压到 U 盘根目录（官方要求）<br />进入  ‘utils&#x2F;win32&#x2F;‘ 文件夹下，右键管理员运行 makeboot.bat (官方真的有够细心)<br />开始常规 u 盘启动，经过一系列胡乱操作之后，进入到了硬盘管理界面。重新调配硬盘大小，执行。。。<br />………………………………………………………………………………………waiting…………………………………………………………………………………………<br />就这样，一个半小时过去了。硬盘完全调配好了，还等什么，麻利拔 U 盘，赶紧开机<br />果真没让我失望，他开了，他终于开了（内心可喜，结果发现高兴过早了！！！）<br><a name="HwEhA"></a></p>
+<h3 id="再补漏洞"><a href="#再补漏洞" class="headerlink" title="再补漏洞"></a>再补漏洞</h3><p>经过了近三个小时的挣扎，系统算是成功打开了。<br />本想着，系统都能正常运行了，你 MongoDB 就别在那拘着了，有什么好傲娇的呢？可是他就是不顺你的心意，这就是我刚说的高兴太早了<br />为了能把 MongoDB 打开，我搜索其反馈的各种错误代码，以及查看运行日志，甚至联系 DBA 大神 – 东东(身边真的没什么玩数据库的，<br />奈何他只搞 Oracle 和 MySQL，而且还说了一句话，生产的数据库是不会挂的，如果没问题，找你干嘛)<br />修改配置文件，删除锁文件，修改权限，等等。网络“大神”给出的方案真的是五花八门，不过我早就料到回是这样，于是就一个个的开始尝试，<br />最后，不出所料，我以失败而告终，已经晚上9点多了，好饿。。。<br />以后有问题，一定要先看官方文档（为什么我就不看呢，服了自己了。）<br />MongoDB 有一个很牛的功能，即使你不能打开服务，也能使用其提供的函数 mongodump，将数据库完整的备份出来。<br />然后，等数据库修复好之后，再用函数 mongorestore，将其恢复。(可能是我太天真了，一切都不是那么顺利。)<br />数据备份还是比较轻松的，先在根目录创个文件夹，用来存备份文件， mkdir -p &#x2F;remote_dir&#x2F;mongo_dump_dir<br />开始备份数据库：  mongodump -d tourism -o &#x2F;remote_dir&#x2F;mongo_dump_dir<br />       接下来就不担心数据问题了，明天早点来搞			时间： 21:44<br />………………………………………………………………………………………………手动分割线……………………………………………………………………………………………<br />2020.07.08<br />今天早上来了之后，不用想其它了，直接重装数据库吧。(面对疾风吧！！！)<br />经过网上一系列卸载 MongoDB 的教程之后，我发现重装的数据库仍然不能打开，这不是欺人太甚嘛！<br />反反复复折腾了小两个小时，我还是失败了。（真的抓狂）<br />最后，走了一条十分绝的道路，直接搜索，凡是和 MongoDB 有关，且和 Anaconda 无关的所有，全部彻底删除，然后重启机器(我命由我)<br />经过大海捞针式的搜索之后，我终于找到了一个不错的帖子（其它都还好，只是这个把问题解决了）<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ae77f6473250">Ubuntu 安装 MongoDB</a><br />经过系列疯狂操作之后，他活了，终于又活过来了<br />开始修复 bug：<br />①. 为了能够远程访问，&#x2F;etc&#x2F;mongodb.conf 中加一句：bind_ip&#x3D;0.0.0.0<br />②.   解决mongod: 找不到命令：vim ~&#x2F;.bashrc<br />到配置最后，加入以下内容<br />export mongodb&#x3D;&#x2F;usr&#x2F;local&#x2F;mongodb<br />export PATH&#x3D;$mongodn&#x2F;bin:$PATH<br />保存，退出编辑，重置环境变量：source ~&#x2F;.bashrc<br />③.   解决sudo: mongod: 找不到命令:  sudo visudo<br />找到secure_path,  最后添加:     :&#x2F;usr&#x2F;local&#x2F;mongodb&#x2F;bin<br />④.   关闭mongod<br />连接： mongo<br />     use admin<br />     db.shutdownServer()<br />⑤.   MongoDB 服务重启：sudo mongod –config &#x2F;etc&#x2F;mongodb.conf<br />至此，MongoDB重装完毕！！！<br />开始恢复数据库： mongorestore -d  tourism  &#x2F;remote_dir&#x2F;mongo_dump_dir&#x2F;tourism<br><a name="Vers1"></a></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>数据不易，且行且珍惜！！！<br />以后再不注意磁盘容量，把磁盘撑爆！！！！！！我是猪！！！！！！！！！！1</p>
                 
             </div>
             <hr/>
@@ -412,7 +418,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://159.75.162.251:4000/posts/1764739963891/">http://159.75.162.251:4000/posts/1764739963891/</a>
+                    <a href="http://159.75.162.251:4000/posts/1764740019637/">http://159.75.162.251:4000/posts/1764740019637/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -450,8 +456,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">
-                                    <span class="chip bg-color">小程序开发</span>
+                                <a href="/tags/Issues/">
+                                    <span class="chip bg-color">Issues</span>
                                 </a>
                             
                         </div>
@@ -534,13 +540,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/1764739963380/">
+                <a href="/posts/1764740019699/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Python 基础">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="DBSCAN_Yelp">
                         
-                        <span class="card-title">Python 基础</span>
+                        <span class="card-title">DBSCAN_Yelp</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -551,14 +557,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-08
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-15
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
+                            <a href="/categories/ML-DL/" class="post-category">
+                                    ML && DL
                                 </a>
                             
                             
@@ -568,8 +574,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python-Code/">
-                        <span class="chip bg-color">Python Code</span>
+                    <a href="/tags/Cluster/">
+                        <span class="chip bg-color">Cluster</span>
+                    </a>
+                    
+                    <a href="/tags/Code/">
+                        <span class="chip bg-color">Code</span>
                     </a>
                     
                 </div>
@@ -583,13 +593,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/1764739963893/">
+                <a href="/posts/1764740019792/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="ubuntu使用技巧">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Extracting Keywords from Short Government Documents Using Reinforcement Learning">
                         
-                        <span class="card-title">ubuntu使用技巧</span>
+                        <span class="card-title">Extracting Keywords from Short Government Documents Using Reinforcement Learning</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -600,14 +610,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Ubuntu/" class="post-category">
-                                    Ubuntu
+                            <a href="/categories/Paper-Reading/" class="post-category">
+                                    Paper-Reading
                                 </a>
                             
                             
@@ -617,8 +627,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Ubuntu-Desktop-ICON/">
-                        <span class="chip bg-color">Ubuntu-Desktop-ICON</span>
+                    <a href="/tags/Extracting-Keywords/">
+                        <span class="chip bg-color">Extracting Keywords</span>
+                    </a>
+                    
+                    <a href="/tags/Paper/">
+                        <span class="chip bg-color">Paper</span>
                     </a>
                     
                 </div>

@@ -4,14 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Anaconda环境配置, 咸鱼">
-    <meta name="description" content="环境配置新建环境conda create -n NAME python&amp;#x3D;&amp;#x3D;xxx
+    <meta name="keywords" content="DBSCAN_Yelp, 咸鱼">
+    <meta name="description" content="DBSCAN利用 DBSCAN 聚类算法，对经纬度进行聚类​
+代码如下：
 
 
-
-将环境添加到jupyterLabconda activate NAME
-conda install ipykernel
-python">
+import pandas as pd
+import numpy as np
+from sklearn.cluster import DBSCAN
+from sk">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +24,7 @@ python">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Anaconda环境配置 | PZXNYS&#39;s Blog</title>
+    <title>DBSCAN_Yelp | PZXNYS&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -296,12 +297,12 @@ python">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Anaconda环境配置</h1>
+                    <h1 class="description center-align post-title">DBSCAN_Yelp</h1>
                 </div>
             </div>
         </div>
@@ -325,14 +326,27 @@ python">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Anaconda/">
-                                <span class="chip bg-color">Anaconda</span>
+                            <a href="/tags/Cluster/">
+                                <span class="chip bg-color">Cluster</span>
+                            </a>
+                        
+                            <a href="/tags/Code/">
+                                <span class="chip bg-color">Code</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/ML-DL/" class="post-category">
+                                ML && DL
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -341,7 +355,7 @@ python">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-29
+                    2021-11-15
                 </div>
                 
 
@@ -350,14 +364,14 @@ python">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    134
+                    462
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -380,37 +394,53 @@ python">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h4><h5 id="新建环境"><a href="#新建环境" class="headerlink" title="新建环境"></a>新建环境</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda create -n NAME python&#x3D;&#x3D;xxx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h3 id="DBSCAN"><a href="#DBSCAN" class="headerlink" title="DBSCAN"></a>DBSCAN</h3><p>利用 DBSCAN 聚类算法，对经纬度进行聚类<br>​</p>
+<p>代码如下：</p>
+<span id="more"></span>
 
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">import pandas as pd
+import numpy as np
+from sklearn.cluster import DBSCAN
+from sklearn import metrics
+import os
 
+def dbscan(input_file):
+    columns&#x3D;[&#39;lon&#39;,&#39;lat&#39;]
+    in_df &#x3D; pd.read_csv(input_file, sep&#x3D;&#39;,&#39;, header&#x3D;1, names&#x3D;columns)
+    print(in_df)
+    coords &#x3D; in_df.values
+ 
+    kms_per_radian &#x3D; 6371.0086
+   
+    epsilon &#x3D; 0.4 &#x2F; kms_per_radian
+ 
+    db &#x3D; DBSCAN(eps&#x3D;epsilon, min_samples&#x3D;10, algorithm&#x3D;&#39;ball_tree&#39;, metric&#x3D;&#39;haversine&#39;).fit(np.radians(coords))
+    cluster_labels &#x3D; db.labels_
+ 
+    num_clusters &#x3D; len(set(cluster_labels) - set([-1]))
+ 
+    print( &#39;Clustered &#39; + str(len(in_df)) + &#39; points to &#39; + str(num_clusters) + &#39; clusters&#39;)
+ 
+    for n in range(num_clusters):
+        #print(&#39;Cluster &#39;, n, &#39; all samples:&#39;)
+        one_cluster &#x3D; coords[cluster_labels &#x3D;&#x3D; n]
+        print(len(one_cluster))
+        #clist &#x3D; one_cluster.tolist()
+        #print(clist[0])
+        
+def main():
+    path &#x3D; &#39;.&#x2F;data&#39;
+    f &#x3D; &#39;placell.csv&#39;
+    datafile &#x3D; os.path.join(path,f)
+    print(datafile)
+    dbscan(datafile)
+    
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
+    main()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="将环境添加到jupyterLab"><a href="#将环境添加到jupyterLab" class="headerlink" title="将环境添加到jupyterLab"></a>将环境添加到jupyterLab</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda activate NAME
-conda install ipykernel
-python -m ipykernel install --user --name NAME --display-name NAME<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h5 id="将环境从jupyterLab中删除"><a href="#将环境从jupyterLab中删除" class="headerlink" title="将环境从jupyterLab中删除"></a>将环境从jupyterLab中删除</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">jupyter kernelspec remove NAME<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h5 id="删除环境"><a href="#删除环境" class="headerlink" title="删除环境"></a>删除环境</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda remove -n NAME --all<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h4 id="TensorFlow安装"><a href="#TensorFlow安装" class="headerlink" title="TensorFlow安装"></a>TensorFlow安装</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda activate NAME<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>（Version &gt; 2.4  2021年12月29日18:37:18）</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip install tensorflow&#x3D;&#x3D;xxx
-conda install cudaToolkit
-conda install cudnn<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>(Version &lt;&#x3D; 2.4 2021年12月29日18:39:26)</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda install tensorflow&#x3D;&#x3D;xxx    &#x2F;&#x2F;conda 自动将对应的版本的 cuda 和 cudnn 安装完成。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h4 id="PyTorch安装"><a href="#PyTorch安装" class="headerlink" title="PyTorch安装"></a>PyTorch安装</h4><p> 参见官网<a target="_blank" rel="noopener" href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a></p>
+<p>利用此算法，将 12094 家店铺聚类为 163 类，每一类至少有 10 家店铺。<br>并存储。<br>重新做数据，将聚类标签添加至数据集中。<br>创建 dqn_coords，训练不同地理位置所适应的店铺。<br>将其作为参数引入 YELP 的推荐中。<code>​</code><br>获得新的推荐结果。<br>​</p>
+<h3 id="数据模拟"><a href="#数据模拟" class="headerlink" title="数据模拟"></a>数据模拟</h3><p>对用户的 70W+ 记录进行完全随机模拟生成用户所在地理位置，或许，模拟出的位置分类与其真实所到的位置相距很远，<br>但是在后期推荐的时候，由于推荐结果的某些特性，在一定程度上来说，提高了对于分类的准确性，综合结果有待评价。<br>​</p>
+<p>若利用聚类的结果，对用户的 70W+ 记录进行随机模拟生成用户所在地理位置，其模拟出的位置与实际位置相距很近，<br>但在后期推荐的时候，对于根据地理位置进行推荐的准确率有所偏低，综合结果有待评价。</p>
 
                 
             </div>
@@ -437,7 +467,7 @@ conda install cudnn<span aria-hidden="true" class="line-numbers-rows"><span></sp
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://159.75.162.251:4000/posts/1764739963442/">http://159.75.162.251:4000/posts/1764739963442/</a>
+                    <a href="http://159.75.162.251:4000/posts/1764740019699/">http://159.75.162.251:4000/posts/1764740019699/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -475,8 +505,12 @@ conda install cudnn<span aria-hidden="true" class="line-numbers-rows"><span></sp
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Anaconda/">
-                                    <span class="chip bg-color">Anaconda</span>
+                                <a href="/tags/Cluster/">
+                                    <span class="chip bg-color">Cluster</span>
+                                </a>
+                            
+                                <a href="/tags/Code/">
+                                    <span class="chip bg-color">Code</span>
                                 </a>
                             
                         </div>
@@ -559,43 +593,7 @@ conda install cudnn<span aria-hidden="true" class="line-numbers-rows"><span></sp
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/1764739963419/">
-                    <div class="card-image">
-                        
-                        <img src="https://pzxnys.github.io/images/lash.png" class="responsive-img" alt="Welcome to My Blog">
-                        
-                        <span class="card-title">Welcome to My Blog</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-11
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            pzxnys
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/1764739963319/">
+                <a href="/posts/1764740019623/">
                     <div class="card-image">
                         
                         
@@ -611,9 +609,9 @@ conda install cudnn<span aria-hidden="true" class="line-numbers-rows"><span></sp
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-15
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -631,6 +629,55 @@ conda install cudnn<span aria-hidden="true" class="line-numbers-rows"><span></sp
                     
                     <a href="/tags/Dataset/">
                         <span class="chip bg-color">Dataset</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/1764740019637/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="记录一次磁盘爆炸血泪史">
+                        
+                        <span class="card-title">记录一次磁盘爆炸血泪史</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Ubuntu/" class="post-category">
+                                    Ubuntu
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Issues/">
+                        <span class="chip bg-color">Issues</span>
                     </a>
                     
                 </div>

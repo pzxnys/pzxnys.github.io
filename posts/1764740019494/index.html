@@ -4,9 +4,20 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Data processing (Tourism ), 咸鱼">
-    <meta name="description" content="
-①. jieba分词使用jieba分词工具，对马蜂窝爬取数据进行简单处理首先，去除停用词、表情符号，英文等字符，避免干扰PS：只保留中文字符（if word &amp;gt;&amp;#x3D; u’\u4e00’ and word &amp;lt;&amp;#x3D;">
+    <meta name="keywords" content="橙啦-颉斌斌老师 阅读课, 咸鱼">
+    <meta name="description" content="阅读低分思维和满分思维的区别：低分思维：
+定位：题干中有什么就去定位什么
+内容：把每个单词都读懂，翻译成中文
+做题：答案见过，求证 100% 正确
+已知信息：原文
+
+结果：
+
+定位不准
+低消耗时
+出错率高
+
+正确的做题方式 – 即满分思维：">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +29,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Data processing (Tourism ) | PZXNYS&#39;s Blog</title>
+    <title>橙啦-颉斌斌老师 阅读课 | PZXNYS&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -291,12 +302,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Data processing (Tourism )</h1>
+                    <h1 class="description center-align post-title">橙啦-颉斌斌老师 阅读课</h1>
                 </div>
             </div>
         </div>
@@ -320,8 +331,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Dataset/">
-                                <span class="chip bg-color">Dataset</span>
+                            <a href="/tags/Reading-Comprehension/">
+                                <span class="chip bg-color">Reading Comprehension</span>
                             </a>
                         
                     </div>
@@ -332,8 +343,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/ML-DL/" class="post-category">
-                                ML && DL
+                            <a href="/categories/CET-6/" class="post-category">
+                                CET-6
                             </a>
                         
                     </div>
@@ -345,7 +356,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-15
+                    2023-11-12
                 </div>
                 
 
@@ -354,14 +365,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.4k
+                    941
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    3 分
                 </div>
                 
 
@@ -384,106 +395,101 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a name="97buO"></a></p>
-<h3 id="①-jieba分词"><a href="#①-jieba分词" class="headerlink" title="①. jieba分词"></a>①. jieba分词</h3><p>使用jieba分词工具，对马蜂窝爬取数据进行简单处理<br /><br>首先，去除停用词、表情符号，英文等字符，避免干扰<br /><br>PS：只保留中文字符（if word &gt;&#x3D; u’\u4e00’ and word &lt;&#x3D; u’\u9fa5’:）(此数据采用中文’utf-8’编码)<br /></p>
-<span id="more"></span>
-<p>去除停用词（if word not in stopwords:）（stopwords为预加载的中文停用词表）<br />其次，采用jieba分词的精确分词模式，对预处理过的数据进行分词<br /><br>最后，将266个景点评论合并到同一个文档中，其中每一行的头部为景点名称，后面为其评论<br /></p>
-<p><a name="e6Cwh"></a></p>
-<h3 id="②-计算TF-IDF"><a href="#②-计算TF-IDF" class="headerlink" title="②. 计算TF-IDF"></a>②. 计算TF-IDF</h3><p>TF-IDF——词项在向量中的权重方法：表示TF(词频)和IDF(倒文档频率)的乘积：<br /><br>$tf-idf_{i, j} &#x3D; tf_{i, j} * idf_i$<br /><br>其中 TF 表示某个关键词出现的频率，IDF 为所有文档的数目除以包含该词语的文档数目的对数值。<br /><img src="https://pzxnys.github.io/images/1607666893076.png"><br />|D|表示所有文档的数目，|w∈d|表示包含词语w的文档数目。<br />使用 scikit-learn 工具调用CountVectorizer()和TfidfTransformer()函数计算 TF-IDF 值<br />CountVectorizer()：通过 fit_transform 函数将文本中的词语转换为词频矩阵<br />矩阵元素 weight[i][j] 表示 j 词在第 i 个 文本下的词频，即各个词语出现的次数<br />通过 get_feature_names() 可看到所有文本的关键字，通过 toarray() 可看到词频矩阵的结果<br /><br><br />TfidfTransformer 也有个 fit_transform 函数， 它的作用是计算 tf_idf 值。<br /><br><br />输出 93244 维特征，其中共266个景点<br />故构建的矩阵为：[266][93244]<br />或许特征值较大，下一步考虑降维<br /></p>
-<p><a name="7QXfF"></a></p>
-<h3 id="③-K-Means-聚类"><a href="#③-K-Means-聚类" class="headerlink" title="③. K-Means(聚类)"></a>③. K-Means(聚类)</h3><p><br />首先，理解一下什么是聚类。<br />聚类：它的目的也是把数据分类，却与分类不同。事先不知道如何去分，完全是算法自己来判断各条数据之间的相似性，相似的就放在一起。<br />在聚类的结论出来之前，完全不知道每一类有什么特点，一定要根据聚类的结果通过人的经验来分析，看看聚成的这一类大概有什么特点。<br /><br><br />其次，聚类和分类有什么不同。<br />分类的目标是事先已知的，而聚类则不一样，聚类事先不知道目标变量是什么，类别没有像分类那样被预先定义出来。<br /><br><br />最后，重头戏登场。<br />K-Means：聚类算法有很多种(几十种)，K-Means 是聚类算法中的最常用的一种。<br />特点：简单、好理解、运算速度快<br />缺点：只能应用于连续型的数据，并且一定要在聚类前手动指定要分成几类。<br />算法思想：求加权均值，大概需要迭代3~5步<br /></p>
-<p><a name="nePuH"></a></p>
-<h3 id="④-特征提取"><a href="#④-特征提取" class="headerlink" title="④. 特征提取"></a>④. 特征提取</h3><p><br />1、使用 WordCloud 对特征进行提取，以及生成词云图，由于为旅游景点的游客评价，因此特征提取效果甚是不好，需要融入其它因素<br />2、使用 tfidf，进行权重计算，但是主要用于聚类，未应用到实际特征提取，需要进一步了解<br />3、使用 embedding 进行特征提取，需要进一步了解<br />4、引入评分，做一个新的建模，进行权重加持，需要进一步思考（急）<br />5、引入历史天气信息，暂时考虑<br /><br><br /></p>
-<p><a name="lMaPM"></a></p>
-<h3 id="⑤-数据清洗"><a href="#⑤-数据清洗" class="headerlink" title="⑤. 数据清洗"></a>⑤. 数据清洗</h3><p><br />1、抽取爬虫数据时，自动去除非中文、数字、英文(暂时考虑保留)的字符，可以解决数据非正常换行，制表符等转义字符问题，造成字典异常<br />ps: 地名包含的数字和英文：0123589    M SKY RING O I · ,暂时考虑只保留这些数字和英文，<br />2、将列表文件转存为字典文件，会自动去重，可以降低数据冗余<br />3、由于生成字典格式，每写入一个 key-value，均需插入’,’ ，使得最后写出的文件多一个逗号，需手动删除。可以考虑进行优化(已优化，具体测试代码如下：)<br /></p>
-<pre class="line-numbers language-none"><code class="language-none">import json
-list &#x3D; [&#123;&#39;color&#39;: &#39;greefja放假啊的说法\nnnfhasjkfhajk话费卡技术复核hell&#39;, &#39;point&#39;: 5&#125;, &#123;&#39;color&#39;: &#39;yellow&#39;, &#39;point&#39;: 10&#125;,&#123;&#39;color&#39;: &#39;green\nhell&#39;, &#39;point&#39;: 5&#125;,&#123;&#39;color&#39;: &#39;green\nhell&#39;, &#39;point&#39;: 5&#125;, &#123;&#39;color&#39;: &#39;red&#39;, &#39;point&#39;: 15&#125;]
-dict &#x3D; &#123;&#125;
-for l in list:
-    outstr &#x3D; &#39;&#39;
-    for g in l[&#39;color&#39;]:     # 数据清洗
-        if g &gt;&#x3D; u&#39;\u4e00&#39; and g &lt;&#x3D; u&#39;\u9fa5&#39;:     #保留中文字符(utf-8)
-            outstr +&#x3D; g
-        elif g &gt;&#x3D; u&#39;\u0030&#39; and g &lt;&#x3D; u&#39;\u0039&#39;:     # 保留阿拉伯数字(utf-8)
-            g +&#x3D; g
-        elif g &gt;&#x3D; u&#39;\u0041&#39; and g &lt;&#x3D; u&#39;\u007a&#39;:     # 保留英文大小写(utf-8)
-           outstr +&#x3D; g
-    dict[outstr] &#x3D; str(l[&#39;point&#39;])    # 生成一个新字典
-   
-<p>print(dict)<br>with open(&#39;a.txt&#39;, &#39;w&#39;, encoding&#x3D;&#39;utf-8&#39;) as c:<br>        c.write(json.dumps(dict, ensure_ascii&#x3D;False))     将字典原样写入文件 (其中，ensure_ascii &#x3D; False 为了保证中文不乱码)</p>
-<p>#读取上面保存的文件<br>with open(&#39;a.txt&#39;, &#39;r&#39;, encoding&#x3D;&#39;utf-8&#39;) as test:<br>    dict &#x3D; json.loads(test.readline())</p>
-<p>print(dict)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
-<p><a name="cFdKQ"></a></p>
-<h3 id="⑥-仿真用户行为日志数据（MongoDB）"><a href="#⑥-仿真用户行为日志数据（MongoDB）" class="headerlink" title="⑥. 仿真用户行为日志数据（MongoDB）"></a>⑥. 仿真用户行为日志数据（MongoDB）</h3><p><a name="zhjyP"></a></p>
-<h4 id="1、-json格式数据集导入"><a href="#1、-json格式数据集导入" class="headerlink" title="1、  json格式数据集导入"></a>1、  json格式数据集导入</h4><p>向 MongoDB 导入 json 格式的数据集，用 Navicat 15 ，提示 Not a valid JSON。<br />索性自己使用命令行，向 MongoDB 导入数据集。<br />sudo mongoimport –db newdb –collection newcoll –file primer-dataset.json<br />其中，newdb为数据库名字，newcoll为导入的数据集名字<br /></p>
-<p><a name="UAwlA"></a></p>
-<h4 id="2、清理数据"><a href="#2、清理数据" class="headerlink" title="2、清理数据"></a>2、清理数据</h4><p>按条件删除多组mongo数据库中数据：<br /><code>collection.delete_many(&#123;条件对&#125;)</code><br /><code>输出删除的总计: result.deleted_count</code><br />​<br /><br><a name="YYrC8"></a></p>
-<h4 id="3、增加天气因素。"><a href="#3、增加天气因素。" class="headerlink" title="3、增加天气因素。"></a>3、增加天气因素。</h4><p>字符串截取：将字符串按某一特定字符截取n段，并转为数组。<br /><code>str.split(&#39;/&#39;, n)</code><br />判断字典中是否存在某个key：<br /><code>&#39;xxx&#39; not in dict.keys()</code><br />按条件插入或修改多组mongo数据库中的某字段数据：<br /><code>collection.update_many(&#123;条件对&#125;,&#123;&#39;$set&#39;:&#123;修改对&#125;&#125;)</code><br /></p>
-<p><a name="hrhxV"></a></p>
-<h4 id="4、模拟用户旅游时长"><a href="#4、模拟用户旅游时长" class="headerlink" title="4、模拟用户旅游时长"></a>4、模拟用户旅游时长</h4><p>调整 random 概率，预先设置一个集合，则会按该集合各数字所占比列进行random：<br /><code>b = (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 4, 5, 6, 6, 6)</code><br /><code>num = random.sample(b, n)</code><br />其中n为随机生成的数组长度<br />​<br /><br><a name="xZBco"></a></p>
-<h4 id="5、模拟景区拥挤度"><a href="#5、模拟景区拥挤度" class="headerlink" title="5、模拟景区拥挤度"></a>5、模拟景区拥挤度</h4><p>安装插件 chinesecalendar。<code>pip install chinesecalendar</code><br />将日期转为 date 型：<br />保留时分秒：<code>datetime.strptime(date, &#39;%Y-%m-%d&#39;)</code> PS: Y, m, d 顺序根据需要进行调整<br />不保留时分秒：datetime.strptime(date, ‘%Y-%m-%d’).date()<br />调用插件判断该日期是否为工作日：<br /><code>from chinese_calendar import is_workday</code><br /><code>is_workday(date)</code>  返回值为 boolean 类型。<br><a name="ABKtZ"></a></p>
-<h3 id="⑧-Mysql"><a href="#⑧-Mysql" class="headerlink" title="⑧.Mysql"></a>⑧.Mysql</h3><p><a name="WogJB"></a></p>
-<h4 id="1、-json数据拆分"><a href="#1、-json数据拆分" class="headerlink" title="1、 json数据拆分"></a>1、 json数据拆分</h4><p>虽然 MySQL 数据库的查找、更新速度比 MongoDB 快的多(实测情况，MySQL 与 MongoDB 的速度差不太多，最后直接使用 json 文件，进行数据清洗)<br />但是使用 Python 向其导入 json 文件的速度，相形之下要慢的多，因此需对超大数据集进行拆分<br />多线程，同步插入数据，更有效率<br />PS：MySQL 写入，并不会占用 CPU 线程达100%<br /></p>
-<pre class="line-numbers language-none"><code class="language-none">import json
-# 读取大json文件N &#x3D; []
-with open(&#39;..&#x2F;data&#x2F;review.json&#39;, &#39;r&#39;, encoding&#x3D;&#39;utf-8&#39;) as f1:
-    for line in f1.readlines():
-        N.append(line.strip())
-print(len(N))
-# 转存略显繁琐，但为导入做准备
-i &#x3D; 0
-co &#x3D; 0
-f &#x3D; open (&quot;..&#x2F;data&#x2F;review_&quot; + str(i) + &quot;.json&quot;, &#39;w&#39;, encoding&#x3D;&#39;utf8&#39;)
-for li in N:
-    co +&#x3D; 1
-    f.write(str(li) + &#39;\n&#39;)
-    if co &#x3D;&#x3D; 600000:
-        co &#x3D; 0
-        i +&#x3D; 1
-        f.close()
-        print(str(i) + &#39; File close!!!&#39;)
-        f &#x3D; open (&quot;..&#x2F;data&#x2F;review_&quot; + str(i) + &quot;.json&quot;, &#39;w&#39;, encoding&#x3D;&#39;utf8&#39;)
-        continue <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><a name="tBJQH"></a></p>
-<h4 id="2、-json-数据导入"><a href="#2、-json-数据导入" class="headerlink" title="2、 json 数据导入"></a>2、 json 数据导入</h4><p>大部分 json 文件不能直接通过 Navicat 导入到 MySQL</p>
-<pre><code>  - 有一个插件：mysqljsonimport，但是一直没能成功使用， 不知道是 MySQL 版本问题，还是安装时的配置问题，未解决
-  - 有一个工具，成功导入了 1000 条，但是收费不低，而且破解版一直未找到，记录一下工具名称：JSONtoMySQL。后期可继续寻找
-  - 通过 python，先将 json 文件读出，然后写入 MySQL，具体代码如下：
-</code></pre>
-<pre class="line-numbers language-none"><code class="language-none">import json
-import pymysql
-conn &#x3D; pymysql.connect(    # 服务器地址
-    host &#x3D; &#39;192.168.3.78&#39;,
-    # 端口号
-    port &#x3D; 3306,
-    # 用户名
-    user &#x3D; &#39;root&#39;,
-    # 密码
-    passwd &#x3D; &#39;123456&#39;,
-    # 数据库名称
-    db &#x3D; &#39;yelp&#39;,
-    # 字符编码格式
-    charset &#x3D; &#39;utf8&#39;,
-    )
-# 设置游标，进行数据库操作
-cur &#x3D; conn.cursor()
-# open file
-path &#x3D; &#39;..&#x2F;data&#x2F;review.json&#39;
-
-<p>with open(path, &#39;r&#39;, encoding&#x3D;&#39;utf-8&#39;) as f:<br>    ln &#x3D; 0<br>    for line in f.readlines():<br>        ln +&#x3D; 1<br>        dic &#x3D; json.loads(line)<br>        # 一逗号进行key拼接，对应json中的字段<br>        keys &#x3D; &#39;,&#39;.join(dic.keys())<br>        # print(keys)<br>        # 将字典value信息存储成list<br>        valuesList &#x3D; [dici for dici in dic.values()]<br>        # 进行List列表的遍历<br>        for index1, value1 in enumerate(valuesList):<br>        # 如果是list,将其以str类型存储<br>            if isinstance(value1, list):<br>                valuesList[index1] &#x3D; str(value1)<br>        # 将str类型转化成元组形式存储<br>        valuesTuple &#x3D; tuple(valuesList)<br>        # 将value值进行拼接<br>        values &#x3D; &#39;, &#39;.join([&#39;%s&#39;]*len(dic))<br>        # print(values)<br>        # 设置表名称<br>        table&#x3D;&quot;review&quot;<br>        #构造sql插入语句<br>        sql &#x3D; &#39;INSERT INTO &#123;table&#125;(&#123;keys&#125;) VALUES (&#123;values&#125;)&#39;.format(table&#x3D;table, keys&#x3D;keys, values&#x3D;values)<br>        # 执行sql语句<br>        cur.execute(sql,valuesTuple)<br>        conn.commit()<br>        if ln%10000 &#x3D;&#x3D; 0:<br>            print(str(ln) + &#39; End!&#39;)<br>conn.close()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
-<p><a name="toRp0"></a></p>
-<h3 id="⑨-评价指标"><a href="#⑨-评价指标" class="headerlink" title="⑨. 评价指标"></a>⑨. 评价指标</h3><p>1、NDCG</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">r&#x3D;np.array([1,0,0,1,0])
-dcg &#x3D; r[0] + np.sum(r[1:] &#x2F; np.log2(np.arange(2, r.size + 1)))
-r_s &#x3D; sorted(r,reverse&#x3D;True)
-r_s &#x3D; np.array(r_s)
-dcg_max &#x3D; r_s[0] + np.sum(r_s[1:] &#x2F; np.log2(np.arange(2, r_s.size + 1)))
-print(dcg,dcg_max)
-dcg&#x2F;dcg_max<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<br />
-<br />
+                <h2 id="阅读低分思维和满分思维的区别："><a href="#阅读低分思维和满分思维的区别：" class="headerlink" title="阅读低分思维和满分思维的区别："></a>阅读低分思维和满分思维的区别：</h2><h3 id="低分思维："><a href="#低分思维：" class="headerlink" title="低分思维："></a>低分思维：</h3><ul>
+<li>定位：题干中有什么就去定位什么</li>
+<li>内容：把每个单词都读懂，翻译成中文</li>
+<li>做题：答案见过，求证 100% 正确</li>
+<li>已知信息：原文</li>
+</ul>
+<p>结果：</p>
+<ol>
+<li>定位不准</li>
+<li>低消耗时</li>
+<li>出错率高<span id="more"></span></li>
+</ol>
+<h3 id="正确的做题方式-–-即满分思维："><a href="#正确的做题方式-–-即满分思维：" class="headerlink" title="正确的做题方式 – 即满分思维："></a>正确的做题方式 – 即满分思维：</h3><ul>
+<li>定位：回答题干问题所问</li>
+<li>内容：逻辑判断</li>
+<li>做题：比出出错概率较小</li>
+<li>已知信息：原文 + 题干 + 选项</li>
+</ul>
+<h3 id="传统老师的定位方法"><a href="#传统老师的定位方法" class="headerlink" title="传统老师的定位方法"></a>传统老师的定位方法</h3><ol>
+<li>先看题干，从题干中找定位词：大写字母 &#x2F; 专有名词 &#x2F; 数字 &#x2F; 人名 &#x2F; 地名 &#x2F; 关键词</li>
+<li>带着这些定位词到原文中去定位，找到出题句</li>
+<li>精读出题句，对比选项看有没有同义词替换或同义改写</li>
+<li>如果没有答案，就去看上一句或下一句，最多三句</li>
+</ol>
+<h3 id="怎样去避免干扰？"><a href="#怎样去避免干扰？" class="headerlink" title="怎样去避免干扰？"></a>怎样去避免干扰？</h3><p>一定要学会精准定位</p>
+<p>题干的问题决定了精准定位，而不是题干有什么就定位什么</p>
+<p>定位的内容一定要回答题干问题所问</p>
+<p>题干问题所问需要深度理解问题：题干结合选项  才能对问题深度把握</p>
+<h3 id="对比选项"><a href="#对比选项" class="headerlink" title="对比选项"></a>对比选项</h3><ol>
+<li><p>客观接收信息</p>
+<p>每个考生面前的信息是一样的，但读完之后会有不一样的解读！所以，如何做到对信息真实的接受，不能失真！</p>
+<h4 id="客观"><a href="#客观" class="headerlink" title="客观"></a>客观</h4><ul>
+<li>不加任何生活背景，不看暗含</li>
+<li>不加自己的解释</li>
+<li>不做主观式的推测</li>
+</ul>
+</li>
+<li><p>比出出错概率最小：</p>
+<h4 id="传统的阅读思维"><a href="#传统的阅读思维" class="headerlink" title="传统的阅读思维"></a>传统的阅读思维</h4><ol>
+<li><p>求证正确答案的正确性：</p>
+<p><font color='red'> 同义替 &#x2F; 同义改写 &#x2F; 逻辑高度概括 </font></p>
+</li>
+<li><p>求证错误选项的错误性：</p>
+<p><font color='red'> 张冠李戴 &#x2F; 无中生有 &#x2F; 逻辑颠倒 </font></p>
+</li>
+</ol>
+<h4 id="真实的考试状态"><a href="#真实的考试状态" class="headerlink" title="真实的考试状态"></a>真实的考试状态</h4><ol>
+<li>有时间压力 - 读不懂或读不透</li>
+<li>有心理压力 - 各种应试能力全面下降</li>
+</ol>
+<p>PS：在考场上大多数考生没有能力判断哪个正确</p>
+<p>PS：选出正确选项是培训老师最大的谎言！</p>
+<h4 id="选择题的特点"><a href="#选择题的特点" class="headerlink" title="选择题的特点"></a>选择题的特点</h4><ol>
+<li><p>答案的唯一性  </p>
+<p>先把错误选项干掉，再把比较不对的选项干掉（选项是比出来的）</p>
+<ol>
+<li>有比较对象 </li>
+<li>选项相对正确</li>
+</ol>
+</li>
+<li><p>比出一个出错概率较小的选项（必要性思维 – 前提思维）</p>
+<p>a. 排除不沾边的，留下沾点边的</p>
+<p>b. 只有一个沾边，就选它</p>
+<p>c. 如果有两个沾边，比出一个出错概率较小的选项</p>
+</li>
+</ol>
+<p>​         PS： 用“出错概率较小”代替“正确选项”的思维</p>
+<h4 id="选择题答案的特点（排除法）"><a href="#选择题答案的特点（排除法）" class="headerlink" title="选择题答案的特点（排除法）"></a>选择题答案的特点（排除法）</h4><ul>
+<li>没有对的定义，只有完全错的定义或相对不好的定义！</li>
+<li>选项之所以选它，不是你想选它，而是被逼的不得不选它！因为别的没法选！</li>
+</ul>
+<h4 id="什么是评估选项"><a href="#什么是评估选项" class="headerlink" title="什么是评估选项"></a>什么是评估选项</h4><ol>
+<li>根据题干中的问题所问到原文中定位</li>
+<li>根据定位到的信息，对选项做出评估</li>
+</ol>
+<p><font color='blue'>PS: 意思一样的可以评估，意思不一样的也可以评估</font></p>
+<p><font color='red'>评估：在这个定位得到的信息存在之下，谁的出错概率更小！</font></p>
+<p><font color='yellowgreen'>答案具有唯一性，A能推出B，则答案一定选B！！！</font></p>
+<p><b><font color='green' size='6px'>阅读理解可以利用的宝藏</font></b></p>
+<h4 id="选择题无法避开的固有缺陷"><a href="#选择题无法避开的固有缺陷" class="headerlink" title="选择题无法避开的固有缺陷"></a>选择题无法避开的固有缺陷</h4><ol>
+<li>问题的暗示</li>
+<li>选项的暗示</li>
+<li>原文的暗示</li>
+<li>一致性（前后题）的暗示</li>
+</ol>
+<h3 id="阅读做法"><a href="#阅读做法" class="headerlink" title="阅读做法"></a>阅读做法</h3><p>先读五个题干后最后一题的4个选项（若最后一题为主旨。）</p>
+<p>画出具体信息：</p>
+<ul>
+<li>名词</li>
+<li>该名词涉及文章具体信息</li>
+<li>词组优先</li>
+</ul>
+<p>PS：选项的区别是思考的角度</p>
+</li>
+</ol>
                 
             </div>
             <hr/>
@@ -509,7 +515,7 @@ dcg&#x2F;dcg_max<span aria-hidden="true" class="line-numbers-rows"><span></span>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://159.75.162.251:4000/posts/1764739963319/">http://159.75.162.251:4000/posts/1764739963319/</a>
+                    <a href="http://159.75.162.251:4000/posts/1764740019494/">http://159.75.162.251:4000/posts/1764740019494/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -547,8 +553,8 @@ dcg&#x2F;dcg_max<span aria-hidden="true" class="line-numbers-rows"><span></span>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Dataset/">
-                                    <span class="chip bg-color">Dataset</span>
+                                <a href="/tags/Reading-Comprehension/">
+                                    <span class="chip bg-color">Reading Comprehension</span>
                                 </a>
                             
                         </div>
@@ -627,17 +633,18 @@ dcg&#x2F;dcg_max<span aria-hidden="true" class="line-numbers-rows"><span></span>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/1764739963442/">
+                <a href="/posts/1764740019494/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Anaconda环境配置">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="橙啦-颉斌斌老师 阅读课">
                         
-                        <span class="card-title">Anaconda环境配置</span>
+                        <span class="card-title">橙啦-颉斌斌老师 阅读课</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -647,22 +654,27 @@ dcg&#x2F;dcg_max<span aria-hidden="true" class="line-numbers-rows"><span></span>
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-12
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            pzxnys
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/CET-6/" class="post-category">
+                                    CET-6
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Anaconda/">
-                        <span class="chip bg-color">Anaconda</span>
+                    <a href="/tags/Reading-Comprehension/">
+                        <span class="chip bg-color">Reading Comprehension</span>
                     </a>
                     
                 </div>
@@ -676,13 +688,13 @@ dcg&#x2F;dcg_max<span aria-hidden="true" class="line-numbers-rows"><span></span>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/1764739963391/">
+                <a href="/posts/1764740020128/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="DBSCAN_Yelp">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Sentiment analysis using deep learning architectures: a review">
                         
-                        <span class="card-title">DBSCAN_Yelp</span>
+                        <span class="card-title">Sentiment analysis using deep learning architectures: a review</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -693,14 +705,14 @@ dcg&#x2F;dcg_max<span aria-hidden="true" class="line-numbers-rows"><span></span>
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/ML-DL/" class="post-category">
-                                    ML && DL
+                            <a href="/categories/Paper-Reading/" class="post-category">
+                                    Paper-Reading
                                 </a>
                             
                             
@@ -710,12 +722,12 @@ dcg&#x2F;dcg_max<span aria-hidden="true" class="line-numbers-rows"><span></span>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Cluster/">
-                        <span class="chip bg-color">Cluster</span>
+                    <a href="/tags/Sentiment-Analysis/">
+                        <span class="chip bg-color">Sentiment Analysis</span>
                     </a>
                     
-                    <a href="/tags/Code/">
-                        <span class="chip bg-color">Code</span>
+                    <a href="/tags/Review/">
+                        <span class="chip bg-color">Review</span>
                     </a>
                     
                 </div>
