@@ -1,0 +1,1886 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="微信常用知识, 咸鱼">
+    <meta name="description" content="小程序开发文档阿里图标iconfont
+
+一、微信小程序的优势：     1、微信有海量用户，且粘性很高，在微信里开发产品更容易触达用户；     2、推广app或公众号的成本太高；     3、开发适配成本低；     4、容易小规模试错">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>微信常用知识 | PZXNYS&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">PZXNYS&#39;s Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">PZXNYS&#39;s Blog</div>
+        <div class="logo-desc">
+            
+            哪有什么厚积薄发，我只愿安于现状
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/pzxnys" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/pzxnys" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">微信常用知识</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Initial/">
+                                <span class="chip bg-color">Initial</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/WeChat/" class="post-category">
+                                WeChat
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-11-08
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    18 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/">小程序开发文档</a></br><br><a target="_blank" rel="noopener" href="https://www.iconfont.cn/">阿里图标iconfont</a></br></p>
+<span id="more"></span>
+<p>一、微信小程序的优势：<br />     1、微信有海量用户，且粘性很高，在微信里开发产品更容易触达用户；<br />     2、推广app或公众号的成本太高；<br />     3、开发适配成本低；<br />     4、容易小规模试错，然后快速迭代；<br />     5、跨平台<br /> <br />事实上，应用号并非微信首创，之前百度推出过应用号，搜狐退出过快站，但是腾讯将这件事情做成功的概率确是最大的<br /><br><br />二、微信小程序对于创业者的优势：<br />     1、APP流量成本的急剧攀升；<br />     2、移动互联网格局基本已定，用户需求场景已被巨头把持；<br />     3、面向所有产品对用户时间的竞争；<br /> <br />三、开发环境准备<br />     1、注册账号：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/cgi-bin/registermidpage?action=index&lang=zh_CN&token=">官网注册</a><br />     2、获取APPID，由于调用微信小程序的接口等功能，需要索取开发者的小程序中的APPID，所以注册成功后，可登录，然后获取APPID。<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/">登录</a>，在设置页面将APPID保存>下来，方便后期使用<br />     3、开发工具<br />      vs  cod下载地址：<a target="_blank" rel="noopener" href="https://code.visualstudio.com/Download">官网下载</a><br />          微信小程序开发工具（微信官方工具，用于查看小程序UI）  下载地址>：<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">官网>下载</a><br /> <br />四、其他小程序（和微信小程序开发很相似）<br />     1、支付宝小程序<br />     2、百度小程序<br />     3、QQ小程序<br />     4、今日头条 + 抖音小程序<br /> <br />五、大项目–黑马优购电商项目（十二大模块）<br />      1、商>品首页<br />     2、商品列表<br />     3、购物车<br />     4、授权页面<br />     5、商品搜索<br />     6、商品收藏<br />     7、商品分类<br />     8、商品详情<br />     9、结算页面<br />     10、订单列表<br />     11、个人中心<br />     12>、意见反馈<br /> <br />六、官方开发文档：<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/">API文档</a><br /> <br />PS：写全局配置文件用微信开发者工具比较快捷，其他用vscode<br /> <br />七、小程序>结构目录<br />     小程序框架的目标是通过尽可能简单、高效的方式让开发者可以在微信中开发具有原生app体验的服务<br /> <br />     小程序内部原生框架名称：MINA<br /> <br />     标签：wxml<br />     样式：wxss<br />     逻辑：JS<br />     配置：JSON<br /> <br />     sitemap配置：小程序根目录下的sitemap.json文件用来配置小程序及其页面是否允许被微信索引<br /> <br />>八、全局配置app.json<br /> <br />    app.json是当前小程序的全局配置，包括了小程序的所有页面路径、界面表现、网络超时时间>、底部tab等<br />        <br />        1、pages字段：<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#pages">API</a><br /> <br />PS：在vscode中通过字段新建页面，在微信小程序开发者工具中，必须产生保存行为，才能成功新建页面<br /> <br />2、window字段：<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#window">API</a><br /> <br />导航栏属性：<br />navigationBarTextStyle 字段需为 black,white<br />enablePullDownRefresh：下拉刷新，默认为false<br />backgroundTextStyle：下拉刷新显示三个点，字段需为light, dark<br />backgroundColor：下拉刷新背景色<br /> <br />    3、tabbar字段：<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#tabBar">API</a><br />   pagePath：页面跳转<br />     text：页面标题<br />     iconPath：未被选中图标<br />     selectedIconPath：当前选中图标<br /> <br />PS：该字段下的部分color属性仅支持十六进制<br /> <br />完整的配置信息请参考<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">app.json</a><br /> <br />九、页面配置<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/page.html">page.json</a><br /> <br />page.json用来表示页面目录下的page.json这类和小程序页面相关的配置。开发者可以独立定义每个页面的一些属性，如：颜色、是否允许下拉刷新等。<br />PS：页面配置只能设置app.json中部分window配置项内容，页面中配置项会覆盖app.json的window中相同的配置项<br /> </p>
+<table>
+<thead>
+<tr>
+<th>navigationBarBackgroundColor</th>
+<th>HexColor</th>
+<th></th>
+<th>#000000</th>
+<th>导航栏背景颜色，如 #000000</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>navigationBarTextStyle</td>
+<td>string</td>
+<td></td>
+<td>white</td>
+<td>导航栏标题颜色，仅支持 black &#x2F; white</td>
+</tr>
+<tr>
+<td>navigationBarTitleText</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>导航栏标题文字内容</td>
+</tr>
+<tr>
+<td>backgroundColor</td>
+<td>HexColor</td>
+<td></td>
+<td>#ffffff</td>
+<td>窗口的背景色</td>
+</tr>
+<tr>
+<td>backgroundTextStyle</td>
+<td>string</td>
+<td></td>
+<td>dark</td>
+<td>下拉 loading 的样式，仅支持 dark &#x2F; light</td>
+</tr>
+<tr>
+<td>enablePullDownRefresh</td>
+<td>boolean</td>
+<td>false</td>
+<td></td>
+<td>设置为 true 则页面整体不能上下滚动。只在页面配置中有效，无法在 app.json 中设置</td>
+</tr>
+</tbody></table>
+<p> <br />十、sitemap配置—了解即可 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/sitemap.html">API</a><br />该配置文件用于配置小程序及其页面是否允许被微信索引<br /> <br />十一、模板语法<br />     <br />WXML（weixin Markup language）是框架设计的一套标签语言，结合基础组件、事件系统，可以构建出>页面的结构。<br />1、数据绑定<br />渲染object类型，需要单独属性渲染，否则只会出现object<br /> <br />text 相当于以前web中的 span标签 行内元素 不会换行<br /> <br />view 相当于以前web中的 div标签 块级元素 会换行<br /> <br />cheekbox 以前的复选框标签<br /> <br />字符串和花括号之间一定不要存在空格 否则会导致识别失败<br />以下写法就是错误的示范<br />  <checkbox checked="  "></checkbox><br />十二、运算 &#x3D;&gt; 表达式<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxml/data.html">API</a><br />   <br />1.可以在花括号中 加入 表达式 – “语句”<br />2.表达式<br />  指的是一些简单运算 数字运算 字符串拼接 逻辑运算…<br />  ·数字的加减乘除<br />  ·字符串拼接<br />  ·三元表达>式<br />3.语句<br />  ·复杂的代码段<br />      ☆ if else<br />      ☆switch<br />      ☆do while…<br />      ☆for…<br /> <br />PS:”&#x3D;&#x3D;&#x3D;” 表示全等,即类型和值都相等<br /> <br />十三、列表渲染<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxml/list.html">API</a><br />   <br />1、wx:for&#x3D;”“  wx:for-item&#x3D;”循环项的名称”    wx:for-index&#x3D;”循环项的索引”<br />2、wx:key&#x3D;”唯一的值” 用来提高列表渲染的性能<br />   ·wx:key 绑定一个普通的字符串的时候 那么这个字符串名称 肯定是循环数组 中的 对象的 唯一属性<br />   ·wx:key&#x3D;”*this” 就表示你的数组 是一个普通的数组 *this表示是 循环项<br />    [1, 2, 3, 44, 5]<br />    [“1”, “222”, “adfdf”]<br />3、当出现 数组的嵌套循环的时候 尤其要注意 一下绑定的名称 不要重名<br />        wx:for-item&#x3D;”item”  wx:for-index&#x3D;”index”<br />4、默认情况下 我们 不写wx:for-item&#x3D;”item”  wx:for-index&#x3D;”index”小程序也会把 循环项的名称 和 索引的名称 item 和 index<br />即 只有一层循环的话(wx:for-item&#x3D;”item”  wx:for-index&#x3D;”index”) 可以省略<br />5、对>象循环<br />   ·wx:for&#x3D;”“  wx:for-item&#x3D;”对象的值”  wx:for-index&#x3D;”对象的属性”<br />   ·循环对象的时候 最好把 item 和 index 的名称修改一下<br />     wx:for-item&#x3D;”value”  wx:for-index&#x3D;”key”<br />注：block<br />   ·占位符的标签<br />   ·写代码的时候 可以看到这标签的存在<br />   ·页面渲染 小程序会把它移除掉<br /> <br />十四、条件渲染 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxml/conditional.html">API</a><br /> <br />1、wx:if<br />  在框架中，使用 wx:if&#x3D;”” 来判断是否需要渲染该代码块   condition:true&#x2F;false<br />  wx:if<br />  wx:elif<br />  wx:else<br /> <br />2、hidden<br />  类似 wx:if<br />  频繁切换 用 hidden<br />      通过添加样式的方式来切换<br />PS：hidden 属性 不要和 样式 display 一起使用<br />hidden&#x3D;”false“显示标签<br />  <br />>不常使用 用wx:if<br />直接把标签从 页面结构给移除掉<br /> <br />十五、事件绑定<br /> <br />小程序中的事件绑定，通过bind>关键字来实现。如bindtap、bindinput、bindchange等  不同的组件支持不同的事件，具体看组件的说明即可<br /> <br />1 需要给 input 标签绑定 input 事件<br />  绑定关键字 bindinput<br /> <br />2 如何获取 输入框的值<br />  通过事件源对象来获取<br />   e.detail.value<br /> <br />3 把输入框的值 赋值到 data 当中<br />     不能直接<br />       · this.data.num &#x3D; e.detail.value<br />       · thie.num &#x3D; e.detail.value<br />      正确写法<br />        this.setData({<br />           num:e.detail.value<br />        })<br />需要加入一个点击事件<br />        1 bindtap<br />        2 无法在小程序当中的 事>件中 直接传参<br />        3 通过自定义属性的方式来传递参数<br />        4 事件源中获取自定义属性<br /> <br />4、特别注>意<br />   ·绑定事件时不能带参数 不能带括号<br />   ·事件传值 通过标签自定义属性的方式和value<br /> <br />十六、样式wxss <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html">API</a><br />wxss是一套样式语言，用于描述wxml的组件样式<br />与CSS相比  WXSS扩展的特性有：<br />    ·响应式长度单位rpx<br />·样式导入<br />   <br />1、尺寸单位<br />  rpx（responsive pixel）：可以根据屏幕宽度进行自适应，规定屏幕宽度为750rpx<br />建议：开发微信小程序是， 用iPhone6作为视觉稿的标准<br />使用步骤：<br />    ·确定设计稿宽度pageWidth<br />    ·计算比>列 750rpx &#x3D; pageWidth px，  因此 1px &#x3D; 750rpx &#x2F; pageWidth<br />    ·在less文件中，只要把设计稿中的 px &#x3D;&gt; 750 &#x2F; pageWidth rpx即可<br />      利用 一个属性 calc属性 css 和 wxss 都支持 一个属性<br />        · 750 和 rpx 中间不要留空格<br />           · 运算符的两边也不要留空格<br /> <br />2、样式导入<br />  wxss中直接支持 样式导入功>能<br />  也可以和 less中的导入混用<br />  使用 @import语句可以导入外联样式表，只支持相对路径<br /> <br />3、选择器<br />  特别需要注意的是 小程序 不支持通配符 *<br /> <br />目前支持的选择器有：</p>
+<table>
+<thead>
+<tr>
+<th><strong>选择器</strong></th>
+<th><strong>样例</strong></th>
+<th><strong>样例描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>.class</strong></td>
+<td>.intro</td>
+<td>选择所有拥有 class&#x3D;”intro” 的组件</td>
+</tr>
+<tr>
+<td><strong>#id</strong></td>
+<td>#firstname</td>
+<td>选择拥有 id&#x3D;”firstname” 的组件</td>
+</tr>
+<tr>
+<td><strong>element</strong></td>
+<td>view</td>
+<td>选择所有 view 组件</td>
+</tr>
+<tr>
+<td><strong>element, element</strong></td>
+<td>view, checkbox</td>
+<td>选择所有文档的 view 组件和所有的 checkbox 组件</td>
+</tr>
+<tr>
+<td><strong>::after</strong></td>
+<td>view::after</td>
+<td>在 view 组件后边插入内容</td>
+</tr>
+<tr>
+<td><strong>::before</strong></td>
+<td>view::before</td>
+<td>在 view 组件前边插入内容</td>
+</tr>
+</tbody></table>
+<p> <br />4、小程序中使用less<br />  原生小程序不支持less  其他基于小程序的框架大体都支持， 如：wepy、mpvue、taro等 但是仅仅因为一个less功能，而去引入一个框架，肯定是不可取的 因此可用以下方式来实现<br />  ·在vscode中安装插件 easy less<br />  ·在vscode的设置中加入如下，配置<br />     <em>“less.compile”</em>: {<br />        <em>“outExt”</em>:     “.wxss”<br />    }<br />·在要编写样式的地方，新建less文件，如index.less即可<br /> <br />十七、常见组件 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/">API</a><br />    <br />1、view<br />      代替原>来的div标签  <br /> <br />2、text<br />  ·文本标签<br />  ·只能嵌套text<br />  ·长安文字可以复制（只有改标签有这个功能）<br />  ·可以对空格 回车 进行编码<br /> <br /> <br /> </p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>默认值</th>
+<th>必填</th>
+<th>说明</th>
+<th>最低版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>selectable</strong></td>
+<td>boolean</td>
+<td>false</td>
+<td>否</td>
+<td>文本是否可选</td>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html">1.1.0</a></td>
+</tr>
+<tr>
+<td><strong>decode</strong></td>
+<td>boolean</td>
+<td>false</td>
+<td>否</td>
+<td>是否解码</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>   <br />3、image<br />      ·图片标签 image组件默认宽度320px 高度240px<br />      ·支持懒加载<br />     PS：lazy-load 会自己判断 当 图片 出现在 视口 上下三屏的高度之内的时候 自己开始加载图片<br /> </p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>默认值</th>
+<th>必填</th>
+<th>说明</th>
+<th>最低版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>src</strong></td>
+<td>string</td>
+<td></td>
+<td>否</td>
+<td>图片资源地址</td>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html">1.0.0</a></td>
+</tr>
+<tr>
+<td><strong>mode</strong></td>
+<td>string</td>
+<td>scaleToFill</td>
+<td>否</td>
+<td>图片裁剪、缩放的模式</td>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html">1.0.0</a></td>
+</tr>
+<tr>
+<td><strong>lazy-load</strong></td>
+<td>boolean</td>
+<td>false</td>
+<td>否</td>
+<td>图片懒加载</td>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html">1.5.0</a></td>
+</tr>
+</tbody></table>
+<p> <br />mode有效值：<br />mode有14种模式 其中5种是缩放模式，9种是裁剪模式<br /> </p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>缩放</td>
+<td>scaleToFill</td>
+<td>不保持纵横比缩放图片，使图片的宽高完全拉伸至填image元素</td>
+</tr>
+<tr>
+<td>缩放</td>
+<td>aspectFit</td>
+<td>保持纵横比缩放图片，使图片的长边能完全显示出来。</td>
+</tr>
+<tr>
+<td>缩放</td>
+<td>aspectFill</td>
+<td>保持纵横比缩放图片，只保证图片的短边能完全显示出来。</td>
+</tr>
+<tr>
+<td>缩放</td>
+<td>widthFix</td>
+<td>宽度不变，高度自动变化，保持原图宽高比不变</td>
+</tr>
+<tr>
+<td>缩放</td>
+<td>heightFix</td>
+<td>高度不变，宽度自动变化，保持原图宽高比不变</td>
+</tr>
+<tr>
+<td>裁剪</td>
+<td>top</td>
+<td>不缩放图片，只显示图片的顶部区域</td>
+</tr>
+<tr>
+<td>裁剪</td>
+<td>bottom</td>
+<td>不缩放图片，只显示图片的底部区域</td>
+</tr>
+<tr>
+<td>裁剪</td>
+<td>center</td>
+<td>不缩放图片，只显示图片的中间区域</td>
+</tr>
+<tr>
+<td>裁剪</td>
+<td>left</td>
+<td>不缩放图片，只显示图片的左边区域</td>
+</tr>
+<tr>
+<td>裁剪</td>
+<td>right</td>
+<td>不缩放图片，只显示图片的右边区域</td>
+</tr>
+<tr>
+<td>裁剪</td>
+<td>top left</td>
+<td>不缩放图片，只显示图片的左上边区域</td>
+</tr>
+<tr>
+<td>裁剪</td>
+<td>top right</td>
+<td>不缩放图片，只显示图片的右上边区域</td>
+</tr>
+<tr>
+<td>裁剪</td>
+<td>bottom left</td>
+<td>不缩放图片，只显示图片的左下边区域</td>
+</tr>
+<tr>
+<td>裁剪</td>
+<td>bottom right</td>
+<td>不缩放图片，只显示图片的右下边区域</td>
+</tr>
+</tbody></table>
+<p> <br />4、<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html">swiper</a>（轮播图组件）<br />  </p>
+<table>
+<thead>
+<tr>
+<th><strong>属性</strong></th>
+<th><strong>类型</strong></th>
+<th><strong>默认值</strong></th>
+<th><strong>必填</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>indicator-dots</strong></td>
+<td>boolean</td>
+<td>false</td>
+<td>否</td>
+<td>是否显示面板指示点</td>
+</tr>
+<tr>
+<td><strong>indicator-color</strong></td>
+<td>color</td>
+<td>rgba(0, 0, 0, .3)</td>
+<td>否</td>
+<td>指示点颜色</td>
+</tr>
+<tr>
+<td><strong>indicator-active-color</strong></td>
+<td>color</td>
+<td>#000000</td>
+<td>否</td>
+<td>当前选中的指示点颜色</td>
+</tr>
+<tr>
+<td><strong>autoplay</strong></td>
+<td>boolean</td>
+<td>false</td>
+<td>否</td>
+<td>是否自动切换</td>
+</tr>
+<tr>
+<td><strong>interval</strong></td>
+<td>number</td>
+<td>5000</td>
+<td>否</td>
+<td>自动切换时间间隔</td>
+</tr>
+<tr>
+<td><strong>circular</strong></td>
+<td>boolean</td>
+<td>false</td>
+<td>否</td>
+<td>是否循环轮播</td>
+</tr>
+</tbody></table>
+<p> <br />5、<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/navigator.html">navigator</a>（导航组件）<br />  <br />类似超链接标签<br />  </p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>默认值</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>target</td>
+<td>string</td>
+<td>self</td>
+<td>否</td>
+<td>在哪个目标上发生跳转，默认当前小程序，可选值self&#x2F;miniProgram</td>
+</tr>
+<tr>
+<td>url</td>
+<td>string</td>
+<td></td>
+<td>否</td>
+<td>当前小程序内的跳转链接</td>
+</tr>
+<tr>
+<td>open-type</td>
+<td>string</td>
+<td>navigate</td>
+<td>否</td>
+<td>跳转方式</td>
+</tr>
+</tbody></table>
+<p> <br />open-type有效值</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>navigate</td>
+<td>保留当前页面，跳转到应用内某个页面，但是不能跳到tabBar页面</td>
+</tr>
+<tr>
+<td>redirect</td>
+<td>关闭当前页面，跳转到应用内某个页面，但是不允许跳到tabBar页面</td>
+</tr>
+<tr>
+<td>switchTab</td>
+<td>跳转到tabBar页面，并关闭其他所有非tabBar页面</td>
+</tr>
+<tr>
+<td>reLaunch</td>
+<td>关闭所有页面，打开应用内的某个页面</td>
+</tr>
+<tr>
+<td>navigateBack</td>
+<td>关闭当前页面，返回上一页面或多级页面。可通过<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/getCurrentPages.html">getCurrentPages()</a>获取当前的页面栈，决定需要返回几层</td>
+</tr>
+<tr>
+<td>exit</td>
+<td>退出小程序，<code>target=&quot;miniProgram&quot;</code>时生效</td>
+</tr>
+</tbody></table>
+<p>   <br />6、<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/rich-text.html">rich-text</a>(富文本标签)<br /> <br />可以将字符解析成 对应标签 类似vue 中 v-heml 功能<br /> <br />7、<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/button.html">button</a><br /> </p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>默认值</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>size</strong></td>
+<td>string</td>
+<td>default</td>
+<td>否</td>
+<td>按钮的大小</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>string</td>
+<td>default</td>
+<td>否</td>
+<td>按钮的样式类型</td>
+</tr>
+<tr>
+<td><strong>plain</strong></td>
+<td>boolean</td>
+<td>false</td>
+<td>否</td>
+<td>按钮是否镂空，背景色透明</td>
+</tr>
+<tr>
+<td><strong>disabled</strong></td>
+<td>boolean</td>
+<td>false</td>
+<td>否</td>
+<td>是否禁用</td>
+</tr>
+<tr>
+<td><strong>loading</strong></td>
+<td>boolean</td>
+<td>false</td>
+<td>否</td>
+<td>名称前是否带 loading 图标</td>
+</tr>
+<tr>
+<td><strong>form-type</strong></td>
+<td>string</td>
+<td></td>
+<td>否</td>
+<td>用于<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/form.html"> </a>组件,点击分别会触发<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/form.html"> </a>组件submit&#x2F;reset事件</td>
+</tr>
+<tr>
+<td><strong>open-type</strong></td>
+<td>string</td>
+<td></td>
+<td>否</td>
+<td>微信开放能力</td>
+</tr>
+</tbody></table>
+<p> <br />size的合法值</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>default</td>
+<td>默认大小</td>
+</tr>
+<tr>
+<td>mini</td>
+<td>小尺寸</td>
+</tr>
+</tbody></table>
+<p> <br />type的合法值</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>primary</td>
+<td>绿色</td>
+</tr>
+<tr>
+<td>default</td>
+<td>白色</td>
+</tr>
+<tr>
+<td>warn</td>
+<td>红色</td>
+</tr>
+</tbody></table>
+<p> <br />form-type的合法值</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>submit</td>
+<td>提交表单</td>
+</tr>
+<tr>
+<td>reset</td>
+<td>重置表单</td>
+</tr>
+</tbody></table>
+<p> <br />open-type的合法值<br /> </p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>contact</td>
+<td>打开客服会话，如果用户在会话中点击消息卡片后返回小程序，可以从 bindcontact 回调中获得具体信息，<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/customer-message/customer-message.html">具体说明</a></td>
+</tr>
+<tr>
+<td>share</td>
+<td>触发用户转发，使用前建议先阅读<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/share.html#%E4%BD%BF%E7%94%A8%E6%8C%87%E5%BC%95">使用指引</a></td>
+</tr>
+<tr>
+<td>getPhoneNumber</td>
+<td>获取用户手机号，可以从bindgetphonenumber回调中获取到用户信息，<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/getPhoneNumber.html">具体说明</a></td>
+</tr>
+<tr>
+<td>getUserInfo</td>
+<td>获取用户信息，可以从bindgetuserinfo回调中获取到用户信息</td>
+</tr>
+<tr>
+<td>launchApp</td>
+<td>打开APP，可以通过app-parameter属性设定向APP传的参数<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html">具体说明</a></td>
+</tr>
+<tr>
+<td>openSetting</td>
+<td>打开授权设置页</td>
+</tr>
+<tr>
+<td>feedback</td>
+<td>打开“意见反馈”页面，用户可提交反馈内容并上传<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/wx.getLogManager.html">日志</a>，开发者可以登录<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/">小程序管理后台</a>后进入左侧菜单“客服反馈”页面获取到反馈内容</td>
+</tr>
+</tbody></table>
+<p> <br />open-type 的 contact 的实现过程<br />² 将小程序的appid 由测试后改为自己的appid<br />² 登录<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/wxamp/home/guide?token=1886309619">微信小程序官网</a>，添加 客服-微信<br />² 准备两个账号<br />                           i.           普通用户A<br />                         ii.           客服->微信B<br />   <br />² 就是干<br />8、<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/icon.html">icon</a><br /> </p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>默认值</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>type</strong></td>
+<td>string</td>
+<td></td>
+<td>是</td>
+<td>icon的类型，有效值：success, success_no_circle, info, warn, waiting, cancel, download, search, clear</td>
+</tr>
+<tr>
+<td><strong>size</strong></td>
+<td>number&#x2F;string</td>
+<td>23</td>
+<td>否</td>
+<td>icon的大小</td>
+</tr>
+<tr>
+<td><strong>color</strong></td>
+<td>string</td>
+<td></td>
+<td>否</td>
+<td>icon的颜色，同css的color</td>
+</tr>
+</tbody></table>
+<p>   <br />9、<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/radio.html">radio</a>（单选框）<br /> <br />可以通过color属性来修改颜色<br />需要搭配<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/radio-group.html">radio-group</a> 一起使用<br /> <br />10、<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/checkbox.html">checkbox</a>（复选框）<br /> <br />可以通过color属性来修改颜色<br />需要搭配<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/checkbox-group.html">checkout-group</a> 一起使用<br /> <br />十八、<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/">自定义组>件</a><br />类似于vue或者react中的自定义组件<br />小程序允许我们使用自定义组件的方式来构建页面<br /> <br />1、创建自定义组件<br />类似于页面，一个自定义组件由json wxml wxss js 4个文件组成<br /> <br />可以在微信开发者工具中快速创建组件的文件结构<br />在文件夹内 components&#x2F;myHeader  创建组件 名为 myHeader<br />² 声明组件<br />首先要在组件的json文件中进行>自定义组件声明<br />² 编辑组件<br />同时 还要在组件的wxml文件中编写组件模板 在wxss文件中加入组件样式<br />slot 表示插槽  类似vue中的slot<br />² 注册组件<br />PS： 1 页面.js  文件中 存放事件回调函数的时候 存放在data同层级下！！！<br /> 2 组>件.js  文件中 存放事件回调函数的时候 必须要存放在methods中！！！<br /> <br />1 绑定点击事件 需要在methods中绑定<br />2 >获取被点击的索引<br />3 获取原数组<br />解构 对 复杂类型进行解构的时候 复制了一份 变量的引用而已<br />    最严谨的做法  重新拷贝一份 数组，  再对这个数组的备份进行处理<br />     let tabs &#x3D; JSON.parse(JSON.stringify(this.data.tabs));<br />     不要直接修改 this.data.数据<br /> <br /> 4 对数组循环<br />    1 给每一个循环项 选中属性 改为false<br />    2 给 当前的索引的 项 添加激活选中效果就可以了 <br />[ ].forEach 遍历数组的时候 修改了 v  也会导致原数组被修改<br />5 点击事>件触发的时候<br />        触发父组件中的自定义事件  同时传递数据给 父组件<br />        this.triggerEvent(“父组件自定义事件的名称”, 要传递的参数)<br /> <br /><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/Component.html">Component 构造器</a><br />可用于定义组件，调用 Component 构造器时可以指定组件的属性>、数据、方法等。<br /> </p>
+<table>
+<thead>
+<tr>
+<th><strong>定义段</strong></th>
+<th><strong>类型</strong></th>
+<th><strong>是否必填</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>properties</strong></td>
+<td>Object Map</td>
+<td>否</td>
+<td>组件的对外属性，是属性名到属性设置的映射表</td>
+</tr>
+<tr>
+<td><strong>data</strong></td>
+<td>Object</td>
+<td>否</td>
+<td>组件的内部数据，和 properties 一同用于组件的模板渲染</td>
+</tr>
+<tr>
+<td><strong>observers</strong></td>
+<td>Object</td>
+<td>否</td>
+<td>组件数据字段监听器，用于监听 properties 和 data 的变化，参见 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/observer.html">数据监听器</a></td>
+</tr>
+<tr>
+<td><strong>methods</strong></td>
+<td>Object</td>
+<td>否</td>
+<td>组件的方法，包括事件响应函数和任意的自定义方法，关于事件响应函数的使用，参见 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/events.html">组件间通信与事件</a></td>
+</tr>
+<tr>
+<td><strong>created</strong></td>
+<td>Function</td>
+<td>否</td>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/lifetimes.html">组件生命周期</a>函数-在组件实例刚刚被创建时执行，注意此时不能调用 setData )</td>
+</tr>
+<tr>
+<td><strong>attached</strong></td>
+<td>Function</td>
+<td>否</td>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/lifetimes.html">组件生命周期</a>函数-在组件实例进入页面节点树时执行)</td>
+</tr>
+<tr>
+<td><strong>ready</strong></td>
+<td>Function</td>
+<td>否</td>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/lifetimes.html">组件生命周期</a>函数-在组件布局完成后执行)</td>
+</tr>
+<tr>
+<td><strong>moved</strong></td>
+<td>Function</td>
+<td>否</td>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/lifetimes.html">组件生命周期</a>函数-在组件实例被移动到节点树另一个位置时执行)</td>
+</tr>
+<tr>
+<td><strong>detached</strong></td>
+<td>Function</td>
+<td>否</td>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/lifetimes.html">组件生命周期</a>函数-在组件实例被从页面节点树移除时执行)</td>
+</tr>
+</tbody></table>
+<p> <br /> <br />十九、小程序生命周期<br />   <br />分为应用生命周期和页面生命周期<br /> <br />1.    <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/App.html">应用生命周期</a><br /> </p>
+<table>
+<thead>
+<tr>
+<th><strong>属性</strong></th>
+<th><strong>类型</strong></th>
+<th><strong>必填</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/App.html#onLaunch-Object-object">onLaunch</a></strong></td>
+<td>function</td>
+<td>否</td>
+<td>监听小程序初始化。</td>
+</tr>
+<tr>
+<td><strong><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/App.html#onShow-Object-object">onShow</a></strong></td>
+<td>function</td>
+<td>否</td>
+<td>监听小程序启动或切前台。</td>
+</tr>
+<tr>
+<td><strong><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/App.html#onHide">onHide</a></strong></td>
+<td>function</td>
+<td>否</td>
+<td>监听小程序切后台。</td>
+</tr>
+<tr>
+<td><strong><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/App.html#onError-String-error">onError</a></strong></td>
+<td>function</td>
+<td>否</td>
+<td>错误监听函数。</td>
+</tr>
+<tr>
+<td><strong><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/App.html#onPageNotFound-Object-object">onPageNotFound</a></strong></td>
+<td>function</td>
+<td>否</td>
+<td>页面不存在监听函数。</td>
+</tr>
+</tbody></table>
+<p> <br />2. <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html">页面生命周期</a><br /> </p>
+<table>
+<thead>
+<tr>
+<th><strong>属性</strong></th>
+<th><strong>类型</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#data">data</a></td>
+<td>Object</td>
+<td>页面的初始数据</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onLoad-Object-query">onLoad</a></td>
+<td>function</td>
+<td>生命周期回调—监听页面加载</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onShow">onShow</a></td>
+<td>function</td>
+<td>生命周期回调—监听页面显示</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onReady">onReady</a></td>
+<td>function</td>
+<td>生命周期回调—监听页面初次渲染完成</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onHide">onHide</a></td>
+<td>function</td>
+<td>生命周期回调—监听页面隐藏</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onUnload">onUnload</a></td>
+<td>function</td>
+<td>生命周期回调—监听页面卸载</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onPullDownRefresh">onPullDownRefresh</a></td>
+<td>function</td>
+<td>监听用户下拉动作</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onReachBottom">onReachBottom</a></td>
+<td>function</td>
+<td>页面上拉触底事件的处理函数</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onShareAppMessage-Object-object">onShareAppMessage</a></td>
+<td>function</td>
+<td>用户点击右上角转发</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onAddToFavorites-Object-object">onAddToFavorites</a></td>
+<td>function</td>
+<td>用户点击右上角收藏</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onPageScroll-Object-object">onPageScroll</a></td>
+<td>function</td>
+<td>页面滚动触发事件的处理函数</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onResize-Object-object">onResize</a></td>
+<td>function</td>
+<td>页面尺寸改变时触发，详见 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/resizable.html#%E5%9C%A8%E6%89%8B%E6%9C%BA%E4%B8%8A%E5%90%AF%E7%94%A8%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%E6%94%AF%E6%8C%81">响应显示区域变化</a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onTabItemTap-Object-object">onTabItemTap</a></td>
+<td>function</td>
+<td>当前是 tab 页时，点击 tab 时触发</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><img src="https://pzxnys.github.io/images/IG7J3T.png"></th>
+</tr>
+</thead>
+</table>
+<p>页面生命周期图解</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">pzxnys</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://pzxnys.icu/posts/1764760731615/">http://pzxnys.icu/posts/1764760731615/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">pzxnys</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Initial/">
+                                    <span class="chip bg-color">Initial</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/1764760731187/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="ubuntu使用技巧">
+                        
+                        <span class="card-title">ubuntu使用技巧</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-08
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Ubuntu/" class="post-category">
+                                    Ubuntu
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Ubuntu-Desktop-ICON/">
+                        <span class="chip bg-color">Ubuntu-Desktop-ICON</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/1764760731615/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="微信常用知识">
+                        
+                        <span class="card-title">微信常用知识</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/WeChat/" class="post-category">
+                                    WeChat
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Initial/">
+                        <span class="chip bg-color">Initial</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: PZXNYS&#39;s Blog<br />'
+            + '文章作者: pzxnys<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2025</span>
+            
+            <a href="/about" target="_blank">pzxnys</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+                <span id="translate">|&nbsp;繁/简：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">86.7k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2020";
+                        var startMonth = "11";
+                        var startDate = "11";
+                        var startHour = "11";
+                        var startMinute = "11";
+                        var startSecond = "11";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/pzxnys" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:23110810000004@hainanu.edu.cn" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=377171636" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 377171636" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "http://pzxnys.icu"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
+    
+    
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
+            }
+        </script>
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
