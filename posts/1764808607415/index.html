@@ -1,0 +1,1415 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="菜就是菜, 咸鱼">
+    <meta name="description" content="基于ML的台风预测
+摘要
+  台风是一种极端天气事件，每年夏季会对沿海地区城市经济造成重大损失，预测台风的形成和强度对台风灾害的预警至关重要。传统的基于热动力方程的数值预报方法和基于经验关系的统计预报方法现如今仍难以准确地预测台风强度。此外">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>菜就是菜 | PZXNYS&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">PZXNYS&#39;s Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">PZXNYS&#39;s Blog</div>
+        <div class="logo-desc">
+            
+            哪有什么厚积薄发，我只愿安于现状
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/pzxnys" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/pzxnys" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://pzxnys.github.io/images/202310021755.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">菜就是菜</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Dr/">
+                                <span class="chip bg-color">Dr.</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Paper-Reading/" class="post-category">
+                                Paper-Reading
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-09-26
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    11.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    39 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="基于ML的台风预测">基于ML的台风预测</h2>
+<h3 id="div-align-center-摘要-div"><div align=center>摘要</div></h3>
+<p>  台风是一种极端天气事件，每年夏季会对沿海地区城市经济造成重大损失，预测台风的形成和强度对台风灾害的预警至关重要。传统的基于热动力方程的数值预报方法和基于经验关系的统计预报方法现如今仍难以准确地预测台风强度。此外，一些研究虽然也尝试用机器学习方法进行预测来提高准确率，但通常没有考虑台风相关变量之间的时空关系。本文提出了一种基于深度学习的台风时空深度混合预测模型，可以弥补现有方法的不足之处。本文模型引入了三维卷积神经网络（3DCNN）和二位卷积神经网络（2DCNN）来学习台风相关大气海洋变量之间的空间关系，利用 LSTM 来学习台风变化过程中的时序关系。针对西太平洋（WP）、东太平洋（EP）、北大西洋（NA）三个海域的大量台风形成与强度预测实验表明，本文模型优于现有官方组织使用的诸多数值预报方法、统计预报方法和机器学习方法。台风 24h 形成预测实验中，本文模型能达到的最高准确率为 85.2%，Auc 值为 92.2%，24h 强度预测实验中，最小误差为 7.4kt（1kt = 0.512 m/s）。并且在参数分析时发现，模型训练时的超参数如学习速率最好设置为 $10^{-4}$ 的量级，并在 25~35 个 epoch 后停止模型的训练。构造输入数据集时，台风中心周围经纬度区域范围最好确定在 $9^\circ \times 9^\circ$ ~ $13^\circ \times 13^\circ$ 内。且 LSTM 时间步确定为 2 时能获得最好的预测效果。</p>
+<br>
+<p><strong>关键词：台风；强度；预测；时空；深度学习；时空深度混合预测模型</strong></p>
+<br>
+<h3 id="div-align-center-绪论-div"><div align=center>绪论</div></h3>
+<h4 id="研究背景及意义">研究背景及意义</h4>
+<p>  热带气旋是由温暖海洋热能驱动的天气尺度风暴，含一个无云区的中心，中心上空有一个暖核，围绕中心的气流呈逆时针方向旋转。在这个涡旋中，最低气压出现在中心，最大风速出现在中心附近，通常会达到或超过 34kt（10.8m/s）。根据世界气象组织定义，在西北太平洋区域，当热带气旋中心附近最大风速达到 64kt（32.7m/s）时则称为台风。这样的涡旋在大西洋和东太平洋称之为飓风，在北印度洋称为强气旋性风暴。</p>
+<p>  台风乃至热带气旋最常形成于 $5^\circ N$ 以北的西北太平洋热带洋面上，但全球除东南太平洋和南大西洋外各大洋区的其他热带海域也均有热带气旋发生和活动，其中以北大西洋、东太平洋、北印度洋最为频繁。图 1 为 1985 ~ 2005 间热带气旋的全球分布图。</p>
+<div align = 'center'>
+<img src = 'https://pzxnys.github.io/images/2023-09-27-17-35-24.png'/>
+<font size=2; color=natural>图 1. 1985-2005 年间热带气旋全球分布图（wikipedia）</font>
+</div>
+<p>  台风的宏观结构大致分为六部分，分别是台风眼、眼外云墙、外包区、外围区、流入层、流出层。其中最为显著的特征是台风眼，它位于涡旋之中，眼内为下沉气流，静风，无云，亦为晴空区。有的台风有两个眼，称为同心双眼，也有两眼并列的台风，但极为罕见。台风眼外的云墙，是由于强烈上升运动而造成的深厚积云对流，台风最强的强风和暴雨也出现于此。台风眼和眼壁称为内核区，内核区直径小的可为二三十千米，而大的可扩大至为上百千米。外包区紧挨着内核区，风速比内核区削弱，螺旋雨带的主体在此区中。外围区紧挨着外包区，水平尺度是外包区的几倍，风速在该区虽明显减弱，但破坏力依然很强。此外，台风在低气压阶段，四周的空气是向中心流入的，从而形成了流入层。随着热带气旋的增强，切向风增大，流入现象也会减弱。流出层位于台风的顶部，对流层顶之上。该层气流在北半球呈反气旋式向外流出，使台风中心气压急剧下降，从而使得台风开始加强。图 2 可以清晰地展现台风的结构。</p>
+<div align = 'center'>
+<img src = 'https://pzxnys.github.io/images/2309271953.png'/>
+<font size=2; color=natural>图 2. 台风结构图（wikipedia）</font>
+</div>
+<p>  本文中所定义的台风强度即为台风中心附近最大风速。根据我国气象局（China Meterological Administration，CMC）对于西北太平洋热带气旋强度的划分，热带气旋不同等级分别对应不同的名称，如表 1 所示。因此，严格意义上，无论是台风还是飓风，均是热带气旋的一种等级划分，本质上仍为热带气旋。本文把所有全球大洋强度大于 64kt 的热带气旋统称为“台风”，强度大于 34kt 的热带气旋称之为“热带风暴”。</p>
+<p><font size=2; color=natural>表 1. 热带气旋等级划分及对应名称</font></p>
+<table>
+    <tr>
+        <th width=300px;>热带气旋等级名称</th>
+        <th width=200px>强度</th>
+    </tr>
+    <tr>
+        <td>热带低压</td>
+        <td>17kt ~ 33kt</td>
+    </tr>
+    <tr>
+        <td>热带风暴</td>
+        <td>34kt ~ 63kt</td>
+    </tr>
+    <tr>
+        <td>台风</td>
+        <td>64kt ~ 84kt</td>
+    </tr>
+    <tr>
+        <td>强台风</td>
+        <td>84kt ~ 104kt</td>
+    </tr>
+    <tr>
+        <td>超强台风</td>
+        <td>$\geq$ 105kt</td>
+    </tr>
+</table>
+<p>  台风发生时，人们一般能直接感受到的是狂风暴雨，而其造成的恶劣灾害事件可分为直接灾害和间接灾害两种。</p>
+<ol>
+<li class="lvl-3">
+<p><strong>直接灾害：</strong> 主要是直接由台风带来的风灾和洪涝灾害；</p>
+<blockquote>
+<p><strong>台风导致的风灾：</strong></p>
+<ul class="lvl-3">
+<li class="lvl-2">海上航行受阻、海上石油勘探和平台生产设施、船舶、码头装卸运输设施等受损；</li>
+<li class="lvl-2">沿海渔业和海洋养殖业设置受损而停业；</li>
+<li class="lvl-2">农作物、果树等经济作物受强风损毁而减产甚至绝收；</li>
+<li class="lvl-2">城市建筑工程设施被摧毁、城市交通运输受阻，事故频发。</li>
+</ul>
+<p><strong>台风强降雨引发的灾害：</strong></p>
+<ul class="lvl-3">
+<li class="lvl-2">
+<p>城市的严重积水；</p>
+</li>
+<li class="lvl-2">
+<p>交通运输受阻，城市经济活动和居民生活严重受影响；</p>
+</li>
+</ul>
+<p><strong>累积雨量很大却无处排放的情况下所引发的大范围灾害：</strong></p>
+<ul class="lvl-3">
+<li class="lvl-2">
+<p>大面积农田被淹没，导致农作物减产甚至绝收；</p>
+</li>
+<li class="lvl-2">
+<p>堤岸、路基、通信和输电网设施被冲毁，导致大面积停电；</p>
+</li>
+<li class="lvl-2">
+<p>房屋、禽畜被损毁或者浸坏，导致人畜伤亡，从而引发流行疾病和瘟疫。</p>
+</li>
+</ul>
+</blockquote>
+</li>
+<li class="lvl-3">
+<p><strong>间接灾害：</strong> 主要是由暴雨间接引发的山体滑坡和泥石流等地质灾害，以及由大风引起的沿海风暴潮灾害；</p>
+<blockquote>
+<p><strong>泥石流：</strong> 是山谷中含有大量泥沙和石块的洪流，主要表现为突然爆发，浑浊的泥石流体会沿陡峻的山沟顺势流下，在宽阔的堆积区堆积，从而对山区人民财产的生命安全造成了严重的危害；</p>
+<p><strong>山体滑坡：</strong> 是构成斜坡的岩土体在重力作用下失稳，沿着坡体内部的一个（或几个）松软脆弱面（带）发生剪切而产生整体性下滑的现象，是山区水库、铁路、公路、及依山而建的居民等建筑设施常遇到的一种地质灾害，主要表现为河道阻塞、公路阻断、公车毁坏等；</p>
+<p><strong>风暴潮：</strong> 指极端天气作用下所引发的海面异常增高的现象，若同时处于天文潮的高潮阶段，将导致潮位快速升高。主要表现为: (1) 水位暴涨、堤岸决口、人畜伤亡；(2) 海水倒灌、地下水遭受入侵、水体和土壤盐度升高、植物生存受威胁。</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p><strong>风暴潮</strong> 和 <strong>天文潮</strong> 的区别</p>
+<ol>
+<li class="lvl-3"><strong>风暴潮（Storm Surge）：</strong><br>
+风暴潮是一种自然现象，通常与气象事件，如飓风、台风或强热带风暴相关联。当这些气象事件接近海岸线时，它们会引起强风，将海水推向沿海地区。这种海水的堆积可以导致水位迅速升高，甚至可能引发洪水，对沿海社区造成严重危害。风暴潮的高度取决于多个因素，包括风力、气压、海底地形和海岸线的形状。风暴潮是飓风或台风最危险的方面之一，因为它可以导致海水大量涌入内陆地区，造成严重的淹水情况。</li>
+<li class="lvl-3"><strong>天文潮（Tidal Surge）：</strong><br>
+天文潮是由太阳、月球和地球之间的引力相互作用引起的潮汐现象。这些引力作用导致海水周期性地上升和下降，形成了潮汐。通常每天都会经历两次高潮和两次低潮。天文潮是可预测的，其发生时间和幅度取决于月球和太阳的位置以及地球的自转。潮汐对航海、渔业和沿海生态系统都具有重要影响。</li>
+</ol>
+<p>风暴潮是由气象事件引起的，不可预测且可能具有破坏性的海水涌浪现象，而天文潮是由天体引力引起的周期性潮汐现象，可以根据天文数据进行预测。两者都与海水的升降有关，但根本原因和影响不同。</p>
+</blockquote>
+<p>  上述所有的灾害中，台风风灾往往将与其他台风灾害同时出现，如狂风伴随着巨浪对船舶的损害、狂风激起风暴潮冲毁海塘、堤坝或者导致海水漫滩、狂风夹带暴雨引发的洪水灾害、暴雨情况下强风拔树可触发山体滑坡和泥石流灾害等次生地质灾害。因而，台风的风力强度和持续时间是致灾的重要气象因素之一。除此之外，灾害的发生以及灾情严重程度还取决于台风预警、预报的准确率，受灾体状况，包括与之密切相关的社会环境和经济发展水平，以及防台抗灾措施的及时性和有效性。对于气象领域的研究人员和业务人员来说，为了减轻台风灾害带来的损失，主要关注部分还是在于提供更为准确的台风预警、预报结果，为接下来的防灾减灾措施做指引。</p>
+<p>  确定台风中心位置和强度是制作台风预报和发布台风预警的第一步，因为台风预报的质量依赖于台风初始定位和定强的精度。台风监测是指利用各种手段对台风移动过程中的物理现象以及气象要素进行观测。台风监测所获取的气象记录、资料是进行台风预警、科学研究和防灾减灾、决策服务的基础。目前对于台风监测主要包括：地面探测、高空探测、雷达观测、以及遥感探测等。在台风监测和预警的实际业务中，确定台风中心位置和强度的主要依据是气象卫星、地面基准雷达和地面气象观测，少数国家则应用飞机探测作为一种重要的辅助监测手段。气象卫星图像是确定台风中心位置最常用的资料，然后使用 Dvorak 方法，并结合透明螺旋线板和主观解释，通过去顶适当的云系中心的位置来定位的：1）为根据云型特征确定台风中心；2）根据云图上的地标特征进行网格误差的校正；3）进行斜视误差的校正；4）再利用台风的前期位置活动强度变化以及路径与台风位置的相关来检验所确定的位置是否合理，最后确定出台风中心位置。</p>
+<p>  至于台风强度的确定，同样无法直接测量。目前世界各国（包括中国、曰本、美国等）主要仍要采用 Dvorak 研发的 Dvorak 分析技术，根据静止气象卫星在红外和可见光波段观测的台风云型特征及其变化估计台风的强度，该技术已成为在缺少飞机探测地区监测台风的世界标准，也是进行强度预报最通用的方法。由于在卫星云图上，需要通过台风云系的多种结构特征才能真实反映强度。这些特征包括：台风中心大小、强对流区范围以及外围螺旋雨带等。可以通过对卫星云图中这些特征的分析判断，给出用于表征台风强度的现实指数，然后根据观测现实强度指数与中心最大风速的经验关系，进而得到台风中心最大风速，即台风的强度。</p>
+<p>  对于台风预警和防台减灾而言，首先需要确定的是海域内是否有热带气旋生成，且是否会形成为台风。因而热带气旋的生成或台风的形成预报是首要需要考虑的问题。其次，需要知道的是台风未来途径的区域，而这主要取决于预报台风的移动路径（一般用 ３ 或 ６ 小时间隔的台风中心位置来表达），因此台风路径的预报也是需要重点考虑的问题。进而为了确定台风对某海域或某地的影响程度，需要关注台风的强度，而风雨预报也是在台风强度的基础上，综合考虑未来天气形势的变化而进行的，因此，台风的强度的预报是需要考虑的关键问题。再之后，则需重点关注的是台风的风雨预报、间接引发的地质灾害预报以及风暴潮预报等。</p>
+<p>  就台风形成预报而言，已有的研究关注点普遍在于热带气旋的生成问题上，比如生成机理的研究上，通常认为热带气旋的生成是需要预先存在的扰动，暖而深的海洋混合层，大于平均的低层涡度和中层湿度，不稳定的大气层，弱的水平风垂直切变以及科氏力作用的存在。业务预报上，国外较为成熟的生成预报模式，如NOAA采用的全球模型 GFS 和 UKMET 及其集合模式是预测热带气旋发生的主要工具，可预报特定海域热带气旋的生成概率。而国内目前常使用的预报模式，如 T639 模式，可用于预测热带气旋的生成、路径和强度变化，尤其是在中尺度范围内。</p>
+<p>  除开数值模式，预测热带气旋生成的方法从以前的统计方法，到现在与机器学习方法融合的新型方法，使得热带气旋生成的预测方法更加丰富，效果相比于以前有了较大的提升。研究学者们会在洋面上已有热带扰动的基础上，通过考虑周围的大气环境条件建立模型来预测是否会有热带气旋生成。其中一部分研究的目的是为了研究更为有效预测方法，另一部分研究的目的是为了开发为业务预报服务的热带气旋生成预报系统。此外，还有部分研究会利用大尺度环境场对热带气旋的活动进行季节性预报，主要通过定义热带气旋的生成指数（GPI），来描述热带气旋生成可能性大小的空间分布。</p>
+<p>  台风路径最初大多是建重在预报经验的基础上，传铳的路径业务预报方法包括天气气候学预报方法、环境引导气流预报方法。近三十年来，出现了一些客观预报方法，包括统计预报方法、统计动力预报法、模式输出统计释用法、神经网络法等。大多采用的是历史台风资料作为统计样本，在对影响台风移动的大尺度环境场气压系统（如副热带高压、高空长波槽、高空切断冷涡等）、环境场引导气流、海洋要素（海温、洋流等）、下垫面状态（如地形、地温等）作相关分析基础上，选择具有天气学、大气热力动力学等物理意义作为预报因子，一般以特定时效（如 12、24、36、48 小时）的经向和纬向移动距离作为预报量，采用各种数理统计方法对历史样本研究建立台风路径预报模型来进行预报。而数值预报模式仍然是现阶段常用的一种预报方法，台风路径数值预报模式系统是在数值天气预报模式上研发的专业应用的数值预报系统，在模式中反映了台风独有的参数化方案（如积云参数化，边界层参数化，海气耦合）和针对台风建立相应的物理过程。由于台风数值预报模式的初始场含有观测误差和分析误差，且大气运动本身存在不确定性，所以数值预报同时受初始场误差和观测误差的影响，这将使最终的预报结果偏离实际预测结果。台风强度预报和台风路径预报有很多相似之处，但是由于台风的发展过程中存在迅速增强等现象，会使得台风强度预测更具有挑战性。同样业务预报中的预报方法和路径预报类似，但是比较常用的是统计法、统计动力法、以及数值天气预报方法。近年来统计预报方法和统计动力预报方法表现了最优的预报效果。其中统计预报方法除考虑气候相关变量外，还引入了当前和前期大气环境变量、海面变量以及卫星图像特征建立预报模型。而统计动力预报方法是以数值天气预报的预报产品为依托，通过考虑未来大气环境和海洋状况的变化来建立预报模型。总的来说，可以发现预报的总体趋势是，路径误差在逐年降低，而强度误差基本无太大的变化。</p>
+<p>  为了提高台风预测的准确性，同样出现了越来越多的学者尝试将机器学习应用于台风预测相关领域。一些学者尝试利用深度学习里的前馈神经网络量化台风引起的海面温度冷却，通过增加在预测模型中海表温度冷却的作用<sup>[2]</sup>来提高台风预测的准确率。一些学者利用卷积神经网络提取卫星遥感图片里的特征，从而预测台风眼的路径轨迹<sup>[3]</sup>。一些学者为了准确预测表示台风发生时的风险概况，利用机器学习中的主成分分析预测相关参数的分布，发掘机器学习算法作为当前数值模式中参数方法的替代方案的潜力<sup>[4]</sup>，来确定风场可变性的全部范围。一些学者利用机器学习中的支持向量回归模型作为预测方法对台风的季节性进行预测<sup>[5]</sup>，从而为准确获得台风的发生频率、空间分布以及季节性的强度变化。还有一些学者利用深度学习从大量的卫星云图中研究其台风“胚胎”的可预测性<sup>[6]</sup>，或者对现有的预报方法进行误差订正<sup>[7]</sup>。然而，目前被研究的最多的还是机器学习或者深度学习在台风路径和强度研究中的应用。对于路径研究，主要研究的是台风中心的定位和中心位置以及轨迹的预测。对于强度研究，主要研究的是台风强度的估计，台风的强度分类，以及强度的预测。</p>
+<p>  由于现阶段台风的形成预测问题是基本被忽视，而路径预测在有明显提升的同时强度预测却没有太大的改善，从而重点关注于台风的形成预测和强度预测问题。本文的目的是在以往台风预测相关研究的基础上，利用深度学习自动提取特征并且处理时空相关性的优势，提出一个能够有效提高台风预测的效果且减少实施的代价的台风预测模型。并以台风形成和台风强度实际预测为例，证明能够提供更为准确的台风预报和预警，为防灾减灾做贡献。</p>
+<h3 id="div-align-center-相关研究方法-div"><div align=center>相关研究方法</div></h3>
+<h4 id="相关台风预测方法">相关台风预测方法</h4>
+<h5 id="数值预报方法">数值预报方法</h5>
+<p>  台风数值预报一般是通过对一定海域内的气象海洋环境条件，如副热带高压、水汽输送、海温等大尺度环境场进行预报后，再对台风路径和台风强度等台风要素进行推断预报。其中路径预报一般只需要数值模式能够对大尺度环境场进行合理的描述，即可对路径做出较为准确的预报。而强度预报不仅需要数值模式对大尺度环境场进行描述，还需了解 内核热动力过程与环境场的关系，对台风涡旋结构、多尺度物理过程等多方面进行合理的定义。因此，根据数值预报模式准确预报台风强度的难道比路径要大。若要对台风的数值预报过程进行描述，需要从模式初始化、物理过程参数化这两方面展开。</p>
+<p>  模式初始化是进行台风数值预报的第一步。模式初始化是根据观察和背景场资料，在热动力约束下生成模式初始场的过程。早期由于缺乏海上观测资料，台风模式初始化方法通常是构造少量的Bogus涡旋，然后通过插值或变分同化方法融合到模式初始分析场中。上述方法虽然对于预报能力在一定程度上有提升，但由于考虑了许多假设以及经验关系，所以仍然会导致台风预报误差过大。近年来，国内外均逐渐尝试将多种卫星遥感、雷达、飞机实测资料与同化方法结合，应用于台风模式的初始化及预报。</p>
+<p>  VIRV法，一种典型的模式初始方法，它不仅避免了传统三维变分同化（3DVAR）方法不适用台风的问题，融合了四维变化同分（4DVAR）的优点，而且考虑了边界层对台风对流及其发展的重要性，在模式初始场中引入了与实际观测相符的台风结构。VIVR的过程为：（1）在 QuickSCAT 资料的中纬度区域的每个格点，利用边界层模式估计边界层顶的气压梯度，然后进行梯度订正；（2）在热带地区，根据混合层边界层模式估计边界层顶的气压梯度；（3）通过最小二乘法由气压梯度拟合最佳相对气压场；（4）根据（3）得到的相对气压和浮标站观测和数值模式背景场分析得出的参考气压计算海平面气压；（5）将海平面的气压同化进中尺度数值模式；</p>
+<p>  过程中选择的反演中纬度海平面气压的方法是由 Patoux 等提出。假设边界层顶存在地转平衡，那么边界层顶的地转风（G）可根据公式 1 中由海面风（$U_h$）计算得出：<br>
+$$<br>
+\frac{U_h}{G} = \frac{V_T}{G} + \frac{1}{G} \frac{\partial V_2}{\partial \xi} + cos \alpha + sin \alpha<br>
+\tag{1}<br>
+$$<br>
+  式中 $V_T$ 为热成风，$V_2$ 为次级涡旋扰动，$\alpha$ 为边界层内风相对于垂直方向的旋转角度。由于假设存在地转平衡，所以需要再作梯度风订正。</p>
+<p>  而热带地区风压场不再满足地转平衡，于是 Stevens et al 通过使用混合层模式来对气压场进行估计，可以得到如下方程：<br>
+$$<br>
+fk \times U + \frac{1}{\rho_0} \nabla P = \frac{\tau(h) - \tau(0)}{h}<br>
+\tag{2}<br>
+$$<br>
+  其中，$U$ 为边界层平均风速，$P$ 为海平面气压，$\tau(0)$ 为地表湍流应力，$\tau(h)$ 为边界层顶的湍流应力。</p>
+<p>  气压场 $p$ 可由下式得出：<br>
+$$<br>
+|H^T Hx - H^T y| \equiv 0<br>
+\tag{3}<br>
+$$<br>
+  其中算子 $H = \begin{vmatrix}<br>
+\frac{1}{\alpha cos \varphi} &amp; \frac{\partial}{\partial \lambda} \<br>
+\frac{1}{a} &amp; \frac{\partial}{\partial \varphi} \<br>
+\end{vmatrix}$,<br>
+且 $a$ 为地球半径，$\lambda$ 为经度，$\varphi$ 为纬度。</p>
+<p>  由（1~3）式结合海上的浮标站观测和数值模式背景场分析得出的参考气压值，可以得到中纬度地区和热带地区的气压场分布。</p>
+<p>  在反演出海面气压场后还需将其同化进入台风模式的初始场中。典型同化方法包括最优插值、三维变分同化、四维变分同化、集合卡尔曼滤波、粒子滤波等。Ma and Tan 选择了较为成熟的三维变分同化，通过迭代最小化代价函数 $J(x)$ 来得到最接近观测的最优分析场 $x$，其代价函数由观测误差和背景场误差构成，具体定义为：</p>
+<p>$$<br>
+J(x) = J^b + J^o = \frac{1}{2} (x - x^b )^T B^{-1} (x - x^b) + \frac{1}{2} (y - y^o) (E +F)^{-1} (y-y^o)<br>
+\tag{4}<br>
+$$</p>
+<p>  上式对每个格点的误差分析，使用了背景误差，观测误差和代表性误差的加权，它们的误差协方差矩阵分别为 <strong>$B、E$</strong> 和 <strong>$F$</strong>。</p>
+<p>  对流参数化是台风数值预报的第二步。在数值模式中，对流参数化方案是为了反映次网格尺度对流作用而设计的，其对于描述台风对流发展至关重要。目前，台风模式研究和业务应用中广泛应用的是 Kain-Fritsch 对流参数化方案。KF93 方案为估计对流云发展过程的不稳定能量及区域而采用的方法是拉格朗日气块法。具体细节：首先比较在气块抬升凝结高度（LCL）的气块温度与大气温度，来寻找上拽气流的源地。由于一般对流发生前 ，气块温度比环境温度低，气块难以抬升，因此需要在参数化方案中定义一个温度初始扰动 $\delta T_w$ 附加至气块现有的温度上，以强迫气块抬升。具体如下：<br>
+$$<br>
+\delta T_w = c_1 w^{1/3}_G<br>
+\tag{5}<br>
+$$<br>
+  其中 $w_G$ 为抬升凝结高度的垂直速度（$cm \cdot s^{-1}$）。</p>
+<p>  当 $T_LCL + \delta T_w \leq T_{ENV}$ 时，则不满足触发对流的条件，须在更高一层的模式层中判断是否为上拽气流的源地层，依此类推，直至找到源地层为止。想法，如经附加温度扰动的气块温度高于环境温度，则已满足触发对流的条件。显然，定义温度扰动（$\delta T_w$）对于气块是否上升以及是否触发对流非常重要。</p>
+<h5 id="统计预报方法">统计预报方法</h5>
+<p>  一般来说，通过台风数值预报模式能对台风路径进行较为准确的预报，而台风强度预报的准确性不高。这是由于热带气旋强化过程的复杂性，使得强度预测技巧相对较低，因此强度预测也更加困难。此外，目前的数值模型无法以实时和可操作的方式明确解决对流问题，因此需要用其他强度预测方法来克服现有的数值模型的缺陷。通常，当无法通过机理分析建立模型时，可以采取收集大量数据的方法，通过对数据的统计分析建立模型。因为在大量的观察下，数据会表现出一定的规律性，这种规律可以通过函数关系式表示，函数关系式则称为回归方程，统计回归模型确定的是变量之间的相关关系。但是和台风相关的很多数据是无法通过实测得来的，所以仍然需要利用数值模式的产品。理想的替代方法是利用统计模型和数值模型的优势，将统计方法与数值天气预报的环境预测相结合起来，这种方法被统称为统计学-动力学方法。其中比较典型的是台风强度预测模式（Statistical Typhoon Intensity Prediction Scheme，STIPS），具体介绍请移步原文。</p>
+<h5 id="机器学习方法">机器学习方法</h5>
+<p>  近年来，许多学者将机器学习应用于台风领域，其在一定程度上弥补数值预报方法和统计预报方法的不足。具体方法请移步原文。</p>
+<h4 id="相关深度学习方法">相关深度学习方法</h4>
+<p><font size = 2; color = natural>PS: 由于之前一直处于该领域，故不再此处展开，具体请移步原文。</font></p>
+<h3 id="div-align-center-基于深度学习的台风时空深度混合预测模型-div"><div align = center>基于深度学习的台风时空深度混合预测模型</div></h3>
+<h4 id="引言">引言</h4>
+<p>  台风从生成到发展的过程是一个时空变化的过程，影响台风变化甚至是台风周围的气象海洋要素也是时空相关的变量。然而，现有的方法很少将这种时空关系考虑进来，通常，预报因子都只是作为独立变量进行预测，因此可能造成预报效果不理想的原因之一。数值预报方法根据流体动力热力学方程考虑了这种时空关系，但是由于数值模式的计算复杂太大，且各种和台风相关的机制还不够完全，因此，虽然作为近些年来的主流预报方法，但是仍然存在很大的缺陷。本文旨在利用现有的统计预报和机器学习等台风相关预测方法的基础上，结合深度学习中卷积神经网络获取空间特征和长短期记忆神经网络获取时序特征的能力，充分学习台风活动过程的时间关系，建立台风时空深度混合预测模型来对台风的各种关键问题进行预测。本章则主要介绍如何把台风预测问题转换为时空序列预测问题，然后提出了解决这个问题的方法，即基于深度学习的台风时空混合预测模型，并详细给出了设计该模型的思路。</p>
+<h4 id="问题定义">问题定义</h4>
+<p>  本文希望通过历史台风资料，大气数据和海洋数据构建台风的预测模型，以能对未来台风的活动进行预测，比如是否形成、路径变化、强度变化、风雨状况等。在实际观测中，台风形成前的热带气旋等级为热带风暴。由于从热带风暴发展到台风的过程是一个空间和时间变化的过程，台风之后的发展消亡也是空间和时间变化的过程。在不考虑空间信息的情况下，热带风暴和台风的路径是时间序列，为分析获取其时序关系，需要采用多个时刻的大气和海洋数据来进行预测。但是热带风暴或台风中心的周围环境变量在任意时刻都是空间场，大气变量在空间中的三个维度包括经度、纬度、层。而与台风紧密相关的海面变量在空间中的维度只包括经度和纬度。如何从历史数据中获取台风形成之前与之后时空变量的规律对未来的台风活动进行预测？这是本文需要考虑的问题。本文由此可以将台风预测问题定义为时空序列预测问题。</p>
+<p>  为了能通过深度学习的手段来解决台风预测这类时空序列预测问题，需要在已划分为空间网格点的区域中选择相应的数据。无论数据类型是再分析资料或者是卫星遥感的反演数据，选择的单层大气层或海表层的相关变量数据都可以用二维网格图表示。给定热带风暴或台风中心周围的二维网格图有 $M \times M$ 个网格点。大气压力层的数量是 $L$，大气变量的数量是 $R$，海面变量的数量是 $O$。因此热带风暴中心或台风中心 $X^P$ 周围的大气变量是 $M \times M \times L \times R$ 规格的网格数据集。热带风暴中心周围的海面变量 $X^S$ 是 $M \times M \times O$ 规格的网格数据集。包含大气变量和海洋变量的空间环境变量由此可以表示为 $X = [X^P, X^S]$。定义预测当前时刻是 $t$，预测当前时刻的环境变量是 $X_t$。$Y$ 是预测对象，可以表示台风是否形成，路径上的中心经纬度位置，强度或者风雨量等，$k$ 是预测时间步，$b$ 是在预测当前时刻之前应该考虑的回顾时间步，每个时间步长为 6 小时。</p>
+<p>  因此，问题可以进一步被定义为给定预测当前时刻和回顾时刻风暴中心或者是台风中心周围环境变量网格数据集，预测台风在未来时刻的状态，如是否形成，形成后的强度、路径以及风雨等状态量。即给定时空变量序列 $X_{t - 6b} (b = 0, 1, 2, 3)$，预测台风的状态量 $Y_{t + 6k}$。简单表述如下：</p>
+<p>$$<br>
+Y_{t + 6k} = f(X_t, X_{t - 6b}) \ \ \ \  k, b = 0, 1, 2, 3…<br>
+\tag{6}<br>
+$$<br>
+  $Y_{t + 6k}$ 是从当前预测时刻 $t$ 开始 $6k$ 小时后的预测对象，$f$ 是需要通过历史数据学习的模型，$X_t$ 是当前预测时刻热带风暴或者台风中心周围环境变量的网格数据集，$X_{t - 6b} 是预测当前时刻之前 $6b$ 小时环境变量的网格数据集。图 3 表示台风预测相关时空变量结构。</p>
+<div align = 'center'>
+<img src = 'https://pzxnys.github.io/images/2023-10-02-11-37-43.png'/>
+<font color = natural; size = 2>图 3. 台风预测相关变量的时空结构示意图</font>
+</div>
+<h4 id="模型框架">模型框架</h4>
+<p>  该模型的总体框架如图 4 所示。本文提出了台风时空预测模型来学习与台风相关的大气和海洋变量的时空相关性。其主要思想是使用 3DCNN 来学习大气变量的三维空间关系，2DCNN 来学习海面变量的二维空间关系以及 LSTM 来学习台风变化过程中变量的时序关系。</p>
+<div align = 'center'>
+<img src = 'https://pzxnys.github.io/images/2023-10-02-13-21-44.png'/>
+<font color = natural; size = 2>图 4. 台风时空深度混合模型框架图</font>
+</div>
+&emsp;&emsp;任意时刻热带风暴中心或台风周围的大气变量 $X^P$ 都是 $M \times M \times L \times N$ 规格的网格数据集，亦可作为 3DCNN 输入的 4D 张量。任意时刻热带风暴中心或台风中心周围的海面变量 $X^S$ 都是 $M \times M \times O$ 规格的网格数据集，亦可作为 2DCNN 输入的 3D 张量。 该模型在“connection”部分拼接 3DCNN 和 2DCNN 的输出向量，其长度为 $K$，并作为 LSTM 的输入。因此，台风时刻深度混合预测模型可以表述为：
+<p>$$<br>
+Y_{t + 6k} = LSTM(3DCNN(X^P_{t - 6b}), 2DCNN(X^S_{t - 6b}))<br>
+\tag{7}<br>
+$$<br>
+其中 $k = 1, 2, 3…$ 且 $b = 0, 1, 2, 3…$</p>
+<p>  由于根据不同的预测问题，模型损失函数有不同的定义。对于神经网络模型，其代价函数仍然很大程度上与其他的参数模型相近，如线性模型的损失函数。大多数情况下，参数模型定义了一个分布 $p(Y|X;\theta)$，并且简单地使用最大似然原理，即意味着是将训练数据和模型预测间的交叉熵作为代价函数。有时则使用更简单的方法，不是预测 $Y$ 的完整的概率分布，而是在给定 $X$ 的条件下 $Y$ 的某种统计量，比如均方根误差和平均绝对误差。因此本文模型的整体损失函数可以表示为：</p>
+<p>$$<br>
+J(\theta) = \frac{1}{N} \frac{1}{T} E_{X, Y ~ \hat{p}_{data}} ||Y - f(X;\theta)||^2<br>
+\tag{8}<br>
+$$</p>
+<p>  其中，$N$ 表样本数，$T$ 表示 LSTM 的时间步数，$E$ 表示模型预测值与真实值之间差距的衡量标准，$Y$ 表示真实值，$X$ 表示输入值，$f$ 表示模型，$\theta$ 表示模型需要学习的参数。</p>
+<p>  通常，设计网络模型时需要考虑损失函数的梯度足够大且具有足够的可预测性这样才能为训练出学习算法提供一个好的指引。用于实现最大似然估计的交叉熵函数可以处理离散型变量，因此可以用于台风预测中所定义的分类问题。而均方根误差和平均绝对误差虽然在使用基于梯度的优化方法时虽然往往不如交叉熵函数，但是通常可以适用于台风预测中所定义的回归问题。</p>
+<h5 id="海表变量-X-S-二维空间关系的特征学习">海表变量 $X^S$ 二维空间关系的特征学习</h5>
+<p><font size = 2; color = natural>PS: 具体请移步原文。</font></p>
+<h5 id="大气变量-X-P-三维空间关系的特征学习">大气变量 $X^P$ 三维空间关系的特征学习</h5>
+<p>  台风是一种强对流天气，其间大气存在强烈的垂直运动，因此大气变量不仅仅是三维空间变量，而且具有很强的相关性。常与台风相关的大气基本变量有：风的方向分量（u）、风的速度分量（v）、温度（t）、相对湿度（rh）和位势高度（z）。同样可以通过已有数据来定义一些与台风的相关变量，如位涡。垂直速度，涡度（VOR），散度（DIV）。而不能通过已有数据直接定义的有垂直风切变（VSHEAR）、垂直不稳定度（THEDV）、日生成潜力（DGP）、低层环流（CIRC）、最大潜在强度（MPI）。其中，最常用的涡度和散度可作如下表示（式中 $\vec{V}$ 为风矢量）：</p>
+<p>$$<br>
+VOR = \nabla \times \vec{V} \\<br>
+DIV = \nabla \cdot \vec{V}<br>
+\tag{9}<br>
+$$</p>
+<p>  此外，可通过压力层数据定义一些相关量：</p>
+<p>$$<br>
+VSHEAR = \sqrt{(\overline{u_{850}} - \overline{u_{200}})^2 + (\overline{v_{850}} - \overline{v_{200}})^2} \\<br>
+THEDV = \sum_{p = 850 hpa}^{200 pha} wt(p) [\overline{\theta_E(850)} - \theta_E^*(p)]，\theta_E 为 850hpa 位温 \\<br>
+DGP = \overline{\xi 900} - \overline{\xi 200}，\xi 900 和 \xi 200 为 900hpa 和 200 hpa 压力层的相对涡度值 \\<br>
+CIRC = \oint_P u \cdot dl<br>
+MPI = 66.5 + 108.5e^{(0.8313(SST - 30))}<br>
+\tag{10}<br>
+$$</p>
+<p>  由于现在对台风的机制理解还不够到位，传统的手动特征变量可能与之相关，却不能够保证是真正有效的。受涡度、风切变等这些传统物理特征的启发，加之为了充分利用深度学习自动提取特征的能力，模型同样使用 CNN 对台风相关的三维大气变量进行更复杂的特征学习。CNN 可以通过 3D 卷积核，即本文的 3DCNN，学习网格化大气变量各层各类型之间的相关性。如图 5 所示，3D 卷积核可以设置不同规格的卷积核尺寸，它将前一个特征图的相连几层的局部区域特征提取后映射到下一层子特征图的某一对应位置，再通过多个卷积核来生成多个系列的子特征图来学习整体与台风相关大气变量的空间特征。</p>
+<div align = 'center'>
+<img src = 'https://pzxnys.github.io/images/2023-10-02-15-59-12.png'/>
+<font size = 2; color = natural>图 5. 用于大气变量空间特征提取的三维卷积层示意图</font>
+</div>
+&emsp;&emsp;第 i 层第 j 个特征图上位置（x, y, z）的值表示如下：
+<p>$$<br>
+u_{ij}^{xyz} = f(\sum_{k=0} \sum_{p=0}^{P_{i-1}} \sum_{q=0}^{Q_{i-1}} \sum_{r=0}^{R_{i-1}} w_{ijk}^{pqr} u_{(i-1) k}^{(x+p)(y+q)(z+r)} + b_{ij})<br>
+\tag{11}<br>
+$$<br>
+  其中 $R_{i}$ 是 3D 卷积核时间维度的值，$w_{ijk}^{pqr}$ 连接 k 层特征图（i, j）位置处卷积核内的（p, q, r）处的值，$b_{ij}$ 为偏置项。</p>
+<p>  台风中心周围的大气变量各网格点各层之间同样存在各种复杂抽象的特征关系，因此仍然需要设置多个卷积核和多个卷积层来提取复杂的特征以进行预测，如图 6 所示。以一个样本为例，该 3DCNN 网络结构的输入为 $L$ 层 $M \times M$ 个网格位置的 $R$ 个海表变量，同样通过第一个卷积层的多个卷积核进行卷积操作后，生成了多个特征图，然后对特征图进行降采样操作，得到了同样数量的子特征图，再利用多个卷积层来对大气变量之间的复杂的抽象特征进行提取，最后对所有子特征图进行全连接展开后，降维为大气变量特征向量，此即为 3DCNN 用于大气变量三维空间关系特征学习的过程。</p>
+<div align = 'center'>
+<img src = 'https://pzxnys.github.io/images/2023-10-02-16-42-41.png'/>
+<font size=2; color=natural>图 6. 3DCNN 用于大气变量三维空间关系的特征学习示意图</font>
+</div>
+<h5 id="台风变化过程中时序关系的特征学习">台风变化过程中时序关系的特征学习</h5>
+<p><font size = 2; color = natural>PS:大致思路为，将 3DCNN 学习到的大气变量特征和 2DCNN 学习到的海表变量特征作为 LSTM 的输入向量，学习时序相关特征。具体请移步原文。</font></p>
+<h4 id="实现方法">实现方法</h4>
+<p><font size = 2; color = natural>PS:该章节为，采用 TensorFlow 框架搭建上述模型的具体步骤。具体请移步原文。</font></p>
+<h3 id="div-align-center-基于时空深度混合预测模型的台风形成及强度预测-div"><div align = center>基于时空深度混合预测模型的台风形成及强度预测</div></h3>
+<p>实验所用数据集为：</p>
+<ol>
+<li class="lvl-3">
+<p>世界气象组织（World Meteorological Organization, WMO）版本的国际气候管理最佳轨道档案（International Best Track Archive for Climate Stewardship, IBTrACS）全球热带气旋最佳轨道数据集：<a target="_blank" rel="noopener" href="https://www.ncei.noaa.gov/products/international-best-track-archive">链接</a></p>
+</li>
+<li class="lvl-3">
+<p>欧洲中期天气预报中心（European Centers for Medium-Range Weather Forecasts, ECMWF）开源的大气海洋变量组成的实验数据集：<a target="_blank" rel="noopener" href="https://confluence.ecmwf.int/display/CKB/How+to+download+ERA5">ERA-Interin 再分析数据集</a></p>
+</li>
+</ol>
+<p><font size = 2; color = natural>PS:该章为上述模型的实验部分，故不在此展开。具体请移步原文。</font></p>
+<br>
+<font size=2; color=grey>
+[1]. 陈睿. 基于深度学习的台风预测关键技术研究[D].国防科技大学, 2018.<br>
+[2]. Jiang G Q, Xu J, Wei J. A deep learning algorithm of neural network for the parameterization of typhoon‐ocean feedback in typhoon forecast models[J]. Geophysical Research Letters, 2018, 45(8): 3706-3716.<br>
+[3]. Hong S, Kim S, Joh M, et al. Globenet: Convolutional neural networks for typhoon eye tracking from remote sensing imagery[J]. arXiv preprint arXiv:1708.03417, 2017.<br>
+[4]. Loridan T, Crompton R P, Dubossarsky E. A machine learning approach to modeling tropical cyclone wind field uncertainty[J]. Monthly Weather Review, 2017, 145(8): 3203-3221.<br>
+[5]. Richman M B, Leslie L M. Adaptive machine learning approaches to seasonal prediction of tropical cyclones[J]. Procedia Computer Science, 2012, 12: 276-281.<br>
+[6]. Matsuoka D, Nakano M, Sugiyama D, et al. Detecting precursors of tropical cyclone using deep neural networks[C]//The 7th International Workshop on Climate Informatics, CI. 2017.<br>
+[7]. Richman M B, Leslie L M, Ramsay H A, et al. Reducing tropical cyclone prediction errors using machine learning approaches[J]. Procedia computer science, 2017, 114: 314-323.<br>
+</font>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">pzxnys</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://pzxnys.icu/posts/1764808607415/">http://pzxnys.icu/posts/1764808607415/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">pzxnys</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Dr/">
+                                    <span class="chip bg-color">Dr.</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/1764808607866/">
+                    <div class="card-image">
+                        
+                        <img src="https://pzxnys.github.io/images/202310090851.png" class="responsive-img" alt="菜就要多学">
+                        
+                        <span class="card-title">菜就要多学</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-02
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Paper-Reading/" class="post-category">
+                                    Paper-Reading
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Dr/">
+                        <span class="chip bg-color">Dr.</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/1764808608088/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="新手村任务2">
+                        
+                        <span class="card-title">新手村任务2</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Paper-Reading/" class="post-category">
+                                    Paper-Reading
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Dr/">
+                        <span class="chip bg-color">Dr.</span>
+                    </a>
+                    
+                    <a href="/tags/Ocean/">
+                        <span class="chip bg-color">Ocean</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: PZXNYS&#39;s Blog<br />'
+            + '文章作者: pzxnys<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2025</span>
+            
+            <a href="/about" target="_blank">pzxnys</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+                <span id="translate">|&nbsp;繁/简：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">87.2k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2020";
+                        var startMonth = "11";
+                        var startDate = "11";
+                        var startHour = "11";
+                        var startMinute = "11";
+                        var startSecond = "11";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/pzxnys" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:23110810000004@hainanu.edu.cn" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=377171636" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 377171636" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "http://pzxnys.icu"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
+    
+    
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
+            }
+        </script>
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
