@@ -1,0 +1,1564 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="新手村任务1, 咸鱼">
+    <meta name="description" content="海洋流场数据同化方法与应用的研究
+论文信息：马寨璞，浙江大学博士学位论文
+摘要
+  本文以三维陆架海模型（HAMSOM）作为数据同化系统的模型部分，深入研究了数据同化的理论方法和在海洋流场数据处理中的应用，对海洋场的数据同化方法提出了行之有">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>新手村任务1 | PZXNYS&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">PZXNYS&#39;s Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">PZXNYS&#39;s Blog</div>
+        <div class="logo-desc">
+            
+            哪有什么厚积薄发，我只愿安于现状
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/pzxnys" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/pzxnys" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">新手村任务1</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Dr/">
+                                <span class="chip bg-color">Dr.</span>
+                            </a>
+                        
+                            <a href="/tags/Ocean/">
+                                <span class="chip bg-color">Ocean</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Paper-Reading/" class="post-category">
+                                Paper-Reading
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-09-14
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    12.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    43 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="海洋流场数据同化方法与应用的研究">海洋流场数据同化方法与应用的研究</h2>
+<p><font size=2; color=grey>论文信息：马寨璞，浙江大学博士学位论文</font></p>
+<h3 id="div-align-center-摘要-div"><div align="center">摘要</div></h3>
+<p>  本文以三维陆架海模型（HAMSOM）作为数据同化系统的模型部分，深入研究了数据同化的理论方法和在海洋流场数据处理中的应用，对海洋场的数据同化方法提出了行之有效的改进，并将中国黄、东海区域内的TOPEX/POSEIDON（T/P）数据和理论模式的计算结果相结合，进行同化处理，获得了更接近于真实的结果。</p>
+<blockquote>
+<p>**三维陆架海模型（HAMSOM）**是一种用于研究海洋和海底地质的数学模型。这种模型被用来模拟和分析陆架海区域的各种物理和地质过程，包括海洋水流、海底地形、沉积物运转、生态系统动态等等。以下是关于三维陆架海模型的一些基本信息：</p>
+<ol>
+<li class="lvl-3">**物理过程模拟：**三维陆架海模型可以用来模拟海洋中的物理过程，如海水运动、温度和盐度分布、海洋循环等。这对于理解气候变化、海洋环境和天气模式等方面非常重要</li>
+<li class="lvl-3">**地质过程模拟：**该模型也可用于模拟陆架海底地质过程，如地壳运动、海底地形的演变、地震和火山活动等。这对于理解板块构造和地球内部动力学有重要意义。</li>
+<li class="lvl-3">**生态系统模拟：**三维陆架海模型可以用来模拟海洋生态系统的动态，包括生物群落的分布、物种互动、生态链的演变等。这对于海洋保护和资源管理非常有用。</li>
+<li class="lvl-3">**环境影响评估：**该模型还可用于评估人类活动对陆架海环境的影响，如渔业、油气开发、海岸防护工程等。通过模拟，可以预测和减轻环境影响。</li>
+<li class="lvl-3">**数据驱动：**三维陆架海模型通常依赖于大量的实测数据和卫星观测数据来验证和调整模型，以确保准确性和可靠性。</li>
+<li class="lvl-3">**计算复杂性：**这种模型通常需要大规模的计算资源，因此要在三维空间中模拟多种复杂的物理和地质过程。</li>
+</ol>
+<p>这些模型的应用领域包括海洋科学研究、气候模拟、海洋资源管理、环境保护等。三维陆架海模型是一个强大的工具，有助于我们更好地理解和管理陆架海区域的复杂系统。</p>
+</blockquote>
+<blockquote>
+<p>**TOPEX/POSEIDON（T/P）**是一颗美国-法国合作的卫星任务，旨在测量地球海洋表面的高度，并且用于研究海洋的动态、气候变化、海洋循环等。以下是关于T/P卫星的一些基本信息：</p>
+<ol>
+<li class="lvl-3">**任务目标：**T/P卫星任务的主要目标是测量全球海洋表面高度，这对于研究海洋动力学、洋流、海平面上升、气候变化等具有重要意义。卫星携带有高精度的雷达测高仪，可实现高度测量。</li>
+<li class="lvl-3">**卫星启动：**T/P卫星于1992年8月10日由美国国家航空航天局（NASA）和法国国家空间研究中心（CNES）合作发射升空。</li>
+<li class="lvl-3">**测量方法：**卫星通过发射雷达信号并测量信号返回的时间来测量海洋表面的高度。这种测高仪能够提供非常精确的海洋表面高度数据。</li>
+<li class="lvl-3">**数据应用：**T/P卫星数据在气象学、海洋学、气候研究以及海洋资源管理等领域中被广泛应用。这些数据有助于监测全球海平面上升、研究洋流的变化、预测气象和气候事件等。</li>
+<li class="lvl-3">**后续任务：**T/P任务之后，还有一系列类似的卫星任务，如Jason-1、Jason-2和Jason-3等，继续收集海洋表面高度数据，并持续对全球海洋的变化进行监测。</li>
+<li class="lvl-3">**数据获取：**T/P卫星数据通常可以通过NASA、CNES以及其他相关机构的数据存档和分发渠道获得，以供科研和应用使用。</li>
+</ol>
+<p>这些卫星数据对于研究全球海洋和气候系统的变化非常重要，可以提供宝贵的信息，有助于科学家们更好地理解地球系统的复杂性。</p>
+</blockquote>
+<p>  对数据同化问题的研究，尤其针对目前我国海区的数据同化应用研究较少这一情况。本文在前人文献的基础上，进行了方法及应用上的研究。这些成果包括：</p>
+<p>   - 建立考虑了时间相关的方差矩阵和时空相关的最优插值算法：</p>
+<p>   <font size = 2; color = natural>时空相关的最优插值算法是一种用于从有限的空间和时间观测数据中估计或预测未来或未观测位置和时间点的数值方法。这些插值算法可用于多个领域，包括气象学、环境科学、地理信息系统（GIS）、地质学等，其中时空数据的插值和预测通常具有挑战性，因为它们需要考虑时空相关性和变化。以下是一些常见的时空相关的最优插值算法：<br>
+   - **Kriging：**Kriging是一种统计插值方法，广泛用于时空相关数据的插值。它考虑了数据点之间的空间和时间相关性，并利用半变异函数来模拟数据的空间和时间变异性。Kriging还提供了估计误差的信息，因此在估计不确定性时非常有用。<br>
+   - **Cokriging：**Cokriging是Kriging的扩展，它允许在插值时同时使用多个相关变量，例如，同时考虑空气温度和湿度的时空相关性。这可以提高插值的准确性。<br>
+   - **模型插值：**模型插值方法将时空数据建模为一组数学方程，这些方程可以捕捉到数据的时空关系。例如，趋势面模型可以用来建模数据的趋势，而周期性模型可以考虑数据的季节性变化。<br>
+   - **径向基函数插值：**径向基函数插值方法使用径向基函数来逼近时空数据。这些基函数的形状可以根据数据的时空特性进行调整。<br>
+   - **地统计学方法：**地统计学方法结合了地理信息系统（GIS）和空间统计学的原理，用于处理空间和时间数据的插值和分析。它们通常考虑地理上的特殊性，并尝试将这些特性纳入插值过程中。<br>
+   - **神经网络：**深度学习方法如卷积神经网络（CNN）和循环神经网络（RNN）也可以用于时空数据的插值。这些方法可以学习时空数据的复杂模式和关系。<br>
+   - **插值工具包：**有许多地理信息系统（GIS）和科学计算软件提供了各种插值工具包，例如ArcGIS中的插值工具箱、R中的gstat包等，这些工具包通常包括多种插值方法供用户选择。<br>
+  选择适当的时空插值方法取决于数据的性质、研究问题和可用的计算资源。通常，最优的方法是结合领域知识和实际数据特性来选择合适的插值方法。此外，考虑到时空数据的不确定性也是非常重要的，因此在插值时要估计和报告估计误差。<br>
+</font><br>
+   - 对卡尔曼滤波算法进行了SVD简化以及建立了显式的状态转移矩阵；<br>
+   <font size = 2; color = natural>卡尔曼滤波（Kalman Filtering）是一种用于估计系统状态的递归迭代算法，特别适用于线性动态系统。它是由Rudolf E. Kálmán于1960年首次提出的，因此得名。卡尔曼滤波广泛应用于估计动态系统的状态，例如，飞行器导航、车辆定位、金融预测等领域。<br>
+  卡尔曼滤波的主要思想是通过融合系统的动态模型（通常表示为状态转移方程）和测量模型（通常表示为观测方程）来估计系统的状态，同时考虑了系统的不确定性。以下是卡尔曼滤波算法的基本步骤：<br>
+   - **初始化：**首先，需要初始化系统的状态估计和协方差矩阵。通常，这些初始值可以通过系统的先验知识或测量得到。<br>
+   - **状态预测：**根据系统的动态模型（状态转移方程），通过预测当前时刻的状态和状态协方差矩阵。这一步估计了系统在没有新测量数据的情况下的状态。<br>
+   - **测量更新：**接下来，使用测量模型（观测方程）将最新的测量数据与状态预测进行比较。通过卡尔曼增益（Kalman Gain），卡尔曼滤波器会根据测量的可信度来融合测量数据和状态预测，从而得到更精确的状态估计。<br>
+  <font color=grey>**卡尔曼增益（Kalman Gain）**是卡尔曼滤波算法中的一个关键概念，它用于将测量数据与状态估计进行融合，从而得到更精确的状态估计。<br>
+  卡尔曼增益的作用是根据系统模型和测量模型的不确定性来确定在状态更新中给予哪个模型更多的权重。具体来说，卡尔曼增益用于调整状态预测和测量更新之间的权衡，以便更好地估计系统的真实状态。<br>
+  卡尔曼增益的计算通常可以表示为以下的数学表达式：<br>
+$$ K = \frac {P^- H^T} {HP^- H^T + R} $$<br>
+  其中：<br>
+   - $K$ 是卡尔曼增益。<br>
+   - $P^-$ 是状态协方差矩阵的预测（先验）估计，表示状态预测的不确定性。<br>
+   - $H$ 是观测矩阵，用于将状态映射到测量空间。<br>
+   - $R$ 是测量噪声的协方差矩阵，表示测量的不确定性。<br>
+  卡尔曼增益 $K$ 的计算考虑了系统预测的不确定性 $P^-$、测量的不确定性 $R$，以及系统模型和测量模型之间的关系。它决定了在状态更新中，应该给予测量多大的权重，以便得到更准确的状态估计。<br>
+  在卡尔曼滤波算法中，卡尔曼增益的计算是迭代的过程，它在每个时间步都会根据当前的状态估计和测量数据进行更新，从而实现递归的状态估计。这样，卡尔曼滤波可以在不断获得新测量数据时，动态地调整状态估计，以适应系统的变化。<br>
+</font><br>
+   - **状态估计更新：**使用融合后的测量数据更新状态估计和状态协方差矩阵。这一步会更新系统的状态估计，并考虑到新测量数据的影响。<br>
+   - **重复迭代：**卡尔曼滤波是一个递归算法，它会在每个时间步重复进行上述状态预测和测量更新的过程，以不断更新系统状态的估计。<br>
+  卡尔曼滤波的关键优点在于它能够在不确定性的环境中提供最优的状态估计，并且能够有效地处理动态系统的变化。然而，卡尔曼滤波的局限性在于它要求系统的动态和测量模型必须是线性的，且需要提前知道系统的统计特性（均值和协方差）。<br>
+  对于非线性系统，扩展卡尔曼滤波（Extended Kalman Filter，EKF）和粒子滤波（Particle Filter）等方法是卡尔曼滤波的扩展和变种，用于处理更复杂的系统模型。这些方法通过非线性状态转移和观测方程的线性化或蒙特卡洛采样等技术，使得卡尔曼滤波可以应用于更广泛的应用领域。<br>
+</font><br>
+   - 将T/P实时卫星数据进行调和分析并与数值模型进行同化处理。</p>
+<p>具体内容如下几个方面：</p>
+<ol>
+<li class="lvl-3">
+<p><strong>建立时间相关的协方差矩阵处理方法</strong><br>
+  在估值类的同化方法中，观测数据与理论模型相结合的桥梁是各自的协方差矩阵。在确定协方差矩阵的时候，以往的做法是将所有不同观测时刻的数据当作同一时刻的数据应用；本文在形成协方差矩阵时，不仅考虑空间相关，而且应用了时间相关，对观测数据的应用依照其得到时间的不同分别处理到协方差矩阵的建立中，并根据其在时间上的相关强弱给予不同的权重值，使得到观测数据的应用更接近实际情况。</p>
+</li>
+</ol>
+<blockquote>
+<p>**时间相关的协方差矩阵：**是一种用于描述时间序列数据中观测值之间的相关性随时间变化的矩阵。它通常用于分析和建模时间序列数据中的相关性结构，以便更好地理解数据的动态性质。</p>
+</blockquote>
+<ol start="2">
+<li class="lvl-3">
+<p><strong>应用动态最优插值算法进行渤海海表温度同化</strong><br>
+  传统的最优插值算法没有考虑观测数据的时间错位。本文首先推导了既考虑空间相关，又考虑时间相关的最优插值算法，由于应用了时间相关的协方差矩阵，就使这个算法具有动态处理时间错位的观测数据的能力。随后，本文应用理论模型数据和模拟观测数据进行了并行实验，将动态插值算法应用到渤海海表温度场的计算中，同化结果兼顾理论模型结果和模拟观测结果，在方差意义上显示出最优特性，验证了本文所提出的方法改进的正确性。</p>
+</li>
+<li class="lvl-3">
+<p><strong>应用SVD分解，推导了简约形式的卡尔曼滤波方法，并直接建立了显式的状态转移矩阵</strong><br>
+  卡尔曼滤波法无法直接应用于海洋，其主要原因是增益矩阵的计算量太大。本文根据“最大限度保留原来的主要信息，尽可能地简化计算”的原则，应用SVD分解推导了简约形式的卡尔曼滤波方法，得到了该方法的简约表达公式，同时，还得到了截断误差部分的伴随发展公式，它可用于探讨截差本身的动态发展。<br>
+  另外，本文成功应用反向量表述的方法将通常需要迭代得到的卡尔曼状态转移矩阵表述为可直接计算的显式表达形式。<br>
+  上述两个方面的改进节省了数据同化卡尔曼滤波法的计算量，提高了效率，对时效性很强的海洋预报计算很有意义。</p>
+</li>
+<li class="lvl-3">
+<p><strong>对T/P数据进行调和分析，并将其结果与理论模型数据进行同化处理，使结果更接近于真实值</strong><br>
+  对卫星数据如何进行处理和应用是一个重要的课题。本文首先使用黄、东海沿岸60个验潮站实际观测得到的调和常数进行同化处理，有效地改进了理论模式的结果。随后，本文将美国T/P卫星数据集的第1～第150周期的数据进行调和分析，获得了黄、东海区域的10条轨道撒花姑娘的M2分潮的调和常数。在此基础上，本文进一步应用最优插值法，将理论模型结果和卫星数据调和结果进行同化处理。获得了更接近于真实值的同化结果。</p>
+</li>
+</ol>
+<p>**关键词：**数据同化，动态最优插值，卡尔曼滤波，T/P数据</p>
+<h3 id="div-align-center-第一章-绪-论-div"><div align='center'>第一章  绪 论</div></h3>
+<h4 id="1-1-本论文研究的重要意义">1.1 本论文研究的重要意义</h4>
+<p>  海洋流场的研究有两种方式：a. 使用数值型模型进行研究；（缺点：只能近似的反映海洋流场规律性的特征）b. 对海洋流场进行直接观测。（缺点：由于观测设备的局限和观测点物理量的随机变动，因此观测结果具有不可避免的系统误差与随机误差）<br>
+  为了解决上述问题，采用数据同化方法，将观测数据与理论模型结果相结合，吸收两者的优点，以期得到更接近真实值的结果。<br>
+  为了充分利用温度数据，采用时间相关的数据同化方法来处理不同时刻的数据，使其更具有真实性。<br>
+  为了更好的将卡尔曼滤波算法应用到海洋上面，采用SVD简化卡尔曼方法和直接显式建立状态转移矩阵的方法，节省了卡尔曼滤波算法的计算量，提高了效率，对时效性很强的海洋预报计算很有意义。<br>
+  为了更好的将理论模型结果和卫星数据调和结果进行同化处理，使用最优插值算法，获得更接近于真实值的同化结果。这对于更准确的确定潮汐的等振幅线和等迟脚线分布具有重要意义。<br>
+  <strong>数据同化研究还具有很大的实际意义：</strong></p>
+<blockquote>
+<ol>
+<li class="lvl-3">
+<p>通过数据同化可进行参数估计。区域性的场估计可通过边界条件估计而显著地改进。对于多学科的海洋科学，参数估计尤其充满希望，其对于理解海洋过程、监测环境变化、海洋资源管理以及气象和气候研究都至关重要。</p>
+</li>
+<li class="lvl-3">
+<p>当在有足够数据但动力模型有点欠缺的情形下进行流场估计时，同化的数据能够补偿动力模型的欠缺。因此它可以改进场估计，使之与客观自然相一致。</p>
+</li>
+<li class="lvl-3">
+<p>数据同化可用来进行海洋预报。通过持续的数据同化过程可以将可预见性误差控制在允许的范围内。这也是数据同化在海洋上的主要应用之一。</p>
+</li>
+</ol>
+</blockquote>
+<p>综上所述，对海洋流场数据同化方法及其应用的研究具有十分重要的意义。一方面不仅可以借用观测数据和模式两者各自的优势，得到更接近客观自然的结果。另一方面，可以加深对海洋运动状态的了解，掌握海洋运动更准确的规律，为人类社会的发展服务，推动社会进步和海洋科技进步。fdssdsdasdadas</p>
+<h4 id="1-2-数据同化系统的结构及其方法分类">1.2 数据同化系统的结构及其方法分类</h4>
+<h5 id="1-2-1-数据同化系统的结构">1.2.1 数据同化系统的结构</h5>
+<p>  一般的状态过程与参数估计如图所示：</p>
+<div align = 'center'><img src = 'https://pzxnys.github.io/images/2023-09-16-15-35-50.png'/></div>
+<div align='center'><font size = 2>数据同化系统结构图</font></div>
+<p>  上图所示为海洋观测与预报系统(简称OOPS)的示意性结构，在一般的非线性数据同化系统中，有许多的重要反馈机制，图中给出了两种反馈机制：（1）预报提供了改变到实时的结构、实例与误差的有效采样机会–自适应采样；（2）为了同化而收集的数据，可应用于后报模型的验证试验，这可界定模型的不足，从而将模型加以改进。一个完整的数据同化系统包括以下三个部分：<br>
+  （1）一系列的观测数据集；（2）一个动力模型；（3）数据同化的融合方案。<br>
+  现代的多学科OOPS一般都有与模型和采样相容的嵌套网络。在数据同化中，其核心的概念是：误差、误差的估计和误差模型。其中，观测误差包括：观测仪器误差；环境噪声；采样误差；传感仪器误差。动力模型误差：所有的海洋模型都不完善，误差多数来自对物理模型的逼近、尺度的大小、离散化方法。</p>
+<h5 id="1-2-2-数据同化的方法与分类">1.2.2 数据同化的方法与分类</h5>
+<p><font size=2; color=natural>PS：作者在论文中提供的分类概念为 Robinson 和 Pierre 提供的，然而随着科技的发展，如今的海洋数据同化方法已有所变化，故下面为较新的分类方法。</font><br>
+  海洋数据同化方法可以根据其基本原理和实现方式进行分类。以下是海洋数据同化方法的一些常见分类：<br>
+   1. **估值理论类方法：**估值理论类方法基于统计估计原理，使用卡尔曼滤波、扩展卡尔曼滤波（EKF）、四维变分数据同化（4D-Var）等技术，将观测数据与数值模型相结合。这些方法通常用于调整模型的初始条件和参数，以逼近观测数据。<br>
+   2. **粒子滤波和蒙特卡洛方法：**粒子滤波方法使用随机粒子集合来表示模型状态的分布，并通过重要性采样和权重更新来估计状态。蒙特卡洛方法基于随机采样和蒙特卡洛积分，用于估计状态和参数。<br>
+   3. **深度学习方法：**深度学习方法包括神经网络、卷积神经网络（CNN）、循环神经网络（RNN）等，用于从海洋观测数据中学习模型的状态和参数。深度学习方法可以用于非线性问题和大数据集。<br>
+   4. **集合方法：**集合方法使用一组不同的初始条件或模型参数来生成多个模型集成，然后使用统计技术（如：集合平均、集合方差）来融合这些模型结果。这可以提高对不确定性的估计。例：集合卡尔曼滤波（Ensemble Kalman Filter，EnKF）海洋数据同化、集合方法数据同化等。<br>
+   5. **贝叶斯方法：**贝叶斯方法基于贝叶斯统计理论，将观测数据和先验信息相结合，以估计模型状态和参数的后验分布。这些方法通常使用马尔科夫链蒙特卡洛（MCMC）技术来采样后验分布。</p>
+<p>  这些分类方法有助于科学家和工程师根据其海洋数据同化问题的特点和可用的观测数据选择适当的方法。不同方法在处理非线性、高维度、大数据集和不确定性等方面具有不同的优势和限制。选择适合的方法需要考虑问题的复杂性和可行性。</p>
+<h4 id="1-3-数据同化发展的现状">1.3 数据同化发展的现状</h4>
+<p>  对数据同化问题的研究，和国外相比，国内的研究起步较晚，国外的研究起步早、发展快。无论是在利用常规观测资料方面，还是在利用卫星遥感资料方面，国外都已经做了大量的研究工作。为把最优秀的数据同化技术引入气象、海洋业务打下了坚实的基础。</p>
+<h5 id="1-3-1-数据同化方法">1.3.1 数据同化方法</h5>
+<p><font size=2; color=natural>PS:由于该篇论文较早，此处不再同步更新发展现状，而是介绍在海洋数据同化中使用的一些方法。</font><br>
+<br></p>
+<p><strong><div align = center><font color = green> 直接插入法或重新初始化法 </font></div></strong></p>
+<p>  <strong>直接插入法或重新初始化法</strong>是一种简单的同化方法。</p>
+<blockquote>
+<ul class="lvl-1">
+<li class="lvl-2">
+<p>**直接插入法：**是一种通过将观测数据直接嵌入到数值模型的初始条件中来进行数据同化的方法。这意味着模型的初始状态被观测数据所取代，从而使模型的输出更接近观测数据。这种方法通常用于短期预测或短期模拟，因为它可能会忽略模型内部的物理过程和演化。它在需要立即将模型输出与观测数据一致的情况下非常有用，例如天气预报中的现场初始化。</p>
+</li>
+<li class="lvl-2">
+<p>**重新初始化法：**是一种将观测数据与数值模型的初始条件相结合，但不是直接替换初始条件。相反，它通过在一段时间后重新设置模型的初始条件，使模型逐渐适应观测数据。这种方法通常用于长期模拟和预测，因为它更好地保留了模型的物理一致性。通过逐渐调整初始条件，模型可以在一段时间内逼近观测数据。</p>
+</li>
+</ul>
+</blockquote>
+<p><strong><div align = center><font color = green> 松弛法（Relaxation Method）</font></div></strong><br>
+  **松弛法（Relaxation Method）**是一种常用的数值技术，用于将观测数据与数值模型相结合以改进模型的状态或参数。松弛法通常用于寻找最优的模型状态或参数，使模型的输出与观测数据更加一致。以下是关于从松弛法在海洋数据同化的一些基本概念：<br>
+<font size=2; color=natural>PS:此方法类似于模型调参工具。</font></p>
+<blockquote>
+<ul class="lvl-1">
+<li class="lvl-2">
+<p>**基本原理：**松弛法的基本思想是通过迭代过程，逐渐调整模型的状态或参数，使模型输出与观测数据逼近。它通常使用一个称为&quot;松弛因子&quot;的参数来控制调整的幅度。这个因子可以是一个常数或随时间变化。</p>
+</li>
+<li class="lvl-2">
+<p>**状态调整：**在海洋数据同化中，松弛法可以用于调整模型的状态变量，如海洋温度、盐度、海流速度等。通过与观测数据进行比较，可以计算出如何调整模型的状态，以使其与观测数据更加一致。</p>
+</li>
+<li class="lvl-2">
+<p>**参数估计：**松弛法也可以用于估计数值模型的参数，例如模型的摩擦系数、混合参数等。通过调整这些参数，可以改进模型的性能，使其更好地拟合观测数据。</p>
+</li>
+<li class="lvl-2">
+<p>**迭代过程：**松弛法通常是一个迭代过程，其中模型的状态或参数在每个迭代步骤中根据松弛因子和观测数据进行调整。迭代过程会在模型输出与观测数据之间的误差足够小或达到一定的收敛条件时停止。</p>
+</li>
+<li class="lvl-2">
+<p>**松弛因子：**松弛因子是一个关键参数，决定了每个迭代步骤中的调整幅度。较小的松弛因子可能导致收敛较慢但更稳定，而较大的松弛因子可能导致快速收敛但不稳定。选择合适的松弛因子是一个重要的调整参数。</p>
+</li>
+<li class="lvl-2">
+<p>**应用：**松弛法在海洋数据同化中的应用范围广泛，可用于改进海洋模型的初始条件、参数估计以及模拟结果的调整。它通常与其他数据同化方法（如卡尔曼滤波、4D-Var等）结合使用，以提高模型的准确性和性能。</p>
+</li>
+</ul>
+</blockquote>
+<p>  总的来说，松弛法是海洋数据同化中的一种有效技术，可用于将观测数据与数值模型相结合，以改进模型的状态或参数，从而提高模型的准确性和可预测性。在实际应用中，选择合适的松弛因子和调整参数是关键，以确保收敛到合适的解。</p>
+<p><strong><div align = center><font color = green> 伴随法（Adjoint Method）</font></div></strong><br>
+  **伴随法（Adjoint Method）**是一种常用的数值方法，用于计算模型参数的灵敏度以及用于优化目标函数的参数。其被认为是克服了最优插值法存在的问题，可以很好地适用于非线性问题，人们将其应用于多种观测数据与多类海洋数值模型的拟合中，显示了伴随数据同化方法在优化模型初始场、参数估计、开边界条件和外部强迫场方面广泛的应用前景。这些海洋模型包括：</p>
+<ol>
+<li class="lvl-3">
+<p><strong>原始方程模型</strong>用于描述海洋中物理过程的一组基本方程，这些方程基于物理定律和原理，通常包括质量守恒、动量守恒和能量守恒等。这些方程用来模拟海洋的运动、温度、盐度、悬浮物运输等重要参数的时空演化。最常见的海洋模型原始方程模型包括：</p>
+</li>
+</ol>
+<blockquote>
+<ul class="lvl-1">
+<li class="lvl-2">
+<p>**质量守恒方程：**描述海水的质量守恒。它通常包括了关于海水的连续性方程，其中包括了海水的流入和流出，以及源和汇。这个方程用于描述海水的体积浓度的时空变化，通常用于模拟海水的盐度分布。</p>
+</li>
+<li class="lvl-2">
+<p>**动量守恒方程：**描述海洋流动的动量守恒。这个方程通常包括了关于流体速度的动量守恒方程，其中包括了各种外部力，如风、压强梯度力和克里奥利力。这个方程用于描述海洋的流速和流态的演化。</p>
+</li>
+<li class="lvl-2">
+<p>**热守恒方程：**描述海水的温度守恒，这个方程通常包括了关于海水温度的热守恒方程，其中包括了各种热通量，如太阳辐射、热通量和热传导。这个方程用于描述海水温度的时空变化。</p>
+</li>
+<li class="lvl-2">
+<p>**盐度守恒方程：**描述海水的盐度守恒。这个方程通常包括了关于海水盐度的盐。</p>
+</li>
+</ul>
+</blockquote>
+<p>  这些方程可以根据问题的具体性质和模型的复杂程度而有所变化。海洋模型的原始方程模型可以通过数值方法进行求解，通常使用有限元法、有限差分法或谱方法等。这些模型被广泛应用于研究海洋中的物理和生态过程，以及海洋气象和气候变化等重要领域。</p>
+<ol start="2">
+<li class="lvl-3">
+<p>**准地转模型（Quasi-Geostrophic Model）**是一类用于描述大气或海洋中的运动的模型。它是在一种近似情况下，将运动方程简化而得到的模型。准地转模型通常应用于描述大尺度的大气或海洋运动，尤其是涉及到大范围的涡旋运动时。以下是关于准地转模型的一些基本信息：</p>
+</li>
+</ol>
+<blockquote>
+<ul class="lvl-1">
+<li class="lvl-2">
+<p>**准地转近似：**准地转模型是基于准地转近似的。准地转近似是一种假设，它认为在大尺度运动中，克里奥利力和压强梯度力之间存在一个平衡，从而使得某些运动方程的项可以被忽略。</p>
+</li>
+<li class="lvl-2">
+<p>**运动方程：**准地转模型通常涉及一组动量守恒和热守恒方程，这些方程描述了大气或海洋运动中的涡旋运动和辐散运动等。</p>
+</li>
+<li class="lvl-2">
+<p>**模型应用：**准地转模型通常用于研究大尺度的大气或海洋现象，如高空气压系统、大气涡旋、海洋涡旋等。它可以用于预测和解释这些现象的运动和演变。</p>
+</li>
+<li class="lvl-2">
+<p>**数值求解：**准地转模型通常通过数值方法来求解，例如有限差分法、谱方法等。这些方法可以模拟大范围的运动，但通常不适用于描述小尺度的细节。</p>
+</li>
+<li class="lvl-2">
+<p>**适用范围：**准地转模型是一种近似模型，适用于大尺度和相对较缓慢的运动。它通常不适用于描述小尺度、高频率的运动。</p>
+</li>
+</ul>
+</blockquote>
+<p>  总的来说，准地转模型是一种在大气或海洋科学中常用的工具，用于研究大尺度的运动和涡旋现象。它提供了一种在物理定律的基础上进行简化建模的方式，从而使得我们可以更好地理解和预测大气和海洋中的运动特性。然而，需要注意的是，在应用准地转模型时，需要认识到其近似性质，以及适用范围的限制。</p>
+<ol start="3">
+<li class="lvl-3">
+<p><strong>环流模型</strong>是用于模拟和研究海洋环流系统的数学模型。它们基于物理定律和实验观测，描述了海洋中的流动、变化和交换过程。环流模型在海洋科学研究中扮演者重要角色，用于理解海洋环境、预测海洋动态和探索海洋生态系统。以下是关于海洋环流模型的一些基本信息：</p>
+</li>
+</ol>
+<blockquote>
+<ul class="lvl-1">
+<li class="lvl-2">
+<p>**基本方程：**海洋环流模型通常基于一组基本方程，包括质量守恒、动量守恒和能量守恒等方程。这些方程描述了海水的运动、温度、盐度等物理参数的时空演化。</p>
+</li>
+<li class="lvl-2">
+<p>**模拟尺度：**环流模型可以模拟不同尺度的海洋环流，从大尺度的大循环到局部区域的细节环流，甚至可以考虑较小尺度的涡旋运动。</p>
+</li>
+<li class="lvl-2">
+<p>**边界条件：**环流模型通常需要考虑边界条件，包括海洋边界和陆地边界，这些边界条件可以影响模型的模拟结果。</p>
+</li>
+<li class="lvl-2">
+<p>**外部驱动：**环流模型通常考虑外部驱动，如风场、太阳辐射、潮汐等，这些驱动因素可以影响海洋环流的形态和演变。</p>
+</li>
+<li class="lvl-2">
+<p>**数值求解：**环流模型通常通过数值方法来求解，包括有限元法、有限差分法、谱方法等。这些方法可以将模型方程离散化，以便在计算机上进行模拟。</p>
+</li>
+<li class="lvl-2">
+<p>**应用：**环流模型在海洋科学研究中应用广泛，包括研究海洋循环系统、探测温盐环流、模拟海洋风暴等。它们也在海洋资源开发、海洋环境保护等领域发挥着重要作用。</p>
+</li>
+</ul>
+</blockquote>
+<p>  环流模型的选择取决于研究问题的具体性质和尺度。大规模的全球环流模型可以用于研究全球尺度的海洋动力学，而区域环流模型则适用于研究特定区域的海洋环流特征。环流模型的发展也在不断推动着海洋科学的进步，为我们更好地理解和保护海洋环境提供了重要的工具。</p>
+<ol start="4">
+<li class="lvl-3">
+<p><strong>简化重力浅水模型</strong>是一种用于描述海洋或大气中大尺度运动的数学模型，其核心假设之一是在水平方向上，流体的运动速度远小于重力波速度，因此可以将垂直方向的动力学效应忽略不计。这一模型适用于描述海洋或大气的低频运动和长波传播，如大尺度的海洋波动、大气气旋等。以下是关于简化重力浅水模型的一些基本信息：</p>
+</li>
+</ol>
+<blockquote>
+<ul class="lvl-1">
+<li class="lvl-2">
+<p>**基本方程：**简化重力浅水模型通常基于一维或二维的浅水方程（Shallow Water Equations）进行建模。这些方程包括连续性方程和动量守恒方程，描述了流体的质量和动量在水平方向上的传递。</p>
+</li>
+<li class="lvl-2">
+<p>**假设：**该模型的核心假设是忽略了垂直方向上的运动，即认为流体在垂直方向上是均匀分布的。这个假设使得模型的求解变得相对简单，适用于描述长波和大尺度运动。</p>
+</li>
+<li class="lvl-2">
+<p>**应用：**简化重力浅水模型广泛应用于研究大尺度的海洋或大气运动，包括大洋中的波动、海洋涡旋、大气气旋等，它们也用于气象学中的气旋和锋面的建模，以及海洋学中的海浪、潮汐和海洋涡旋的研究。</p>
+</li>
+<li class="lvl-2">
+<p>**数值求解：**通常，简化重力浅水模型通过数值方法求解，如有限差分法、有限元法或谱方法。这些方法可以模拟流体的时空演化，并生成模型的预测。</p>
+</li>
+<li class="lvl-2">
+<p>**模型扩展：**简化重力浅水模型可以扩展到包括地转效应、摩擦、边界条件等更复杂的情况。这些扩展模型通常用于更准确地描述特定地区或特定问题的运动。</p>
+</li>
+</ul>
+</blockquote>
+<p>  总的来说，简化重力浅水模型为研究大尺度海洋或大气运动提供了一个有用的数学框架。尽管它们是基于一些近似和简化，但它们对于理解和预测大尺度的运动和波动在海洋学和气象学中仍然具有重要价值。</p>
+<p><strong><div align = center><font color = green> 模拟退火法</font></div></strong><br>
+  <strong>模拟退火法</strong>适合于大尺度最优问题。该法是基于缓慢冷却液体，从而使得液体自然结晶，使得全局的能量最小。该法用于温度方面的同化。在应用于最优方面时，代价函数在能量方面起决定性的作用，而温度由控制参数代替。模拟退火方案确定了控制参数如何以及以多大的速度下降。该法的优点是基础原理明确。缺点是计算量太大，要求计算机的性能太高（在计算机资源受限的环境或需要高效解决方案的问题中），且有时候收敛到的值不是全局最小。</p>
+<p><strong><div align = center><font color = green> 遗传算法</font></div></strong><br>
+  <strong>遗传算法</strong>的基本原理是基于生物的遗传与进化。在每一次迭代寻求最优的过程中，该法保留许多解，解的进化是将过去的能够产生最小不适，以使得新解能够最大可能得适合于模型的优化的解保留。因此，代价函数越复杂，计算量就越大。该法允许非局部最优，但不保证收敛于全局最优。该法的主要缺点是缺乏理论基础，并且和模拟退火一样，对计算机的性能要求太高。总的来讲，和模拟退火一样，是直接下降法中的一种方法。<br>
+<font size = 2; color = natural>PS：直接下降法（Direct Descent Method）通常不是用于解决海洋模型的问题。直接下降法通常用于数学优化问题，其主要目标是寻找一个函数的最小值或最优解。在某些情况下，为了改进海洋模型的性能或优化模型参数，可以使用数学优化算法，例如遗传算法、粒子群优化、梯度下降等。这些算法通常被用于调整模型参数，以使模型模拟与观测数据更好地吻合。但直接下降法在这种上下文中并不常见，因为海洋模型通常不是一个单一的数学函数，而是一个包含多个参数和物理方程的复杂模型。因此，在海洋科学中，直接下降法不是常见的工具，而更常见的是数值模拟方法和其他优化算法，以改进海洋模型的性能和准确性。</font></p>
+<p><strong><div align = center><font color = green> 杂交算法</font></div></strong><br>
+  **杂交算法（Hybrid Algorithms）**是一种将不同的优化和模拟方法组合在一起，以改善算法的性能和鲁棒性的方法。在海洋模型中，杂交算法可以用于改进模型的性能、提高模拟结果的准确性，以及解决特定的复杂问题。</p>
+<p>  随着卫星遥感数据的大量获取以及精度的提高，人们更感兴趣的是把实际的卫星测量数据结合常规的数据和模型相结合。</p>
+<h5 id="1-3-2-数据同化模型">1.3.2 数据同化模型</h5>
+<p><font size=2; color=natural>PS:由于该篇论文较早，此处不再同步更新作者观点，而是介绍海洋数据模型相关知识。</font><br>
+  除了同化方法外，构成同化系统的另一个基础 – 模型 – 也在不断地发展。一个优秀的海洋系统的预报模型是建立模型体系的必要一步，该模型体系要能够准确的合并观测数据与预报模型，并可应用于预报目的。描述海洋基本环流的数值模型是一个重要的科研工具，它能够帮助我们理解海洋的环流、海洋在天气变化中所扮演的角色以及在海洋内部的生物化学的产生、发展过程。<br>
+  基于涡及非涡的模型广泛而活跃地表述了涉及海洋环流的各种时间尺度的问题。好、一个基础性的物理模型的质量保证是成功同化试验的前提。对物理系统的动力、热力过程的充分理解是最终准确预报海洋（或天气）变化的必要条件。</p>
+<h4 id="1-4-论文的内容和创新点">1.4 论文的内容和创新点</h4>
+<p>  针对我国海区的应用研究较少，本文在前人文献的基础上，进行了方法及应用上研究。这些研究内容包括以下几个方面：</p>
+<blockquote>
+<ol>
+<li class="lvl-3">
+<p>本文建立观测场与时间和空间相关的协方差矩阵，并根据时间相关强弱给予不同的权重值，使得对观测数据的应用更接近实际情况。本文还详细研究了渤海温度场的水平相关和垂向相关，得到了渤海温度场的相关特性。</p>
+</li>
+<li class="lvl-3">
+<p>将时间相关引进最优插值算法，解决了观测数据使用时间错位的问题，从而得到了动态处理协方差矩阵的动态最优插值方法。不仅改善了空间分布数据处理的准确性，而且也改善了在时间过程上数据处理的准确性。</p>
+</li>
+<li class="lvl-3">
+<p>针对卡尔曼滤波与平滑无法直接应用在海洋数据同化问题，针对其计算量过大的问题，提出了SVD简化原则，将状态空间向量进行改写，获得了用主要成分误差和次要成分误差表述原状态向量误差的表达形式，从而将原预报误差协方差阵降维，简化了增益矩阵的求解计算。另外，应用反向量表述方法，将半隐式离散格式转换为可直接计算状态转移矩阵的显式格式。上述两个计算方面的改进，节省了计算量，提高了计算效率，这对有时间性要求的预报计算很有意义。</p>
+</li>
+<li class="lvl-3">
+<p>本文首先对T/P实时卫星数据进行了调和分析，并在此结果的基础上，进一步结合理论模型的结果进行同化数据处理。这使得得到的结果更加符合真实情况。</p>
+</li>
+</ol>
+</blockquote>
+<p>  除此之外，本文还扩展推导了融合方法的公式，将数据同化公式推广到观测与模式数据不一致情况下进行应用，并以并行试验做了检测。丰富了同化方法的应用。<br>
+  本文的创新处有以下几点：</p>
+<blockquote>
+<ol>
+<li class="lvl-3">
+<p>在确定协方差矩阵时首次应用时间相关，这可将数据根据其获取时间的不同分别进行权重处理。推导了时间相关的动态最优插值算法，并应用到渤海海表温度场的数据同化处理中。解决了观测数据使用时，时间错位的问题，使结果更加符合实际情况。</p>
+</li>
+<li class="lvl-3">
+<p>提出了使用SVD简化卡尔曼增益矩阵计算的新方法；应用反向量表述方法，将半隐式离散格式转换为可直接计算状态转移矩阵的显式离散格式；将卡尔曼方法成功应用到温度场的同化中。这两个改进简化了计算，极大地节省了计算量，提高了计算效率，对有时效性要求地海洋流场计算具有直接意义。</p>
+</li>
+<li class="lvl-3">
+<p>对黄、东海区域内的卫星数据进行调和分析，并结合理论模式计算，进行最优插值同化处理，获得了更接近真实值的结果。</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="div-align-center-第二章-模式介绍-div"><div align='center'>第二章  模式介绍</div></h3>
+<p>  本文所采用的模式是德国的汉堡陆架模式 HAMSOM（Hamburg Shelf Ocean Model），HAMSOM 是一个三维斜压原始方程模式。HAMSOM 具有以下方面的主要特征：</p>
+<blockquote>
+<ol>
+<li class="lvl-3">
+<p>对运动方程中的正压梯度力项($ g\rho_{1}\zeta $)、连续方程中的散度项，采用半隐式的差分格式，以克服由外重力波所引起的对稳定性的限制。</p>
+</li>
+<li class="lvl-3">
+<p>对运动方程中的垂向粘性项和温度、盐度方程中的垂向扩散项，采用半隐式的差分格式，以克服垂向粘性项和垂向扩散项引起的对稳定性的限制。</p>
+</li>
+<li class="lvl-3">
+<p>为克服在时间向前积分过程中，因科氏力项而引起的线性不稳定，在运动方程中，对科氏力项引入一个稳定的二阶旋转矩阵。</p>
+</li>
+<li class="lvl-3">
+<p>其差分处理的主要特点是：对层积分方程组进行差分，在时间域里引入两个时间步长，它们分别用上指标 $n$ 和 $n+1$ 来代表当前和将来时间步。在这一差分格式中，进入半隐式格式的所有预报量是定义在这一交叉的时间步上的。对于运动方程、温度方程中的水平粘性（扩散）项，及这些方程中的水平平流项，都采用显式差分格式。</p>
+</li>
+</ol>
+</blockquote>
+<h4 id="2-1-海洋流动的基本方程">2.1 海洋流动的基本方程</h4>
+<p>  描述流体水动力和热力系统的基本方程为：关于<strong>运动的动量方程</strong>，描述<strong>质量守恒的连续方程</strong>，<strong>状态方程</strong>，<strong>温度和盐度的守恒方程</strong>。为了把这些方程应用到海洋中，针对海洋的特性，对这些方程作了一些假定和近似：</p>
+<blockquote>
+<ol>
+<li class="lvl-3">
+<p>在动力海洋学研究中，因为海水运动的速度远远小于声速，常把海水作为不可压缩流体来处理的，即在流动过程中海水微团的形状可以变化，但其体积不会发生变化，从而海水微团的密度（质量）不会发生变化，即 $\frac {D_{\rho}} {D_t} = 0$ ;</p>
+</li>
+<li class="lvl-3">
+<p>海洋中垂向尺度与水平尺度的型比数远小于 1，根据量纲分析，运动的垂向速度分量远远小于水平速度分量，那么垂向的运动方程可用静力平衡方程来近似，即重力加速度与垂向压力梯度相平衡。在右手笛卡儿坐标系（东向为X轴方向，北向为Y轴方向，垂直向上为Z轴方向，Z轴的零面取在水平位势面上）中， 基本方程有：</p>
+</li>
+</ol>
+</blockquote>
+<h5 id="2-1-1-连续方程">2.1.1 连续方程</h5>
+<p>由质量守恒定律在流体中的应用可得连续方程：<br>
+$$\frac{D_\rho}{D_t} + \rho\nabla \cdot \vec{V} = 0 $$<br>
+由海水为不可压缩流体，在上述坐标中连续方程被简化为：<br>
+$$\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} = 0$$<br>
+其中：$u,v,w$ 分别为$X,Y,Z$方向的速度分量；</p>
+<h5 id="2-1-2-运动方程">2.1.2 运动方程</h5>
+<p>  研究海洋，必须考虑地球的自转效应，或称为科氏（Coriolis）效应。由于地球不停地以平均角速度。$ \omega = 7.292 \times 10^{-5}  rad/s $ 绕轴线自西向东自转，而参照坐标也都取在固定的地表，这样参照坐标系也在不停地旋转，因此它是一个非惯性系统，由于地球自转而引起的惯性力也就要考虑进去，这个力即称为科氏力。在上述直角坐标系中，科氏力可表示为：<br>
+$$-2 \vec{\omega} \times \vec{V} = (2 \omega sin \varphi \cdot -2 \omega cos \varphi \cdot w) \vec{i} + (-2 \omega sin \varphi \cdot u) \vec{j} + (2 \omega cos \varphi \cdot u) \vec{k}$$<br>
+式中： $\omega$ 地球自转的角速度矢量； $\varphi$ 流体微团所在纬度；<br>
+<font size = 2; color = natural>PS:上述公式中，第一项为科氏力在 $X$ 轴方向上的分量，第二项为科氏力在 $Y$ 轴方向上的分量，第三项为科氏力在 $Z$ 轴方向上的分量</font><br>
+<font size = 2; color = natural>PS：科氏力方程描述了地球自转引起的科氏力对海洋中流体运动的影响。</font><br>
+  由于海水运动的速度远小于声速，所以把海水看作是不可压缩流体，而且假定 $w &lt;&lt; u、v$ ,垂向的运动方程可用静力平衡来近似。如果海水运动处于层流状态，则由 Navier-Stokes 运动方程可得海水的运动方程为：<br>
+$$\frac{D\vec{V}}{Dt} = −\frac{1}{\rho} \nabla p + \mu \nabla^2 \vec{V} + \vec{F}$$</p>
+<blockquote>
+<p><strong>$\frac{D\vec{V}}{Dt}$：</strong> 表示速度矢量 <strong>$\vec{V}$</strong> 的拉格朗日导数，表示速度随时间的变化率；<br>
+<strong>$−\frac{1}{\rho} \nabla p$：</strong> 表示压力梯度力，描述了压力如何影响流体的运动，其中 <strong>$\nabla p$</strong> 表示压力梯度矢量；<br>
+<strong>$\mu \nabla^2 \vec{V}$：</strong> 表示粘性项，描述了粘性如何影响速度场，其中 <strong>$\nabla^2$：</strong> 是拉普拉斯算子，表示速度场的散度。<br>
+<strong>$\vec{F}$：</strong> 表示外部力，可以包括重力、电磁力等其他外部力。</p>
+</blockquote>
+<p>在上述直角坐标系中，上式的分量形式为：</p>
+<p>$$<br>
+\left\{\begin{matrix}<br>
+\frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y} + w\frac{\partial u}{\partial z} - fv = -\frac{1}{\rho}\frac{\partial p}{\partial x} + \mu(\frac{\partial^2u}{\partial x^2} + \frac{\partial^2u}{\partial y^2} + \frac{\partial^2u}{\partial z^2}) + F_x \\<br>
+\frac{\partial v}{\partial t} + u\frac{\partial v}{\partial x} + v\frac{\partial v}{\partial y} + w\frac{\partial v}{\partial z} + fv = -\frac{1}{\rho}\frac{\partial p}{\partial x} + \mu(\frac{\partial^2v}{\partial x^2} + \frac{\partial^2v}{\partial y^2} + \frac{\partial^2v}{\partial z^2}) + F_y  \\<br>
+\frac{\partial p}{\partial z} = - \rho g<br>
+\end{matrix}\right.<br>
+$$</p>
+<blockquote>
+<p>**t：**时间；<br>
+**f：**科氏参量，且 $f = 2 \omega sin \varphi$；<br>
+**g：**重力加速度；<br>
+**$p(z)$：**水深 $z$ 处的压力；<br>
+**$F_x, F_y$：**分别为 $X$ 和 $Y$方向上的外力；</p>
+</blockquote>
+<br>
+<font size=2; color=grey>马寨璞. 海洋流场数据同化方法与应用的研究[D]. 浙江大学,2002.</font>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">pzxnys</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://pzxnys.icu/posts/1764808885639/">http://pzxnys.icu/posts/1764808885639/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">pzxnys</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Dr/">
+                                    <span class="chip bg-color">Dr.</span>
+                                </a>
+                            
+                                <a href="/tags/Ocean/">
+                                    <span class="chip bg-color">Ocean</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/1764808885624/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="新手村任务2">
+                        
+                        <span class="card-title">新手村任务2</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-09-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Paper-Reading/" class="post-category">
+                                    Paper-Reading
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Dr/">
+                        <span class="chip bg-color">Dr.</span>
+                    </a>
+                    
+                    <a href="/tags/Ocean/">
+                        <span class="chip bg-color">Ocean</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/1764808885401/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="海洋的世界">
+                        
+                        <span class="card-title">海洋的世界</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Initial/" class="post-category">
+                                    Initial
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Dr/">
+                        <span class="chip bg-color">Dr.</span>
+                    </a>
+                    
+                    <a href="/tags/Ocean/">
+                        <span class="chip bg-color">Ocean</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: PZXNYS&#39;s Blog<br />'
+            + '文章作者: pzxnys<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2025</span>
+            
+            <a href="/about" target="_blank">pzxnys</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+                <span id="translate">|&nbsp;繁/简：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">87.2k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2020";
+                        var startMonth = "11";
+                        var startDate = "11";
+                        var startHour = "11";
+                        var startMinute = "11";
+                        var startSecond = "11";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/pzxnys" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:23110810000004@hainanu.edu.cn" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=377171636" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 377171636" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "http://pzxnys.icu"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
+    
+    
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
+            }
+        </script>
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
