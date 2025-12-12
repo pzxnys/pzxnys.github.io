@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>director环境安装与配置</title>
+      <link href="/posts/20251212161309/"/>
+      <url>/posts/20251212161309/</url>
+      
+        <content type="html"><![CDATA[<h2>director 安装步骤汇总</h2><p>在科研的长河里，系统一直在不断迭代，但用起来顺手的工具却一直在原地踏步，比如这个director环境，最后更新时间停留在Oct 5, 2021。使得想要使用该环境，就必须使用Ubuntu18及以下的系统，尽管如此，安装的时候，依然有许多坑等着。这也是我历经n次安装后，总结的部分安装流程。</p><ol><li><p>下载director</p><p>‘’’git clone <a href="https://github.com/RobotLocomotion/director.git">https://github.com/RobotLocomotion/director.git</a>‘’’</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Initial </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Environment </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>写作手法</title>
       <link href="/posts/20251209094457/"/>
       <url>/posts/20251209094457/</url>
