@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Word无法使用粘贴快捷键</title>
+      <link href="/posts/20251215094329/"/>
+      <url>/posts/20251215094329/</url>
+      
+        <content type="html"><![CDATA[<h3>MathType安装导致Word无法正常使用复制粘贴</h3><p>报错如图所示：</p><p><img src="http://pzxnys.github.io/images/2025121501.png" alt="报错示意图"></p><h4>解决步骤</h4><ol><li><p>找到 &quot;mathpage.wll&quot;文件直接使用任务栏搜索MathType，打开文件所在位置，如图所示<img src="http://pzxnys.github.io/images/2025121502.png" alt="Search"></p></li><li><p>右键点击图标，进入属性，点击&quot;打开文件所在的位置&quot;<img src="http://pzxnys.github.io/images/2025121503.png" alt="属性"></p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> System </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Microsoft Office </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>director环境安装与配置</title>
       <link href="/posts/20251212161309/"/>
       <url>/posts/20251212161309/</url>
