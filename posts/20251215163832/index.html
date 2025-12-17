@@ -376,14 +376,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    579
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -423,6 +423,29 @@ $$</p>
 <blockquote>
 <p>其中：$TD_{error}^i$是样本$i$的时序差分误差，$\epsilon &gt; 0$是一个小的常数，用于防止优先级为0，$\alpha \in [0,1]$控制优先级分布的锐度。当$\alpha$接近0时，所有样本的抽样概率趋于均匀，退化为传统方法；当$\alpha$接近1时，优先级差异被最大程度地放大。</p>
 </blockquote>
+<p>第二个层次，即局部优先级难度，考虑了特定于任务的重要性因素。在多USV包围场景中，这包括几个关键方面：首先，早期的探索行为和包围圈的最后阶段都具有特殊价值；其次，在接近成功包围时的关键时刻做出的决定直接影响任务的失败；最后，回合结束时是成功或者失败，都包含完整策略执行的结果信息。局部优先级方程：
+$$
+P_{global}^i = \beta_1 \cdot f_{capture}(d) + \beta_2 \cdot f_{episode}(b) + \beta_3 \cdot f_{coordination}©
+$$</p>
+<blockquote>
+<p>其中$f_{capture}(d_i)=exp(-d_i/\sigma)$表示捕获距离因子。使用指数衰减函数，这意味着更接近成功捕获的经验会被赋予更高的优先级。$f_{episode} = max(0, (t-150) / 200)$表示回合进度因子，反映了对时间维度重要性的考虑。这种分段函数设计更符合捕获任务的实际特征。在早期阶段，主要涉及接近和定位，只有在后期阶段才会进行实际捕获。$f_{coordination}(c_i)$表示多USV协调质量因子。$\beta_1, \beta_2,\beta_3$是权重参数。符合优先级结合了上述两层信息：</p>
+</blockquote>
+<p>$$
+P_{combined}^i=(P_{global}^i)^\lambda \cdot (P_{local}^i)^{(1 - \lambda)}
+$$
+在早期阶段，可能更多地依赖于TD误差，而在后期阶段，则更多地依赖于特定于任务的信息，最终采样概率：
+$$
+P_{sampling}^i = \frac{P_{combined}^i}{\sum_j P_{combined}^j}
+$$
+为了确保估计的无偏性，引入重要性采样权重：
+$$
+\omega^i = (N \cdot P_{sampling}^i)^{-\beta} \\
+\hat W_i = \frac{\omega^i}{max_j(\omega^j)}
+$$</p>
+<blockquote>
+<p>参数$\beta$控制偏差校正的强度。当$\beta = 0$时，不进行校正；当$\beta = 1$时，偏差被完全校正。在实际应用中，$\beta$通常从一个较小的值逐渐增加到1。它允许在训练的初始阶段存在一定程度的偏差以加速学习，并在后期逐渐纠正它以确保收敛。</p>
+</blockquote>
+<p>双层优先级机制发挥着关键作用。这种设计的核心优势在于它能够更准确地识别和利用对学习最有价值的经验。在诸如海上包围和捕获等复杂协调任务中，简单的TD误差可能无法完全捕捉到特定于任务的重要性。通过结合学习误差和任务语义，双层机制确保训练过程能够专注于具有最大学习价值的经验。</p>
 
                 
             </div>
@@ -853,7 +876,7 @@ $$</p>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">91k</span>
+                        class="white-color">91.7k</span>
             
             
             
